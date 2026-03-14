@@ -1,0 +1,28 @@
+# Nirixa OS - Master System Configuration Template
+
+system:
+  name: "Nirixa OS"
+  version: "0.2.0"
+  workspace_root: "."
+
+delegator:
+  daily_cap: 4
+  debounce_seconds: 8
+
+anonymization:
+  rules:
+    - pattern: "Ernst & Young|EY"
+      replacement: "Tier-1 Consulting Firm"
+    - pattern: "([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+)"
+      replacement: "[EMAIL REDACTED]"
+
+resonance:
+  weight_similarity: 0.6
+  weight_recency: 0.2
+  weight_domain: 0.2
+  threshold_edge: 0.85
+  decay_half_life_days: 90
+
+accountability:
+  stale_draft_days: 3
+  daily_nudge_cap: 4

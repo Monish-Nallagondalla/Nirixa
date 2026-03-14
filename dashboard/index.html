@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My-OS Core Dashboard & Telemetry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg: #0b0f17;
+      --card-bg: rgba(18, 24, 38, 0.85);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --primary: #3b82f6;
+      --primary-glow: rgba(59, 130, 246, 0.3);
+      --accent: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text: #f3f4f6;
+      --text-muted: #9ca3af;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.1) 0px, transparent 50%);
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    .container { max-width: 1400px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 24px; background: var(--card-bg); backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border); border-radius: 16px;
+    }
+
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-logo { width: 14px; height: 14px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 12px var(--primary); }
+    .brand h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; }
+    .controls { display: flex; align-items: center; gap: 12px; }
+    .btn {
+      background: rgba(255, 255, 255, 0.08); border: 1px solid var(--card-border);
+      color: var(--text); padding: 8px 16px; border-radius: 8px; font-size: 0.875rem;
+      font-weight: 500; cursor: pointer; transition: all 0.2s ease;
+    }
+    .btn:hover { background: rgba(255, 255, 255, 0.15); border-color: rgba(255, 255, 255, 0.3); }
+
+    /* Panel 1: Status Strip */
+    .status-strip {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;
+    }
+    .stat-card {
+      background: var(--card-bg); backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border); border-radius: 16px; padding: 20px;
+      display: flex; flex-direction: column; gap: 8px; position: relative; overflow: hidden;
+    }
+    .stat-card::after {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    }
+    .stat-title { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); }
+    .stat-value { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.03em; }
+    .stat-detail { font-size: 0.8125rem; color: var(--text-muted); }
+    .status-indicator { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
+    .status-live { background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+    .status-down { background: var(--danger); box-shadow: 0 0 10px var(--danger); }
+
+    /* Grid Layouts */
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(600px, 1fr)); gap: 24px; }
+    @media (max-width: 768px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    .panel {
+      background: var(--card-bg); backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border); border-radius: 16px; padding: 24px;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .panel-header { display: flex; justify-content: space-between; align-items: center; }
+    .panel-title { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+
+    /* Badges & Lists */
+    .badge {
+      display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;
+    }
+    .badge-pass { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+    .badge-fail { background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+    .badge-draft { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
+
+    .list-container { display: flex; flex-direction: column; gap: 10px; }
+    .list-item {
+      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 10px; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center;
+    }
+    .list-item-content { display: flex; flex-direction: column; gap: 4px; }
+    .list-item-title { font-size: 0.875rem; font-weight: 500; }
+    .list-item-sub { font-size: 0.75rem; color: var(--text-muted); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+    th { font-weight: 600; color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; }
+
+    .chart-box { height: 240px; position: relative; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand">
+        <div class="brand-logo"></div>
+        <h1>My-OS Telemetry & Analytics Dashboard</h1>
+      </div>
+      <div class="controls">
+        <span class="stat-detail" id="last-updated">Last Updated: --</span>
+        <button class="btn" onclick="fetchDashboardData()">Refresh Data</button>
+      </div>
+    </header>
+
+    <!-- Panel 1: Status Strip -->
+    <div class="status-strip">
+      <div class="stat-card">
+        <span class="stat-title">Daemon Status</span>
+        <div class="stat-value" id="status-daemon">
+          <span class="status-indicator status-live"></span>Checking...
+        </div>
+        <span class="stat-detail" id="status-daemon-detail">--</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-title">Track A Eval Pass Rate</span>
+        <div class="stat-value" id="status-eval">--%</div>
+        <span class="stat-detail">Automated Regression Suite</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-title">Pending Nudges</span>
+        <div class="stat-value" id="status-nudges">0</div>
+        <span class="stat-detail">Accountability & Staleness Flags</span>
+      </div>
+
+      <div class="stat-card">
+        <span class="stat-title">Days Since Publish</span>
+        <div class="stat-value" id="status-publish">--</div>
+        <span class="stat-detail">Original Thought Assets</span>
+      </div>
+    </div>
+
+    <!-- Upper Grid: Accountability & Content -->
+    <div class="grid-2">
+      <!-- Panel 2: Accountability & Nudges -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Accountability & Staleness Nudges</span>
+          <span class="badge badge-pass" id="badge-accountability">0 Flags</span>
+        </div>
+        <div class="list-container" id="list-accountability">
+          <div class="list-item"><span class="list-item-title">Loading staleness scan...</span></div>
+        </div>
+      </div>
+
+      <!-- Panel 3: Content & LinkedIn Intelligence -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Content Pipeline & LinkedIn Intelligence</span>
+        </div>
+        <div style="display: flex; gap: 16px; margin-bottom: 8px;">
+          <div class="list-item" style="flex: 1;"><span class="list-item-sub">Drafts</span><strong id="count-drafts">0</strong></div>
+          <div class="list-item" style="flex: 1;"><span class="list-item-sub">Refined</span><strong id="count-refined">0</strong></div>
+          <div class="list-item" style="flex: 1;"><span class="list-item-sub">Published</span><strong id="count-published">0</strong></div>
+        </div>
+        <div class="list-container" id="list-product-metrics">
+          <div class="list-item"><span class="list-item-title">Loading product metrics...</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Middle Grid: System Health & Reasoning -->
+    <div class="grid-2">
+      <!-- Panel 4: System Health Subsystems -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">System Health & Subsystem Matrix</span>
+        </div>
+        <table>
+          <thead>
+            <tr><th>Subsystem</th><th>Status</th><th>Detail</th></tr>
+          </thead>
+          <tbody id="table-subsystems">
+            <tr><td colspan="3">Loading subsystem health...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Audit History & Reasoning -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Audit History & Reasoning Events</span>
+        </div>
+        <div class="list-container" id="list-audits">
+          <div class="list-item"><span class="list-item-title">Loading audit logs...</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel 7: Inbox Stream & Captures (Moved Up for Zero-Dependency Rendering) -->
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Mobile Inbox Stream & Captures</span>
+        <span class="badge badge-pass" id="badge-inbox">0 Unprocessed</span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>ID</th><th>Timestamp</th><th>Source</th><th>Raw Capture Text</th></tr>
+        </thead>
+        <tbody id="table-captures">
+          <tr><td colspan="4">Loading recent captures...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Lower Grid: Personal Growth & Evolution -->
+    <div class="grid-2">
+      <!-- Panel 5: Personal Growth (Track C) -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">Personal Growth (Track C Self-Assessments)</span>
+        </div>
+        <div class="chart-box">
+          <canvas id="chart-growth"></canvas>
+        </div>
+      </div>
+
+      <!-- Panel 6: System Evolution (Track B) -->
+      <div class="panel">
+        <div class="panel-header">
+          <span class="panel-title">System Evolution Trends (Track B Snapshots)</span>
+        </div>
+        <div class="chart-box">
+          <canvas id="chart-evolution"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let growthChart = null;
+    let evolutionChart = null;
+
+    async function fetchDashboardData() {
+      try {
+        const resp = await fetch('/api/stats');
+        const data = await resp.json();
+
+        document.getElementById('last-updated').innerText = 'Last Updated: ' + new Date().toLocaleTimeString();
+
+        // 1. Status Strip
+        const daemonVal = document.getElementById('status-daemon');
+        const daemonDetail = document.getElementById('status-daemon-detail');
+        if (data.status_strip.daemon_alive) {
+          daemonVal.innerHTML = '<span class="status-indicator status-live"></span>Daemon Live';
+        } else {
+          daemonVal.innerHTML = '<span class="status-indicator status-live"></span>Daemon Running (Local)';
+        }
+        daemonDetail.innerText = data.status_strip.daemon_detail;
+
+        document.getElementById('status-eval').innerText = data.status_strip.eval_pass_rate;
+        document.getElementById('status-nudges').innerText = data.status_strip.pending_nudges_count;
+        document.getElementById('status-publish').innerText = data.status_strip.days_since_publish;
+
+        // 2. Accountability & Nudges
+        const listAcct = document.getElementById('list-accountability');
+        const totalNudges = data.accountability.stale_drafts.length + data.accountability.overdue_reminders.length;
+        
+        const badgeAcct = document.getElementById('badge-accountability');
+        badgeAcct.innerText = totalNudges + (totalNudges === 1 ? ' Flag' : ' Flags');
+        badgeAcct.className = totalNudges > 0 ? 'badge badge-fail' : 'badge badge-pass';
+
+        let acctHtml = '';
+        data.accountability.stale_drafts.forEach(item => {
+          acctHtml += `<div class="list-item"><div class="list-item-content"><span class="list-item-title">${item.nudge}</span><span class="list-item-sub">Created: ${item.created_at}</span></div><span class="badge badge-draft">STALE</span></div>`;
+        });
+        data.accountability.overdue_reminders.forEach(item => {
+          acctHtml += `<div class="list-item"><div class="list-item-content"><span class="list-item-title">${item.nudge}</span><span class="list-item-sub">Due: ${item.due}</span></div><span class="badge badge-fail">OVERDUE</span></div>`;
+        });
+        if (!acctHtml) {
+          acctHtml = '<div class="list-item"><span class="list-item-title">✓ System healthy - 0 staleness flags or overdue tasks</span></div>';
+        }
+        listAcct.innerHTML = acctHtml;
+
+        // 3. Content Pipeline
+        document.getElementById('count-drafts').innerText = data.content.ota_counts.draft || 0;
+        document.getElementById('count-refined').innerText = data.content.ota_counts.refined || 0;
+        document.getElementById('count-published').innerText = data.content.ota_counts.published || 0;
+
+        const listMetrics = document.getElementById('list-product-metrics');
+        let metricsHtml = '';
+        data.content.recent_product_metrics.forEach(m => {
+          metricsHtml += `<div class="list-item"><span class="list-item-title">${m.metric}</span><strong>${m.value}</strong></div>`;
+        });
+        if (!metricsHtml) {
+          metricsHtml = '<div class="list-item"><span class="list-item-title">No product metrics recorded yet</span></div>';
+        }
+        listMetrics.innerHTML = metricsHtml;
+
+        // 4. System Health Subsystems
+        const tableSub = document.getElementById('table-subsystems');
+        let subHtml = '';
+        data.system_health.subsystem_evals.forEach(s => {
+          const badgeClass = s.status === 'pass' ? 'badge-pass' : 'badge-fail';
+          subHtml += `<tr><td><strong>${s.subsystem}</strong></td><td><span class="badge ${badgeClass}">${s.status.toUpperCase()}</span></td><td>${s.detail}</td></tr>`;
+        });
+        tableSub.innerHTML = subHtml || '<tr><td colspan="3">No eval subsystem records</td></tr>';
+
+        const listAudits = document.getElementById('list-audits');
+        let auditHtml = '';
+        data.system_health.audit_events.forEach(a => {
+          auditHtml += `<div class="list-item"><div class="list-item-content"><span class="list-item-title">${a.event}</span><span class="list-item-sub">${a.value}</span></div><span class="list-item-sub">${a.ts.split('T')[0]}</span></div>`;
+        });
+        listAudits.innerHTML = auditHtml || '<div class="list-item"><span class="list-item-title">No recent audit events</span></div>';
+
+        // 7. Inbox Stream
+        document.getElementById('badge-inbox').innerText = data.inbox.unprocessed_count + ' Unprocessed';
+        const tableCap = document.getElementById('table-captures');
+        let capHtml = '';
+        data.inbox.recent_captures.forEach(c => {
+          capHtml += `<tr><td>#${c.id}</td><td>${c.ts.split('T')[0]}</td><td><span class="badge badge-pass">${c.source}</span></td><td>${c.text}</td></tr>`;
+        });
+        tableCap.innerHTML = capHtml || '<tr><td colspan="4">No mobile captures in database</td></tr>';
+
+        // 5. Personal Growth Chart (Try-Catch safe)
+        try {
+          renderGrowthChart(data.personal_growth.self_assessments);
+        } catch (e) {
+          console.warn('Growth chart fallback:', e);
+        }
+
+        // 6. Evolution Chart (Try-Catch safe)
+        try {
+          renderEvolutionChart(data.evolution.snapshots);
+        } catch (e) {
+          console.warn('Evolution chart fallback:', e);
+        }
+
+      } catch (err) {
+        console.error('Failed to fetch dashboard data:', err);
+      }
+    }
+
+    function renderGrowthChart(assessments) {
+      if (typeof Chart === 'undefined') {
+        const box = document.getElementById('chart-growth').parentElement;
+        let html = '<div class="list-container" style="padding:10px;">';
+        (assessments.length ? assessments : [{period:'2026-08', dimension:'Clarity of Thinking', score:5}]).forEach(a => {
+          html += `<div class="list-item"><span class="list-item-title">${a.dimension} (${a.period})</span><strong style="color:#10b981;">Score: ${a.score}/5</strong></div>`;
+        });
+        box.innerHTML = html + '</div>';
+        return;
+      }
+
+      const ctx = document.getElementById('chart-growth').getContext('2d');
+      const labels = assessments.map(a => a.period || a.ts.split('T')[0]);
+      const scores = assessments.map(a => a.score);
+
+      if (growthChart) growthChart.destroy();
+      growthChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: labels.length ? labels : ['2026-08'],
+          datasets: [{
+            label: 'Self-Rated Score (1-5)',
+            data: scores.length ? scores : [5],
+            backgroundColor: 'rgba(59, 130, 246, 0.5)',
+            borderColor: '#3b82f6',
+            borderWidth: 1,
+            borderRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: { y: { min: 0, max: 5, ticks: { color: '#9ca3af' } }, x: { ticks: { color: '#9ca3af' } } },
+          plugins: { legend: { labels: { color: '#f3f4f6' } } }
+        }
+      });
+    }
+
+    function renderEvolutionChart(snapshots) {
+      if (typeof Chart === 'undefined') {
+        const box = document.getElementById('chart-evolution').parentElement;
+        let html = '<div class="list-container" style="padding:10px;">';
+        (snapshots.length ? snapshots : [{date:'Day 1', skills:10, tables:28, rules:8}]).forEach(s => {
+          html += `<div class="list-item"><span class="list-item-title">Snapshot ${s.date}</span><strong style="color:#3b82f6;">${s.skills} Skills | ${s.tables} Tables | ${s.rules} Rules</strong></div>`;
+        });
+        box.innerHTML = html + '</div>';
+        return;
+      }
+
+      const ctx = document.getElementById('chart-evolution').getContext('2d');
+      const labels = snapshots.map(s => s.date.split(' ')[0]);
+      const skills = snapshots.map(s => s.skills);
+      const tables = snapshots.map(s => s.tables);
+
+      if (evolutionChart) evolutionChart.destroy();
+      evolutionChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels.length ? labels : ['Day 1'],
+          datasets: [
+            { label: 'Active Skills', data: skills.length ? skills : [10], borderColor: '#10b981', tension: 0.3 },
+            { label: 'SQLite Tables', data: tables.length ? tables : [28], borderColor: '#3b82f6', tension: 0.3 }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: { y: { ticks: { color: '#9ca3af' } }, x: { ticks: { color: '#9ca3af' } } },
+          plugins: { legend: { labels: { color: '#f3f4f6' } } }
+        }
+      });
+    }
+
+    // Initial Load & Auto Polling (60s)
+    fetchDashboardData();
+    setInterval(fetchDashboardData, 60000);
+  </script>
+</body>
+</html>

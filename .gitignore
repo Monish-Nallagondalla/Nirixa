@@ -1,0 +1,28 @@
+# Secrets & Environment (Never Pushed to Public Repo)
+.env
+system/config/.env
+*.env
+*.key
+*.pem
+ssh-key-*.key
+
+# Private User Data & Databases (Air-Gap Protection)
+system/data/*.db
+system/data/*.db-journal
+system/data/synced_messages.json
+personal/
+inbox/*.md
+!inbox/README.md
+
+# Python Cache & Bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# System Generated Artifacts & Logs
+system/calendar/*.ics
+*.log
+.DS_Store
+Thumbs.db

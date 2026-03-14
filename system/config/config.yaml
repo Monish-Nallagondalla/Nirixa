@@ -1,0 +1,60 @@
+# My-OS Sync & Ecosystem Configuration
+
+paths:
+  workspace_root: "c:/Users/MONISH/OneDrive/Documents/My-Os"
+  inbox: "inbox"
+  archive: "archive"
+  content_plan: "content/2026-q3-omni-channel-plan.md"
+  knowledge_frameworks: "knowledge/frameworks"
+
+telegram:
+  poll_timeout: 10
+  allowed_chat_ids: []
+  auto_delete_synced_messages: false  # Immediate delete OFF (retain in chat for 7 days)
+  cleanup_retention_days: 7            # Delete synced messages after 7 days
+
+anonymization:
+  enabled: true
+  rules:
+    - match: "(?i)\\bEY\\b|Ernst\\s*&?\\s*Young"
+      replace: "Tier-1 Consulting Firm"
+    - match: "(?i)\\bLexsis\\b"
+      replace: "Health-Tech Startup"
+    - match: "(?i)\\bManager\\b"
+      replace: "Senior Engagement Lead"
+
+operating_rhythm:
+  sparring_mode: "ad-hoc"  # On-demand when triggered by Monish
+  weekday_work_hours: "09:00 - 21:00"  # EY Consulting intensive hours
+  default_writing_slots:
+    - day: "Saturday"
+      time: "10:00"
+      duration_minutes: 45
+    - day: "Sunday"
+      time: "10:00"
+      duration_minutes: 45
+
+book_quotes:
+  auto_tagging: true
+  section_header: "Book Quotes & Context Retention"
+
+git:
+  auto_push: true
+  commit_prefix: "feat(sync): mobile capture stream"
+
+calendar:
+  default_duration_minutes: 45
+  timezone: "Asia/Kolkata"
+
+delegator:
+  daily_cap: 4
+  dismissal_rate_threshold: 0.50
+
+resonance:
+  weight_similarity: 0.6
+  weight_recency: 0.2
+  weight_domain: 0.2
+  threshold_edge: 0.85
+  decay_half_life_days: 90
+
+

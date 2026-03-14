@@ -1,0 +1,17 @@
+# My-OS / Nirixa OS Engine Dependencies
+# Install via: pip install -r requirements.txt
+
+# Phase 3 Vector Store & Similarity
+sqlite-vec>=0.1.9
+
+# Config & Environment Parsing
+pyyaml>=6.0
+python-dotenv>=1.0.0
+
+# Hardware Telemetry & System Monitoring
+psutil>=5.9.0
+
+# Google Calendar Integration
+google-api-python-client>=2.0.0
+google-auth-httplib2>=0.1.0
+google-auth-oauthlib>=1.0.0
