@@ -203,6 +203,18 @@ Nirixa/
 
 ---
 
+## 🎯 Custom Goals, Milestones & Persona Extensibility
+
+Nirixa OS is designed to be completely user-programmable. You can define your own **life milestones**, **custom persona boards**, and **original thought assets (OTAs)** without writing complex boilerplate:
+
+- **Custom Life Milestones**: Track long-term horizons (e.g. Keynote Talks, Book Releases, Research Labs) in SQLite via Python API or Dashboard.
+- **Custom Persona Advisory Board**: Add custom simulated mentors (e.g. Paul Graham, Jensen Huang, Sam Altman) in `.agents/skills/persona-advisory-board/`.
+- **Original Thought Assets (OTAs)**: Register custom foundational hypotheses and lineage trees.
+
+👉 **Read the complete guide**: **[docs/CUSTOM_GOALS_AND_EXTENSIONS.md](docs/CUSTOM_GOALS_AND_EXTENSIONS.md)**
+
+---
+
 ## 🤝 Contributing
 
 We welcome contributions from system architects, AI engineers, and builders! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines, testing protocols, and PR workflows.
