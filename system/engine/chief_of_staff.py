@@ -39,9 +39,9 @@ class ChiefOfStaffDispatcher:
         """
         context = {
             "user_profile": {
-                "name": "Monish Nallagondalla Srinath",
-                "degrees": "B.E. Mechanical Engineering (VTU) & M.Sc. Data Science (Coventry University, UK)",
-                "role": "AI Product Manager & Associate Tech Consultant (4+ yrs GenAI/Multi-Agent Systems)"
+                "name": "User Operator (Configured in user_profile)",
+                "degrees": "User Degrees & Academic Foundation (Configured in user_profile)",
+                "role": "AI Architect & Product Leader (Configured in user_profile)"
             },
             "career_milestones": [],
             "active_projects": [],
