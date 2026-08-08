@@ -1,6 +1,6 @@
 ---
 name: content-stylist
-description: Enforces high-signal, minimalist tech copywriting based on Naval Ravikant, Aviral Bhatnagar, and Paul Graham. Banned from using emoji clutter, hype marketing, or generic advice.
+description: Enforces high-signal, minimalist tech copywriting based on Elite Technical Thought Leadership. Banned from using emoji clutter, hype marketing, or generic advice.
 ---
 
 # Content Stylist Skill (`content-stylist`)

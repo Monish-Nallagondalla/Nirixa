@@ -37,7 +37,7 @@ My-Os/
 │   └── skills/                   # The 10 Active Agent Custom Skills
 │       ├── agent-evaluator/      # Reader persona evaluation matrix (Engineer, Exec, PM)
 │       ├── calendar-scheduler/   # Actionable task -> Google Calendar scheduling
-│       ├── content-stylist/      # Naval/Aviral high-signal minimalist copywriting engine
+│       ├── content-stylist/      # High-Signal Minimalist minimalist copywriting engine
 │       ├── daily-login/          # Login context resumption ("I am back")
 │       ├── daily-signoff/        # End-of-day signoff & mobile push workflow
 │       ├── founder-council-evaluator/ # Multi-founder strategic audit (Jobs, Huang, etc.)
@@ -177,7 +177,7 @@ My-OS operates 10 specialized agent skills:
 3. **`daily-signoff`**: Handles end-of-day sign-off, logging finished work and pushing pending tasks to Telegram for mobile review.
 4. **`mobile-task-delegator`**: Delegates low-friction micro-tasks (sparring prompts, voice note requests, inline decision buttons) to Monish's phone.
 5. **`omni-channel-publisher`**: Enforces strict platform mechanics (splits X posts into <280 char threads; auto-compiles multi-slide LinkedIn carousels into single ready-to-upload PDF documents).
-6. **`content-stylist`**: Enforces Naval Ravikant & Aviral Bhatnagar copywriting standard (zero hype emojis, sparse line breaks, high thesis density).
+6. **`content-stylist`**: Enforces First-Principles Technical Copywriting copywriting standard (zero hype emojis, sparse line breaks, high thesis density).
 7. **`persona-advisory-board`**: Runs multi-perspective debates (Marty Cagan for product vision, David Goggins for discipline, Paramahansa Yogananda for core purpose).
 8. **`founder-council-evaluator`**: Audits strategy against elite tech leaders (Steve Jobs, Jensen Huang, Sundar Pichai, Mark Zuckerberg).
 9. **`agent-evaluator`**: Simulates target reader personas (Senior Engineer, Executive VP, Junior PM) to score emotional impact.

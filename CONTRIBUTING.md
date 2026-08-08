@@ -37,7 +37,7 @@ When writing code or adding engine capabilities to Nirixa OS, always adhere to o
 
 - **Local-First Security**: Never write user databases, credentials, or private notes outside local disk or air-gapped repositories.
 - **Rule 1 (Dialogue-First Boundary)**: AI reasoning suggests drafts as `status='draft'`; raw thoughts are never auto-published without explicit human approval.
-- **Rule 7 (High-Signal Copywriting)**: AI outputs must adhere to Naval Ravikant & Aviral Bhatnagar copywriting standards (zero hype marketing, zero tacky emojis `🔴, 🟢, 🔥, 🚀, 👈, 👇`).
+- **Rule 7 (High-Signal Copywriting)**: AI outputs must adhere to High-Signal Minimalist Copywriting Standards (zero hype marketing, zero tacky emojis `🔴, 🟢, 🔥, 🚀, 👈, 👇`).
 
 ---
 

@@ -3,7 +3,7 @@
 Nirixa OS Engine - Autonomous AI News Radar Agent (LinkedIn Thought Leadership)
 
 Scans high-signal AI developments (arXiv preprints, open-source releases),
-applies Naval & Aviral copywriting filters (Rule 7: zero hype, zero emojis),
+applies High-Signal Minimalist Copywriting filters (Rule 7: zero hype, zero emojis),
 and compiles clean, ready-to-publish LinkedIn thought pieces.
 """
 
@@ -60,12 +60,12 @@ def fetch_arxiv_ai_breakthroughs(max_results=3):
 
 def generate_linkedin_thought_piece(paper):
     """
-    Compiles an AI news development into a high-thesis LinkedIn post adhering to Rule 7 (Naval & Aviral standard).
+    Compiles an AI news development into a high-thesis LinkedIn post adhering to Rule 7 (High-Signal Minimalist Standard).
     """
     title = paper["title"]
     summary = paper["summary"]
     
-    # Naval / Aviral high-signal styling
+    # High-signal minimalist styling
     post = f"""The biggest misunderstanding in enterprise AI right now is assuming adding more agent layers increases intelligence linearly.
 
 It doesn't. It increases latency and failure surfaces exponentially.
