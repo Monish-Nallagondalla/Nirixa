@@ -76,6 +76,38 @@ Nirixa OS separates memory, reasoning, and human judgment into three isolated bo
 
 ---
 
+## 🧠 The 3-Layer Local Memory Core
+
+Unlike generic RAG implementations that flood context windows with noisy vector chunks, Nirixa OS utilizes a **deterministic 3-layer memory retrieval engine** operating in sub-milliseconds:
+
+```
+                       INCOMING INQUIRY / NOTE
+                                  │
+      ┌───────────────────────────┼───────────────────────────┐
+      ▼                           ▼                           ▼
+[Layer 1: FTS5]          [Layer 2: Resonance]        [Layer 3: Graph Edges]
+Exact Lexical Search     3-Signal Vector Math        Associative Traversal
+(BM25 Inverted Index)    (Embedding + Time Decay)    (ota_edges >= 0.85)
+```
+
+1. **Layer 1: Sub-Millisecond Exact Search (SQLite FTS5)**: Fast BM25 lexical search for exact entity and keyword retrieval ($< 1\text{ms}$).
+2. **Layer 2: The 3-Signal Mathematical Resonance Model**:
+   $$\text{Resonance} = \underbrace{w_s \cdot \text{Vector Similarity}}_{\text{Semantic Meaning (60\%)}} + \underbrace{w_r \cdot e^{-\lambda t}}_{\text{Time Decay (20\%)}} + \underbrace{w_d \cdot \text{Domain Overlap}}_{\text{Context Alignment (20\%)}}$$
+3. **Layer 3: Associative Graph Traversal (`ota_edges`)**: Subconscious bridge linking related cognitive assets across months and years when resonance surpasses $0.85$.
+
+---
+
+## 🏢 Enterprise & Team Deployment (Institutional Memory)
+
+Nirixa OS scales beyond individual productivity into **Enterprise Cognitive Infrastructure**:
+
+- **Institutional Knowledge Retention**: Captures friction, architectural decisions, and post-mortems locally across teams, eliminating tribal knowledge loss when engineers transition.
+- **Decentralized Multi-Agent Coordination**: Eliminates fragile daisy-chained cloud agents by providing deterministic, single-boundary memory stores for distributed product teams.
+- **Zero Data Leakage**: Runs 100% air-gapped on private VPCs or on-premise hardware without shipping confidential enterprise PRDs to third-party vector clouds.
+- **Cross-Domain Collision Detection**: Automated background heuristics detect scheduling collisions, competing milestone timelines, and PRD conflicts across departments.
+
+---
+
 ## ⚡ Quickstart (Under 2 Minutes)
 
 ### 1. Prerequisites
