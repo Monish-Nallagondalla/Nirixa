@@ -26,21 +26,36 @@
 
 ---
 
-## 🛑 The Problem with Modern AI Agents
+## 🛑 The Problem with Corporate AGI (The Rented Subscription)
 
 Most AI agent frameworks today suffer from three fatal design flaws:
 
-1. **Non-Deterministic Memory Decay**: Storing agent context in bloated prompt context windows or cloud vector databases leads to prompt rot, high latency ($>10s$), and hallucinations.
-2. **Infinite Reasoning Deadlocks**: Daisy-chaining autonomous agents without strict deterministic boundaries compounds failure rates exponentially.
-3. **Cloud Lock-In & Privacy Leaks**: Personal journals, raw mobile notes, and proprietary work thoughts are shipped to unverified third-party cloud wrappers.
+1. **Rented Intelligence vs Owned Assets**: A $20/month cloud chatbot is a rented subscription that resets when you close the tab and gets a lobotomy when the vendor pivots. Model quality is a commodity; your personal context and cognitive library are your only true compounding assets.
+2. **Confusing Latent Space with Deterministic State**: Trying to do arithmetic, exact database indexing, and state tracking inside fuzzy prompt windows leads to hallucinations and infinite deadlocks.
+3. **Cloud Lock-In & Privacy Leaks**: Personal journals, raw mobile notes, and proprietary enterprise thoughts are shipped to unverified third-party cloud vector silos.
 
-**Nirixa OS** was built from first principles to solve this. It is a **local-first, event-driven personal AI operating system** that turns fragmented thoughts, voice notes, and friction into high-density assets while keeping 100% of your data private on your local disk.
+**Nirixa OS** is a **local-first personal AI operating system (Personal AGI)** that runs on your own infrastructure, reads from a memory you own, and compounds every day you use it.
 
 ---
 
-## 🏛️ Architecture & System Philosophy
+## 🏛️ Architecture: Latent Taste vs Deterministic State
 
-Nirixa OS separates memory, reasoning, and human judgment into three isolated boundaries:
+Nirixa OS strictly separates computation into two distinct domains:
+
+```
+                           INCOMING USER REQUEST
+                                     │
+      ┌──────────────────────────────┴──────────────────────────────┐
+      ▼                                                             ▼
+[LATENT SPACE COMPUTATION]                                    [DETERMINISTIC COMPUTATION]
+Taste, Judgment, Socratic Debate                              Arithmetic, SQL Queries, FTS5 Search
+Intent & Fuzzy Nuance                                         State Storage & Task Scheduling
+Steered by Markdown Skill Files                               Executed by Python & SQLite Core
+```
+
+- **Markdown is the Code**: High-level agent skills are written in plain English markdown files (`.agents/skills/`). The language model is the compiler.
+- **SQLite is the State**: All long-term memories, vector embeddings, and associative graph edges are managed deterministically in local SQLite (`nirixa.db`).
+- **Memory + Hygiene (The Librarian Model)**: Provenance is preserved on every fact; contradiction heuristics flag tensions when new evidence collides with old beliefs.
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
