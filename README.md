@@ -1,29 +1,37 @@
-# Nirixa OS (My-OS)
+<p align="center">
+  <img src="https://img.shields.io/badge/Nirixa_OS-v0.2.0-blueviolet?style=for-the-badge" alt="Version">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Storage-SQLite_Core-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+  <img src="https://img.shields.io/badge/Telegram-Connected-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
+  <img src="https://img.shields.io/badge/Agents-Antigravity_%7C_Cursor_%7C_Claude-green?style=for-the-badge" alt="Agents">
+  <img src="https://img.shields.io/badge/License-MIT-success?style=for-the-badge" alt="License">
+</p>
 
-> **A 24/7 AI Chief of Staff & Company Living Wiki for high-leverage builders, engineers, and teams.**
+# Nirixa OS (My-OS) ☤
 
-```
-                       🎯 MISSION
-               (Career, Products, Outputs)
-                           │
-                           │
-       🧘 MIND ────────────┼──────────── 🧠 MASTERY
- (Health, Clarity, Energy) │        (Deep Inquiry, Knowledge)
-                           │
-                           │
-                       💰 MONEY
-             (Freedom, Capital, Equity)
-```
+> **The autonomous 24/7 AI Chief of Staff & Company Living Wiki with built-in Socratic sparring, zero-friction mobile capture, and a compounding memory loop.**
 
-Traditional note-taking and productivity apps (Notion, Todoist, Confluence) fail because they are static databases where ideas and engineering lessons go to die.
+Traditional note-taking apps (Notion, Todoist, Obsidian, Confluence) fail because they are static databases where ideas, meeting lessons, and engineering scars go to die.
 
-**Nirixa OS** turns your mobile phone and IDE into an active, 24/7 intelligence gateway. Whether you are an individual scaling your career or an engineering team capturing production scars, Nirixa OS actively spars with your thoughts, tracks your goals, and auto-compiles your lessons into living playbooks and assets.
+**Nirixa OS** turns your mobile phone and IDE into an active, 24/7 intelligence gateway. Whether you are an individual scaling your career or an engineering team capturing production incidents, Nirixa OS actively spars with your thoughts, tracks your goals, and auto-compiles your lessons into living playbooks and public assets.
 
 ---
 
-## ⚡ Universal AI Agent Onboarding
+<table>
+<tr><td width="30%"><b>📱 Lives Where You Do</b></td><td>Zero-friction Telegram voice/text capture, interactive inline buttons, 1-click approvals, and deterministic daily briefings directly on your phone.</td></tr>
+<tr><td><b>🧭 Dual Operating Modes</b></td><td><b>Mode A (Personal)</b>: 4-Quadrant Compass (Mission, Mastery, Money, Mind) & 3-Horizon Engine.<br/><b>Mode B (Company)</b>: Living Engineering Playbook, Post-Mortem Scars Vault, and Async Standup Radar.</td></tr>
+<tr><td><b>🧠 Socratic Sparring Loop</b></td><td>The AI does not flatter or autocomplete. It probes unstated premises, extracts authentic architectural scars, and evolves living Original Thought Assets (OTAs).</td></tr>
+<tr><td><b>⚡ Zero-LLM Fast Path</b></td><td>Telemetry, reminders, time-wheel briefings, and status checks run 100% deterministically at 0 token cost.</td></tr>
+<tr><td><b>💾 DB-First SQLite Memory</b></td><td>Single ACID SQLite core (<code>system/data/nirixa.db</code>) with vector embeddings. Zero file clutter. Full thought ancestry and lineage tracking.</td></tr>
+<tr><td><b>🤖 Universal Coding Agent Onboarding</b></td><td>Drop-in setup interview across <b>Google Antigravity</b>, <b>Cursor</b> (<code>.cursorrules</code>), and <b>Claude Code</b> (<code>CLAUDE.md</code>).</td></tr>
+<tr><td><b>🌿 Progressive Enlightenment</b></td><td>30-Day cognitive adoption ladder: Day 1 (Instant Utility) ➔ Day 7 (Socratic Sparring) ➔ Day 30 (Custom Skills & Playbooks).</td></tr>
+</table>
 
-When you clone Nirixa OS and open it in **Antigravity**, **Cursor**, **Claude Code**, or **Windsurf**, your coding agent immediately guides you through a **3-minute interactive setup interview**:
+---
+
+## ⚡ 3-Minute Universal Agent Quickstart
+
+When you clone Nirixa OS and open it in **Antigravity**, **Cursor**, **Claude Code**, or **Windsurf**, your coding agent automatically runs an interactive setup interview:
 
 ```text
 👋 Welcome to Nirixa OS! I am your AI Operating Agent.
@@ -34,19 +42,51 @@ Let's set up your system in under 3 minutes. Are you configuring this for:
 3. 🛠️ Custom Hybrid Setup
 ```
 
+### Installation Commands:
+```bash
+# 1. Clone the repository
+git clone https://github.com/Monish-Nallagondalla/My-Os.git
+cd My-Os
+
+# 2. Configure environment
+cp system/config/.env.example system/config/.env
+# Add TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID (from @BotFather & @userinfobot)
+
+# 3. Start the background listener
+python system/scripts/telegram_listener.py
+```
+
+👉 **[Read the Full Step-by-Step Onboarding Guide](docs/ONBOARDING.md)**
+
 ---
 
-## 🧭 Dual-Mode Architecture
+## 🧭 Dual Operating Frameworks
 
-### **Mode A: Personal Chief of Staff**
-* 🧭 **4-Quadrant Compass**: Balance across *Mission, Mastery, Money, Mind*. ([`docs/PERSONAL_COMPASS.md`](docs/PERSONAL_COMPASS.md))
-* 🌟 **3-Horizon Engine**: High-velocity sprints connecting *North Star ➔ Friction Radar ➔ Weekly Top 3*. ([`docs/HORIZON_ENGINE.md`](docs/HORIZON_ENGINE.md))
-* 👤 **Monish's Living Blueprint**: Complete 24-hour walkthrough of how Monish runs it at EY. ([`docs/MONISH_CASE_STUDY.md`](docs/MONISH_CASE_STUDY.md))
+```
+┌───────────────────────────────────────────────┬───────────────────────────────────────────────┐
+│     MODE A: PERSONAL CHIEF OF STAFF           │     MODE B: COMPANY LIVING WIKI & PLAYBOOK    │
+├───────────────────────────────────────────────┼───────────────────────────────────────────────┤
+│ • 🎯 Mission (Career, Products, Outputs)     │ • 🏛️ Company Vision, Values & Strategic Moat │
+│ • 🧠 Mastery (Deep Inquiry, Books, Research)  │ • 🛠️ Living Engineering Standards & PR Rules │
+│ • 💰 Money (Revenue, Assets, Freedom)         │ • 🩹 Post-Mortem Scars Vault (Outage Rules)  │
+│ • 🧘 Mind (Health, Clarity, Vitality)         │ • 🤖 Async Standup & Dependency Blocker Radar │
+│                                               │                                               │
+│ 📖 [docs/PERSONAL_COMPASS.md]                 │ 📖 [docs/company/README.md]                   │
+└───────────────────────────────────────────────┴───────────────────────────────────────────────┘
+```
 
-### **Mode B: Company Living Wiki & Engineering Playbook**
-* 🏛️ **Living Engineering Playbook**: Standards, PR review invariants, and architecture guardrails. ([`docs/company/ENGINEERING_PLAYBOOK.md`](docs/company/ENGINEERING_PLAYBOOK.md))
-* 🩹 **Post-Mortem Scars Vault**: Turn production outages into permanent algorithmic rules. ([`docs/company/POST_MORTEMS_AND_SCARS.md`](docs/company/POST_MORTEMS_AND_SCARS.md))
-* 🤖 **Async Standup & Blocker Radar**: Automate daily team dependency tracking. ([`docs/company/README.md`](docs/company/README.md))
+---
+
+## 👤 Living Case Study: How Monish Uses It Daily
+
+See the complete 24-hour walkthrough of how Monish runs Nirixa OS as an AI Product Leader at Ernst & Young (EY):
+* **09:00 AM**: Deterministic Morning Executive Briefing on Telegram.
+* **02:30 PM**: `[MISSION]` Voice note capture on Enterprise Multi-Agent Deadlocks (auto-anonymized and indexed).
+* **06:00 PM**: `[MASTERY]` Socratic sparring on *Human Non-Determinism vs. LLM Determinism* (registered as **`OTA-016`**).
+* **08:30 PM**: `[MIND]` Ather ride clarity & workout energy tracking.
+* **Sunday Review**: 1-Click auto-compilation of scars into LinkedIn PDF Carousels and Keynote abstracts.
+
+👉 **[Read the Full Blueprint: How Monish Uses Nirixa OS](docs/MONISH_CASE_STUDY.md)**
 
 ---
 
@@ -54,39 +94,31 @@ Let's set up your system in under 3 minutes. Are you configuring this for:
 
 You do not need to understand complex architecture on Day 1. Nirixa OS guides you through a gradual 30-day cognitive journey:
 
-* 🌱 **Day 1 (Utility)**: 2-Min Telegram connect. Send text/voice notes, get instant reminders, status, and briefings.
-* 🌿 **Day 7 (Reflection)**: AI surfaces recurring weekly friction and conducts your first Socratic sparring session.
-* 🌳 **Day 30+ (Compounding)**: Auto-compiles your monthly scars into ready-to-upload LinkedIn PDF carousels and teaches you to build custom agent skills.
-* 👉 **[Read the Full Progressive Enlightenment Model](docs/PROGRESSIVE_ENLIGHTENMENT.md)**
+```
+  ┌─────────────────────────┐
+  │   DAY 1: UTILITY        │  ➔ 2-Min Telegram setup. Send voice notes, get reminders & briefings.
+  └───────────┬─────────────┘
+              │
+              ▼
+  ┌─────────────────────────┐
+  │   DAY 7: REFLECTION     │  ➔ AI surfaces recurring friction. First Socratic sparring on phone.
+  └───────────┬─────────────┘
+              │
+              ▼
+  ┌─────────────────────────┐
+  │   DAY 30: COMPOUNDING   │  ➔ Auto-compiles first public assets/playbooks. Teaches custom skills.
+  └─────────────────────────┘
+```
+
+👉 **[Read the Full Progressive Enlightenment Model](docs/PROGRESSIVE_ENLIGHTENMENT.md)**
 
 ---
 
-## ⚡ 5-Minute Quickstart
-
-1. **Clone & Open in Your Favorite IDE**:
-   ```bash
-   git clone https://github.com/Monish-Nallagondalla/My-Os.git
-   cd My-Os
-   ```
-2. **Let Your AI Agent Run the Setup Interview**:
-   * Open the workspace in Antigravity, Cursor, or Claude Code.
-   * Type: `"Set up my OS"` or `"Onboard me"`.
-3. **Connect Your Private Telegram Bot**:
-   * Paste your `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` into `system/config/.env`.
-4. **Start the Background Listener**:
-   ```bash
-   python system/scripts/telegram_listener.py
-   ```
-
-👉 **[Detailed Step-by-Step Onboarding Guide](docs/ONBOARDING.md)**
-
----
-
-## 🛠️ System Architecture & Under the Hood
+## 🛠️ Architecture & Under the Hood
 
 ```mermaid
 graph TD
-    User["👥 User / Team (Mobile & IDE Capture)"] -->|"Voice / Text Note"| Daemon["⚡ Runtime Daemon (Zero-LLM Fast Path)"]
+    User["👥 User / Team (Mobile & IDE Gateway)"] -->|"Voice / Text Note"| Daemon["⚡ Runtime Daemon (Zero-LLM Fast Path)"]
     Daemon -->|"Classify & Store"| DB[("💾 SQLite Core (nirixa.db)")]
     DB --> OperatingMode{"Operating Mode Engine"}
     OperatingMode -->|"Personal Mode"| Q["🧭 4-Quadrant / 3-Horizon Framework"]
