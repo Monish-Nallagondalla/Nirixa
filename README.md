@@ -1,15 +1,25 @@
+<div align="center">
+
+# Nirixa OS ☤
+
+**The Autonomous 24/7 AI Chief of Staff & Company Living Wiki with Built-in Socratic Sparring, Zero-Friction Mobile Capture, and Compounding Memory.**
+
+[Quickstart](docs/ONBOARDING.md) • [Personal Compass](docs/PERSONAL_COMPASS.md) • [3-Horizon Engine](docs/HORIZON_ENGINE.md) • [Company Wiki](docs/company/README.md) • [Living Blueprint](docs/MONISH_CASE_STUDY.md)
+
+<br/>
+
 <p align="center">
   <img src="https://img.shields.io/badge/Nirixa_OS-v0.2.0-blueviolet?style=for-the-badge" alt="Version">
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Storage-SQLite_Core-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
-  <img src="https://img.shields.io/badge/Telegram-Connected-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
+  <img src="https://img.shields.io/badge/Telegram-24%2F7_Connected-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
   <img src="https://img.shields.io/badge/Agents-Antigravity_%7C_Cursor_%7C_Claude-green?style=for-the-badge" alt="Agents">
   <img src="https://img.shields.io/badge/License-MIT-success?style=for-the-badge" alt="License">
 </p>
 
-# Nirixa OS (My-OS) ☤
+</div>
 
-> **The autonomous 24/7 AI Chief of Staff & Company Living Wiki with built-in Socratic sparring, zero-friction mobile capture, and a compounding memory loop.**
+---
 
 Traditional note-taking apps (Notion, Todoist, Obsidian, Confluence) fail because they are static databases where ideas, meeting lessons, and engineering scars go to die.
 
