@@ -1,3 +1,14 @@
+<p align="center">
+<pre align="center">
+ ███╗   ██╗██╗██████╗ ██╗██╗  ██╗ █████╗        ██████╗ ███████╗
+ ████╗  ██║██║██╔══██╗██║╚██╗██╔╝██╔══██╗      ██╔═══██╗██╔════╝
+ ██╔██╗ ██║██║██████╔╝██║ ╚███╔╝ ███████║█████╗██║   ██║███████╗
+ ██║╚██╗██║██║██╔══██╗██║ ██╔██╗ ██╔══██║╚════╝██║   ██║╚════██║
+ ██║ ╚████║██║██║  ██║██║██╔╝ ██╗██║  ██║      ╚██████╔╝███████║
+ ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝       ╚═════╝ ╚══════╝
+</pre>
+</p>
+
 # Nirixa OS ☤
 <p align="center">
   <a href="https://github.com/Monish-Nallagondalla/My-Os">Nirixa OS</a> | <a href="docs/ONBOARDING.md">Getting Started</a> | <a href="docs/MONISH_CASE_STUDY.md">Living Blueprint</a>
