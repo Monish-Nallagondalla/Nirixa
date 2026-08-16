@@ -9,19 +9,19 @@
 ## The 3-Stage Onboarding Standard
 
 ```
-┌───────────────────────────────┐
-│     STAGE 1: INFORM           │  ➔ Present architectural choices & understand user intent.
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│     STAGE 2: CONFIRM          │  ➔ Multi-choice validation of selected domains & rules.
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│     STAGE 3: BUILD            │  ➔ Deterministic generation of config, DB schema & playbooks.
-└───────────────────────────────┘
+
+STAGE 1: INFORM Present architectural choices & understand user intent.
+
+
+
+
+STAGE 2: CONFIRM Multi-choice validation of selected domains & rules.
+
+
+
+
+STAGE 3: BUILD Deterministic generation of config, DB schema & playbooks.
+
 ```
 
 ---

@@ -4,7 +4,7 @@
 
 ---
 
-## 📋 Incident Registry & Scar Catalog
+## Incident Registry & Scar Catalog
 
 ### Scar Template
 ```markdown

@@ -1,15 +1,15 @@
-# ❓ The Question Project — Complete Research Context
+# The Question Project — Complete Research Context
 ### The Autonomous Study of Intelligence, Emergence, and the Human Operating System
 *Principal Investigator: Monish Nallagondalla Srinath*
 
 ---
 
-> ### 🌌 The Grand Emerging Hypothesis (Pillar 34)
+> ### The Grand Emerging Hypothesis (Pillar 34)
 > **"Questions may be the primitive building blocks of intelligence, in the same way that tokens are the primitive building blocks of modern language models."**
 
 ---
 
-## 🧭 I. Foundational Premise & Scope
+## I. Foundational Premise & Scope
 
 ### 1. This is not a book project.
 This is the **study of intelligence itself**. The book is merely the first artifact. Future artifacts include:
@@ -26,17 +26,17 @@ Emergence implies: *memory, goals, curiosity, questioning, experience, abstracti
 
 ---
 
-## ⚡ II. The Computational Architecture of Questions
+## II. The Computational Architecture of Questions
 
 ### 3. Questions as First-Class Computational Objects
 Instead of storing static answers, the knowledge graph stores questions as living nodes:
 ```
 Question Node
-    ├── Related Questions
-    ├── Empirical Evidence
-    ├── Counterarguments & Debates
-    ├── Personal Lived Experience & Scars
-    └── Active Research Threads
+Related Questions
+Empirical Evidence
+Counterarguments & Debates
+Personal Lived Experience & Scars
+Active Research Threads
 ```
 
 ### 4. Recursive Intelligence Loops
@@ -53,7 +53,7 @@ $$\text{Question} \longrightarrow \text{Research} \longrightarrow \text{Answer} 
 
 ---
 
-## 🛡️ III. Cognitive Principles & Agent Behaviors
+## III. Cognitive Principles & Agent Behaviors
 
 ### 7. AI Should Debate, Not Flatter
 The system must actively push back, challenge assumptions, find counter-evidence, and value productive disagreement over polite validation.
@@ -91,7 +91,7 @@ Not replacement or antagonism. Human intuition, lived scars, and emotional valen
 
 ---
 
-## 💎 IV. Original Thought Assets & Research Ingestion
+## IV. Original Thought Assets & Research Ingestion
 
 ### 18. Original Thought Assets (OTAs)
 An OTA is a crystallized, high-signal contribution extracted from genuine friction. Every true insight is cataloged as a permanent intellectual asset.
@@ -120,7 +120,7 @@ Investigate the interaction between: *Memory, Attention, Goals, Curiosity, Predi
 
 ---
 
-## 🚀 V. Life, Career, and the 30-Year Compounding Horizon
+## V. Life, Career, and the 30-Year Compounding Horizon
 
 ### 24. The Human Operating System
 Studying how humans operate, choose, fail, and evolve.

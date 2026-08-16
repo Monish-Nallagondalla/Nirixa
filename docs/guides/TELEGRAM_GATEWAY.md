@@ -9,15 +9,15 @@
 ## Capabilities Overview
 
 ```
-┌───────────────────────────────┬───────────────────────────────┐
-│ Feature                       │ Implementation Standard       │
-├───────────────────────────────┼───────────────────────────────┤
-│ 🎙️ Voice & Text Ingestion     │ Auto-transcription & anonymize│
-│ 📊 Live Hardware Telemetry    │ 200ms in-process fast path    │
-│ 🔘 Interactive Inline Buttons │ 1-Click approvals & triggers  │
-│ 💤 Remote Laptop Sleep        │ Windows Suspend PowerShell API│
-│ 🔄 7-Day Rolling Retention    │ Auto-cleanup of stale messages│
-└───────────────────────────────┴───────────────────────────────┘
+
+Feature Implementation Standard 
+
+Voice & Text Ingestion Auto-transcription & anonymize
+Live Hardware Telemetry 200ms in-process fast path 
+Interactive Inline Buttons 1-Click approvals & triggers 
+Remote Laptop Sleep Windows Suspend PowerShell API
+7-Day Rolling Retention Auto-cleanup of stale messages
+
 ```
 
 ---

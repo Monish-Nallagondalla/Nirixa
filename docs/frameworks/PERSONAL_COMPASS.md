@@ -9,15 +9,15 @@
 ## The 4-Quadrant Architecture
 
 ```
-┌───────────────────────────────────────────────┬───────────────────────────────────────────────┐
-│                 🎯 MISSION                    │                  🧠 MASTERY                   │
-│   Enterprise impact, career milestones,       │   First-principles inquiry, deep research,    │
-│   public thought leadership, and products.    │   book retention, and OTA creation.           │
-├───────────────────────────────────────────────┼───────────────────────────────────────────────┤
-│                  💰 MONEY                     │                   🧘 MIND                     │
-│   Revenue engines, equity, capital allocation,│   Health, physical vitality, mental clarity,  │
-│   and financial sovereignty.                  │   rest, and daily equilibrium.                │
-└───────────────────────────────────────────────┴───────────────────────────────────────────────┘
+
+MISSION MASTERY 
+Enterprise impact, career milestones, First-principles inquiry, deep research, 
+public thought leadership, and products. book retention, and OTA creation. 
+
+MONEY MIND 
+Revenue engines, equity, capital allocation, Health, physical vitality, mental clarity, 
+and financial sovereignty. rest, and daily equilibrium. 
+
 ```
 
 ---

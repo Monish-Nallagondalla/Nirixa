@@ -1,4 +1,4 @@
-# 💎 Nirixa OS — Master OTA Registry (Original Thought Assets)
+# Nirixa OS — Master OTA Registry (Original Thought Assets)
 ### The Cognitive Knowledge Graph & Empirical Intellectual Assets of Monish Nallagondalla Srinath
 
 ---
@@ -7,7 +7,7 @@
 
 ---
 
-## 🏛️ I. Core OTAs (Active Primary Assets)
+## I. Core OTAs (Active Primary Assets)
 
 | ID | Title | Core Hypothesis & Inquiry | Status | Lineage & Connections |
 | :--- | :--- | :--- | :--- | :--- |
@@ -29,7 +29,7 @@
 
 ---
 
-## ⚡ II. Seed OTAs (Emerging Inquiries)
+## II. Seed OTAs (Emerging Inquiries)
 
 1. **Mixture of Thoughts**: Modeling human thinking as dynamic activation of internal cognitive experts depending on context.
 2. **The First Question**: If answers generate questions, what generated the very first question in the universe?
@@ -46,7 +46,7 @@
 
 ---
 
-## 🔬 III. Active Research Channels & Threads
+## III. Active Research Channels & Threads
 
 - **Intelligence vs Consciousness**: Functional computational cognition vs subjective experience (*Global Workspace vs Vedanta Vichar*).
 - **Experience vs Data**: Static training distributions vs evolving experiential interpretation.

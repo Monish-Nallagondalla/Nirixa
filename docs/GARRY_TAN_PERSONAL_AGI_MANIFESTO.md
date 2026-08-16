@@ -1,16 +1,16 @@
-# ⚡ The Personal AGI Manifesto & Spinoza's Conatus
+# The Personal AGI Manifesto & Spinoza's Conatus
 ### Synthesizing Garry Tan's YC Keynote into the Core Architecture of Nirixa OS & My-OS
 
 ---
 
-> ### 🏛️ The Central Thesis (Garry Tan / YC)
+> ### The Central Thesis (Garry Tan / YC)
 > *"Everyone is watching the sky for AGI as a god in a data center. The thing they're watching for is already in the room. It doesn't look like a god. It looks like infrastructure, a terminal window, a folder of markdown files, a job that finishes while you sleep spread through everything.*
 > 
 > *AGI isn't arriving as an event. It's arriving diffused as your agent running on your context doing your work. Personal AGI. Model quality is rented, but your context and your brain are owned."*
 
 ---
 
-## 🧭 I. The Baruch Spinoza Analogy (1656 $\rightarrow$ 2026)
+## I. The Baruch Spinoza Analogy (1656 $\rightarrow$ 2026)
 
 ### 1. The Heresy & The Cloak
 - **1656**: At 23, Baruch Spinoza was excommunicated and cursed with no repentance clause. He was offered a salary of 1,000 guilders a year to stop building, keep his mouth shut, and conform. He refused: *"He wanted truth, not comfort."*
@@ -26,7 +26,7 @@
 
 ---
 
-## ⚡ II. Personal AGI vs Corporate AGI
+## II. Personal AGI vs Corporate AGI
 
 | Dimension | Corporate AGI (The Rented Product) | Personal AGI (The Owned Asset — Nirixa OS) |
 | :--- | :--- | :--- |
@@ -38,7 +38,7 @@
 
 ---
 
-## 🧠 III. Cognitive Physics: Working Memory vs The Library
+## III. Cognitive Physics: Working Memory vs The Library
 
 ### 1. The $7 \pm 2$ Limit
 - Cognitive psychology: Human working memory holds roughly **7 items** ($7 \pm 2$). Every org chart, standup meeting, filing cabinet, and checklist was an institutional prosthetic for this limit.
@@ -48,24 +48,24 @@
 - A human life is not 3 books; a human life is a **library** of 25 years of decisions, meetings, scars, and reflections.
 - The fundamental question: **Who or what decides which 3 books are open on the desk?**
 - **Nirixa OS is the Library + The Librarian**:
-  - `system/data/nirixa.db` + `inbox/`: The permanent library.
-  - `resonance.py` + `chief_of_staff.py`: The librarian selecting the exact 3 open books via FTS5, 3-signal resonance, and associative graph traversal (`OTA-004`).
+- `system/data/nirixa.db` + `inbox/`: The permanent library.
+- `resonance.py` + `chief_of_staff.py`: The librarian selecting the exact 3 open books via FTS5, 3-signal resonance, and associative graph traversal (`OTA-004`).
 
 ---
 
-## 🛠️ IV. Latent vs Deterministic Computation
+## IV. Latent vs Deterministic Computation
 
 Every catastrophic agent failure stems from confusing where computation happens:
 
 ```
-                           INCOMING REQUEST
-                                  │
-      ┌───────────────────────────┴───────────────────────────┐
-      ▼                                                       ▼
-[LATENT SPACE COMPUTATION]                              [DETERMINISTIC COMPUTATION]
-Taste, Judgment, Socratic Debate                        Arithmetic, SQL Queries, FTS5 Search
-Intent & Fuzzy Nuance                                   Hard State, Calendars, Task Schedules
-Steered by Markdown Skill Files                         Executed by Python, SQLite & Shell Scripts
+INCOMING REQUEST
+
+
+
+[LATENT SPACE COMPUTATION] [DETERMINISTIC COMPUTATION]
+Taste, Judgment, Socratic Debate Arithmetic, SQL Queries, FTS5 Search
+Intent & Fuzzy Nuance Hard State, Calendars, Task Schedules
+Steered by Markdown Skill Files Executed by Python, SQLite & Shell Scripts
 ```
 
 1. **Latent Space**: Lives inside the model; steered by clear English Markdown skill files (`.agents/skills/`).
@@ -73,7 +73,7 @@ Steered by Markdown Skill Files                         Executed by Python, SQLi
 
 ---
 
-## 🛡️ V. The Knowledge Hygiene & Provenance Standard
+## V. The Knowledge Hygiene & Provenance Standard
 
 > *"A brain nobody curates is a garbage dump with great search. Retrieval will surface a stale fact with total confidence. The primitive is memory plus hygiene."*
 
@@ -83,7 +83,7 @@ Steered by Markdown Skill Files                         Executed by Python, SQLi
 
 ---
 
-## 🚀 VI. Ownership of Cognition (The Maya Parable)
+## VI. Ownership of Cognition (The Maya Parable)
 
 - **The Danger**: When knowledge workers encode their judgment into company-owned repos, the company runs their judgment after they leave while they leave with nothing.
 - **The Invariant**: **Own your skill files.** Your cognition, judgment, and processes belong in a repository you control.
@@ -91,7 +91,7 @@ Steered by Markdown Skill Files                         Executed by Python, SQLi
 
 ---
 
-## 💎 VII. Mapping Garry Tan's Keynote to The Question Project
+## VII. Mapping Garry Tan's Keynote to The Question Project
 
 - **Conatus $\rightarrow$ OTA-001 & Pillar 34**: The striving of intelligence to evolve through recursive questioning.
 - **Personal AGI $\rightarrow$ OTA-014**: Context engineering compounds as the ultimate personal asset.

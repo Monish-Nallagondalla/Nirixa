@@ -1,6 +1,6 @@
 # Chronological Session Log: August 8–9, 2026
 
-> **Topic:** Nirixa Brand Invariant, 3-Bucket Wealth Realism, Socratic Task Kanban, Multi-Agent Publishing Review & Context Continuity Architecture.  
+> **Topic:** Nirixa Brand Invariant, 3-Bucket Wealth Realism, Socratic Task Kanban, Multi-Agent Publishing Review & Context Continuity Architecture. 
 > **Participants:** Monish Nallagondalla Srinath & AI Chief of Staff.
 
 ---
@@ -28,15 +28,15 @@
 - **Friction**: Initial Nirixa post received only 149 impressions.
 - **Diagnosis**: Plain text announcements with no pioneer anchor get suppressed by LinkedIn's algorithm.
 - **Solution**:
-  1. Anchor posts to recognized pioneers (Garry Tan's YC Keynote, Spinoza, Andrej Karpathy, François Chollet).
-  2. Auto-compile high-contrast multi-page PDF slide documents (`post-1-personal-agi-slides.pdf`) to maximize feed dwell time.
-  3. Run all drafts through the **Founder Council** (Steve Jobs, Jensen Huang, Sundar Pichai, Mark Zuckerberg) and **Persona Advisory Board** (Marty Cagan, David Goggins, Paramahansa Yogananda).
+1. Anchor posts to recognized pioneers (Garry Tan's YC Keynote, Spinoza, Andrej Karpathy, François Chollet).
+2. Auto-compile high-contrast multi-page PDF slide documents (`post-1-personal-agi-slides.pdf`) to maximize feed dwell time.
+3. Run all drafts through the **Founder Council** (Steve Jobs, Jensen Huang, Sundar Pichai, Mark Zuckerberg) and **Persona Advisory Board** (Marty Cagan, David Goggins, Paramahansa Yogananda).
 
 ### E. Sovereign Context Continuity (Dual Architecture)
 - **Problem**: Risk of context loss when switching to future IDEs or when sessions reset.
 - **Decision**: Established the Dual Architecture:
-  1. `docs/MONISH_CONTEXT_DOSSIER.md`: Persistent Single Source of Truth.
-  2. `docs/sessions/YYYY-MM-DD-session-log.md`: Chronological high-signal debate history.
+1. `docs/MONISH_CONTEXT_DOSSIER.md`: Persistent Single Source of Truth.
+2. `docs/sessions/YYYY-MM-DD-session-log.md`: Chronological high-signal debate history.
 
 ---
 

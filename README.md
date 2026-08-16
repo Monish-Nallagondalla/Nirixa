@@ -9,7 +9,7 @@
 </pre>
 </p>
 
-# Nirixa OS ☤
+# Nirixa OS
 <p align="center">
   <a href="https://github.com/Monish-Nallagondalla/My-Os">Nirixa OS</a> | <a href="docs/getting-started/QUICKSTART.md">Getting Started</a> | <a href="docs/guides/MONISH_CASE_STUDY.md">Living Blueprint</a> | <a href="docs/README.md">Documentation Hub</a>
 </p>
@@ -72,7 +72,7 @@ pip install -r requirements.txt
    python system/scripts/telegram_listener.py
    ```
 
-👉 **[Read the Full Quickstart Guide](docs/getting-started/QUICKSTART.md)**
+[Read the Full Quickstart Guide](docs/getting-started/QUICKSTART.md)
 
 ---
 
@@ -98,7 +98,7 @@ When you clone Nirixa OS and open it in your preferred IDE, your coding agent im
 * **Cursor**: Automatically reads `.cursorrules`.
 * **Claude Code**: Automatically reads `CLAUDE.md`.
 
-👉 **[Read the Full Onboarding Protocol](docs/getting-started/ONBOARDING_PROTOCOL.md)**
+[Read the Full Onboarding Protocol](docs/getting-started/ONBOARDING_PROTOCOL.md)
 
 ---
 

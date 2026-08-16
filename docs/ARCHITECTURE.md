@@ -26,22 +26,22 @@ Every model reads from the same repository.
 
 # Architecture
 
-                You
-                 │
-                 ▼
-            myos CLI
-                 │
-      ┌──────────┴──────────┐
-      ▼                     ▼
- Context Engine        Repository
-      │                     │
-      └──────────┬──────────┘
-                 ▼
-          Context Bundle
-                 │
-      ┌──────────┼──────────┐
-      ▼          ▼          ▼
-   ChatGPT    Claude     Gemini
+You
+
+
+myos CLI
+
+
+
+Context Engine Repository
+
+
+
+Context Bundle
+
+
+
+ChatGPT Claude Gemini
 
 ---
 

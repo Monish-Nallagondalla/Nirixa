@@ -1,4 +1,4 @@
-# Nirixa OS Documentation Hub ☤
+# Nirixa OS Documentation Hub 
 
 **The central documentation index for Nirixa OS: 24/7 AI Chief of Staff and Company Living Wiki.**
 

@@ -51,10 +51,10 @@ pip install -r requirements.txt
 2. Send `/newbot`, follow the prompts to choose a name, and copy the **API Token**.
 3. Search for `@userinfobot`, press **Start**, and copy your numerical **Chat ID**.
 4. Edit `system/config/.env` and paste your credentials:
-   ```env
-   TELEGRAM_BOT_TOKEN=1234567890:ABCdefGHIjklMNOpqrsTUVwxyz
-   TELEGRAM_CHAT_ID=7172048978
-   ```
+```env
+TELEGRAM_BOT_TOKEN=1234567890:ABCdefGHIjklMNOpqrsTUVwxyz
+TELEGRAM_CHAT_ID=7172048978
+```
 
 ---
 

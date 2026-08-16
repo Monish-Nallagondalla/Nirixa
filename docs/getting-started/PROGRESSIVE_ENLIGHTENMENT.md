@@ -11,19 +11,19 @@
 Most AI systems overwhelm users on Day 1 by demanding complex prompt engineering and manual configuration. Nirixa OS is designed around **Progressive Cognitive Disclosure**:
 
 ```
-┌───────────────────────────────┐
-│     DAY 1: UTILITY            │  ➔ 2-Min Telegram setup. Send voice notes, get reminders & briefings.
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│     DAY 7: REFLECTION         │  ➔ AI surfaces recurring friction. First Socratic sparring on phone.
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│     DAY 30: COMPOUNDING       │  ➔ Auto-compiles public assets/playbooks. Teaches custom skills.
-└───────────────────────────────┘
+
+DAY 1: UTILITY 2-Min Telegram setup. Send voice notes, get reminders & briefings.
+
+
+
+
+DAY 7: REFLECTION AI surfaces recurring friction. First Socratic sparring on phone.
+
+
+
+
+DAY 30: COMPOUNDING Auto-compiles public assets/playbooks. Teaches custom skills.
+
 ```
 
 ---

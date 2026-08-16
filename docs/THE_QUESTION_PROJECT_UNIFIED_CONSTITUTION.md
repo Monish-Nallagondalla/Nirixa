@@ -1,30 +1,30 @@
-# 🌌 The Question Project — Unified Constitution & Epistemological Blueprint
+# The Question Project — Unified Constitution & Epistemological Blueprint
 ### The Irreducible Primitives of Biological and Artificial Intelligence
 *Principal Investigator: Monish Nallagondalla Srinath*
 
 ---
 
-> ### 🏛️ The One Sentence That Compresses Everything
+> ### The One Sentence That Compresses Everything
 > **"How does intelligence emerge, evolve, and compound across humans and artificial systems through questions, memory, experience, and reflection?"**
 
-> ### ⚡ The Foundational Discovery
+> ### The Foundational Discovery
 > **"The Question Project is not about building better AI, nor is it merely about humans. It is the quest to discover the irreducible primitive building blocks from which ANY intelligent system—biological or artificial—must emerge."**
 
 ---
 
-## 🧭 I. The Meta Vision
+## I. The Meta Vision
 
 You are **not building software**. You are building a **unified framework for understanding intelligence**.
 
 ```
-                           THE QUESTION PROJECT
-                        (Study of Intelligence Itself)
-                                     │
-      ┌───────────────┬──────────────┼──────────────┬───────────────┐
-      ▼               ▼              ▼              ▼               ▼
-   [My-OS]         [Nirixa]      [The Book]     [LinkedIn]       [Career/EY]
-  Personal        Interface      Permanent        Public          Empirical
- Laboratory        Doorway       Synthesis     Thinking Lab       Field Data
+THE QUESTION PROJECT
+(Study of Intelligence Itself)
+
+
+
+[My-OS] [Nirixa] [The Book] [LinkedIn] [Career/EY]
+Personal Interface Permanent Public Empirical
+Laboratory Doorway Synthesis Thinking Lab Field Data
 ```
 
 - **My-OS**: The private thinking laboratory and cognitive repository.
@@ -35,7 +35,7 @@ You are **not building software**. You are building a **unified framework for un
 
 ---
 
-## 🏛️ II. The Five Pillars of Intelligence
+## II. The Five Pillars of Intelligence
 
 1. **Questions**: What is a question? Why do questions exist? Can questions be represented computationally? Are questions more fundamental than answers?
 2. **Intelligence**: Human, artificial, collective, and goal-directed intelligence.
@@ -45,7 +45,7 @@ You are **not building software**. You are building a **unified framework for un
 
 ---
 
-## 🔬 III. Personal Research Questions
+## III. Personal Research Questions
 
 - **Intelligence**: How do humans collect information? Why do humans notice different things? Why do identical experiences affect people differently?
 - **AI**: Can AI have authentic experiences? Can AI formulate intrinsic goals? Can AI become curious? Can AI maintain unresolved open loops across years?
@@ -55,7 +55,7 @@ You are **not building software**. You are building a **unified framework for un
 
 ---
 
-## 💎 IV. Core Convictions & Design Philosophy
+## IV. Core Convictions & Design Philosophy
 
 - **Values**: *Originality $\rightarrow$ First Principles $\rightarrow$ Long-Term Compounding $\rightarrow$ Systems $\rightarrow$ Evolution $\rightarrow$ Deep Understanding* (over disposable life-hacks or shallow optimization).
 - **Product Rejection**: Rejection of generic SaaS clones, prompt wrappers, and chatbot gimmicks. Focus strictly on fundamental cognitive architecture.
@@ -67,7 +67,7 @@ You are **not building software**. You are building a **unified framework for un
 
 ---
 
-## 🌌 V. The 10 Frontier Research Areas (The Open Inquiries)
+## V. The 10 Frontier Research Areas (The Open Inquiries)
 
 1. **Attention**: How is attention allocated internally? Can artificial attention ever model human salience?
 2. **Emotion**: Does emotion act as the heuristic weight that guides memory retrieval and prioritizes thoughts?
@@ -82,7 +82,7 @@ You are **not building software**. You are building a **unified framework for un
 
 ---
 
-## 🚀 VI. The 30-Year Horizon & Milestones
+## VI. The 30-Year Horizon & Milestones
 
 - **Top AI Product Leader & System Architect**: Globally recognized for high-trust, original systems thinking.
 - **Global Keynote / TED Talk**: Delivered before **Age 33 (Target: 2029)** on *The Question Project & The Emergence of Intelligence*.

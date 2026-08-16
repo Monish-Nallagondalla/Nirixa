@@ -11,23 +11,23 @@
 Nirixa OS is not a task manager or a generic productivity dashboard. It is an exploration of **how intelligence emerges across biological and artificial systems**.
 
 ```
-┌───────────────────────────────────────────────────────────────────────────────┐
-│ THE THOUGHT ANCESTRY PIPELINE (OTA-011)                                       │
-│                                                                               │
-│ Real-World Friction / Reading                                                 │
-│       │                                                                       │
-│       ▼                                                                       │
-│ Living Question Object (OTA-001)                                              │
-│       │                                                                       │
-│       ▼                                                                       │
-│ Socratic Sparring & Adversarial Debate (OTA-010)                              │
-│       │                                                                       │
-│       ▼                                                                       │
-│ Registered Original Thought Asset (OTA-001 through OTA-015)                   │
-│       │                                                                       │
-│       ▼                                                                       │
-│ Public Asset Compilation (LinkedIn Carousel / RFC / Global Keynote)          │
-└───────────────────────────────────────────────────────────────────────────────┘
+
+THE THOUGHT ANCESTRY PIPELINE (OTA-011) 
+
+Real-World Friction / Reading 
+
+
+Living Question Object (OTA-001) 
+
+
+Socratic Sparring & Adversarial Debate (OTA-010) 
+
+
+Registered Original Thought Asset (OTA-001 through OTA-015) 
+
+
+Public Asset Compilation (LinkedIn Carousel / RFC / Global Keynote) 
+
 ```
 
 ---

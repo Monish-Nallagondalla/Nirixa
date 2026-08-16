@@ -2,9 +2,9 @@
 
 # My-OS / Nirixa OS Engine v0.1
 
-**Author**: Monish Nallagondalla  
-**Status**: Implemented & Operational (Production Baseline)  
-**Date**: August 2026  
+**Author**: Monish Nallagondalla 
+**Status**: Implemented & Operational (Production Baseline) 
+**Date**: August 2026 
 **Document Purpose**: Definitive technical specification and architectural inventory of all operational capabilities, daemons, skills, and data flows within **My-OS** for subsequent structural analysis, auditing, and optimization.
 
 ---
@@ -23,28 +23,28 @@
 ## 2. Implemented Subsystems Overview
 
 ```
-                      +-----------------------------------+
-                      |   Mobile Telegram Interface       |
-                      +-----------------+-----------------+
-                                        | (Webhooks / Polling)
-                                        v
-                      +-----------------+-----------------+
-                      | Nirixa OS Engine Daemon           |
-                      | (system/engine/daemon.py)         |
-                      +--------+----------------+---------+
-                               |                |
-             +-----------------+                +------------------+
-             v                                                     v
-+------------+-------------+                             +---------+----------------+
-| SQLite Memory Core       |                             | Telemetry & Auto-Start  |
-| (system/data/nirixa.db)  |                             | (VBS, Batches, GCal)    |
-+------------+-------------+                             +---------+----------------+
-             |                                                     |
-             v                                                     v
-+------------+-------------+                             +---------+----------------+
-| 3-Stage Sync Workflow    |                             | Multi-Agent Skill Suite  |
-| (Buffer -> Spar -> Save) |                             | (.agents/skills/*)       |
-+--------------------------+                             +--------------------------+
++-----------------------------------+
+| Mobile Telegram Interface |
++-----------------+-----------------+
+| (Webhooks / Polling)
+v
++-----------------+-----------------+
+| Nirixa OS Engine Daemon |
+| (system/engine/daemon.py) |
++--------+----------------+---------+
+| |
++-----------------+ +------------------+
+v v
++------------+-------------+ +---------+----------------+
+| SQLite Memory Core | | Telemetry & Auto-Start |
+| (system/data/nirixa.db) | | (VBS, Batches, GCal) |
++------------+-------------+ +---------+----------------+
+| |
+v v
++------------+-------------+ +---------+----------------+
+| 3-Stage Sync Workflow | | Multi-Agent Skill Suite |
+| (Buffer -> Spar -> Save) | | (.agents/skills/*) |
++--------------------------+ +--------------------------+
 ```
 
 ---
@@ -54,20 +54,20 @@
 ### 3.1. Event-Driven Telegram Daemon (`system/engine/daemon.py`)
 - **Real-Time Event Processing**: Operates a non-blocking asynchronous event loop listening for Telegram updates, messages, and callback button presses (`answerCallbackQuery`).
 - **Proactive Daily Briefings**:
-  - **Morning Briefing**: Synthesizes priorities, unread mobile captures, and scheduled calendar blocks.
-  - **Evening Reflection**: Queries completed tasks, pending items, and prompts for evening sign-off.
+- **Morning Briefing**: Synthesizes priorities, unread mobile captures, and scheduled calendar blocks.
+- **Evening Reflection**: Queries completed tasks, pending items, and prompts for evening sign-off.
 - **Laptop Telemetry & Battery Monitoring**: Tracks battery percentage and power source; issues real-time alerts when running low on battery without AC power.
 - **Zero-LLM Fast Path Reminders**: Handles exact-time and relative-time reminder parsing without invoking full LLM reasoning loops.
 
 ### 3.2. SQLite Database Memory Core (`system/engine/db.py`)
 - **Location**: `system/data/nirixa.db` (Zero-dependency SQLite store).
 - **Implemented Schema**:
-  1. `raw_captures`: Ingests mobile Telegram thoughts (`update_id`, `timestamp`, `raw_text`, `anonymized_text`, `status`).
-  2. `conversation_threads`: Tracks prompt-response trajectories for session context.
-  3. `otas` (Original Thought Assets): Stores refined thesis statements, LinkedIn/X content angles, and authentic scars.
-  4. `reminders`: Manages scheduled reminders with trigger times and execution flags.
-  5. `system_evolution`: Logs system upgrades, capability additions, and autonomous changes.
-  6. `audit_logs`: Records errors, system health checks, and daemon execution telemetry.
+1. `raw_captures`: Ingests mobile Telegram thoughts (`update_id`, `timestamp`, `raw_text`, `anonymized_text`, `status`).
+2. `conversation_threads`: Tracks prompt-response trajectories for session context.
+3. `otas` (Original Thought Assets): Stores refined thesis statements, LinkedIn/X content angles, and authentic scars.
+4. `reminders`: Manages scheduled reminders with trigger times and execution flags.
+5. `system_evolution`: Logs system upgrades, capability additions, and autonomous changes.
+6. `audit_logs`: Records errors, system health checks, and daemon execution telemetry.
 
 ### 3.3. Chief of Staff Dispatcher & Core Synthesizer Modules
 - **Unified Chief of Staff Dispatcher (`system/engine/chief_of_staff.py`)**: Consolidates cross-domain strategic reasoning across Career, Learning, Projects, and Writing. Coordinates mobile briefings, task delegation, and enforces Merge-First Skill Governance.
@@ -77,9 +77,9 @@
 
 ### 3.4. Windows Silent Background Auto-Start
 - **Files**:
-  - `system/scripts/start_silent_daemon.vbs`: VBScript wrapper launching the daemon detached from console windows.
-  - `system/scripts/enable_autostart.bat` & `setup_windows_autostart.bat`: Registers startup hooks in Windows Startup folder for zero-touch 24/7 background uptime.
-  - `system/scripts/stop_daemon.bat`: Gracefully terminates running background python processes.
+- `system/scripts/start_silent_daemon.vbs`: VBScript wrapper launching the daemon detached from console windows.
+- `system/scripts/enable_autostart.bat` & `setup_windows_autostart.bat`: Registers startup hooks in Windows Startup folder for zero-touch 24/7 background uptime.
+- `system/scripts/stop_daemon.bat`: Gracefully terminates running background python processes.
 
 ### 3.5. Google Calendar Integration Engine (`system/scripts/calendar_sync.py`)
 - **OAuth2 Token Handling**: Authenticates via `credentials.json` and caches access tokens in `token.pickle`.
@@ -116,7 +116,7 @@ The operational behavior of the system is governed by **9 non-negotiable rules**
 4. **7-Day Rolling Retention**: Synced Telegram chat messages are tracked in `system/data/synced_messages.json` and automatically pruned from chat interface after 7 days.
 5. **Strict Anonymization**: Never expose specific company names, client names, or proprietary systems. Abstract to architectural patterns and psychological insights.
 6. **Proactive End-to-End Execution Standard**: Never deliver raw intermediate assets (e.g., carousels MUST be auto-compiled as single ready-to-upload PDFs).
-7. **High-Signal Minimalist Copywriting**: Zero emoji clutter (no 🔴, 🟢, 🔥, 🚀), sparse line breaks, high thesis density.
+7. **High-Signal Minimalist Copywriting**: Zero emoji clutter (no , , , ), sparse line breaks, high thesis density.
 8. **Monish 10/10 Quality Calibration**: Zero self-satisfaction; baseline expectations set to zero-prompt autonomy and top 1% content execution.
 9. **Proactive Mobile Task Delegation**: Chief of Staff AI authorized to push low-friction micro-tasks to Telegram when Monish is away from desk.
 

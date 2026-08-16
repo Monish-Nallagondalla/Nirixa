@@ -14,6 +14,6 @@ This document establishes the subjective quality calibration bars, writing philo
 ## 2. Copywriting & Intellectual Standards
 
 - **High-Signal Minimalist Copywriting (Naval & Aviral Standard)**:
-  - Zero emoji clutter or hype marketing.
-  - High thesis density and first-principles intellectual clarity.
-  - Sparse line breaks and clean typography.
+- Zero emoji clutter or hype marketing.
+- High thesis density and first-principles intellectual clarity.
+- Sparse line breaks and clean typography.

@@ -9,14 +9,14 @@
 ## Capabilities Overview
 
 ```
-┌───────────────────────────────────────────────┬───────────────────────────────────────────────┐
-│ Feature                                       │ Technical Execution                           │
-├───────────────────────────────────────────────┼───────────────────────────────────────────────┤
-│ 📁 Rekordbox XML Library Parser               │ Parses BPM, Camelot Key, BeatGrid & HotCues   │
-│ 🎼 Harmonic Camelot Transition Engine         │ Computes +1/-1 energy shifts & smooth swaps   │
-│ 🎛️ DDJ-FLX4 15-Minute Hardware Drills         │ EQ isolators, loop roll builds & blind cues   │
-│ 📋 Live Mix Transition Cue Sheets             │ Generates bar-by-bar mixing action sheets     │
-└───────────────────────────────────────────────┴───────────────────────────────────────────────┘
+
+Feature Technical Execution 
+
+Rekordbox XML Library Parser Parses BPM, Camelot Key, BeatGrid & HotCues 
+Harmonic Camelot Transition Engine Computes +1/-1 energy shifts & smooth swaps 
+DDJ-FLX4 15-Minute Hardware Drills EQ isolators, loop roll builds & blind cues 
+Live Mix Transition Cue Sheets Generates bar-by-bar mixing action sheets 
+
 ```
 
 ---

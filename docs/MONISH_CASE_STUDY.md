@@ -4,20 +4,20 @@
 
 ---
 
-## 📅 A Day in the Operating Rhythm
+## A Day in the Operating Rhythm
 
 ```
- 09:00 AM ─── Proactive Executive Briefing (Telegram)
-    │
- 02:30 PM ─── [MISSION] Consulting Friction Voice Note (Auto-Anonymized)
-    │
- 06:00 PM ─── [MASTERY] Socratic Sparring: Humans vs. LLM Determinism (OTA-016)
-    │
- 08:30 PM ─── [MIND] Ather Ride & Workout Energy Check-in
-    │
- 09:30 PM ─── [MONEY] Enterprise Equity & Career Milestone Tracking
-    │
- 10:00 PM ─── Evening Sync-Down & Socratic Handover
+09:00 AM Proactive Executive Briefing (Telegram)
+
+02:30 PM [MISSION] Consulting Friction Voice Note (Auto-Anonymized)
+
+06:00 PM [MASTERY] Socratic Sparring: Humans vs. LLM Determinism (OTA-016)
+
+08:30 PM [MIND] Ather Ride & Workout Energy Check-in
+
+09:30 PM [MONEY] Enterprise Equity & Career Milestone Tracking
+
+10:00 PM Evening Sync-Down & Socratic Handover
 ```
 
 ---
@@ -27,20 +27,20 @@
 Monish's phone receives a deterministic morning briefing directly from his local daemon:
 
 ```text
-☀️ MORNING EXECUTIVE BRIEFING (Aug 15, 2026)
+MORNING EXECUTIVE BRIEFING (Aug 15, 2026)
 ----------------------------------------
-🔋 Laptop Battery: 88% (Plugged In)
-🧠 SQLite Core   : nirixa.db (356 KB)
-🎯 Active OTAs   : 15 Living Assets
+Laptop Battery: 88% (Plugged In)
+SQLite Core : nirixa.db (356 KB)
+Active OTAs : 15 Living Assets
 ⏰ Pending Tasks : 2 Due Today
 
 COMPASS DISTRIBUTION (Last 7 Days):
-• 🎯 Mission : 55% (High focus on Agent deadlocks)
-• 🧠 Mastery : 25% (Inquiry on biological emergence)
-• 💰 Money   : 10% (Target 20 outreach)
-• 🧘 Mind    : 10% (Recovery needed)
+• Mission : 55% (High focus on Agent deadlocks)
+• Mastery : 25% (Inquiry on biological emergence)
+• Money : 10% (Target 20 outreach)
+• Mind : 10% (Recovery needed)
 
-[ 📊 System Status ] [ ⏰ Check Reminders ] [ 🥊 Spar on Priorities ]
+[ System Status ] [ ⏰ Check Reminders ] [ Spar on Priorities ]
 ```
 
 * **Why it works**: Zero LLM API cost. Pure deterministic local logic summarizing system telemetry and quadrant health.
@@ -68,9 +68,9 @@ During research on intelligence emergence, Monish texts a fundamental question t
 
 ### What Nirixa OS Executes:
 1. **Socratic Sparring Engine**: The Chief of Staff does not flatter or autocomplete. It probes the thesis:
-   * *LLMs*: Mathematically 100% deterministic at Temperature = 0; randomness is pseudo-random sampling over a static matrix.
-   * *Humans*: Open non-equilibrium biological systems with continuous state mutation.
-   * *The Inversion*: Humans crave determinism (habits) because biology is chaotic; LLMs simulate non-determinism because their core is rigid math.
+* *LLMs*: Mathematically 100% deterministic at Temperature = 0; randomness is pseudo-random sampling over a static matrix.
+* *Humans*: Open non-equilibrium biological systems with continuous state mutation.
+* *The Inversion*: Humans crave determinism (habits) because biology is chaotic; LLMs simulate non-determinism because their core is rigid math.
 2. **Living Asset Registration**: Automatically registers the refined thesis into SQLite as **`OTA-016: The Inversion of Determinism`**.
 
 ---
@@ -97,7 +97,7 @@ Monish logs progress on high-leverage career initiatives:
 
 ## 6. Sunday Compounding Engine — 1-Click Publishing & Playbooks
 
-At the end of the week, Monish taps **`[ 🚀 Auto-Compile Assets ]`** on Telegram:
+At the end of the week, Monish taps **`[ Auto-Compile Assets ]`** on Telegram:
 * The system reviews the week's scars across all 4 quadrants.
 * It auto-compiles a **5-slide LinkedIn PDF document** (`post-1-carousel-slides.pdf`) ready for 1-click upload.
 * It generates a strictly validated **280-character X Thread**.

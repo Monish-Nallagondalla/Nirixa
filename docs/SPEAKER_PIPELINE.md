@@ -4,7 +4,7 @@
 
 ---
 
-## 🎤 Speaker Profile & Bio
+## Speaker Profile & Bio
 
 ### Speaker Title
 **Monish Nallagondalla** — AI Product Leader & System Architect
@@ -14,7 +14,7 @@ Monish Nallagondalla is an AI Product Leader specializing in enterprise multi-ag
 
 ---
 
-## 📌 Target Keynote Events & Submissions
+## Target Keynote Events & Submissions
 
 | Event Name | Category | Submission Window | Proposal Title | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -25,7 +25,7 @@ Monish Nallagondalla is an AI Product Leader specializing in enterprise multi-ag
 
 ---
 
-## 📜 Keynote Talk Abstract 1 (TEDx Pitch)
+## Keynote Talk Abstract 1 (TEDx Pitch)
 
 ### Title
 *Why the Future of AI Isn't Chatbots—It's Invisible Event Architecture*

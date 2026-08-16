@@ -8,12 +8,12 @@
 ## 1. Pillars & Content Distribution
 
 ```
-■■■■■■■■■ (45%) Pillar 1: Technical AI Systems Architecture
-            - Multi-agent orchestration, RAG & graph memory, LLM evals, fine-tuning, voice AI
-■■■■■■■■ (40%) Pillar 2: AI Current Affairs & Industry Breakdowns
-            - Reasoning models, AI coding tools (Cursor/Devin), open source vs closed, enterprise ROI
-■■■ (15%) Pillar 3: Philosophical OTAs & The Question Project
-            - Human agency, freedom, goals vs tools, perception loops, first principles
+(45%) Pillar 1: Technical AI Systems Architecture
+- Multi-agent orchestration, RAG & graph memory, LLM evals, fine-tuning, voice AI
+(40%) Pillar 2: AI Current Affairs & Industry Breakdowns
+- Reasoning models, AI coding tools (Cursor/Devin), open source vs closed, enterprise ROI
+(15%) Pillar 3: Philosophical OTAs & The Question Project
+- Human agency, freedom, goals vs tools, perception loops, first principles
 ```
 
 ---

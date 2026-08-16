@@ -4,7 +4,7 @@
 
 ---
 
-## 🎯 Executive Engagement Matrix
+## Executive Engagement Matrix
 
 | Name / Persona | Role & Organization | Priority Topic | Engagement Strategy | Status |
 | :--- | :--- | :--- | :--- | :--- |
@@ -15,7 +15,7 @@
 
 ---
 
-## 💡 High-Signal Engagement Protocol
+## High-Signal Engagement Protocol
 
 1. **Zero Hype / Zero Fluff**: Never leave generic comments (*"Great post!", "Totally agree!"*).
 2. **Inject Authentic Scars**: Always add a 2-line technical counter-point, production metric, or operational scar.

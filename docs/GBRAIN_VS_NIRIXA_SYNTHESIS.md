@@ -1,9 +1,9 @@
-# 🧠 GBrain, GStack & Nirixa OS: Comprehensive Synthesis
+# GBrain, GStack & Nirixa OS: Comprehensive Synthesis
 ### How Nirixa OS Compares, Adopts, and Advances Garry Tan's Open-Source Cognitive Architecture
 
 ---
 
-## 🏛️ Executive Summary
+## Executive Summary
 
 Garry Tan (CEO of Y Combinator) introduced **GBrain** (the persistent memory layer) and **GStack** (the opinionated skill-file team) to solve agent amnesia and enable "Personal AGI."
 
@@ -11,7 +11,7 @@ Nirixa OS shares this exact philosophy while taking the architecture further by 
 
 ---
 
-## ⚡ Architectural Comparison: GBrain vs Nirixa OS
+## Architectural Comparison: GBrain vs Nirixa OS
 
 | Architectural Dimension | Garry Tan's GBrain & GStack | Nirixa OS Architecture |
 | :--- | :--- | :--- |
@@ -26,13 +26,13 @@ Nirixa OS shares this exact philosophy while taking the architecture further by 
 
 ---
 
-## 🛠️ What We Adopted & Integrated into Nirixa OS:
+## What We Adopted & Integrated into Nirixa OS:
 
 1. **The `skillify` Protocol (`system/engine/skillify.py`)**:
-   - At the end of any complex session or task, Nirixa can automatically compile the interaction into an immutable, reusable `.agents/skills/<name>/SKILL.md` file.
+- At the end of any complex session or task, Nirixa can automatically compile the interaction into an immutable, reusable `.agents/skills/<name>/SKILL.md` file.
 2. **Model Context Protocol (MCP) Server (`system/engine/nirixa_mcp_server.py`)**:
-   - Exposes Nirixa's memory, OTAs, and active milestones via standard JSON-RPC so that any future IDE (Cursor, Windsurf, Claude Code) connects directly without Monish repeating himself.
+- Exposes Nirixa's memory, OTAs, and active milestones via standard JSON-RPC so that any future IDE (Cursor, Windsurf, Claude Code) connects directly without Monish repeating himself.
 3. **Knowledge Hygiene & Provenance Standard**:
-   - Contradiction detection heuristics and hot-memory vs cold-reference pruning.
+- Contradiction detection heuristics and hot-memory vs cold-reference pruning.
 4. **Fat Skills, Thin Harness**:
-   - Keeping the harness lightweight while encoding deep taste and domain judgment into clear English Markdown files.
+- Keeping the harness lightweight while encoding deep taste and domain judgment into clear English Markdown files.

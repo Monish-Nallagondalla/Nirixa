@@ -9,12 +9,12 @@
 ## 24-Hour Daily Cycle
 
 ```
-09:00 AM ─── ☕ Morning Briefing & Top 3 Sprint Alignment
-11:30 AM ─── 💼 Enterprise Multi-Agent Architecture Meeting (EY)
-02:30 PM ─── 📱 Mobile Voice Note: Enterprise Deadlock Friction Capture
-06:00 PM ─── 🧠 Socratic Sparring: Human Non-Determinism vs LLM Drift (OTA-016)
-08:30 PM ─── ⚡ Ather Electric Scooter Ride & Evening Clarity Check-in
-10:30 PM ─── 💤 System Telemetry Review & 1-Click Laptop Sleep Trigger
+09:00 AM Morning Briefing & Top 3 Sprint Alignment
+11:30 AM Enterprise Multi-Agent Architecture Meeting (EY)
+02:30 PM Mobile Voice Note: Enterprise Deadlock Friction Capture
+06:00 PM Socratic Sparring: Human Non-Determinism vs LLM Drift (OTA-016)
+08:30 PM Ather Electric Scooter Ride & Evening Clarity Check-in
+10:30 PM System Telemetry Review & 1-Click Laptop Sleep Trigger
 ```
 
 ---
@@ -29,16 +29,16 @@
 ### 2. 02:30 PM — Real-World Enterprise Scar Capture
 * **Context**: Monish encounters a real-world multi-agent coordination race condition during client consulting at EY.
 * **Monish Action**: Sends a 15-second voice note to Telegram:
-  > *"When enterprise agents share a tool registry without semantic locks, tool execution deadlocks on overlapping resources."*
+> *"When enterprise agents share a tool registry without semantic locks, tool execution deadlocks on overlapping resources."*
 * **Nirixa Action**:
-  * Anonymizes company names and client proprietary data.
-  * Stores to `captures` table in `nirixa.db`.
-  * Indexes under topic `[MISSION: Multi-Agent Architecture]`.
+* Anonymizes company names and client proprietary data.
+* Stores to `captures` table in `nirixa.db`.
+* Indexes under topic `[MISSION: Multi-Agent Architecture]`.
 
 ### 3. 06:00 PM — Socratic Sparring on Mobile
 * **Trigger**: Nirixa detects a high-signal conceptual tension.
 * **Nirixa Prompt (on Telegram)**:
-  > *"You noted tool execution deadlocks. But isn't dynamic backpressure sufficient? What makes deterministic state locks necessary here?"*
+> *"You noted tool execution deadlocks. But isn't dynamic backpressure sufficient? What makes deterministic state locks necessary here?"*
 * **Monish Reply (30s text)**: Refines the premise with empirical latency numbers.
 * **Nirixa Action**: Synthesizes the dialogue into **`OTA-016: Semantic Tool Locking in Enterprise Agent Swarms`**.
 

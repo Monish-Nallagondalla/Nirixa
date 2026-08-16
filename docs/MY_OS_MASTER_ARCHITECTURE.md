@@ -2,9 +2,9 @@
 
 # Personal Intelligence Operating System (Nirixa OS Engine v0.1)
 
-**System Owner**: Monish Nallagondalla  
-**Document Purpose**: Comprehensive end-to-end technical reference, directory map, subsystem specification, and architectural review package for external analysis and feedback (prepared for Claude / AI Reviewers / Engineering Interns).  
-**Date**: August 2026  
+**System Owner**: Monish Nallagondalla 
+**Document Purpose**: Comprehensive end-to-end technical reference, directory map, subsystem specification, and architectural review package for external analysis and feedback (prepared for Claude / AI Reviewers / Engineering Interns). 
+**Date**: August 2026 
 **Status**: Production Baseline (Phase 1 Complete + Phase 2 Chief of Staff Engine Implemented)
 
 ---
@@ -17,11 +17,11 @@ Unlike conventional note-taking applications (Obsidian, Notion) or standard conv
 
 ```
 +-------------------------------------------------------------------------+
-|                         CORE ARCHITECTURAL AXIOM                         |
+| CORE ARCHITECTURAL AXIOM |
 +-------------------------------------------------------------------------+
-|  1. Memory belongs to the repository (system/data/nirixa.db & Markdown) |
-|  2. Reasoning belongs to the AI (Chief of Staff & Persona Models)       |
-|  3. Judgment belongs to the human (Monish Nallagondalla)                |
+| 1. Memory belongs to the repository (system/data/nirixa.db & Markdown) |
+| 2. Reasoning belongs to the AI (Chief of Staff & Persona Models) |
+| 3. Judgment belongs to the human (Monish Nallagondalla) |
 +-------------------------------------------------------------------------+
 ```
 
@@ -33,56 +33,56 @@ The repository is organized into distinct functional layers separating long-term
 
 ```
 My-Os/
-├── .agents/                      # Agent Customization & Skill Roots
-│   └── skills/                   # The 10 Active Agent Custom Skills
-│       ├── agent-evaluator/      # Reader persona evaluation matrix (Engineer, Exec, PM)
-│       ├── calendar-scheduler/   # Actionable task -> Google Calendar scheduling
-│       ├── content-stylist/      # Naval/Aviral high-signal minimalist copywriting engine
-│       ├── daily-login/          # Login context resumption ("I am back")
-│       ├── daily-signoff/        # End-of-day signoff & mobile push workflow
-│       ├── founder-council-evaluator/ # Multi-founder strategic audit (Jobs, Huang, etc.)
-│       ├── mobile-sync/          # Telegram thought ingestion to monthly inbox log
-│       ├── mobile-task-delegator/ # Async mobile micro-task & decision push
-│       ├── omni-channel-publisher/ # X.com (280-char/threads) & LinkedIn (PDF carousel)
-│       └── persona-advisory-board/ # Multi-persona debate engine (Cagan, Goggins, etc.)
-├── AGENTS.md                     # The 9 Non-Negotiable System Operating Rules
-├── README.md                     # High-level vision & philosophical principles
-├── docs/                         # System Documentation & Specifications
-│   ├── ARCHITECTURE.md           # High-level architectural diagrams
-│   ├── CAREER_DASHBOARD.md       # Strategic career goals & milestones
-│   ├── MY_OS_MASTER_ARCHITECTURE.md # (This Document) Master Spec & Audit Package
-│   ├── PLAYBOOK.md               # Standard operating procedures
-│   ├── PRD.md                    # Product vision & 5-Phase Roadmap
-│   ├── SYSTEM_CAPABILITIES_PRD.md # Live system capability specification
-│   └── VISION.md                 # Long-term philosophy & non-goals
-├── system/                       # Nirixa OS Engine Core Infrastructure
-│   ├── Chief-of-Staff.md         # Operational Chief of Staff prompt spec
-│   ├── config/                   # Configuration files (config.yaml, .env)
-│   ├── data/                     # Data persistence & state tracking
-│   │   ├── nirixa.db             # Primary SQLite Memory Core
-│   │   └── synced_messages.json  # 7-day Telegram chat message retention state
-│   ├── engine/                   # Python Core Engine Modules
-│   │   ├── chief_of_staff.py     # [NEW] Unified Cross-Domain Strategic Dispatcher
-│   │   ├── daemon.py             # Event-Driven Telegram Listener & Telemetry Loop
-│   │   ├── db.py                 # SQLite Memory Core & FTS5 Indexing
-│   │   ├── evolver.py            # Self-Evolution Engine & Capability Logging
-│   │   ├── skill_distiller.py    # Workflow-to-Skill Distillation Engine
-│   │   └── synthesizer.py        # Spar-First Intelligence & Thesis Extractor
-│   └── scripts/                  # Background Scripts & Windows Launchers
-│       ├── bot_listener.py       # Telegram polling listener
-│       ├── calendar_sync.py      # Google Calendar OAuth2 API Sync
-│       ├── enable_autostart.bat  # Windows Startup Registry Integration
-│       ├── start_silent_daemon.vbs # Detached silent daemon process wrapper
-│       ├── stop_daemon.bat       # Process shutdown script
-│       └── telegram_push.py      # Asynchronous outbound notification script
-├── inbox/                        # Monthly Mobile Stream Consolidation Hubs
-│   └── 2026-08-mobile-inbox.md   # Active month processed mobile notes
-├── content/                      # Refined Original Thought Assets & Calendars
-│   └── linkedin/                 # Master LinkedIn content calendar & assets
-├── career/                       # Career strategy, resume iterations & network
-├── knowledge/                    # Long-term evergreen mental models & frameworks
-├── projects/                     # Shared active projects execution directory
-└── journal/                      # Daily reflections & unedited observations
+.agents/ # Agent Customization & Skill Roots
+skills/ # The 10 Active Agent Custom Skills
+agent-evaluator/ # Reader persona evaluation matrix (Engineer, Exec, PM)
+calendar-scheduler/ # Actionable task -> Google Calendar scheduling
+content-stylist/ # Naval/Aviral high-signal minimalist copywriting engine
+daily-login/ # Login context resumption ("I am back")
+daily-signoff/ # End-of-day signoff & mobile push workflow
+founder-council-evaluator/ # Multi-founder strategic audit (Jobs, Huang, etc.)
+mobile-sync/ # Telegram thought ingestion to monthly inbox log
+mobile-task-delegator/ # Async mobile micro-task & decision push
+omni-channel-publisher/ # X.com (280-char/threads) & LinkedIn (PDF carousel)
+persona-advisory-board/ # Multi-persona debate engine (Cagan, Goggins, etc.)
+AGENTS.md # The 9 Non-Negotiable System Operating Rules
+README.md # High-level vision & philosophical principles
+docs/ # System Documentation & Specifications
+ARCHITECTURE.md # High-level architectural diagrams
+CAREER_DASHBOARD.md # Strategic career goals & milestones
+MY_OS_MASTER_ARCHITECTURE.md # (This Document) Master Spec & Audit Package
+PLAYBOOK.md # Standard operating procedures
+PRD.md # Product vision & 5-Phase Roadmap
+SYSTEM_CAPABILITIES_PRD.md # Live system capability specification
+VISION.md # Long-term philosophy & non-goals
+system/ # Nirixa OS Engine Core Infrastructure
+Chief-of-Staff.md # Operational Chief of Staff prompt spec
+config/ # Configuration files (config.yaml, .env)
+data/ # Data persistence & state tracking
+nirixa.db # Primary SQLite Memory Core
+synced_messages.json # 7-day Telegram chat message retention state
+engine/ # Python Core Engine Modules
+chief_of_staff.py # [NEW] Unified Cross-Domain Strategic Dispatcher
+daemon.py # Event-Driven Telegram Listener & Telemetry Loop
+db.py # SQLite Memory Core & FTS5 Indexing
+evolver.py # Self-Evolution Engine & Capability Logging
+skill_distiller.py # Workflow-to-Skill Distillation Engine
+synthesizer.py # Spar-First Intelligence & Thesis Extractor
+scripts/ # Background Scripts & Windows Launchers
+bot_listener.py # Telegram polling listener
+calendar_sync.py # Google Calendar OAuth2 API Sync
+enable_autostart.bat # Windows Startup Registry Integration
+start_silent_daemon.vbs # Detached silent daemon process wrapper
+stop_daemon.bat # Process shutdown script
+telegram_push.py # Asynchronous outbound notification script
+inbox/ # Monthly Mobile Stream Consolidation Hubs
+2026-08-mobile-inbox.md # Active month processed mobile notes
+content/ # Refined Original Thought Assets & Calendars
+linkedin/ # Master LinkedIn content calendar & assets
+career/ # Career strategy, resume iterations & network
+knowledge/ # Long-term evergreen mental models & frameworks
+projects/ # Shared active projects execution directory
+journal/ # Daily reflections & unedited observations
 ```
 
 ---
@@ -90,41 +90,41 @@ My-Os/
 ## 3. End-to-End System Data Flow & Architecture
 
 ```
-                                  +---------------------------------------+
-                                  |      MONISH (Mobile Telegram)         |
-                                  +-------------------+-------------------+
-                                                      |
-                                       (Raw Audio / Text Capture)
-                                                      v
-                                  +-------------------+-------------------+
-                                  |  Nirixa OS Engine Daemon              |
-                                  |  (system/engine/daemon.py)            |
-                                  +---------+-------------------+---------+
-                                            |                   |
-                     +----------------------+                   +---------------------+
-                     | (Ingest Raw Note)                                              | (Periodic Trigger)
-                     v                                                                v
-+--------------------+---------------------+                      +-------------------+-------------------+
-| SQLite Memory Core                       |                      | Unified Chief of Staff Dispatcher |
-| (system/data/nirixa.db)                  |                      | (system/engine/chief_of_staff.py) |
-| - raw_captures (FTS5 search)             |                      +---------+-------------------+---------+
-| - otas (Original Thought Assets)         |                                |                   |
-| - reminders & evolution_logs             |                                |                   |
-+--------------------+---------------------+                                |                   |
-                     |                                                      |                   |
-                     | (Sparring / Context Retrieval)                       v                   v
-                     v                                            +---------+--------+  +-----+-----------+
-+--------------------+---------------------+                      | Synthesizer Engine|  | GCal Sync Engine|
-| 3-Stage Sync Workflow                    |                      | (synthesizer.py) |  | (calendar_sync) |
-| 1. Buffer (Telegram ingestion)           |                      +------------------+  +-----------------+
-| 2. Sparring (Interactive Q&A)            |                                |
-| 3. Processed Save (inbox/ & content/)    |                                v
-+--------------------+---------------------+                      +-----------------------------------+
-                     |                                            | Omni-Channel Publishing Engine    |
-                     +------------------------------------------->| (.agents/skills/omni-channel-pub) |
-                                                                  | - X.com 280-char / 1/N threads    |
-                                                                  | - LinkedIn Single Auto-PDF        |
-                                                                  +-----------------------------------+
++---------------------------------------+
+| MONISH (Mobile Telegram) |
++-------------------+-------------------+
+|
+(Raw Audio / Text Capture)
+v
++-------------------+-------------------+
+| Nirixa OS Engine Daemon |
+| (system/engine/daemon.py) |
++---------+-------------------+---------+
+| |
++----------------------+ +---------------------+
+| (Ingest Raw Note) | (Periodic Trigger)
+v v
++--------------------+---------------------+ +-------------------+-------------------+
+| SQLite Memory Core | | Unified Chief of Staff Dispatcher |
+| (system/data/nirixa.db) | | (system/engine/chief_of_staff.py) |
+| - raw_captures (FTS5 search) | +---------+-------------------+---------+
+| - otas (Original Thought Assets) | | |
+| - reminders & evolution_logs | | |
++--------------------+---------------------+ | |
+| | |
+| (Sparring / Context Retrieval) v v
+v +---------+--------+ +-----+-----------+
++--------------------+---------------------+ | Synthesizer Engine| | GCal Sync Engine|
+| 3-Stage Sync Workflow | | (synthesizer.py) | | (calendar_sync) |
+| 1. Buffer (Telegram ingestion) | +------------------+ +-----------------+
+| 2. Sparring (Interactive Q&A) | |
+| 3. Processed Save (inbox/ & content/) | v
++--------------------+---------------------+ +-----------------------------------+
+| | Omni-Channel Publishing Engine |
++------------------------------------------->| (.agents/skills/omni-channel-pub) |
+| - X.com 280-char / 1/N threads |
+| - LinkedIn Single Auto-PDF |
++-----------------------------------+
 ```
 
 ---
@@ -134,28 +134,28 @@ My-Os/
 ### 4.1. The Unified Chief of Staff Dispatcher (`system/engine/chief_of_staff.py`)
 - **Role**: Serves as the central reasoning orchestrator across Career, Learning, Projects, and Writing.
 - **Key Functions**:
-  - `get_cross_domain_context()`: Aggregates active milestones from `docs/CAREER_DASHBOARD.md`, active project directories in `projects/`, recent Original Thought Assets (OTAs) from `nirixa.db`, and pending reminders.
-  - `synthesize_strategic_briefing(briefing_type)`: Generates structured Morning Priorities and Evening Reflection briefings combining unread captures with domain objectives.
-  - `evaluate_skill_distillation(workflow_name, target_intent)`: Enforces the **Merge-First Skill Rule** to prevent skill proliferation.
+- `get_cross_domain_context()`: Aggregates active milestones from `docs/CAREER_DASHBOARD.md`, active project directories in `projects/`, recent Original Thought Assets (OTAs) from `nirixa.db`, and pending reminders.
+- `synthesize_strategic_briefing(briefing_type)`: Generates structured Morning Priorities and Evening Reflection briefings combining unread captures with domain objectives.
+- `evaluate_skill_distillation(workflow_name, target_intent)`: Enforces the **Merge-First Skill Rule** to prevent skill proliferation.
 
 ### 4.2. Event-Driven Telegram Daemon (`system/engine/daemon.py`)
 - **Role**: Continuous non-blocking background process providing 24/7 mobile connectivity.
 - **Key Capabilities**:
-  - Real-time polling and callback button handling (`answerCallbackQuery`).
-  - Proactive Daily Briefings (Morning priorities at 08:00, Evening signoff prompt at 20:00).
-  - Laptop Telemetry & Battery Monitor: Monitors battery percentage and power status, sending immediate alerts when running low without AC power.
-  - Zero-LLM Fast Path: Intercepts deterministic reminder strings (e.g., `remind me in 30m to check build`) and persists directly to SQLite without invoking LLM tokens.
+- Real-time polling and callback button handling (`answerCallbackQuery`).
+- Proactive Daily Briefings (Morning priorities at 08:00, Evening signoff prompt at 20:00).
+- Laptop Telemetry & Battery Monitor: Monitors battery percentage and power status, sending immediate alerts when running low without AC power.
+- Zero-LLM Fast Path: Intercepts deterministic reminder strings (e.g., `remind me in 30m to check build`) and persists directly to SQLite without invoking LLM tokens.
 
 ### 4.3. SQLite Database Memory Core (`system/engine/db.py`)
 - **Location**: `system/data/nirixa.db` (Zero-dependency SQLite store).
 - **Tables**:
-  - `raw_captures`: `id`, `update_id`, `timestamp`, `chat_id`, `raw_text`, `anonymized_text`, `source`, `status`.
-  - `conversation_threads`: `id`, `session_id`, `user_prompt`, `agent_reply`, `timestamp`.
-  - `otas`: `id`, `capture_id`, `title`, `raw_thought`, `refined_thesis`, `draft_x`, `draft_linkedin`, `status`, `created_at`.
-  - `reminders`: `id`, `chat_id`, `message`, `remind_at`, `status`, `created_at`.
-  - `evolution_logs`: `id`, `capture_id`, `rating`, `feedback_text`, `rule_extracted`, `created_at`.
-  - `system_audits`: `id`, `metric_name`, `metric_value`, `timestamp`.
-  - `raw_captures_fts`: SQLite FTS5 Virtual Table for full-text keyword indexing across captures.
+- `raw_captures`: `id`, `update_id`, `timestamp`, `chat_id`, `raw_text`, `anonymized_text`, `source`, `status`.
+- `conversation_threads`: `id`, `session_id`, `user_prompt`, `agent_reply`, `timestamp`.
+- `otas`: `id`, `capture_id`, `title`, `raw_thought`, `refined_thesis`, `draft_x`, `draft_linkedin`, `status`, `created_at`.
+- `reminders`: `id`, `chat_id`, `message`, `remind_at`, `status`, `created_at`.
+- `evolution_logs`: `id`, `capture_id`, `rating`, `feedback_text`, `rule_extracted`, `created_at`.
+- `system_audits`: `id`, `metric_name`, `metric_value`, `timestamp`.
+- `raw_captures_fts`: SQLite FTS5 Virtual Table for full-text keyword indexing across captures.
 
 ### 4.4. Synthesizer & Evolver Modules (`synthesizer.py`, `evolver.py`, `skill_distiller.py`)
 - **`synthesizer.py`**: Extracts authentic scars, raw context, refined theses, and content angles during interactive sparring.
@@ -195,7 +195,7 @@ All operations strictly adhere to **9 non-negotiable rules**:
 4. **7-Day Rolling Retention**: Telegram chat messages tracked in `system/data/synced_messages.json` are auto-cleaned from chat after 7 days.
 5. **Strict Anonymization**: Never expose client names or proprietary systems; abstract into structural architectural patterns.
 6. **Proactive End-to-End Execution Standard**: Never deliver raw intermediate assets (e.g., carousels MUST be auto-compiled as single ready-to-upload PDFs).
-7. **High-Signal Minimalist Copywriting**: Zero emoji clutter (no 🔴, 🟢, 🔥, 🚀), high density, razor-sharp thesis.
+7. **High-Signal Minimalist Copywriting**: Zero emoji clutter (no , , , ), high density, razor-sharp thesis.
 8. **Monish 10/10 Quality Calibration**: Zero self-satisfaction; baseline expectations set to zero-prompt autonomy and top 1% content execution.
 9. **Proactive Mobile Task Delegation**: Chief of Staff authorized to push low-friction micro-tasks to Telegram when Monish is away from desk.
 
@@ -261,6 +261,6 @@ To ensure system reliability, structural evolution tracking, and personal cognit
 - **Track A (System Health Evals)**: An automated 8-check regression suite ([run_system_evals.py](file:///c:/Users/MONISH/OneDrive/Documents/My-Os/system/engine/evals/run_system_evals.py)) logging pass/fail results into `eval_results`. Checks daemon liveness, startup integrity, capture pipeline live smoke test, Chief of Staff reasoning, resonance accuracy, publishing compliance (Rule 7 emoji audit + 280-char X split), anonymization air-gap boundaries, and data integrity.
 - **Track B (Capability Snapshots - Day 1 to Day N)**: Captures time-series capability snapshots in `capability_snapshots` table (`active_skill_count`, `active_skill_names`, `table_count`, `rule_count`, `eval_pass_rate`, `total_otas`, `total_captures`). Automatically triggered by `evolver.py`.
 - **Track C (Personal Growth & Outcomes)**:
-  - *Part 1 (Objective Proxies)*: Capture-to-published latency, OTA resurfacing rate, near-duplicate capture rate, and monthly published volume tracked in `product_metrics`.
-  - *Part 2 (Structured Self-Assessments)*: Monthly 1-5 scale ratings for Clarity of Thinking, Decision Quality, and Overall Progress stored in `self_assessments`.
+- *Part 1 (Objective Proxies)*: Capture-to-published latency, OTA resurfacing rate, near-duplicate capture rate, and monthly published volume tracked in `product_metrics`.
+- *Part 2 (Structured Self-Assessments)*: Monthly 1-5 scale ratings for Clarity of Thinking, Decision Quality, and Overall Progress stored in `self_assessments`.
 

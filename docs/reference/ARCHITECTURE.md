@@ -10,36 +10,36 @@
 
 ```mermaid
 graph TD
-    subgraph Client_Interfaces ["📱 Client Interfaces"]
-        T["Telegram Mobile Gateway<br/>(Voice & Text Notes)"]
-        IDE["Universal Coding Agents<br/>(Antigravity / Cursor / Claude)"]
-    end
+subgraph Client_Interfaces [" Client Interfaces"]
+T["Telegram Mobile Gateway<br/>(Voice & Text Notes)"]
+IDE["Universal Coding Agents<br/>(Antigravity / Cursor / Claude)"]
+end
 
-    subgraph Runtime_Daemon ["⚡ Runtime Daemon"]
-        P["telegram_listener.py<br/>(PID Singleton Lock)"]
-        Fast["Zero-LLM Fast Path<br/>(200ms Telemetry / Sleep API)"]
-    end
+subgraph Runtime_Daemon [" Runtime Daemon"]
+P["telegram_listener.py<br/>(PID Singleton Lock)"]
+Fast["Zero-LLM Fast Path<br/>(200ms Telemetry / Sleep API)"]
+end
 
-    subgraph Memory_Layer ["💾 Memory & Storage Core"]
-        DB[("ACID SQLite Core<br/>system/data/nirixa.db")]
-        Vec["sqlite-vec Embeddings<br/>& FTS5 Semantic Search"]
-    end
+subgraph Memory_Layer [" Memory & Storage Core"]
+DB[("ACID SQLite Core<br/>system/data/nirixa.db")]
+Vec["sqlite-vec Embeddings<br/>& FTS5 Semantic Search"]
+end
 
-    subgraph Engine_Layer ["🧠 Reasoning & Compounding"]
-        Spar["Socratic Sparring Engine<br/>(Assumptions Prober)"]
-        Synth["Topic Synthesizer & Topic Clusters"]
-        Pub["Publisher Engine<br/>(LinkedIn PDF Carousels & RFCs)"]
-    end
+subgraph Engine_Layer [" Reasoning & Compounding"]
+Spar["Socratic Sparring Engine<br/>(Assumptions Prober)"]
+Synth["Topic Synthesizer & Topic Clusters"]
+Pub["Publisher Engine<br/>(LinkedIn PDF Carousels & RFCs)"]
+end
 
-    T --> P
-    P --> Fast
-    P --> DB
-    IDE --> DB
-    DB --> Vec
-    DB --> Spar
-    Spar --> Synth
-    Synth --> Pub
-    Pub --> T
+T --> P
+P --> Fast
+P --> DB
+IDE --> DB
+DB --> Vec
+DB --> Spar
+Spar --> Synth
+Synth --> Pub
+Pub --> T
 ```
 
 ---
@@ -53,10 +53,10 @@ graph TD
 
 ### B. Single Source of Truth: ACID SQLite Core (`nirixa.db`)
 * **Tables**:
-  * `captures`: Raw and anonymized mobile voice/text captures with timestamp and source.
-  * `topics`: Dynamically clustered high-level conceptual themes.
-  * `reminders`: Time-indexed scheduled notifications.
-  * `eval_logs`: Unit test and feedback audit scores.
+* `captures`: Raw and anonymized mobile voice/text captures with timestamp and source.
+* `topics`: Dynamically clustered high-level conceptual themes.
+* `reminders`: Time-indexed scheduled notifications.
+* `eval_logs`: Unit test and feedback audit scores.
 * **Integrity**: Zero unorganized flat markdown sprawl; structured relational ACID guarantees.
 
 ### C. Proactive Socratic Sparring Engine

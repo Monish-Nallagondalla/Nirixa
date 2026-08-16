@@ -4,13 +4,13 @@
 
 ---
 
-## 👤 Executive Profile & Context Matrix
+## Executive Profile & Context Matrix
 
 - **Full Name**: Monish Nallagondalla Srinath
 - **Target Positioning**: AI Product Leader & System Architect (TED/Tier-1 Keynote Speaker).
 - **Education**:
-  - **B.E. Mechanical Engineering** (Visvesvaraya Technological University, India)
-  - **M.Sc. Data Science** (Coventry University, United Kingdom)
+- **B.E. Mechanical Engineering** (Visvesvaraya Technological University, India)
+- **M.Sc. Data Science** (Coventry University, United Kingdom)
 - **Current Sole Active Role**: Associate Tech Consultant (Ernst & Young LLP - EY) | Digital Transformation & Emerging Tech
 - **Past Roles**: AI PM (Lexsis AI) | Co-Founder (Webfixus LLP) | AI PM (Healthtech Startup) | Consultant (Nirmaan) | Data Scientist (AIET) | Data Analyst (Hood Group UK).
 - **Domain Specialization**: 4+ years in AI Product Management, Multi-Agent AI Systems, GenAI, RAG, and Data-Driven Product Strategy.
@@ -19,7 +19,7 @@
 
 ---
 
-## 🛠️ Comprehensive Technical Mastery & Proof-of-Work Matrix (77 Repositories)
+## Comprehensive Technical Mastery & Proof-of-Work Matrix (77 Repositories)
 
 | Competency Area | Verified Frameworks & Tools Demonstrated | Flagship Proof-of-Work Repositories |
 | :--- | :--- | :--- |
@@ -32,7 +32,7 @@
 
 ---
 
-## 🎯 Master KPIs & Live Telemetry Tracker
+## Master KPIs & Live Telemetry Tracker
 
 | Metric / Milestone | Target | Current Status | Next Action |
 | :--- | :--- | :--- | :--- |
@@ -44,21 +44,21 @@
 
 ---
 
-## 📜 Active Original Thought Assets (OTA Registry)
+## Active Original Thought Assets (OTA Registry)
 
 1. **OTA 1: Event-Driven Autonomous Agents vs. Reactive Chatbots**
-   * *Core Thesis*: Prompt wrappers wait for humans; true agents trigger on telemetry, isolate sandboxes, and request 1-click human approval.
-   * *Status*: Published (Aug 4, 2026). Linked in [2026-q3-omni-channel-plan.md](file:///c:/Users/MONISH/OneDrive/Documents/My-Os/content/2026-q3-omni-channel-plan.md).
+* *Core Thesis*: Prompt wrappers wait for humans; true agents trigger on telemetry, isolate sandboxes, and request 1-click human approval.
+* *Status*: Published (Aug 4, 2026). Linked in [2026-q3-omni-channel-plan.md](file:///c:/Users/MONISH/OneDrive/Documents/My-Os/content/2026-q3-omni-channel-plan.md).
 2. **OTA 2: The Enterprise Trust Paradox**
-   * *Core Thesis*: Domain experts judge AI on edge cases; Human-in-the-Loop architecture is an adoption requirement, not just safety.
-   * *Status*: Drafted (Aug 7, 2026).
+* *Core Thesis*: Domain experts judge AI on edge cases; Human-in-the-Loop architecture is an adoption requirement, not just safety.
+* *Status*: Drafted (Aug 7, 2026).
 3. **OTA 3: Multi-Agent Deadlocks & Competing Drives**
-   * *Core Thesis*: Resolving infinite loops and goal conflict in agentic systems.
-   * *Status*: Scheduled (Aug 11, 2026).
+* *Core Thesis*: Resolving infinite loops and goal conflict in agentic systems.
+* *Status*: Scheduled (Aug 11, 2026).
 
 ---
 
-## 📅 Certainty Engine Weekly Operating Rhythm
+## Certainty Engine Weekly Operating Rhythm
 
 * **Monday**: Sync mobile friction via Telegram & run Chief of Staff Sparring (`sync.py`).
 * **Tuesday & Friday**: Publish high-signal post package (LinkedIn PDF Carousel + X 280-char Thread).
