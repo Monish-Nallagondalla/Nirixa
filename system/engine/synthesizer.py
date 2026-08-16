@@ -40,21 +40,31 @@ def synthesize_topics(workspace_root=None):
         conn.close()
         return 0
 
-    # Example topic extraction clusters
+    # Example topic extraction clusters aligned with The Question Project
     topics = {
+        "question-primitives": {
+            "title": "Questions as Primitive Computational Primitives (The Question Project)",
+            "keywords": ["question", "primitive", "emergence", "intelligence", "token", "inquiry", "loop"],
+            "entries": []
+        },
+        "associative-memory": {
+            "title": "Associative Memory & Cognitive Bridges (Graph Traversal)",
+            "keywords": ["memory", "graph", "associative", "recall", "water heater", "bridge", "subconscious"],
+            "entries": []
+        },
+        "open-loops": {
+            "title": "Open Loops & Intrinsic Curiosity Systems",
+            "keywords": ["open loop", "curiosity", "unresolved", "months", "years", "goal"],
+            "entries": []
+        },
         "career-leagues": {
-            "title": "Career Leagues & Amateur Progression",
-            "keywords": ["league", "amateur", "associate", "senior engagement", "director", "ladder"],
+            "title": "Career Leagues & Executive Mastery Progression",
+            "keywords": ["league", "amateur", "associate", "senior engagement", "director", "ey", "consulting"],
             "entries": []
         },
         "governor-theory": {
             "title": "Human Performance & The Mind Governor",
-            "keywords": ["governor", "goggins", "stock car", "potential", "velocity", "ceiling"],
-            "entries": []
-        },
-        "behavior-data-science": {
-            "title": "Data Science & Human Intelligence",
-            "keywords": ["data science", "human behaviour", "intelligence", "dots", "learning curve"],
+            "keywords": ["governor", "goggins", "potential", "velocity", "ceiling", "discipline"],
             "entries": []
         }
     }

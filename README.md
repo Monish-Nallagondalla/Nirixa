@@ -11,25 +11,25 @@
 
 # Nirixa OS
 <p align="center">
-  <a href="https://github.com/Monish-Nallagondalla/My-Os">Nirixa OS</a> | <a href="docs/getting-started/QUICKSTART.md">Getting Started</a> | <a href="docs/guides/MONISH_CASE_STUDY.md">Living Blueprint</a> | <a href="docs/README.md">Documentation Hub</a>
+  <a href="https://github.com/Monish-Nallagondalla/Nirixa">Nirixa OS</a> | <a href="docs/getting-started/QUICKSTART.md">Getting Started</a> | <a href="docs/guides/LEADER_BLUEPRINT.md">Daily Blueprint</a> | <a href="docs/README.md">Documentation Hub</a>
 </p>
 <p align="center">
   <a href="docs/README.md"><img src="https://img.shields.io/badge/Docs-Documentation_Hub-FFD700?style=for-the-badge" alt="Documentation"></a>
-  <a href="https://github.com/Monish-Nallagondalla/My-Os/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
+  <a href="https://github.com/Monish-Nallagondalla/Nirixa/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Storage-SQLite_Core-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
   <img src="https://img.shields.io/badge/Telegram-Connected-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
   <img src="https://img.shields.io/badge/Agents-Antigravity_%7C_Cursor_%7C_Claude-blueviolet?style=for-the-badge" alt="Agents">
 </p>
 
-**The autonomous 24/7 AI Chief of Staff and Company Living Wiki built by Monish Nallagondalla.** It is an agentic operating system with a closed learning loop — it captures raw voice and text friction on mobile, debates and spars on assumptions via Socratic reasoning, persists structured knowledge in an ACID SQLite core, and auto-compiles authentic lessons into living engineering playbooks, keynote abstracts, and career assets. Run it locally, on an Oracle Always-Free VPS, or alongside your coding agent in Google Antigravity, Cursor, and Claude Code. It is not tied to your IDE — talk to it from Telegram while it manages your memory, telemetry, and execution.
+**The autonomous 24/7 AI Chief of Staff and Company Living Wiki.** An agentic operating system with a closed learning loop — it captures raw voice and text friction on mobile, debates and spars on assumptions via Socratic reasoning, persists structured knowledge in an ACID SQLite core, and auto-compiles authentic lessons into living engineering playbooks, decision records, and public assets. Run it locally, on an Oracle Always-Free VPS, or alongside your coding agent in Google Antigravity, Cursor, and Claude Code. It is not tied to your IDE — talk to it from Telegram while it manages your memory, telemetry, and execution.
 
 Use any model you want — Gemini Flash, Claude, OpenAI, or local open weights. Switch via configuration with zero code changes and zero lock-in.
 
 <table>
 <tr><td width="30%"><b>A real mobile and terminal gateway</b></td><td>Zero-friction Telegram text and voice capture, interactive inline buttons, 1-click approvals, and bidirectional IDE execution with zero latency.</td></tr>
 <tr><td><b>Dual operating modes</b></td><td><b>Mode A (Personal Chief of Staff)</b>: 4-Quadrant Compass (Mission, Mastery, Money, Mind) and 3-Horizon Execution Engine.<br/><b>Mode B (Company Living Wiki)</b>: Living Engineering Playbook, Post-Mortem Scars Vault, and automated async standup dependency radar.</td></tr>
-<tr><td><b>A closed Socratic learning loop</b></td><td>The AI does not flatter or autocomplete. It probes unstated premises, extracts authentic architectural scars, and evolves living Original Thought Assets (OTAs) that compound over decades.</td></tr>
+<tr><td><b>A closed Socratic learning loop</b></td><td>The AI does not flatter or autocomplete. It probes unstated premises, extracts authentic architectural scars, and evolves living Original Thought Assets (OTAs) that compound over time.</td></tr>
 <tr><td><b>Zero-LLM deterministic fast path</b></td><td>Hardware telemetry, regex reminders, time-wheel briefings, and status checks run 100% deterministically at zero token cost.</td></tr>
 <tr><td><b>DB-first SQLite memory core</b></td><td>Single ACID SQLite database (<code>system/data/nirixa.db</code>) with vector embeddings (sqlite-vec) and FTS5 search. Zero unorganized markdown file proliferation. Full thought ancestry and lineage tracking.</td></tr>
 <tr><td><b>Universal coding agent onboarding</b></td><td>Interactive Inform -&gt; Confirm -&gt; Build interview protocol across Google Antigravity, Cursor (<code>.cursorrules</code>), and Claude Code (<code>CLAUDE.md</code>).</td></tr>
@@ -43,8 +43,8 @@ Use any model you want — Gemini Flash, Claude, OpenAI, or local open weights. 
 ### Linux, macOS, WSL2
 
 ```bash
-git clone https://github.com/Monish-Nallagondalla/My-Os.git
-cd My-Os
+git clone https://github.com/Monish-Nallagondalla/Nirixa.git
+cd Nirixa
 cp system/config/.env.example system/config/.env
 pip install -r requirements.txt
 ```
@@ -52,8 +52,8 @@ pip install -r requirements.txt
 ### Windows (PowerShell)
 
 ```powershell
-git clone https://github.com/Monish-Nallagondalla/My-Os.git
-cd My-Os
+git clone https://github.com/Monish-Nallagondalla/Nirixa.git
+cd Nirixa
 Copy-Item system/config/.env.example system/config/.env
 pip install -r requirements.txt
 ```
@@ -112,7 +112,7 @@ Nirixa OS operates across two synchronized interfaces: the local IDE/CLI runtime
 | Hardware & DB telemetry | `python system/scripts/send_status.py` | Tap `[ System Status ]` button |
 | Socratic sparring | Interactive chat pairing in Antigravity | Real-time Socratic thesis pushback |
 | Check reminders | Query `reminders` table in `nirixa.db` | Tap `[ Check Reminders ]` button |
-| Put laptop to sleep | Trigger sleep script | Tap `[ Put Laptop to Sleep ]` button |
+| Put host machine to sleep | Trigger sleep script | Tap `[ Put Laptop to Sleep ]` button |
 | Compile public assets | Run publisher script | Tap `[ Auto-Compile Assets ]` button |
 
 ---
@@ -134,16 +134,16 @@ Nirixa OS operates across two synchronized interfaces: the local IDE/CLI runtime
 
 ---
 
-## Living Case Study: How Monish Uses It Daily
+## Operating Blueprint: Daily Cycle
 
-A complete 24-hour walkthrough of how Monish runs Nirixa OS as an AI Product Leader at Ernst & Young (EY):
+A complete 24-hour walkthrough demonstrating an AI Tech Lead operating Nirixa OS:
 * **09:00 AM**: Deterministic Morning Executive Briefing on Telegram.
-* **02:30 PM**: `[MISSION]` Voice note capture on Enterprise Multi-Agent Deadlocks (auto-anonymized and indexed).
-* **06:00 PM**: `[MASTERY]` Socratic sparring on *Human Non-Determinism vs. LLM Determinism* (registered as `OTA-016`).
-* **08:30 PM**: `[MIND]` Ather ride clarity and workout energy tracking.
-* **Sunday Review**: 1-Click auto-compilation of scars into LinkedIn PDF Carousels and Keynote abstracts.
+* **02:30 PM**: `[MISSION]` Voice note capture on distributed system deadlocks.
+* **06:00 PM**: `[MASTERY]` Socratic sparring on deterministic state machines vs LLM drift.
+* **08:30 PM**: `[MIND]` Health and evening equilibrium tracking.
+* **Sunday Review**: 1-Click auto-compilation of scars into LinkedIn visual documents and technical RFCs.
 
-Full blueprint: **[docs/guides/MONISH_CASE_STUDY.md](docs/guides/MONISH_CASE_STUDY.md)**
+Full blueprint: **[docs/guides/LEADER_BLUEPRINT.md](docs/guides/LEADER_BLUEPRINT.md)**
 
 ---
 
@@ -180,7 +180,7 @@ graph TD
     DB --> OperatingMode{"Operating Mode Engine"}
     OperatingMode -->|"Personal Mode"| Q["4-Quadrant / 3-Horizon Framework"]
     OperatingMode -->|"Company Mode"| W["Living Engineering Playbook & Scars"]
-    Q & W --> Compounding["Compounding Engine<br/>(LinkedIn Carousels, RFCs, Post-Mortems)"]
+    Q & W --> Compounding["Compounding Engine<br/>(Visual Documents, RFCs, Post-Mortems)"]
     Compounding --> Proactive["Proactive Briefings & Blocker Alerts"]
     Proactive --> User
 ```
@@ -197,19 +197,17 @@ graph TD
 | **Frameworks** | [Personal Compass](docs/frameworks/PERSONAL_COMPASS.md) | 4-Quadrant holistic balance model (Mission, Mastery, Money, Mind) |
 | **Execution** | [3-Horizon Engine](docs/frameworks/HORIZON_ENGINE.md) | 3-Horizon execution framework (North Star -> Friction -> Sprint) |
 | **Epistemology** | [Original Thought Assets](docs/frameworks/ORIGINAL_THOUGHT_ASSETS.md) | The 15 Core OTAs, question objects, and thought lineage |
-| **Case Study** | [Living Case Study](docs/guides/MONISH_CASE_STUDY.md) | 24-Hour operating blueprint of Monish's daily workflow at EY |
-| **Mobile Gateway**| [Telegram Gateway Guide](docs/guides/TELEGRAM_GATEWAY.md) | Voice notes, telemetry, callbacks, and remote sleep control |
-| **DJ Copilot** | [DJ Mastery Copilot](docs/guides/DJ_MASTERY_COPILOT.md) | DDJ-FLX4 15-minute drills and Rekordbox harmonic setlists |
-| **24/7 Cloud** | [Oracle Cloud VPS Guide](docs/guides/ORACLE_CLOUD_DEPLOYMENT.md) | Running 24/7 on Oracle Always-Free Compute with systemd |
-| **Company Wiki** | [Company Wiki Hub](docs/company/README.md) | Team operating system, living playbooks, and async standups |
-| **Architecture** | [System Architecture](docs/reference/ARCHITECTURE.md) | SQLite Core, Zero-LLM Fast Path, and Socratic engine |
-| **CLI Reference**| [CLI Playbook](docs/reference/CLI_PLAYBOOK.md) | Complete CLI commands and daemon scripts reference |
-| **Configuration**| [Configuration Reference](docs/reference/CONFIGURATION.md) | Complete `.env` variables and model providers reference |
+| **Daily Blueprint**| [Operating Blueprint](docs/guides/LEADER_BLUEPRINT.md) | 24-Hour operating cycle of an AI Tech Lead |
+| **Mobile Gateway** | [Telegram Gateway Guide](docs/guides/TELEGRAM_GATEWAY.md) | Voice notes, telemetry, callbacks, and remote sleep control |
+| **Custom Skills**  | [Creating Custom Skills](docs/guides/CREATING_CUSTOM_SKILLS.md) | Building specialized domain skills, habits, and drills |
+| **24/7 Cloud**     | [Oracle Cloud VPS Guide](docs/guides/ORACLE_CLOUD_DEPLOYMENT.md) | Running 24/7 on Oracle Always-Free Compute with systemd |
+| **Company Wiki**   | [Company Wiki Hub](docs/company/README.md) | Team operating system, living playbooks, and async standups |
+| **Architecture**   | [System Architecture](docs/reference/ARCHITECTURE.md) | SQLite Core, Zero-LLM Fast Path, and Socratic engine |
+| **CLI Reference**  | [CLI Playbook](docs/reference/CLI_PLAYBOOK.md) | Complete CLI commands and daemon scripts reference |
+| **Configuration**  | [Configuration Reference](docs/reference/CONFIGURATION.md) | Complete `.env` variables and model providers reference |
 
 ---
 
 ## License
 
 MIT — see [LICENSE](LICENSE).
-
-Built with first-principles clarity by [Monish Nallagondalla](https://github.com/Monish-Nallagondalla).

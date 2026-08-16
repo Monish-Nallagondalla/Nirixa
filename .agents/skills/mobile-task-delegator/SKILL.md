@@ -25,5 +25,5 @@ Use this skill whenever Monish is signing off, leaving his desk, or when the sys
 
 3. **Format Standard**:
    - Keep tasks low-friction (< 2 minutes required from Monish on phone).
-   - Enforce High-Signal Minimalist Copywriting standards (zero emoji clutter, zero hype marketing).
+   - Enforce Naval & Aviral copywriting standards (zero emoji clutter, zero hype marketing).
    - Automatically push the task via `telegram_push.py`.

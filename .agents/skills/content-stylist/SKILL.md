@@ -1,6 +1,6 @@
 ---
 name: content-stylist
-description: Enforces high-signal, minimalist tech copywriting based on Elite Technical Thought Leadership. Banned from using emoji clutter, hype marketing, or generic advice.
+description: Enforces high-signal, minimalist tech copywriting with zero emoji clutter, zero hype marketing, and first-principles intellectual clarity.
 ---
 
 # Content Stylist Skill (`content-stylist`)
@@ -22,6 +22,6 @@ Use this skill whenever drafting, reviewing, or editing content for My-OS.
 - Write like a calm, elite Principal AI Architect & Editorial Director.
 - Understated authority over loud claims.
 
-### 4. Steve Jobs Radical Reduction Filter
+### 4. Radical Reduction Filter
 - **Single Core Truth**: Every draft must focus on **ONE single undeniable thesis**. If a post tries to teach 3 separate things at once, strip out the side tangents.
 - **Visceral Emotional Punch**: Start with an authentic friction scar or real-world contrast. Make the conclusion unavoidable.

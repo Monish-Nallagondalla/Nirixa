@@ -2,7 +2,7 @@
 """
 Nirixa OS Engine - Track A System Health Evals Suite (Automated Regression Suite)
 
-Executes 8 automated checks testing daemon liveness, startup integrity, capture pipeline,
+Executes 8 automated checks testing wakeup bridge liveness, bridge integrity, capture pipeline,
 Chief of Staff reasoning, resonance retrieval accuracy, publishing compliance,
 anonymization air-gap boundaries, and data integrity.
 Logs results and pass rates into eval_results table in nirixa.db.
@@ -23,7 +23,7 @@ sys.path.insert(0, engine_dir)
 import db
 import chief_of_staff
 import resonance
-import daemon
+import anonymizer
 
 class SystemHealthEvaluator:
     def __init__(self, workspace_root=workspace_root):
@@ -43,45 +43,34 @@ class SystemHealthEvaluator:
         conn.commit()
         conn.close()
 
-    def check_daemon_liveness(self):
-        """Check 1: Verify daemon_heartbeat is recent in system_audits."""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        cursor.execute("SELECT timestamp FROM system_audits WHERE metric_name = 'daemon_heartbeat' ORDER BY id DESC LIMIT 1")
-        row = cursor.fetchone()
-        conn.close()
-
-        if not row:
-            return "fail", "No daemon_heartbeat metrics recorded in system_audits."
-
+    def check_wakeup_bridge_liveness(self):
+        """Check 1: Verify Telegram Wakeup Bridge is alive by checking offset modification."""
+        offset_file = os.path.join(self.workspace_root, "system", "data", "telegram_offset.txt")
+        if not os.path.exists(offset_file):
+            return "fail", "telegram_offset.txt not found."
+            
         try:
-            ts_clean = str(row[0]).split("+")[0].replace("Z", "")
-            last_hb = datetime.datetime.fromisoformat(ts_clean)
+            mtime = os.path.getmtime(offset_file)
+            last_hb = datetime.datetime.fromtimestamp(mtime)
             now = datetime.datetime.now()
             diff_min = (now - last_hb).total_seconds() / 60.0
             if diff_min <= 60.0:  # Allow 60 min threshold for local dev execution
-                return "pass", f"Daemon heartbeat fresh ({round(diff_min, 1)}m ago)."
+                return "pass", f"Wakeup Bridge heartbeat fresh ({round(diff_min, 1)}m ago)."
             else:
-                return "fail", f"Daemon heartbeat stale ({round(diff_min, 1)}m ago)."
+                return "fail", f"Wakeup Bridge heartbeat stale ({round(diff_min, 1)}m ago)."
         except Exception as e:
-            return "fail", f"Heartbeat parsing error: {e}"
+            return "fail", f"Offset parsing error: {e}"
 
-    def check_startup_integrity(self):
-        """Check 2: Verify daemon_startup_check logged pass status."""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        cursor.execute("SELECT metric_value FROM system_audits WHERE metric_name = 'daemon_startup_check' ORDER BY id DESC LIMIT 1")
-        row = cursor.fetchone()
-        conn.close()
-
-        if not row:
-            return "fail", "No daemon_startup_check metrics recorded."
-
-        val = row[0]
-        if "telegram: pass" in val and "db: pass" in val:
-            return "pass", f"Startup check verified: {val}"
-        else:
-            return "fail", f"Startup check failed: {val}"
+    def check_bridge_integrity(self):
+        """Check 2: Verify database connectivity is sound."""
+        try:
+            conn = sqlite3.connect(self.db_path)
+            cursor = conn.cursor()
+            cursor.execute("SELECT 1")
+            conn.close()
+            return "pass", "SQLite Bridge connectivity verified."
+        except Exception as e:
+            return "fail", f"Bridge check failed: {e}"
 
     def check_capture_pipeline(self):
         """Check 3: Ingest a synthetic test capture, verify DB persistence, and clean up."""
@@ -150,13 +139,9 @@ class SystemHealthEvaluator:
     def check_anonymization_boundary(self):
         """Check 7: Verify publish-time anonymization air-gap boundary."""
         raw_text = "Met with EY Manager to discuss client systems"
-        rules = [
-            {"match": "(?i)\\bEY\\b", "replace": "Tier-1 Consulting Firm"},
-            {"match": "(?i)\\bManager\\b", "replace": "Senior Engagement Lead"}
-        ]
-        anonymized = daemon.apply_anonymization(raw_text, rules)
+        anonymized = anonymizer.apply_anonymization(raw_text)
 
-        if "Tier-1 Consulting Firm" in anonymized and "EY" not in anonymized:
+        if "Tier-1 Consulting Firm" in anonymized and "EY" not in anonymized and "Senior Engagement Lead" in anonymized:
             return "pass", f"Anonymization air-gap verified: '{raw_text}' -> '{anonymized}'"
         else:
             return "fail", f"Anonymization rule failed to substitute text: {anonymized}"
@@ -175,30 +160,16 @@ class SystemHealthEvaluator:
         else:
             return "pass", f"Noticed {stale_count} pending reminders past scheduled trigger time."
 
-    def check_reasoning_backend_health(self):
-        """Check 9: Monitor reasoning_backend_fallback rate in system_audits."""
-        conn = sqlite3.connect(self.db_path)
-        cursor = conn.cursor()
-        cursor.execute("SELECT COUNT(*) FROM system_audits WHERE metric_name = 'reasoning_backend_fallback'")
-        fallbacks = cursor.fetchone()[0]
-        conn.close()
-
-        if fallbacks == 0:
-            return "pass", "Reasoning backend operating 100% on primary (0 fallbacks)."
-        else:
-            return "pass", f"Noticed {fallbacks} reasoning backend fallback events logged."
-
     def run_all_evals(self):
         eval_suite = [
-            ("daemon_liveness", "Daemon", self.check_daemon_liveness),
-            ("startup_integrity", "Daemon", self.check_startup_integrity),
+            ("wakeup_bridge_liveness", "Bridge", self.check_wakeup_bridge_liveness),
+            ("bridge_integrity", "Bridge", self.check_bridge_integrity),
             ("capture_pipeline", "Pipeline", self.check_capture_pipeline),
             ("chief_of_staff_reasoning", "ChiefOfStaff", self.check_chief_of_staff_reasoning),
             ("retrieval_accuracy", "Resonance", self.check_retrieval_accuracy),
             ("publishing_compliance", "Publishing", self.check_publishing_compliance),
             ("anonymization_boundary", "Security", self.check_anonymization_boundary),
             ("data_integrity", "Database", self.check_data_integrity),
-            ("reasoning_backend_health", "Reasoning", self.check_reasoning_backend_health),
         ]
 
         print("==================================================")

@@ -1,4 +1,4 @@
-# Nirixa OS Documentation Hub 
+# Nirixa OS Documentation Hub
 
 **The central documentation index for Nirixa OS: 24/7 AI Chief of Staff and Company Living Wiki.**
 
@@ -19,8 +19,8 @@
 | Document | Description |
 | :--- | :--- |
 | [The 4-Quadrant Personal Compass](frameworks/PERSONAL_COMPASS.md) | Holistic life balancing model (Mission, Mastery, Money, Mind). |
-| [The 3-Horizon Execution Engine](frameworks/HORIZON_ENGINE.md) | Connecting 30-year North Stars down to Top 3 weekly sprint deliverables. |
-| [Original Thought Assets & The Question Project](frameworks/ORIGINAL_THOUGHT_ASSETS.md) | The 15 Core OTAs, living question objects, and epistemological thought lineage. |
+| [The 3-Horizon Execution Engine](frameworks/HORIZON_ENGINE.md) | Connecting multi-year North Stars down to Top 3 weekly sprint deliverables. |
+| [Original Thought Assets & Inquiry](frameworks/ORIGINAL_THOUGHT_ASSETS.md) | The 15 Core OTAs, living question objects, and epistemological thought lineage. |
 
 ---
 
@@ -28,9 +28,9 @@
 
 | Document | Description |
 | :--- | :--- |
-| [Living Blueprint: Monish's Daily Workflow](guides/MONISH_CASE_STUDY.md) | Complete 24-hour cycle of an AI Product Leader operating Nirixa OS at EY. |
+| [Operating Blueprint: Daily Cycle](guides/LEADER_BLUEPRINT.md) | Complete 24-hour cycle of an AI Tech Lead operating Nirixa OS. |
 | [Telegram Mobile Gateway Guide](guides/TELEGRAM_GATEWAY.md) | Voice notes, in-process 200ms telemetry, inline buttons, and remote sleep control. |
-| [DJ Mastery Copilot Guide](guides/DJ_MASTERY_COPILOT.md) | DDJ-FLX4 15-minute drills and Rekordbox Camelot harmonic setlist engine. |
+| [Creating Custom Agent Skills](guides/CREATING_CUSTOM_SKILLS.md) | Building specialized skills, habits, and domain drills across coding agents. |
 | [Oracle Cloud 24/7 VPS Deployment](guides/ORACLE_CLOUD_DEPLOYMENT.md) | Running Nirixa OS continuously on Oracle Always-Free Compute with systemd. |
 
 ---

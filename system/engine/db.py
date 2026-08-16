@@ -87,6 +87,22 @@ def init_db(db_path=None):
     )
     """)
 
+    # Action Tasks Kanban Table (Active / Overdue / Completed & Velocity Tracking)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS action_tasks (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        description TEXT DEFAULT '',
+        source TEXT DEFAULT 'ide',
+        deadline TEXT,
+        status TEXT DEFAULT 'pending',
+        created_at TEXT,
+        completed_at TEXT,
+        turnaround_minutes INTEGER DEFAULT 0,
+        completed_before_deadline INTEGER DEFAULT 1
+    );
+    """)
+
     # Reminders Table (Zero-LLM Deterministic Store)
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS reminders (
@@ -649,6 +665,151 @@ def get_profile_context(category=None, db_path=None):
     rows = cursor.fetchall()
     conn.close()
     return {r[0]: r[1] for r in rows}
+
+def get_user_profile(workspace_root=None):
+    """Convenience accessor for Monish's complete profile and financial baseline."""
+    db_path = get_db_path(workspace_root)
+    ctx = get_profile_context(db_path=db_path)
+    return {
+        "monthly_salary": int(ctx.get("monthly_salary", 67000)),
+        "monthly_rent": int(ctx.get("monthly_rent", 15000)),
+        "monthly_parents": int(ctx.get("monthly_parents", 10000)),
+        "monthly_living_estimate": int(ctx.get("monthly_living_estimate", 15000)),
+        "liquid_armor_balance": int(ctx.get("liquid_armor_balance", 20000)),
+        "user_name": ctx.get("user_name", "Monish Nallagondalla"),
+        "wife_name": ctx.get("wife_name", "Harshitha"),
+        "user_dob": ctx.get("user_dob", "1996-01-09"),
+        "wife_dob": ctx.get("wife_dob", "1997-04-14")
+    }
+
+def add_action_task(title, deadline_str=None, source="ide", description="", db_path=None):
+    """Inserts a new actionable task with a deadline."""
+    if not db_path:
+        db_path = get_db_path()
+    init_db(db_path)
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    if not deadline_str:
+        # Default: 24h from now
+        deadline_str = (datetime.datetime.now() + datetime.timedelta(hours=24)).strftime("%Y-%m-%d %H:%M:%S")
+        
+    cursor.execute("""
+    INSERT INTO action_tasks (title, description, source, deadline, status, created_at)
+    VALUES (?, ?, ?, ?, 'pending', ?)
+    """, (title.strip(), description.strip(), source, deadline_str, now_str))
+    task_id = cursor.lastrowid
+    conn.commit()
+    conn.close()
+    return task_id
+
+def get_action_tasks_grouped(db_path=None):
+    """
+    Retrieves all tasks, auto-evaluates overdue status against current time,
+    groups into active, overdue, completed, and calculates velocity metrics.
+    """
+    if not db_path:
+        db_path = get_db_path()
+    init_db(db_path)
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    
+    cursor.execute("SELECT id, title, description, source, deadline, status, created_at, completed_at, turnaround_minutes, completed_before_deadline FROM action_tasks ORDER BY id DESC")
+    rows = cursor.fetchall()
+    
+    active = []
+    overdue = []
+    completed = []
+    
+    for r in rows:
+        tid, title, desc, src, dline, stat, cat, comp_at, t_min, on_time = r
+        task_obj = {
+            "id": tid, "title": title, "description": desc, "source": src,
+            "deadline": dline, "status": stat, "created_at": cat,
+            "completed_at": comp_at, "turnaround_minutes": t_min,
+            "completed_before_deadline": on_time
+        }
+        
+        if stat == "completed":
+            completed.append(task_obj)
+        else:
+            # Check if deadline passed
+            if dline and dline < now_str:
+                task_obj["status"] = "overdue"
+                overdue.append(task_obj)
+            else:
+                active.append(task_obj)
+                
+    conn.close()
+    
+    total_completed = len(completed)
+    on_time_count = sum(1 for c in completed if c.get("completed_before_deadline") == 1)
+    on_time_pct = round((on_time_count / total_completed * 100), 1) if total_completed > 0 else 100.0
+    avg_turnaround_hrs = round(sum(c.get("turnaround_minutes", 0) for c in completed) / (total_completed * 60), 1) if total_completed > 0 else 0.0
+    
+    return {
+        "active": active,
+        "overdue": overdue,
+        "completed": completed[:15],
+        "velocity_metrics": {
+            "total_completed": total_completed,
+            "completed_on_time_pct": on_time_pct,
+            "avg_turnaround_hours": avg_turnaround_hrs,
+            "velocity_score": f"{on_time_pct}% On-Time"
+        }
+    }
+
+def complete_action_task(task_id, db_path=None):
+    """
+    Marks task as completed, computes exact turnaround minutes,
+    evaluates whether it beat the deadline, and logs velocity to Track C.
+    """
+    if not db_path:
+        db_path = get_db_path()
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    now_dt = datetime.datetime.now()
+    now_str = now_dt.strftime("%Y-%m-%d %H:%M:%S")
+    
+    cursor.execute("SELECT created_at, deadline FROM action_tasks WHERE id = ?", (task_id,))
+    row = cursor.fetchone()
+    if not row:
+        conn.close()
+        return False
+        
+    created_at_str, deadline_str = row
+    turnaround_mins = 60
+    if created_at_str:
+        try:
+            c_dt = datetime.datetime.fromisoformat(created_at_str)
+            turnaround_mins = max(1, int((now_dt - c_dt).total_seconds() / 60))
+        except Exception:
+            pass
+            
+    completed_before_deadline = 1
+    if deadline_str and deadline_str < now_str:
+        completed_before_deadline = 0
+        
+    cursor.execute("""
+    UPDATE action_tasks
+    SET status = 'completed', completed_at = ?, turnaround_minutes = ?, completed_before_deadline = ?
+    WHERE id = ?
+    """, (now_str, turnaround_mins, completed_before_deadline, task_id))
+    conn.commit()
+    conn.close()
+    return True
+
+def delete_action_task(task_id, db_path=None):
+    """Permanently removes a task."""
+    if not db_path:
+        db_path = get_db_path()
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM action_tasks WHERE id = ?", (task_id,))
+    conn.commit()
+    conn.close()
+    return True
 
 if __name__ == "__main__":
     init_db()
