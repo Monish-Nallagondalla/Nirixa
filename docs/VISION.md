@@ -1,130 +1,18 @@
-# Vision
+# My-OS: Project Vision & PRD
 
-Version: v0.1.0
+## The Core Invariant
+This system is **not** a superficial AI wrapper or standard chatbot. It is the architectural foundation for the study of how intelligence emerges across biological and artificial systems. Every feature, script, and automation must compound toward the 30-Year Horizon: delivering a Global Keynote / TED Talk on Intelligence Emergence before Age 33 (2029), and the eventual establishment of an independent AI Research Institute.
 
----
+## Identity & Principles
+- **The Chief of Staff Architecture**: The system acts as a proactive, high-agency extension of Monish's mind. It must anticipate platform constraints (e.g., auto-compiling PDFs for LinkedIn, splitting tweets), enforce high-signal minimalist copywriting (zero emojis, zero fluff), and push low-friction micro-tasks to mobile.
+- **OTA (Questions as First-Class Primitives)**: The system stores, traverses, and evolves questions as living computational objects. Intelligence is measured by the ability to debate, challenge assumptions, and trace thought lineage.
+- **Zero Friction**: The system must operate with zero overhead. No manual copy-pasting, no API key dependency bottlenecks, and zero file proliferation. 
 
-## Why My-OS Exists
+## The Operating Loop
+1. **Friction Capture (Buffer)**: Raw thoughts, ideas, and friction are captured instantly via the Telegram Bridge while mobile.
+2. **Sparring (Refinement)**: The system actively debates and challenges raw thoughts via interactive Q&A (via Telegram or IDE), extracting abstract architectural scars and verifying assumptions.
+3. **Processed Execution**: Refined insights are synthesized into the monthly stream (`inbox/YYYY-MM-mobile-inbox.md`), anonymized, and mapped to the active content calendar for execution and publication.
 
-Knowledge is easy to collect.
-
-Wisdom is difficult to build.
-
-Most note-taking systems help people remember information.
-
-My-OS exists to help me understand, connect, refine, and evolve my thinking over decades.
-
-It is not a diary.
-
-It is not a note-taking application.
-
-It is not an AI agent.
-
-It is a Personal Cognitive Operating System.
-
----
-
-## Mission
-
-Build a system that helps me:
-
-- Think more clearly.
-- Learn continuously.
-- Capture only what matters.
-- Create original work.
-- Grow professionally.
-- Build meaningful AI products.
-- Contribute useful ideas to society.
-
----
-
-## Principles
-
-### 1. Capture Transformations, Not Everything
-
-Store only ideas, lessons, decisions, and experiences that change how I think or act.
-
-If it doesn't matter next year,
-it probably doesn't belong here.
-
----
-
-### 2. AI Assists. Humans Decide.
-
-AI helps explore ideas.
-
-I remain responsible for judgment, values, and decisions.
-
----
-
-### 3. Knowledge Compounds
-
-Every artifact should make future work easier.
-
-Nothing should exist in isolation.
-
-Ideas connect.
-
-Questions evolve.
-
-Understanding compounds.
-
----
-
-### 4. Think Better. Ship Faster.
-
-Every feature must improve either:
-
-- quality of thinking
-
-or
-
-- speed of execution.
-
-Otherwise it doesn't belong.
-
----
-
-### 5. Build Once. Reuse Forever.
-
-Frameworks.
-
-Thoughts.
-
-Definitions.
-
-Research.
-
-Experiences.
-
-Everything should become reusable knowledge.
-
----
-
-## Long-Term Vision
-
-Create a living system that grows with me throughout my career and life.
-
-A system that helps me:
-
-- understand intelligence
-- build AI products
-- become a better thinker
-- create meaningful content
-- write books
-- make better decisions
-- continuously evolve
-
----
-
-## Success
-
-Years from now, I should be able to answer:
-
-"What do I believe?"
-
-"Why do I believe it?"
-
-"How has my thinking changed?"
-
-using evidence from my own work.
+## Current Technical State
+- **Antigravity Telegram Bridge**: A fully localized, zero-cost bidirectional bridge. The listener runs silently in the background and commits a self-interrupt to instantly wake the local Antigravity IDE when a message is received. This guarantees a real-time, proactive connection to Monish's phone.
+- **Knowledge Sync**: Automatic append of captured thoughts into the DB and markdown logs.

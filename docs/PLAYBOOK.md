@@ -1,71 +1,125 @@
-# The Monish Product Playbook
+# 📘 The My-OS Master Manual & Operating Playbook
+### The Unified System Manual for Monish Nallagondalla Srinath & Nirixa OS
 
-## The Objective
-To manage Monish as a high-leverage product, positioning him as a leading voice in AI Product Management and orchestration, culminating in top-tier speaking engagements (TED) and accelerated career growth.
+---
 
-## The Dynamic: Human + AI
-This system relies on a strict division of labor to eliminate friction:
-1. **The Human (Monish):** Provides the raw, unpolished thought, usually derived from the *friction* of building real AI systems at EY or startups. Challenges the AI.
-2. **The AI (Chief of Staff):** Challenges the human. Demands evidence. Categorizes the thought, formats the OTA, maps it to the Knowledge Graph, and drafts the execution (LinkedIn post, book chapter). 
+## 🧭 I. The Foundational Vision
 
-## Operating Rhythms
+> **"You are not building software. You are building a framework for understanding intelligence."**
+> 
+> My-OS is your private cognitive laboratory. Nirixa is the interface. The book is the communication. LinkedIn is the public experimentation lab. Your career is the empirical data. All compound toward your **Global Keynote / TED Talk before Age 33 (2029)** and an independent AI Research Institute.
 
-### 1. The Daily Friction Capture (Inbox)
-Whenever you encounter a problem building AI (e.g., dieticians not trusting AI, latency issues in RAG), dump the raw thought into the `/inbox`. Do not format it. Do not optimize it. Just write the truth.
+---
 
-### 2. The Sparring Session (Review)
-When you ask me to review the inbox, I will push back.
-- If it's a generic thought, I will reject it.
-- If it's profound, I will ask you to clarify the "So what?"
-Once we agree the thought is valuable, I (the AI) will format it into an **OTA (Original Thought Asset)**.
+## 📁 II. Repository Directory Manual & Folder Anatomy
 
-### 2b. The Post Drafting Protocol (Strict Rule)
-**NEVER generate a final post directly.** Follow this mandatory 4-step interactive cycle:
-1. **Pitch the Gist**: Present a 2–3 sentence concept gist and proposed angle.
-2. **Interactive Sparring (To & Fro)**: Ask Monish 2–3 targeted questions to extract his authentic scars, real-world friction, and personal stance.
-3. **Refine & Align**: Iterate back-and-forth until Monish approves the exact thesis.
-4. **Draft Post**: ONLY draft the final post after Monish explicitly approves step 3.
+```
+My-Os/
+├── docs/                               # 🏛️ Master Strategic & Epistemological Blueprints
+│   ├── THE_QUESTION_PROJECT_UNIFIED_CONSTITUTION.md # The 34 Pillars & 10 Frontier Inquiries
+│   ├── THE_QUESTION_PROJECT_COMPLETE_RESEARCH_CONTEXT.md # In-depth research context & hypothesis
+│   ├── MASTER_OTA_REGISTRY.md          # Complete taxonomy of OTA-001 through OTA-015 + Seeds
+│   ├── CUSTOM_GOALS_AND_EXTENSIONS.md  # Guide on defining custom goals & persona advisors
+│   ├── CAREER_DASHBOARD.md             # Inbound opportunities, milestones & speaking tracks
+│   └── PLAYBOOK.md                     # This master system manual
+│
+├── personal/                           # 🔒 Private & Air-Gapped Personal Knowledge
+│   ├── USER_PROFILE.md                 # Age, demographics, family, finances & vehicle telemetry
+│   └── PROFILE_README.md               # Master profile summary & verified credentials
+│
+├── inbox/                              # 📥 Friction Capture & Monthly Thinking Streams
+│   ├── YYYY-MM-mobile-inbox.md         # Consolidated monthly stream of processed reflections
+│   └── README.md                       # Stream architecture explanation
+│
+├── system/                             # ⚙️ Core Engine & Subsystems
+│   ├── data/
+│   │   ├── nirixa.db                   # SQLite memory store (FTS5 search, OTAs, milestones)
+│   │   └── synced_messages.json        # 7-day rolling Telegram message retention
+│   ├── engine/
+│   │   ├── daemon.py                   # Telegram long-polling daemon & 8s debouncer
+│   │   ├── chief_of_staff.py           # Context-adaptive Socratic reasoning & OTA connector
+│   │   ├── synthesizer.py              # LLM-Wiki auto-clustering & 4-part extraction
+│   │   ├── resonance.py                # 3-signal vector resonance math
+│   │   ├── ai_news_radar.py            # $0 multi-source autonomous tech radar
+│   │   └── evals/                      # 3-Track evaluation regression harness
+│   ├── scripts/                        # Automated startup, Wi-Fi recovery & utility scripts
+│   └── config/                         # System configuration & environment variables
+│
+├── dashboard/                          # 🖥️ Local-First Control Center (Port 8000)
+│   ├── dashboard_server.py             # Python HTTP server with Control Center action APIs
+│   └── index.html                      # Glowing dark glassmorphism layout & telemetry
+│
+├── .agents/                            # 🤖 Agent Rules & Cognitive Skills
+│   ├── AGENTS.md                       # Master workspace rules & Rule 9 Epistemological Standard
+│   └── skills/                         # Specialized capabilities:
+│       ├── persona-advisory-board/     # Marty Cagan, David Goggins, Paramahansa Yogananda
+│       ├── content-stylist/            # Naval & Aviral high-signal minimalist copywriting
+│       ├── mobile-sync/                # 3-Stage Telegram friction sync
+│       ├── omni-channel-publisher/     # Platform-native PDF carousel & X validator
+│       └── calendar-scheduler/         # Google Calendar task & milestone scheduling
+│
+├── nirixa-open-source/                 # 🌐 Public, Generic & 100% Air-Gapped Framework Repo
+│   ├── docs/                           # Generic architecture specs & extensibility guides
+│   ├── system/                         # Reusable core engine code (zero private data)
+│   └── README.md                       # Flagship open-source documentation
+│
+└── start_os.bat                        # 🚀 1-Click Master Launcher (Daemon + Dashboard)
+```
 
-### 3. Strict Confidentiality (The Anonymization Rule)
-**Never put the career at risk.** When capturing friction or evidence, we *never* name specific companies (EY, Lexsis, clients), proprietary data, or confidential features. 
-Instead, we extract the *architectural pattern* or the *psychological insight*. 
-*(e.g., Instead of "At the health-tech startup, the dieticians rejected...", we write: "When building human-in-the-loop AI for clinical workflows, domain experts inherently distrust...")*
+---
 
-### 4. Execution (The Output)
-Every OTA must eventually convert into leverage. 
-We will use LinkedIn not to "post content," but to "build in public." We will share the scars of building multi-agent AI in the abstract. I will draft the post based *only* on the OTA. You review, edit, and publish.
+## ⚡ III. The 3-Stage Processing Pipeline
 
-### 5. Mobile Sync & Network Infrastructure Protocol
-- **ISP Telegram API Block Bypass**: In Indian broadband networks (Jio, Airtel, corporate Wi-Fi), direct TCP connections to `api.telegram.org:443` frequently experience ISP IP filtering (`socket.timeout`).
-- **Standard Remedy**: Enable **Cloudflare WARP (1.1.1.1)** on Windows or configure `TELEGRAM_API_BASE_URL` / `HTTPS_PROXY` in `system/config/.env`.
-- **System Capability**: Both `sync.py` and `telegram_push.py` support `TELEGRAM_API_BASE_URL` and `HTTPS_PROXY` fallbacks natively with detailed diagnostic hints.
+```
+[Mobile Friction on Telegram]
+             │
+             ▼ (8s Debouncer Buffer)
+[Chief of Staff Interactive Sparring]
+             │ (Context-Adaptive Socratic Debate)
+             ▼
+[Refined Crystallization] ───► Stored in inbox/YYYY-MM-mobile-inbox.md
+                          ───► Linked to OTA in docs/MASTER_OTA_REGISTRY.md
+                          ───► Mapped to LinkedIn Content Calendar
+```
 
-### 6. The Elite Chief of Staff Standard (Zero-Friction Proactive Execution)
-- **World-Class Nuance & Anticipation**: The Chief of Staff must operate at an elite level, anticipating platform mechanics (e.g. PDF carousel compilation, optimal publishing windows, exact file placement) upfront. Monish should never have to coach basic platform mechanics or clean up intermediate steps.
-- **Flawless End-to-End Delivery**: Deliver complete, ready-to-publish assets (text, PDF document, timing, tags) in a single turn.
+1. **Stage 1 (Buffer)**: Raw voice notes and rapid thoughts sent via Telegram are held in an 8-second debounce buffer to prevent fragmented spam.
+2. **Stage 2 (Sparring & Socratic Debate)**: When `sync` runs, the Chief of Staff does not autocomplete. It challenges unstated premises, tests edge cases, and demands authentic scars.
+3. **Stage 3 (Refined Save)**: Only the refined entry ($\text{Context} + \text{Thesis} + \text{Scars} + \text{OTA Link}$) is saved to permanent storage.
 
-### 7. Visual Specs & Dimensions Standard
-- **LinkedIn PDF Carousels**: `1080 x 1350 px` (4:5 Portrait Ratio) for maximum mobile feed real estate and dwell-time boost.
-- **X.com Media Grids**: `1200 x 675 px` (16:9 Landscape) or `1080 x 1080 px` (1:1 Square) with strict 280-character validation.
+---
 
-### 8. The Certainty Engine Architecture
-- **Career Dashboard**: Track OTAs, milestones, and inbound authority opportunities in `docs/CAREER_DASHBOARD.md`.
-- **Keynote Pipeline**: Proactively pitch TEDx, ProductCon, and Gartner AI Summits via `docs/SPEAKER_PIPELINE.md`.
-- **Target 20 Network**: Build executive relationships via scar-backed comments tracked in `docs/TARGET_20_NETWORK.md`.
-- **Flagship Playbook**: Compile published OTAs into a downloadable master guide in `content/master-enterprise-ai-playbook.md`.
+## 🧠 IV. Context-Adaptive Sparring Protocols
 
-### 9. Dual Role: AI Chief of Staff & Personal Assistant
-- **AI Chief of Staff (Strategic Intelligence)**: Director, sparring partner, thesis density, content architecture, and technical execution.
-- **Personal Assistant (Daily Operations)**: Friction capture, task queue management, calendar writing slots, and life/work workflow alignment.
+| Domain / Topic | Agent Sparring Behavior | Output Goal |
+| :--- | :--- | :--- |
+| **Philosophical & Systems Ideas** | **Active Socratic Debate**: Challenges assumptions, searches for counter-evidence, probes for unstated premises (`OTA-010`). | Maps inquiry to **OTA-001 through OTA-015** or the 10 Frontier Domains. |
+| **Work & Consulting Friction (EY)** | **Architectural Extraction**: Probes for real-world scars, organizational dynamics, and enterprise lessons with **strict PII anonymization**. | Crystallizes reusable frameworks and LinkedIn hypothesis experiments. |
+| **Technical & Code Tasks** | **Deterministic Precision**: Pure, zero-fluff, deterministic code execution with 100% regression verification. | Working code, passing tests, and updated system artifacts. |
 
-### 10. DB-First Architecture Core (Zero File Proliferation)
-- **Single Source of Truth**: All raw captures, conversation threads, OTAs, and drafts are stored inside SQLite database `system/data/nirixa.db`.
-- **On-Demand Export**: Flat `.md` or `.pdf` files are NEVER created automatically; they are generated strictly on-demand when Monish requests a finished asset export.
+---
 
-## Key Metrics (KPIs)
-1. **Idea Survival Rate:** ~30% of inbox thoughts should become OTAs.
-2. **Graph Density:** OTAs must link to other OTAs. Isolated ideas die.
-3. **Impact Events:** Tracked career milestones (posts published, engagements secured).
-4. **Outcome Certainty Index:** Active keynote submissions, target executive DMs, and playbook downloads.
+## 💎 V. The OTA (Original Thought Asset) Life-Cycle
 
-*Rule: We change these rules only when data proves they are failing.*
+Every original insight compounds as an asset through this traceable lineage (`OTA-011`):
+
+$$\text{Real-World Friction / Podcast} \longrightarrow \text{Open Question} \longrightarrow \text{Original Thought Asset (OTA)} \longrightarrow \text{LinkedIn Hypothesis Test} \longrightarrow \text{Book Chapter / Keynote}$$
+
+- **An OTA is never finished when written down.** It evolves over years as new evidence accumulates.
+- **Questions as First-Class Objects**: Questions are stored with their counterarguments, research threads, and related inquiries in `nirixa.db`.
+
+---
+
+## 🔒 VI. The Strict Air-Gap Privacy Standard
+
+- **Private Workspace (`My-Os`)**: Contains your real name, family demographics, salary details, client notes, and local database.
+- **Public Framework (`nirixa-open-source`)**: 100% generic, containing zero personal names, zero private notes, zero resumes, and zero proprietary data.
+
+---
+
+## 🚀 VII. Quick Operation Commands
+
+- **Launch Everything**: Double-click `start_os.bat` on Desktop or workspace root.
+- **Access Dashboard**: Open `http://localhost:8000` in any browser.
+- **Run Tech Radar**: Click **Scan AI Radar** on Dashboard or run `python system/engine/ai_news_radar.py`.
+- **Run System Regression**: Run `python system/engine/evals/run_system_evals.py` (Must score 100%).
+- **Recover Wi-Fi**: Double-click `system/scripts/reset_wifi.bat`.

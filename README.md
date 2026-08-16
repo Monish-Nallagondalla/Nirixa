@@ -11,10 +11,10 @@
 
 # Nirixa OS ☤
 <p align="center">
-  <a href="https://github.com/Monish-Nallagondalla/My-Os">Nirixa OS</a> | <a href="docs/ONBOARDING.md">Getting Started</a> | <a href="docs/MONISH_CASE_STUDY.md">Living Blueprint</a>
+  <a href="https://github.com/Monish-Nallagondalla/My-Os">Nirixa OS</a> | <a href="docs/getting-started/QUICKSTART.md">Getting Started</a> | <a href="docs/guides/MONISH_CASE_STUDY.md">Living Blueprint</a> | <a href="docs/README.md">Documentation Hub</a>
 </p>
 <p align="center">
-  <a href="docs/ONBOARDING.md"><img src="https://img.shields.io/badge/Docs-Quickstart-FFD700?style=for-the-badge" alt="Documentation"></a>
+  <a href="docs/README.md"><img src="https://img.shields.io/badge/Docs-Documentation_Hub-FFD700?style=for-the-badge" alt="Documentation"></a>
   <a href="https://github.com/Monish-Nallagondalla/My-Os/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Storage-SQLite_Core-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
@@ -72,6 +72,8 @@ pip install -r requirements.txt
    python system/scripts/telegram_listener.py
    ```
 
+👉 **[Read the Full Quickstart Guide](docs/getting-started/QUICKSTART.md)**
+
 ---
 
 ## Getting Started
@@ -84,7 +86,7 @@ python system/engine/evolver.py             # Run self-evolution audit on feedba
 python system/engine/evals/run_system_evals.py # Run deterministic system evaluation suite
 ```
 
-Full documentation is available in the [Documentation Hub](#documentation).
+Full documentation is available in the **[Documentation Hub](docs/README.md)**.
 
 ---
 
@@ -96,8 +98,7 @@ When you clone Nirixa OS and open it in your preferred IDE, your coding agent im
 * **Cursor**: Automatically reads `.cursorrules`.
 * **Claude Code**: Automatically reads `CLAUDE.md`.
 
-Simply ask your agent:
-> *"Set up my OS"* or *"Onboard me"*
+👉 **[Read the Full Onboarding Protocol](docs/getting-started/ONBOARDING_PROTOCOL.md)**
 
 ---
 
@@ -127,7 +128,7 @@ Nirixa OS operates across two synchronized interfaces: the local IDE/CLI runtime
 │ - Money (Revenue, Assets, Freedom)            │ - Post-Mortem Scars Vault (Outage Invariants) │
 │ - Mind (Health, Clarity, Vitality)            │ - Async Standup & Dependency Blocker Radar    │
 │                                               │                                               │
-│ [docs/PERSONAL_COMPASS.md]                    │ [docs/company/README.md]                      │
+│ [docs/frameworks/PERSONAL_COMPASS.md]         │ [docs/company/README.md]                      │
 └───────────────────────────────────────────────┴───────────────────────────────────────────────┘
 ```
 
@@ -142,7 +143,7 @@ A complete 24-hour walkthrough of how Monish runs Nirixa OS as an AI Product Lea
 * **08:30 PM**: `[MIND]` Ather ride clarity and workout energy tracking.
 * **Sunday Review**: 1-Click auto-compilation of scars into LinkedIn PDF Carousels and Keynote abstracts.
 
-Full blueprint: **[docs/MONISH_CASE_STUDY.md](docs/MONISH_CASE_STUDY.md)**
+Full blueprint: **[docs/guides/MONISH_CASE_STUDY.md](docs/guides/MONISH_CASE_STUDY.md)**
 
 ---
 
@@ -166,7 +167,7 @@ You do not need to understand complex architecture on Day 1. Nirixa OS guides yo
   └─────────────────────────┘
 ```
 
-Full details: **[docs/PROGRESSIVE_ENLIGHTENMENT.md](docs/PROGRESSIVE_ENLIGHTENMENT.md)**
+Full details: **[docs/getting-started/PROGRESSIVE_ENLIGHTENMENT.md](docs/getting-started/PROGRESSIVE_ENLIGHTENMENT.md)**
 
 ---
 
@@ -186,20 +187,24 @@ graph TD
 
 ---
 
-## Documentation
+## Documentation Index
 
-| Section | What is Covered |
-| :--- | :--- |
-| [Quickstart](docs/ONBOARDING.md) | Install -> setup -> first mobile capture in 2 minutes |
-| [Personal Compass](docs/PERSONAL_COMPASS.md) | 4-Quadrant holistic balance model (Mission, Mastery, Money, Mind) |
-| [3-Horizon Engine](docs/HORIZON_ENGINE.md) | 3-Horizon execution framework (North Star -> Friction -> Sprint) |
-| [Company Living Wiki](docs/company/README.md) | Team operating system, living playbooks, and async standups |
-| [Engineering Playbook](docs/company/ENGINEERING_PLAYBOOK.md) | Architectural standards, PR review invariants, and test rules |
-| [Post-Mortem Scars Vault](docs/company/POST_MORTEMS_AND_SCARS.md) | Production outage post-mortems converted into living algorithmic rules |
-| [Living Case Study](docs/MONISH_CASE_STUDY.md) | 24-Hour operating blueprint of Monish's daily workflow at EY |
-| [Progressive Enlightenment](docs/PROGRESSIVE_ENLIGHTENMENT.md) | 30-Day cognitive adoption ladder |
-| [Original Thought Assets](docs/VISION.md) | The Question Project, thought lineage, and epistemological foundation |
-| [CLI Playbook](docs/PLAYBOOK.md) | Complete CLI scripts and technical reference |
+| Section | Link | What is Covered |
+| :--- | :--- | :--- |
+| **Getting Started** | [Quickstart](docs/getting-started/QUICKSTART.md) | Install -> setup -> first mobile capture in 2 minutes |
+| **Onboarding** | [Onboarding Protocol](docs/getting-started/ONBOARDING_PROTOCOL.md) | Universal agent setup across Antigravity, Cursor, and Claude Code |
+| **Adoption** | [Progressive Enlightenment](docs/getting-started/PROGRESSIVE_ENLIGHTENMENT.md) | 30-Day cognitive adoption ladder |
+| **Frameworks** | [Personal Compass](docs/frameworks/PERSONAL_COMPASS.md) | 4-Quadrant holistic balance model (Mission, Mastery, Money, Mind) |
+| **Execution** | [3-Horizon Engine](docs/frameworks/HORIZON_ENGINE.md) | 3-Horizon execution framework (North Star -> Friction -> Sprint) |
+| **Epistemology** | [Original Thought Assets](docs/frameworks/ORIGINAL_THOUGHT_ASSETS.md) | The 15 Core OTAs, question objects, and thought lineage |
+| **Case Study** | [Living Case Study](docs/guides/MONISH_CASE_STUDY.md) | 24-Hour operating blueprint of Monish's daily workflow at EY |
+| **Mobile Gateway**| [Telegram Gateway Guide](docs/guides/TELEGRAM_GATEWAY.md) | Voice notes, telemetry, callbacks, and remote sleep control |
+| **DJ Copilot** | [DJ Mastery Copilot](docs/guides/DJ_MASTERY_COPILOT.md) | DDJ-FLX4 15-minute drills and Rekordbox harmonic setlists |
+| **24/7 Cloud** | [Oracle Cloud VPS Guide](docs/guides/ORACLE_CLOUD_DEPLOYMENT.md) | Running 24/7 on Oracle Always-Free Compute with systemd |
+| **Company Wiki** | [Company Wiki Hub](docs/company/README.md) | Team operating system, living playbooks, and async standups |
+| **Architecture** | [System Architecture](docs/reference/ARCHITECTURE.md) | SQLite Core, Zero-LLM Fast Path, and Socratic engine |
+| **CLI Reference**| [CLI Playbook](docs/reference/CLI_PLAYBOOK.md) | Complete CLI commands and daemon scripts reference |
+| **Configuration**| [Configuration Reference](docs/reference/CONFIGURATION.md) | Complete `.env` variables and model providers reference |
 
 ---
 

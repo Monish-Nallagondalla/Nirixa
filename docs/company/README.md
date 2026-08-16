@@ -1,40 +1,34 @@
-# Company & Team Living Operating System
+# Company Living Wiki & Playbook Hub
 
-> **The Invariant**: Company Notion wikis and documentation hubs turn into stale graveyards because updating docs is separated from daily engineering friction. Nirixa OS turns team communication into a **self-updating living engineering playbook**.
+[Documentation](../README.md) / [Company Wiki](README.md)
 
----
-
-## 🏛️ How Companies & Teams Use Nirixa OS
-
-```mermaid
-graph TD
-    Devs["👥 Engineers & Product Managers"] -->|"Post-Mortem / Standup / RFC"| Gateway["📱 Slack / Telegram / Terminal Bridge"]
-    Gateway --> Ingest["⚡ Nirixa Ingestion & Anonymization Engine"]
-    Ingest --> DB[("💾 Team SQLite Knowledge Graph")]
-    DB --> LivingWiki["📚 Living Company Playbook<br/>(Architecture, Scars, Standards)"]
-    LivingWiki --> Standups["🤖 Automated Async Standups & Blocker Radar"]
-    LivingWiki --> Onboarding["🚀 Instant Day-1 New Engineer Onboarding"]
-```
+**An enterprise operating system transforming dormant company wikis and Notion pages into active, living engineering standards, post-mortem scars, and automated async standups.**
 
 ---
 
-## 🛠️ The 3 Core Company Modules
+## The Enterprise Problem
 
-### 1. [Living Engineering Playbook](ENGINEERING_PLAYBOOK.md)
-* Architectural standards, PR review protocols, API design conventions, and deployment checklists that update as lessons are learned.
+In most companies, documentation is write-only: Notion pages, Confluence spaces, and architecture wikis rot within weeks of being written. When production outages occur, post-mortems are filed and promptly forgotten, leading to the same architectural failures recurring quarters later.
 
-### 2. [Post-Mortem Scars Vault](POST_MORTEMS_AND_SCARS.md)
-* Incident root cause analyses, outages, and production bugs transformed into living algorithmic guardrails.
-
-### 3. Automated Team Standup & Blocker Radar
-* Daily async friction sync: Engineers log 1-sentence blockers; AI groups common dependencies and alerts the Tech Lead before standup.
+**Nirixa OS (Mode B)** makes documentation executable:
+1. **Living Engineering Standards**: Rules in `docs/company/ENGINEERING_PLAYBOOK.md` are actively enforced by coding agents (Antigravity, Cursor, Claude Code) during pull request authoring.
+2. **Post-Mortem Scars Vault**: Outages in `docs/company/POST_MORTEMS_AND_SCARS.md` automatically compile into algorithmic invariants that block risky code patterns before deployment.
+3. **Async Standup Radar**: Engineers send 30-second mobile voice notes on blockers; Nirixa maps cross-team dependencies and surfaces deadlocks automatically.
 
 ---
 
-## 🚀 Setting Up for Your Team
-1. Initialize in team mode:
-   ```text
-   "Configure Nirixa OS for Company Living Wiki mode."
-   ```
-2. Connect your team's Slack or Telegram group channel.
-3. Invite engineers to log post-mortems and architecture RFCs directly into the stream.
+## Directory Index
+
+| Document | Purpose |
+| :--- | :--- |
+| [Engineering Playbook](ENGINEERING_PLAYBOOK.md) | Living architectural rules, PR invariants, and test coverage standards. |
+| [Post-Mortem Scars Vault](POST_MORTEMS_AND_SCARS.md) | Production outage post-mortems converted into permanent algorithmic constraints. |
+
+---
+
+## Universal Team Onboarding
+
+When a new engineer joins the team:
+1. Clone the company repository.
+2. Open in Cursor / Antigravity / Claude Code.
+3. The coding agent automatically loads the team's living playbook and warns against historical production scars in real-time.

@@ -98,7 +98,7 @@ The workspace contains **10 active custom skills** configured for specialized ag
 | **`daily-signoff`** | Handles end-of-day signoff workflow, prompts for status updates, logs completed items, and pushes pending tasks to Telegram for async mobile review. |
 | **`mobile-task-delegator`** | Delegates micro-tasks (sparring prompts, 30s voice note requests, inline approval buttons, strategic options) to Monish's phone via Telegram. |
 | **`omni-channel-publisher`** | Platform-native publishing mechanics: strictly validates X 280-char limits, splits long posts into `1/N` threads, auto-compiles multi-slide graphics into single PDF documents for LinkedIn, and generates explicit Document Titles. |
-| **`content-stylist`** | Enforces high-signal, minimalist tech copywriting (High-Signal Minimalist Copywriting Standard). Eliminates hype emojis, colored dots, and artificial sales formatting. |
+| **`content-stylist`** | Enforces high-signal, minimalist tech copywriting (Naval Ravikant & Aviral Bhatnagar standard). Eliminates hype emojis, colored dots, and artificial sales formatting. |
 | **`persona-advisory-board`** | Simulates multi-perspective debates among core personas (Marty Cagan for product vision, David Goggins for relentless discipline, Paramahansa Yogananda for deep purpose). |
 | **`founder-council-evaluator`** | Audits My-OS architecture and content through the lens of elite tech leaders (Steve Jobs, Jensen Huang, Sundar Pichai, Mark Zuckerberg). |
 | **`agent-evaluator`** | Evaluates content drafts against 3 simulated target reader personas (Senior Engineer, Executive VP, Junior PM), generating emotional response matrices and tuning suggestions. |
@@ -132,7 +132,7 @@ To perform an in-depth structural analysis of what is implemented, the following
 - Network resiliency of Telegram API calls and Google Calendar OAuth token refresh cycles.
 
 ### 6.2. Content Pipeline Quality & Signal-to-Noise Ratio
-- Compliance rate with High-Signal Minimalist Copywriting style across generated assets.
+- Compliance rate with Naval/Aviral copywriting style across generated assets.
 - Anonymization coverage across ingested raw mobile thoughts.
 - Single-page PDF auto-compilation reliability for LinkedIn multi-slide graphics.
 
