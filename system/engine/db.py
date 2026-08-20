@@ -728,17 +728,27 @@ def update_ota_status(ota_id, new_status, db_path=None):
     if new_status.lower() == "published":
         workspace_root = os.path.abspath(os.path.join(os.path.dirname(db_path), "..", ".."))
         try:
-            import accountability
+            from system.engine import accountability
             acct = accountability.AccountabilityEngine(workspace_root=workspace_root)
             acct.schedule_publish_engagement_check(ota_id, title)
-        except Exception as e:
-            print(f"[DB Warning] Could not schedule engagement check for published OTA #{ota_id}: {e}")
+        except Exception:
+            try:
+                import accountability
+                acct = accountability.AccountabilityEngine(workspace_root=workspace_root)
+                acct.schedule_publish_engagement_check(ota_id, title)
+            except Exception as e:
+                print(f"[DB Warning] Could not schedule engagement check for published OTA #{ota_id}: {e}")
 
         try:
-            import sync
+            from system.scripts import sync
             sync.run_git_sync(workspace_root, commit_prefix=f"feat(publish): published OTA #{ota_id} ('{title[:30]}')")
-        except Exception as e:
-            print(f"[DB Warning] Publish Git sync failed: {e}")
+        except Exception:
+            try:
+                import sync
+                sync.run_git_sync(workspace_root, commit_prefix=f"feat(publish): published OTA #{ota_id} ('{title[:30]}')")
+            except Exception as e:
+                print(f"[DB Warning] Publish Git sync failed: {e}")
+
 
 def set_profile_key(key, value, category="general", db_path=None):
     """Inserts or updates a key-value profile attribute in user_profile table."""
