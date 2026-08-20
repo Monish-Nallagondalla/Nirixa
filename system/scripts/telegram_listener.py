@@ -59,6 +59,7 @@ if workspace_root not in sys.path:
 from system.engine import db
 from system.engine import synthesizer
 from system.engine import anonymizer
+from system.engine import identity_router
 from system.scripts import sync
 from system.scripts import send_status
 
@@ -141,12 +142,22 @@ if __name__ == "__main__":
                         msg = upd.get("message")
                         if not msg: continue
                         chat_id = msg.get("chat", {}).get("id")
+                        from_user = msg.get("from", {})
+                        telegram_id = from_user.get("id", chat_id)
+                        sender_name = from_user.get("first_name", "User")
                         text = msg.get("text", "")
+                        
                         if text:
-                            # DB Sync
+                            # Identity envelope resolution & DB Sync
                             try:
                                 anon_text = anonymizer.apply_anonymization(text)
-                                c_id = db.save_capture(upd["update_id"], chat_id, text, anon_text, source="telegram-listener") or 0
+                                envelope = identity_router.create_envelope(
+                                    upd["update_id"], chat_id, telegram_id, sender_name, text, anon_text, bot_origin="monish_dev"
+                                )
+                                c_id = db.save_capture(
+                                    upd["update_id"], chat_id, text, anon_text, source="telegram-listener",
+                                    owner_id=envelope.owner_id, visibility=envelope.privacy_scope
+                                ) or 0
                                 synthesizer.synthesize_topics(root)
                                 sync.append_thought_to_monthly_log(anon_text, source="telegram", root_path=root)
                                 m_id = msg.get("message_id")
@@ -161,7 +172,8 @@ if __name__ == "__main__":
                                 subprocess.Popen([sys.executable, sender_script, "--chat_id", str(chat_id), "--text", "Would you like me to put the laptop to sleep?", "--keyboard", json.dumps(kb)])
 
                             # Print explicitly for Antigravity to parse and EXIT
-                            print(f"[TELEGRAM_IN] chat_id={chat_id} | message={text}", flush=True)
+                            print(f"[TELEGRAM_IN] chat_id={chat_id} | owner_id={envelope.owner_id} | persona={envelope.active_persona} | message={text}", flush=True)
                             sys.exit(0)
+
         except Exception as e:
             time.sleep(1)

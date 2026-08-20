@@ -26,3 +26,5 @@ Guide them through 3-4 simple questions, confirm their preview, and build their 
 2. **Minimalist, High-Signal Copywriting**: Zero emoji clutter, zero hype marketing. Deliver first-principles clarity, clean markdown tables, and code diffs.
 3. **Strict Anonymization**: Never expose company PII, client names, or secrets. Extract the abstract architectural pattern or lesson.
 4. **DB-First Memory**: Store structured data in SQLite (`system/data/nirixa.db`). Avoid unorganized markdown file proliferation.
+5. **Strict Dual-Repository Separation**: `My-Os` is private (personal context/hobbies like DJing). `nirixa-open-source` is public and strictly generalized. Never leak personal specifics to open source, and always ask before syncing improvements.
+

@@ -201,6 +201,43 @@ def init_db(db_path=None):
     except Exception as e:
         pass
 
+    # Multi-Member Relational Table (Open-Source Multi-Tenancy & Household Collaboration)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS members (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        member_key TEXT UNIQUE,
+        name TEXT,
+        telegram_id TEXT UNIQUE,
+        role TEXT DEFAULT 'member',
+        relationship_type TEXT DEFAULT 'primary_owner',
+        persona TEXT DEFAULT 'chief_of_staff',
+        privacy_default TEXT DEFAULT 'private',
+        created_at TEXT
+    )
+    """)
+
+    # Shared Contexts & Joint Ledgers Table
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS shared_contexts (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT,
+        category TEXT DEFAULT 'general',
+        visibility TEXT DEFAULT 'shared',
+        participant_ids TEXT,
+        status TEXT DEFAULT 'active',
+        created_at TEXT
+    )
+    """)
+
+    # Non-breaking column migrations for multi-member partitioning
+    for table_name in ["raw_captures", "reminders", "action_tasks"]:
+        cursor.execute(f"PRAGMA table_info({table_name})")
+        cols = [row[1] for row in cursor.fetchall()]
+        if "owner_id" not in cols:
+            cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN owner_id TEXT DEFAULT 'monish'")
+        if "visibility" not in cols:
+            cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN visibility TEXT DEFAULT 'private'")
+
     # FTS5 Full-Text Search Virtual Tables (Hermes L3 Episodic Memory Core)
     cursor.execute("""
     CREATE VIRTUAL TABLE IF NOT EXISTS raw_captures_fts USING fts5(
@@ -252,7 +289,7 @@ def is_update_processed(update_id, db_path=None):
     conn.close()
     return row is not None
 
-def save_capture(update_id, chat_id, raw_text, anonymized_text, source="telegram", db_path=None):
+def save_capture(update_id, chat_id, raw_text, anonymized_text, source="telegram", owner_id="monish", visibility="private", db_path=None):
     if not db_path:
         db_path = get_db_path()
     conn = sqlite3.connect(db_path)
@@ -260,9 +297,9 @@ def save_capture(update_id, chat_id, raw_text, anonymized_text, source="telegram
     now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     try:
         cursor.execute("""
-        INSERT INTO raw_captures (update_id, timestamp, chat_id, raw_text, anonymized_text, source, status)
-        VALUES (?, ?, ?, ?, ?, ?, 'unread')
-        """, (str(update_id), now_str, str(chat_id), raw_text, anonymized_text, source))
+        INSERT INTO raw_captures (update_id, timestamp, chat_id, raw_text, anonymized_text, source, status, owner_id, visibility)
+        VALUES (?, ?, ?, ?, ?, ?, 'unread', ?, ?)
+        """, (str(update_id), now_str, str(chat_id), raw_text, anonymized_text, source, owner_id, visibility))
         conn.commit()
         last_id = cursor.lastrowid
     except sqlite3.IntegrityError:
@@ -270,6 +307,46 @@ def save_capture(update_id, chat_id, raw_text, anonymized_text, source="telegram
     finally:
         conn.close()
     return last_id
+
+def save_member(member_key, name, telegram_id, role="member", relationship_type="primary_owner", persona="chief_of_staff", privacy_default="private", db_path=None):
+    if not db_path:
+        db_path = get_db_path()
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    now_str = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    try:
+        cursor.execute("""
+        INSERT OR REPLACE INTO members (member_key, name, telegram_id, role, relationship_type, persona, privacy_default, created_at)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        """, (member_key, name, str(telegram_id), role, relationship_type, persona, privacy_default, now_str))
+        conn.commit()
+        last_id = cursor.lastrowid
+    except Exception as e:
+        last_id = None
+    finally:
+        conn.close()
+    return last_id
+
+def get_member(telegram_id, db_path=None):
+    if not db_path:
+        db_path = get_db_path()
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute("SELECT member_key, name, telegram_id, role, relationship_type, persona, privacy_default FROM members WHERE telegram_id = ?", (str(telegram_id),))
+    row = cursor.fetchone()
+    conn.close()
+    if row:
+        return {
+            "member_key": row[0],
+            "name": row[1],
+            "telegram_id": row[2],
+            "role": row[3],
+            "relationship_type": row[4],
+            "persona": row[5],
+            "privacy_default": row[6]
+        }
+    return None
+
 
 def save_thread_interaction(session_id, user_prompt, agent_reply, db_path=None):
     if not db_path:

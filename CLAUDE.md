@@ -18,3 +18,5 @@ If the workspace is newly cloned or unconfigured, proactively trigger the **Info
 - **High-Signal Tech Copywriting**: Strict, sparse, intellectual clarity. Zero emoji clutter.
 - **Zero File Proliferation**: Centralize thoughts in SQLite DB and hub markdown files.
 - **Zero-LLM Fast Path**: Prefer deterministic regex and local Python logic for telemetry, reminders, and daily briefing time-wheels.
+- **Strict Dual-Repository Separation**: `My-Os` is private (personal context/hobbies like DJing). `nirixa-open-source` is public and strictly generalized. Never leak personal specifics to open source, and always ask before syncing improvements.
+
