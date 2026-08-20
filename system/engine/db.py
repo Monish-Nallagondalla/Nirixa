@@ -188,7 +188,8 @@ def init_db(db_path=None):
 
     # Enable sqlite-vec vector table
     try:
-        import sqlite_vec
+        import importlib
+        sqlite_vec = importlib.import_module("sqlite_vec")
         conn.enable_load_extension(True)
         sqlite_vec.load(conn)
         conn.enable_load_extension(False)
@@ -198,8 +199,9 @@ def init_db(db_path=None):
             embedding float[384]
         )
         """)
-    except Exception as e:
+    except Exception:
         pass
+
 
     # Multi-Member Relational Table (Open-Source Multi-Tenancy & Household Collaboration)
     cursor.execute("""
@@ -728,26 +730,34 @@ def update_ota_status(ota_id, new_status, db_path=None):
     if new_status.lower() == "published":
         workspace_root = os.path.abspath(os.path.join(os.path.dirname(db_path), "..", ".."))
         try:
-            from system.engine import accountability
-            acct = accountability.AccountabilityEngine(workspace_root=workspace_root)
-            acct.schedule_publish_engagement_check(ota_id, title)
-        except Exception:
-            try:
-                import accountability
-                acct = accountability.AccountabilityEngine(workspace_root=workspace_root)
+            import importlib
+            acct_mod = None
+            for mod_name in ["system.engine.accountability", "accountability"]:
+                try:
+                    acct_mod = importlib.import_module(mod_name)
+                    break
+                except ImportError:
+                    pass
+            if acct_mod:
+                acct = acct_mod.AccountabilityEngine(workspace_root=workspace_root)
                 acct.schedule_publish_engagement_check(ota_id, title)
-            except Exception as e:
-                print(f"[DB Warning] Could not schedule engagement check for published OTA #{ota_id}: {e}")
+        except Exception as e:
+            print(f"[DB Warning] Could not schedule engagement check for published OTA #{ota_id}: {e}")
 
         try:
-            from system.scripts import sync
-            sync.run_git_sync(workspace_root, commit_prefix=f"feat(publish): published OTA #{ota_id} ('{title[:30]}')")
-        except Exception:
-            try:
-                import sync
-                sync.run_git_sync(workspace_root, commit_prefix=f"feat(publish): published OTA #{ota_id} ('{title[:30]}')")
-            except Exception as e:
-                print(f"[DB Warning] Publish Git sync failed: {e}")
+            import importlib
+            sync_mod = None
+            for mod_name in ["system.scripts.sync", "sync"]:
+                try:
+                    sync_mod = importlib.import_module(mod_name)
+                    break
+                except ImportError:
+                    pass
+            if sync_mod:
+                sync_mod.run_git_sync(workspace_root, commit_prefix=f"feat(publish): published OTA #{ota_id} ('{title[:30]}')")
+        except Exception as e:
+            print(f"[DB Warning] Publish Git sync failed: {e}")
+
 
 
 def set_profile_key(key, value, category="general", db_path=None):
