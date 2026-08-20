@@ -177,6 +177,19 @@ class SystemHealthEvaluator:
         except Exception as e:
             return "fail", f"Graph engine error: {e}"
 
+    def check_heartbeat_auditor(self):
+        """Check 10: Verify Proactive Heartbeat Audit Engine."""
+        try:
+            from system.engine import heartbeat_audit
+            auditor = heartbeat_audit.HeartbeatAuditor(workspace_root=self.workspace_root)
+            summary = auditor.run_heartbeat_pulse()
+            if "health_status" in summary:
+                return "pass", f"Heartbeat pulse executed (Health: {summary['health_status']})."
+            else:
+                return "fail", "Heartbeat pulse returned invalid summary."
+        except Exception as e:
+            return "fail", f"Heartbeat audit error: {e}"
+
     def run_all_evals(self):
         eval_suite = [
             ("wakeup_bridge_liveness", "Bridge", self.check_wakeup_bridge_liveness),
@@ -188,7 +201,9 @@ class SystemHealthEvaluator:
             ("anonymization_boundary", "Security", self.check_anonymization_boundary),
             ("data_integrity", "Database", self.check_data_integrity),
             ("graph_engine", "GraphRAG", self.check_graph_engine),
+            ("heartbeat_auditor", "ProactiveAudit", self.check_heartbeat_auditor),
         ]
+
 
 
         print("==================================================")
