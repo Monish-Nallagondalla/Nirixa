@@ -18,12 +18,16 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 engine_dir = os.path.abspath(os.path.join(script_dir, ".."))
 workspace_root = os.path.abspath(os.path.join(engine_dir, "..", ".."))
 
-sys.path.insert(0, engine_dir)
+if workspace_root not in sys.path:
+    sys.path.insert(0, workspace_root)
+if engine_dir not in sys.path:
+    sys.path.insert(0, engine_dir)
 
 import db
 import chief_of_staff
 import resonance
 import anonymizer
+
 
 class SystemHealthEvaluator:
     def __init__(self, workspace_root=workspace_root):
@@ -160,6 +164,19 @@ class SystemHealthEvaluator:
         else:
             return "pass", f"Noticed {stale_count} pending reminders past scheduled trigger time."
 
+    def check_graph_engine(self):
+        """Check 9: Verify Embedded Graph Engine (GraphRAG) recursive traversal."""
+        try:
+            from system.engine import graph
+            graph.seed_default_ota_graph(self.db_path)
+            subgraph = graph.get_subgraph("ota_014", max_depth=2, db_path=self.db_path)
+            if len(subgraph.get("nodes", [])) >= 3 and len(subgraph.get("edges", [])) >= 2:
+                return "pass", f"Embedded GraphRAG verified ({len(subgraph['nodes'])} nodes, {len(subgraph['edges'])} edges traversed)."
+            else:
+                return "fail", f"Graph traversal returned sparse result: {subgraph}"
+        except Exception as e:
+            return "fail", f"Graph engine error: {e}"
+
     def run_all_evals(self):
         eval_suite = [
             ("wakeup_bridge_liveness", "Bridge", self.check_wakeup_bridge_liveness),
@@ -170,7 +187,9 @@ class SystemHealthEvaluator:
             ("publishing_compliance", "Publishing", self.check_publishing_compliance),
             ("anonymization_boundary", "Security", self.check_anonymization_boundary),
             ("data_integrity", "Database", self.check_data_integrity),
+            ("graph_engine", "GraphRAG", self.check_graph_engine),
         ]
+
 
         print("==================================================")
         print("  NIRIXA OS - TRACK A SYSTEM HEALTH EVALS SUITE")

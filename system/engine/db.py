@@ -229,6 +229,31 @@ def init_db(db_path=None):
     )
     """)
 
+    # Zero-Dependency Embedded Knowledge Graph Tables (GraphRAG Core)
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS graph_nodes (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        node_key TEXT UNIQUE NOT NULL,
+        node_type TEXT NOT NULL,
+        label TEXT NOT NULL,
+        properties_json TEXT DEFAULT '{}',
+        created_at TEXT
+    )
+    """)
+
+    cursor.execute("""
+    CREATE TABLE IF NOT EXISTS graph_edges (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        source_key TEXT NOT NULL,
+        target_key TEXT NOT NULL,
+        relation_type TEXT NOT NULL,
+        weight REAL DEFAULT 1.0,
+        properties_json TEXT DEFAULT '{}',
+        created_at TEXT,
+        UNIQUE(source_key, target_key, relation_type)
+    )
+    """)
+
     # Non-breaking column migrations for multi-member partitioning
     for table_name in ["raw_captures", "reminders", "action_tasks"]:
         cursor.execute(f"PRAGMA table_info({table_name})")
@@ -237,6 +262,7 @@ def init_db(db_path=None):
             cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN owner_id TEXT DEFAULT 'monish'")
         if "visibility" not in cols:
             cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN visibility TEXT DEFAULT 'private'")
+
 
     # FTS5 Full-Text Search Virtual Tables (Hermes L3 Episodic Memory Core)
     cursor.execute("""
