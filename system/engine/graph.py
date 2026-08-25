@@ -148,6 +148,10 @@ def seed_default_ota_graph(db_path=None):
     add_node("ota_023", "ota", "OTA-023: The Human-AI Symbiotic Communion Invariant", {"category": "human_ai_communion"}, db_path=db_path)
     add_node("ota_024", "ota", "OTA-024: The Human Evolution & Cognitive Scaffold Invariant", {"category": "human_evolution"}, db_path=db_path)
     add_node("ota_025", "ota", "OTA-025: Data Science Evolution & Causal Synthesis Invariant", {"category": "data_science_evolution"}, db_path=db_path)
+    add_node("ota_026", "ota", "OTA-026: Temporal Grounding & Decay Asymmetry", {"category": "temporal_cognition"}, db_path=db_path)
+    add_node("ota_027", "ota", "OTA-027: The Outcome Paradigm Shift (Beyond 'Time is Money')", {"category": "economics_of_ai"}, db_path=db_path)
+    add_node("ota_028", "ota", "OTA-028: The Modern AI Taxonomy & Emergence Layer", {"category": "ai_taxonomy"}, db_path=db_path)
+
 
 
 
