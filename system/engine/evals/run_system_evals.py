@@ -219,6 +219,19 @@ class SystemHealthEvaluator:
         except Exception as e:
             return "fail", f"Profile & Story Bank error: {e}"
 
+    def check_apify_scraper_engine(self):
+        """Check 13: Verify Apify Scraper & Virality X-Factor Engine."""
+        try:
+            from system.engine import apify_scraper
+            calc = apify_scraper.calculate_x_factor(900, 100.0)
+            res = apify_scraper.process_and_cache_scraped_post("Eval Author", "Hook line.\nStory line.\nMeat line.\nMic drop line.", 900, 100.0)
+            if calc["x_factor"] == 9.0 and res["cached_id"] > 0:
+                return "pass", f"Apify Scraper verified (X-Factor: {calc['x_factor']}x, Viral Post #{res['cached_id']} cached)."
+            else:
+                return "fail", "Apify Scraper output validation failed."
+        except Exception as e:
+            return "fail", f"Apify Scraper error: {e}"
+
     def run_all_evals(self):
         eval_suite = [
             ("wakeup_bridge_liveness", "Bridge", self.check_wakeup_bridge_liveness),
@@ -233,7 +246,9 @@ class SystemHealthEvaluator:
             ("heartbeat_auditor", "ProactiveAudit", self.check_heartbeat_auditor),
             ("linkedin_outreach_engine", "OutreachEngine", self.check_linkedin_outreach_engine),
             ("profile_optimizer_and_story_bank", "LandingPageEngine", self.check_profile_optimizer_and_story_bank),
+            ("apify_scraper_engine", "ScraperVirality", self.check_apify_scraper_engine),
         ]
+
 
 
 
