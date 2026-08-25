@@ -204,6 +204,21 @@ class SystemHealthEvaluator:
         except Exception as e:
             return "fail", f"Outreach Engine error: {e}"
 
+    def check_profile_optimizer_and_story_bank(self):
+        """Check 12: Verify Profile Landing Page Optimizer & Story Bank Engine."""
+        try:
+            from system.engine import profile_optimizer, story_bank
+            mined = profile_optimizer.mine_jd_keywords(["Need AI Platform PM for APIs."])
+            prof = profile_optimizer.generate_profile_landing_page("Summary", mined["keyword_brief"])
+            s_id = story_bank.add_story("Eval Story", "Sit", "Frict", "Outcome")
+            fetched = story_bank.query_stories("Eval")
+            if mined["jd_count"] == 1 and prof["optimized_tagline"] and len(fetched) > 0:
+                return "pass", f"Profile & Story Bank verified (JD mined, Landing Page & Story #{s_id} logged)."
+            else:
+                return "fail", "Profile & Story Bank output validation failed."
+        except Exception as e:
+            return "fail", f"Profile & Story Bank error: {e}"
+
     def run_all_evals(self):
         eval_suite = [
             ("wakeup_bridge_liveness", "Bridge", self.check_wakeup_bridge_liveness),
@@ -217,7 +232,9 @@ class SystemHealthEvaluator:
             ("graph_engine", "GraphRAG", self.check_graph_engine),
             ("heartbeat_auditor", "ProactiveAudit", self.check_heartbeat_auditor),
             ("linkedin_outreach_engine", "OutreachEngine", self.check_linkedin_outreach_engine),
+            ("profile_optimizer_and_story_bank", "LandingPageEngine", self.check_profile_optimizer_and_story_bank),
         ]
+
 
 
 
