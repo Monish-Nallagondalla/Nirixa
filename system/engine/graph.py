@@ -145,6 +145,12 @@ def seed_default_ota_graph(db_path=None):
     add_node("ota_019", "ota", "OTA-019: Continuous Multimodal Feedback Asymmetry", {"category": "neuro_architecture"}, db_path=db_path)
     add_node("ota_020", "ota", "OTA-020: The AGI Redefinition & World-Model Invariant", {"category": "world_models"}, db_path=db_path)
     add_node("ota_021", "ota", "OTA-021: Hierarchical Swarm Consensus (SLM-VLLM Asymmetry)", {"category": "swarm_intelligence"}, db_path=db_path)
+    add_node("ota_023", "ota", "OTA-023: The Human-AI Symbiotic Communion Invariant", {"category": "human_ai_communion"}, db_path=db_path)
+    add_node("ota_024", "ota", "OTA-024: The Human Evolution & Cognitive Scaffold Invariant", {"category": "human_evolution"}, db_path=db_path)
+    add_node("ota_025", "ota", "OTA-025: Data Science Evolution & Causal Synthesis Invariant", {"category": "data_science_evolution"}, db_path=db_path)
+
+
+
 
 
 
