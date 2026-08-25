@@ -29,6 +29,16 @@ When invoked, select the most appropriate framework for the draft's intent:
 - **Agitate**: Explain why this is costing time, money, or trust.
 - **Solution**: Offer Nirixa's sub-millisecond local SQLite memory as the fix.
 
+### 4. The Basha High-Relevance Engagement Protocol (Targeted Networking & Profile Hooks)
+- **Targeting Non-Creators**: Focus on product leaders, hiring managers, and senior tech peers who post infrequently (they don't get 50 notifications/hour; your comment gets noticed).
+- **High-Value Comment Blueprint**:
+  - **First Name Address**: Remove last name for warmth (`Hey Marco, ...`).
+  - **Substantive Value**: Add 2-3 sentences showing you researched their post/question or tested their tool.
+  - **Open-Ended Question**: End with a genuine question inviting organic dialogue.
+- **Tagline Curiosity Hook**: Ensure your LinkedIn Tagline explicitly reflects the target domain (e.g. *Principal AI Architect | Building Multi-Agent Systems*). When they check who commented, your tagline converts them to click your profile.
+- **Cheeky Connection Outreach**: Appeal to routine friction (e.g. *"Since you already eat 3 meals a day, let me buy your lunch for 15 mins of your brain power"*).
+
+
 ---
 
 ## 📐 Formatting & Anatomy Rules
