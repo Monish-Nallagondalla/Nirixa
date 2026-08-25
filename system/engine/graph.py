@@ -163,6 +163,17 @@ def seed_default_ota_graph(db_path=None):
     add_edge("code_identity_router", "code_graph_engine", "UTILIZES", weight=1.0, db_path=db_path)
     add_edge("member_monish", "ota_014", "CREATED", weight=1.0, db_path=db_path)
     add_edge("member_Partner", "skill_household", "COLLABORATES_ON", weight=1.0, db_path=db_path)
+
+    # Seed OTA Thought Topology Relationships
+    add_edge("ota_019", "ota_020", "SUBSET_OF", weight=1.0, db_path=db_path)
+    add_edge("ota_021", "ota_019", "ARCHITECTURAL_SOLUTION_FOR", weight=1.0, db_path=db_path)
+    add_edge("ota_016", "ota_018", "REQUIRES", weight=1.0, db_path=db_path)
+    add_edge("ota_017", "ota_016", "ENFORCES", weight=1.0, db_path=db_path)
+    add_edge("member_monish", "ota_016", "CREATED", weight=1.0, db_path=db_path)
+    add_edge("member_monish", "ota_019", "CREATED", weight=1.0, db_path=db_path)
+    add_edge("member_monish", "ota_020", "CREATED", weight=1.0, db_path=db_path)
+    add_edge("member_monish", "ota_021", "CREATED", weight=1.0, db_path=db_path)
+
     add_edge("ota_001", "ota_011", "EXTENDED_BY", weight=1.0, db_path=db_path)
 
 if __name__ == "__main__":
