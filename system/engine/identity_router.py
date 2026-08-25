@@ -62,6 +62,15 @@ def resolve_identity_and_scope(telegram_id, sender_name, bot_origin="monish_dev"
 
 def create_envelope(update_id, chat_id, telegram_id, sender_name, raw_text, anonymized_text, bot_origin="monish_dev"):
     resolved = resolve_identity_and_scope(telegram_id, sender_name, bot_origin, raw_text)
+    
+    # Auto-trigger Continuous Associative Thought Graph Evolution for reflections
+    if resolved["owner_id"] == "monish" and ("ota" in raw_text.lower() or "feedback" in raw_text.lower() or "graph" in raw_text.lower()):
+        try:
+            from system.engine import graph_evolution
+            graph_evolution.compute_thought_centrality()
+        except Exception:
+            pass
+
     return MessageEnvelope(
         update_id=str(update_id),
         chat_id=str(chat_id),
@@ -74,3 +83,4 @@ def create_envelope(update_id, chat_id, telegram_id, sender_name, raw_text, anon
         privacy_scope=resolved["privacy_scope"],
         owner_id=resolved["owner_id"]
     )
+
