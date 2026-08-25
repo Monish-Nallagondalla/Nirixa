@@ -149,5 +149,48 @@ def build_pdf(output_path):
     print(f"Successfully compiled LinkedIn PDF carousel: {output_path}")
 
 if __name__ == "__main__":
-    out_pdf = os.path.abspath(os.path.join("docs", "content", "posts", "ai-vs-human-empathy-slides.pdf"))
-    build_pdf(out_pdf)
+    out_pdf = os.path.abspath(os.path.join("docs", "content", "posts", "death-of-time-is-money-slides.pdf"))
+    
+    slides = [
+        (
+            "The Death of 'Time is Money'",
+            [
+                "If AI executes 40 hours of analysis in 6 seconds, what are you billing for?",
+                "Hourly billing was designed for the industrial revolution.",
+                "Selling time in the AI era punishes efficiency.",
+                "Here is how value shifts from duration to outcome density."
+            ]
+        ),
+        (
+            "1. The Temporal Paradox of AI",
+            [
+                "Humans age and experience biological time scarcity.",
+                "AI models have zero intrinsic sense of time (frozen at Δt=0).",
+                "Sub-second execution latency collapses traditional hourly rates."
+            ]
+        ),
+        (
+            "2. What Replaces 'Time is Money'?",
+            [
+                "Outcome Density: Velocity & precision of delivered results.",
+                "Architectural Judgement: Bounding AI safety & preventing hallucination.",
+                "Empirical Scars: Real-world operational wisdom models cannot simulate."
+            ]
+        ),
+        (
+            "3. The Enterprise Paradigm Shift",
+            [
+                "Stop selling duration and manual effort.",
+                "Start selling risk reduction, governance, and architecture.",
+                "Build cognitive scaffolds that compound value over 30-year horizons."
+            ]
+        )
+    ]
+    
+    c = canvas.Canvas(out_pdf, pagesize=(PAGE_WIDTH, PAGE_HEIGHT))
+    total = len(slides)
+    for idx, (title, bullets) in enumerate(slides, 1):
+        draw_slide(c, title, bullets, idx, total)
+    c.save()
+    print(f"Successfully compiled LinkedIn PDF carousel: {out_pdf}")
+
