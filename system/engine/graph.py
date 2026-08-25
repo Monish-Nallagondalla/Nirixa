@@ -143,6 +143,8 @@ def seed_default_ota_graph(db_path=None):
     add_node("ota_017", "ota", "OTA-017: The Reliability Advantage Invariant", {"category": "execution_trust"}, db_path=db_path)
     add_node("ota_018", "ota", "OTA-018: Story & Narrative Density", {"category": "narrative_arc"}, db_path=db_path)
     add_node("ota_019", "ota", "OTA-019: Continuous Multimodal Feedback Asymmetry", {"category": "neuro_architecture"}, db_path=db_path)
+    add_node("ota_020", "ota", "OTA-020: The AGI Redefinition & World-Model Invariant", {"category": "world_models"}, db_path=db_path)
+
 
 
 
