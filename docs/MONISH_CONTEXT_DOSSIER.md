@@ -8,7 +8,7 @@
 ## 1. Identity, Profile & 30-Year Compounding Horizon
 
 - **Primary User**: Monish Nallagondalla Srinath (Age 30, DOB: 1996-01-09).
-- **Spouse**: Harshitha (Age 29, DOB: 1997-04-14).
+- **Spouse**: Partner (Age 29, DOB: 1997-04-14).
 - **Core Life Milestone**: Deliver a **Global Keynote / TED Talk on the Emergence of Intelligence before Age 33 (2029)** and establish an independent sovereign AI Research Institute.
 - **The Core Invariant**: Nirixa is not a superficial chatbot or wrapper; it is the **computational study and practice of how intelligence emerges** across human, biological, and artificial systems.
 

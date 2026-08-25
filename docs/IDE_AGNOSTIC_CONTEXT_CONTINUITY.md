@@ -16,7 +16,7 @@
 
 | Core Dimension | Primary File Location | What It Contains |
 | :--- | :--- | :--- |
-| **The Sovereign Master Dossier** | [docs/MONISH_CONTEXT_DOSSIER.md](file:///c:/Users/MONISH/OneDrive/Documents/My-Os/docs/MONISH_CONTEXT_DOSSIER.md) | Single Source of Truth: Monish & Harshitha, ₹67k salary, ₹1.4L armor shield, 3-bucket wealth engine, Garry Tan/Spinoza doctrine, Nirixa brand invariant. |
+| **The Sovereign Master Dossier** | [docs/MONISH_CONTEXT_DOSSIER.md](file:///c:/Users/MONISH/OneDrive/Documents/My-Os/docs/MONISH_CONTEXT_DOSSIER.md) | Single Source of Truth: Monish & Partner, ₹67k salary, ₹1.4L armor shield, 3-bucket wealth engine, Garry Tan/Spinoza doctrine, Nirixa brand invariant. |
 | **Chronological Session Logs** | [docs/sessions/](file:///c:/Users/MONISH/OneDrive/Documents/My-Os/docs/sessions/) | High-signal records of all architectural debates, unstated premises, and decisions across IDE sessions. |
 | **The Question Project Constitution** | [docs/THE_QUESTION_PROJECT_UNIFIED_CONSTITUTION.md](file:///c:/Users/MONISH/OneDrive/Documents/My-Os/docs/THE_QUESTION_PROJECT_UNIFIED_CONSTITUTION.md) | The 34 research pillars, the 5 core pillars (*Questions, Intelligence, Memory, Identity, Evolution*), and 10 Frontier Domains. |
 | **Original Thought Assets (OTAs)** | [docs/MASTER_OTA_REGISTRY.md](file:///c:/Users/MONISH/OneDrive/Documents/My-Os/docs/MASTER_OTA_REGISTRY.md) | Full taxonomy of `OTA-001` through `OTA-015` and Seed OTAs. |

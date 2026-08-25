@@ -149,14 +149,14 @@ def seed_default_ota_graph(db_path=None):
     add_node("code_graph_engine", "code", "system/engine/graph.py", {"subsystem": "engine"}, db_path=db_path)
     add_node("skill_household", "code", ".agents/skills/household-companion/SKILL.md", {"subsystem": "skills"}, db_path=db_path)
     add_node("member_monish", "member", "Monish (Primary Owner)", {"role": "admin"}, db_path=db_path)
-    add_node("member_harshitha", "member", "Harshitha (Spouse)", {"role": "member"}, db_path=db_path)
+    add_node("member_Partner", "member", "Partner (Spouse)", {"role": "member"}, db_path=db_path)
 
     # Seed Relationships
     add_edge("ota_014", "code_identity_router", "IMPLEMENTED_IN", weight=1.0, db_path=db_path)
     add_edge("ota_014", "skill_household", "POWERED_BY", weight=1.0, db_path=db_path)
     add_edge("code_identity_router", "code_graph_engine", "UTILIZES", weight=1.0, db_path=db_path)
     add_edge("member_monish", "ota_014", "CREATED", weight=1.0, db_path=db_path)
-    add_edge("member_harshitha", "skill_household", "COLLABORATES_ON", weight=1.0, db_path=db_path)
+    add_edge("member_Partner", "skill_household", "COLLABORATES_ON", weight=1.0, db_path=db_path)
     add_edge("ota_001", "ota_011", "EXTENDED_BY", weight=1.0, db_path=db_path)
 
 if __name__ == "__main__":

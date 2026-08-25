@@ -190,6 +190,20 @@ class SystemHealthEvaluator:
         except Exception as e:
             return "fail", f"Heartbeat audit error: {e}"
 
+    def check_linkedin_outreach_engine(self):
+        """Check 11: Verify High-Relevance Outreach Engine."""
+        try:
+            from system.engine import linkedin_outreach
+            opp = linkedin_outreach.evaluate_target_opportunity(follower_count=500, posts_per_month=2)
+            comm = linkedin_outreach.generate_high_value_comment("Marco", "Building AI systems.")
+            conn = linkedin_outreach.generate_connection_request("Marco", "AI Lead", style="cheeky")
+            if opp["opportunity_score"] >= 70 and comm["comment_text"] and conn["within_linkedin_300_char_limit"]:
+                return "pass", f"Outreach Engine verified (Opportunity score: {opp['opportunity_score']}, Comment & Note generated)."
+            else:
+                return "fail", "Outreach Engine output validation failed."
+        except Exception as e:
+            return "fail", f"Outreach Engine error: {e}"
+
     def run_all_evals(self):
         eval_suite = [
             ("wakeup_bridge_liveness", "Bridge", self.check_wakeup_bridge_liveness),
@@ -202,7 +216,9 @@ class SystemHealthEvaluator:
             ("data_integrity", "Database", self.check_data_integrity),
             ("graph_engine", "GraphRAG", self.check_graph_engine),
             ("heartbeat_auditor", "ProactiveAudit", self.check_heartbeat_auditor),
+            ("linkedin_outreach_engine", "OutreachEngine", self.check_linkedin_outreach_engine),
         ]
+
 
 
 

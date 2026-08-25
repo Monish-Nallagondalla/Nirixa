@@ -800,7 +800,7 @@ def get_user_profile(workspace_root=None):
         "monthly_living_estimate": int(ctx.get("monthly_living_estimate", 15000)),
         "liquid_armor_balance": int(ctx.get("liquid_armor_balance", 20000)),
         "user_name": ctx.get("user_name", "Monish Nallagondalla"),
-        "wife_name": ctx.get("wife_name", "Harshitha"),
+        "wife_name": ctx.get("wife_name", "Partner"),
         "user_dob": ctx.get("user_dob", "1996-01-09"),
         "wife_dob": ctx.get("wife_dob", "1997-04-14")
     }
