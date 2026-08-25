@@ -51,3 +51,7 @@ Public Asset Compilation (LinkedIn Carousel / RFC / Global Keynote)
 | **OTA-013** | Strict Context Anonymization | Corporate scars must be sanitized into abstract architectural patterns without proprietary risk. |
 | **OTA-014** | Universal Coding Agent Interoperability | Operating rules must run seamlessly across Antigravity, Cursor, and Claude Code. |
 | **OTA-015** | Living Playbooks vs Static Wikis | Company knowledge must be active rules enforced in real-time, not dormant wiki pages. |
+| **OTA-016** | Relevance & Utility over Performative Likes | Shares dictate distribution. Likes are vanity metrics; shares occur when content possesses deep, actionable relevance to real-world friction. |
+| **OTA-017** | The Reliability Advantage Invariant | Being reliable is far more advantageous than isolated brilliance. Repeatable, high-signal execution builds compounding trust. |
+| **OTA-018** | Story & Narrative Density | Pure technical facts alone do not convert. Empirical scars framed through human story arcs create emotional resonance and viral reach. |
+

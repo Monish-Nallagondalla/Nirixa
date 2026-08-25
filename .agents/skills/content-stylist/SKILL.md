@@ -25,3 +25,9 @@ Use this skill whenever drafting, reviewing, or editing content for My-OS.
 ### 4. Radical Reduction Filter
 - **Single Core Truth**: Every draft must focus on **ONE single undeniable thesis**. If a post tries to teach 3 separate things at once, strip out the side tangents.
 - **Visceral Emotional Punch**: Start with an authentic friction scar or real-world contrast. Make the conclusion unavoidable.
+
+### 5. Utility, Reliability & Shareability Invariants (OTA-016, OTA-017, OTA-018)
+- **Shares > Likes (OTA-016)**: Optimize for **relevance and utility**. People like out of politeness; people *share* because the content is deeply useful to their own career/life.
+- **Reliability > Brilliance (OTA-017)**: Highlighting consistent, repeatable execution processes is far more valuable than showing off isolated brilliance.
+- **Narrative Story Arc (OTA-018)**: Technical facts alone don't spread. Human stories, empirical scars, and structured narrative resolution drive virality.
+

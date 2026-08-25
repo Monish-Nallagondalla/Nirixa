@@ -139,6 +139,10 @@ def seed_default_ota_graph(db_path=None):
     add_node("ota_011", "ota", "OTA-011: Thought Ancestry & Lineage", {"category": "lineage"}, db_path=db_path)
     add_node("ota_012", "ota", "OTA-012: Autonomous Self-Evolution Engine", {"category": "rl_feedback"}, db_path=db_path)
     add_node("ota_014", "ota", "OTA-014: Multi-Member Relational Graph", {"category": "multi_tenancy"}, db_path=db_path)
+    add_node("ota_016", "ota", "OTA-016: Relevance & Utility over Performative Likes", {"category": "viral_copywriting"}, db_path=db_path)
+    add_node("ota_017", "ota", "OTA-017: The Reliability Advantage Invariant", {"category": "execution_trust"}, db_path=db_path)
+    add_node("ota_018", "ota", "OTA-018: Story & Narrative Density", {"category": "narrative_arc"}, db_path=db_path)
+
 
     # Seed Code & System Nodes
     add_node("code_identity_router", "code", "system/engine/identity_router.py", {"subsystem": "engine"}, db_path=db_path)
