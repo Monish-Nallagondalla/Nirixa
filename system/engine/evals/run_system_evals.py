@@ -232,6 +232,19 @@ class SystemHealthEvaluator:
         except Exception as e:
             return "fail", f"Apify Scraper error: {e}"
 
+    def check_graph_evolution_engine(self):
+        """Check 14: Verify Continuous Associative Thought Graph Evolution Engine."""
+        try:
+            from system.engine import graph_evolution
+            linked = graph_evolution.auto_link_ota_node("ota_eval", "Eval OTA Node", "test", ["ota_001", "ota_022"])
+            cent = graph_evolution.compute_thought_centrality()
+            if linked["auto_linked_edges"] >= 3 and len(cent["top_central_thoughts"]) > 0:
+                return "pass", f"Graph Evolution Engine verified (Linked {linked['auto_linked_edges']} edges, Centrality computed)."
+            else:
+                return "fail", "Graph Evolution output validation failed."
+        except Exception as e:
+            return "fail", f"Graph Evolution error: {e}"
+
     def run_all_evals(self):
         eval_suite = [
             ("wakeup_bridge_liveness", "Bridge", self.check_wakeup_bridge_liveness),
@@ -247,7 +260,9 @@ class SystemHealthEvaluator:
             ("linkedin_outreach_engine", "OutreachEngine", self.check_linkedin_outreach_engine),
             ("profile_optimizer_and_story_bank", "LandingPageEngine", self.check_profile_optimizer_and_story_bank),
             ("apify_scraper_engine", "ScraperVirality", self.check_apify_scraper_engine),
+            ("graph_evolution_engine", "CognitiveEvolution", self.check_graph_evolution_engine),
         ]
+
 
 
 
