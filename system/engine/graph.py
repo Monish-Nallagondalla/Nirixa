@@ -144,6 +144,8 @@ def seed_default_ota_graph(db_path=None):
     add_node("ota_018", "ota", "OTA-018: Story & Narrative Density", {"category": "narrative_arc"}, db_path=db_path)
     add_node("ota_019", "ota", "OTA-019: Continuous Multimodal Feedback Asymmetry", {"category": "neuro_architecture"}, db_path=db_path)
     add_node("ota_020", "ota", "OTA-020: The AGI Redefinition & World-Model Invariant", {"category": "world_models"}, db_path=db_path)
+    add_node("ota_021", "ota", "OTA-021: Hierarchical Swarm Consensus (SLM-VLLM Asymmetry)", {"category": "swarm_intelligence"}, db_path=db_path)
+
 
 
 
