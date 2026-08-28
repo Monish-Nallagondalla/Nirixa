@@ -68,6 +68,12 @@ Public Asset Compilation (LinkedIn Carousel / RFC / Global Keynote)
 | **OTA-030** | Authentic Cognitive Boundary & Self-Knowledge Scope | A personal Chief of Staff must operate strictly within the owner's authentic cognitive boundary: Self-reflections, Personal Projects (Nirixa OS), and Emerging Tech Architecture. Simulating corporate client stories or fake anecdotes destroys system integrity. |
 | **OTA-031** | Socratic Querying as the System Engine | Questions are not fallbacks when confused; they are the primary computational primitive driving knowledge extraction, scar mining, and system self-evolution. When context is missing, asking questions is mandatory. |
 | **OTA-032** | Organoid Intelligence & Substrate-Independent Neuromorphic Connectomes | Post-mortem brain tissue decays within minutes due to ATP depletion and ischemic necrosis. Biocomputing relies on living organoids (lab-grown neuronal cultures on microelectrode arrays) or digitizing 3D synaptic connectomes onto synthetic neuromorphic silicon, bridging biological efficiency with digital permanence. |
+| **OTA-033** | Subconscious Pattern Topology & Dual-Process Cognition | Human subconscious thought is rapid, zero-effort pattern matching over past lived experiences (Don Norman). In hybrid AI systems, vector/graph embedding search acts as the subconscious pattern matcher (System 1), while Monte Carlo Tree Search and Reasoner Swarms execute conscious System 2 deliberation. |
+| **OTA-034** | Biochemical Emotional Bias & Focus Invariant | Emotion interacts with cognition biochemically, biasing the brain's focus. High-threat states trigger narrow, action-oriented focus; calm states trigger exploratory creativity. Agentic AI must dynamically adapt its reasoning style based on situational friction. |
+| **OTA-035** | The 3 Cognitive Layers in Agentic AI (Visceral, Behavioral, Reflective) | Agentic AI mirrors Don Norman's 3 levels of processing: Visceral (sub-10ms safety guardrails & pattern filters), Behavioral (skilled tool & API execution), and Reflective (Socratic metacognition & multidecadal self-evolution). |
+| **OTA-036** | Human-Centric System Design Invariant | System design is applied human psychology. Great software and AI agents are not designed around silicon constraints; they are engineered around biological human cognitive limitations, memory half-lives, and emotional needs. |
+
+
 
 
 

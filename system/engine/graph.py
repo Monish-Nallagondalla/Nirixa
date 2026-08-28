@@ -155,6 +155,11 @@ def seed_default_ota_graph(db_path=None):
     add_node("ota_030", "ota", "OTA-030: Authentic Cognitive Boundary & Self-Knowledge Scope", {"category": "identity_governance"}, db_path=db_path)
     add_node("ota_031", "ota", "OTA-031: Socratic Querying as the System Engine", {"category": "socratic_engine"}, db_path=db_path)
     add_node("ota_032", "ota", "OTA-032: Organoid Intelligence & Substrate-Independent Neuromorphic Connectomes", {"category": "biocomputing"}, db_path=db_path)
+    add_node("ota_033", "ota", "OTA-033: Subconscious Pattern Topology & Dual-Process Cognition", {"category": "cognitive_design"}, db_path=db_path)
+    add_node("ota_034", "ota", "OTA-034: Biochemical Emotional Bias & Focus Invariant", {"category": "emotional_cognition"}, db_path=db_path)
+    add_node("ota_035", "ota", "OTA-035: The 3 Cognitive Layers in Agentic AI", {"category": "agent_levels"}, db_path=db_path)
+    add_node("ota_036", "ota", "OTA-036: Human-Centric System Design Invariant", {"category": "human_centered_design"}, db_path=db_path)
+
 
 
 
