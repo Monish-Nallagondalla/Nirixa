@@ -64,6 +64,12 @@ Public Asset Compilation (LinkedIn Carousel / RFC / Global Keynote)
 | **OTA-026** | Temporal Grounding & Decay Asymmetry | Static LLMs have zero intrinsic sense of time (frozen at training snapshot Δt=0). Giving AI a sense of time requires explicit state decay vectors, session Δt tracking, and event half-life logging. Biological time is bounded by aging and mortality; AI time must be artificially grounded in state evolution. |
 | **OTA-027** | The Outcome Paradigm Shift (Beyond 'Time is Money') | 'Time is Money' was an industrial paradigm billing human labor duration. When AI executes 100 hours of analysis in 4 seconds, hourly billing collapses. Value shifts entirely to Outcome Density, Architectural Judgement, and Authentic Scars. |
 | **OTA-028** | The Modern AI Taxonomy & Emergence Layer | AI is a nested hierarchy: AI (Symbolic & Expert Systems) ⊃ ML (Statistical Pattern Learning) ⊃ DL (Neural Networks) ⊃ Transformers (Self-Attention) ⊃ Multimodal LLMs/SLMs (Generative Agents) ⊃ World Models (Continuous Physics & Reinforcement Feedback). |
+| **OTA-029** | Skill Execution Primacy vs Passive Documentation | Merely writing skill instructions or saving transcripts into markdown files does not improve intelligence. Emergent quality requires active runtime enforcement of skills during reasoning, draft generation, and evals. |
+| **OTA-030** | Authentic Cognitive Boundary & Self-Knowledge Scope | A personal Chief of Staff must operate strictly within the owner's authentic cognitive boundary: Self-reflections, Personal Projects (Nirixa OS), and Emerging Tech Architecture. Simulating corporate client stories or fake anecdotes destroys system integrity. |
+| **OTA-031** | Socratic Querying as the System Engine | Questions are not fallbacks when confused; they are the primary computational primitive driving knowledge extraction, scar mining, and system self-evolution. When context is missing, asking questions is mandatory. |
+| **OTA-032** | Organoid Intelligence & Substrate-Independent Neuromorphic Connectomes | Post-mortem brain tissue decays within minutes due to ATP depletion and ischemic necrosis. Biocomputing relies on living organoids (lab-grown neuronal cultures on microelectrode arrays) or digitizing 3D synaptic connectomes onto synthetic neuromorphic silicon, bridging biological efficiency with digital permanence. |
+
+
 
 
 

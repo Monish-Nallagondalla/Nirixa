@@ -151,6 +151,12 @@ def seed_default_ota_graph(db_path=None):
     add_node("ota_026", "ota", "OTA-026: Temporal Grounding & Decay Asymmetry", {"category": "temporal_cognition"}, db_path=db_path)
     add_node("ota_027", "ota", "OTA-027: The Outcome Paradigm Shift (Beyond 'Time is Money')", {"category": "economics_of_ai"}, db_path=db_path)
     add_node("ota_028", "ota", "OTA-028: The Modern AI Taxonomy & Emergence Layer", {"category": "ai_taxonomy"}, db_path=db_path)
+    add_node("ota_029", "ota", "OTA-029: Skill Execution Primacy vs Passive Documentation", {"category": "skill_execution"}, db_path=db_path)
+    add_node("ota_030", "ota", "OTA-030: Authentic Cognitive Boundary & Self-Knowledge Scope", {"category": "identity_governance"}, db_path=db_path)
+    add_node("ota_031", "ota", "OTA-031: Socratic Querying as the System Engine", {"category": "socratic_engine"}, db_path=db_path)
+    add_node("ota_032", "ota", "OTA-032: Organoid Intelligence & Substrate-Independent Neuromorphic Connectomes", {"category": "biocomputing"}, db_path=db_path)
+
+
 
 
 
