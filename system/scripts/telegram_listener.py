@@ -145,17 +145,49 @@ if __name__ == "__main__":
                         from_user = msg.get("from", {})
                         telegram_id = from_user.get("id", chat_id)
                         sender_name = from_user.get("first_name", "User")
-                        text = msg.get("text", "")
+                        caption = msg.get("caption", "")
+                        text = msg.get("text", "") or caption
+                        photos = msg.get("photo", [])
                         
-                        if text:
+                        media_path = None
+                        if photos:
+                            try:
+                                best_photo = photos[-1]
+                                file_id = best_photo.get("file_id")
+                                get_file_url = f"{api_base.rstrip('/')}/bot{token}/getFile?file_id={file_id}"
+                                with opener.open(urllib.request.Request(get_file_url), timeout=10) as f_resp:
+                                    f_data = json.loads(f_resp.read().decode("utf-8"))
+                                    file_path = f_data.get("result", {}).get("file_path")
+                                    if file_path:
+                                        media_dir = os.path.join(root, "system", "data", "media")
+                                        os.makedirs(media_dir, exist_ok=True)
+                                        local_fn = f"telegram_{upd['update_id']}_{os.path.basename(file_path)}"
+                                        local_path = os.path.join(media_dir, local_fn)
+                                        download_url = f"{api_base.rstrip('/')}/file/bot{token}/{file_path}"
+                                        urllib.request.urlretrieve(download_url, local_path)
+                                        media_path = local_path
+                                        
+                                        # Copy to IDE artifacts for instant multimodal view
+                                        art_dir = r"C:\Users\MONISH\.gemini\antigravity-ide\brain\ba7e6e2b-8099-455a-b877-abde025f307d"
+                                        if os.path.exists(art_dir):
+                                            import shutil
+                                            shutil.copy2(local_path, os.path.join(art_dir, local_fn))
+                            except Exception as photo_err:
+                                print(f"[Photo Download Warning] {photo_err}", flush=True)
+
+                        if text or media_path:
+                            effective_text = text if text else "[Photo Uploaded]"
+                            if media_path:
+                                effective_text = f"{effective_text} [Media: {media_path}]"
+                            
                             # Identity envelope resolution & DB Sync
                             try:
-                                anon_text = anonymizer.apply_anonymization(text)
+                                anon_text = anonymizer.apply_anonymization(effective_text)
                                 envelope = identity_router.create_envelope(
-                                    upd["update_id"], chat_id, telegram_id, sender_name, text, anon_text, bot_origin="monish_dev"
+                                    upd["update_id"], chat_id, telegram_id, sender_name, effective_text, anon_text, bot_origin="monish_dev"
                                 )
                                 c_id = db.save_capture(
-                                    upd["update_id"], chat_id, text, anon_text, source="telegram-listener",
+                                    upd["update_id"], chat_id, effective_text, anon_text, source="telegram-listener",
                                     owner_id=envelope.owner_id, visibility=envelope.privacy_scope
                                 ) or 0
                                 synthesizer.synthesize_topics(root)
@@ -166,14 +198,15 @@ if __name__ == "__main__":
                             except Exception as db_err:
                                 print(f"[DB Sync Warning] {db_err}", flush=True)
                                 
-                            text_lower = text.lower()
+                            text_lower = effective_text.lower()
                             if "good night" in text_lower or text_lower.strip() == "sleep":
                                 kb = [[{"text": "Put Laptop to Sleep", "callback_data": "sys_sleep"}]]
                                 subprocess.Popen([sys.executable, sender_script, "--chat_id", str(chat_id), "--text", "Would you like me to put the laptop to sleep?", "--keyboard", json.dumps(kb)])
 
                             # Print explicitly for Antigravity to parse and EXIT
-                            print(f"[TELEGRAM_IN] chat_id={chat_id} | owner_id={envelope.owner_id} | persona={envelope.active_persona} | message={text}", flush=True)
+                            print(f"[TELEGRAM_IN] chat_id={chat_id} | owner_id={envelope.owner_id} | persona={envelope.active_persona} | message={effective_text}", flush=True)
                             sys.exit(0)
+
 
         except Exception as e:
             time.sleep(1)
