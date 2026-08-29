@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-Nirixa OS Engine - Autonomous Skill Trajectory Distiller
-Inspired by NousResearch Hermes Agent.
+Nirixa OS Engine - Autonomous Skill Trajectory Distiller (Native Nirixa IP)
 Evaluates multi-step execution logs or thread trajectories and automatically distills
 reusable patterns into standard .agents/skills/<skill-name>/SKILL.md format.
 """
+
 
 import os
 import sys

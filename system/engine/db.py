@@ -266,7 +266,7 @@ def init_db(db_path=None):
             cursor.execute(f"ALTER TABLE {table_name} ADD COLUMN visibility TEXT DEFAULT 'private'")
 
 
-    # FTS5 Full-Text Search Virtual Tables (Hermes L3 Episodic Memory Core)
+    # FTS5 Full-Text Search Virtual Tables (Nirixa Native Episodic Memory Core)
     cursor.execute("""
     CREATE VIRTUAL TABLE IF NOT EXISTS raw_captures_fts USING fts5(
         raw_text,
@@ -555,7 +555,7 @@ def get_ota_summary(db_path=None):
     return "\n".join([f"• OTA #{r[0]}: {r[1]} [{r[2]}]" for r in rows])
 
 def search_fts(query_text, limit=5, db_path=None):
-    """Sub-millisecond BM25 FTS5 Full-Text Search Core (Hermes L3 Episodic Recall)"""
+    """Sub-millisecond BM25 FTS5 Full-Text Search Core (Nirixa Native Episodic Recall)"""
     if not query_text:
         return "Please specify a search term."
     if not db_path:
