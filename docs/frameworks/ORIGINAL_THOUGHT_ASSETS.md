@@ -72,6 +72,14 @@ Public Asset Compilation (LinkedIn Carousel / RFC / Global Keynote)
 | **OTA-034** | Biochemical Emotional Bias & Focus Invariant | Emotion interacts with cognition biochemically, biasing the brain's focus. High-threat states trigger narrow, action-oriented focus; calm states trigger exploratory creativity. Agentic AI must dynamically adapt its reasoning style based on situational friction. |
 | **OTA-035** | The 3 Cognitive Layers in Agentic AI (Visceral, Behavioral, Reflective) | Agentic AI mirrors Don Norman's 3 levels of processing: Visceral (sub-10ms safety guardrails & pattern filters), Behavioral (skilled tool & API execution), and Reflective (Socratic metacognition & multidecadal self-evolution). |
 | **OTA-036** | Human-Centric System Design Invariant | System design is applied human psychology. Great software and AI agents are not designed around silicon constraints; they are engineered around biological human cognitive limitations, memory half-lives, and emotional needs. |
+| **OTA-037** | Storytelling as Conceptual Models & Narrative Causality | Humans are innately wired to seek cause-and-effect explanations. Stories are not superficial marketing fluff; they are functional conceptual models that help humans predict outcomes and navigate uncertainty. Technical insights must be framed as conceptual models. |
+| **OTA-038** | The Post-LLM Plateau & Application Expansion Invariant | If base LLM pre-training stopped today, the next decade would trigger the 'Great Systems Boom'. Economic value would shift from scaling parameters to compound agentic harnesses, local edge execution, domain-specific SLMs, and human-AI workflows. |
+| **OTA-039** | The AI Trust Evolution Scale & Deterministic Verification | Human trust in AI evolved from statistical metrics (ML F1-scores) to fluency distrust (LLM hallucinations). True enterprise trust (Level 4) requires deterministic eval suites, ACID audit logs, and Socratic verification—not blind text fluency. |
+| **OTA-040** | Desktop Agent Infrastructure vs Cognitive Chief of Staff OS | Desktop distributions (like Omarchy) provide window manager shortcuts and lazy-loaded CLI wrappers for external AI agents. A true Cognitive OS (Nirixa) operates statefully at the memory, graph topology, and human alignment layer—not just as terminal shortcuts. |
+
+
+
+
 
 
 

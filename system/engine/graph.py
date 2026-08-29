@@ -159,6 +159,11 @@ def seed_default_ota_graph(db_path=None):
     add_node("ota_034", "ota", "OTA-034: Biochemical Emotional Bias & Focus Invariant", {"category": "emotional_cognition"}, db_path=db_path)
     add_node("ota_035", "ota", "OTA-035: The 3 Cognitive Layers in Agentic AI", {"category": "agent_levels"}, db_path=db_path)
     add_node("ota_036", "ota", "OTA-036: Human-Centric System Design Invariant", {"category": "human_centered_design"}, db_path=db_path)
+    add_node("ota_037", "ota", "OTA-037: Storytelling as Conceptual Models & Narrative Causality", {"category": "narrative_cognition"}, db_path=db_path)
+    add_node("ota_038", "ota", "OTA-038: The Post-LLM Plateau & Application Expansion Invariant", {"category": "ai_economics"}, db_path=db_path)
+    add_node("ota_039", "ota", "OTA-039: The AI Trust Evolution Scale & Deterministic Verification", {"category": "trust_architecture"}, db_path=db_path)
+    add_node("ota_040", "ota", "OTA-040: Desktop Agent Infrastructure vs Cognitive Chief of Staff OS", {"category": "os_architecture"}, db_path=db_path)
+
 
 
 
