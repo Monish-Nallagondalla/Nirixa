@@ -163,6 +163,10 @@ def seed_default_ota_graph(db_path=None):
     add_node("ota_038", "ota", "OTA-038: The Post-LLM Plateau & Application Expansion Invariant", {"category": "ai_economics"}, db_path=db_path)
     add_node("ota_039", "ota", "OTA-039: The AI Trust Evolution Scale & Deterministic Verification", {"category": "trust_architecture"}, db_path=db_path)
     add_node("ota_040", "ota", "OTA-040: Desktop Agent Infrastructure vs Cognitive Chief of Staff OS", {"category": "os_architecture"}, db_path=db_path)
+    add_node("ota_041", "ota", "OTA-041: Synthetic Persona Signatures & RLHF Demeanor Asymmetry", {"category": "model_persona"}, db_path=db_path)
+    add_node("ota_042", "ota", "OTA-042: Taste as the Ultimate Moat in Commodity AI", {"category": "creative_moats"}, db_path=db_path)
+
+
 
 
 

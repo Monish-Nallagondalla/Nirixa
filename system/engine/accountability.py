@@ -29,30 +29,66 @@ class AccountabilityEngine:
         self.db_path = db.get_db_path(self.workspace_root)
         db.init_db(self.db_path)
 
-    def check_stale_drafts(self, days_threshold=3):
-        """Finds OTAs sitting in draft/refined status for > days_threshold."""
+    def check_stale_drafts(self, days_threshold=2):
+        """Finds OTAs sitting in draft/refined status and formulates a Socratic sparring question."""
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
-        three_days_ago = (datetime.datetime.now() - datetime.timedelta(days=days_threshold)).isoformat()
+        threshold_date = (datetime.datetime.now() - datetime.timedelta(days=days_threshold)).isoformat()
         cursor.execute("""
         SELECT id, title, status, created_at FROM otas
         WHERE status IN ('draft', 'refined') AND created_at < ?
         ORDER BY id ASC
-        """, (three_days_ago,))
+        """, (threshold_date,))
         rows = cursor.fetchall()
         conn.close()
 
         stale_items = []
         for r in rows:
+            ota_id, title, status, created_at = r[0], r[1], r[2], r[3]
+            socratic_prompt = (
+                f"🤔 *Socratic Sparring Nudge • Draft #{ota_id}*\n\n"
+                f"📌 *Topic:* \"{title}\" (Sitting {days_threshold}+ days in {status})\n\n"
+                f"💡 *Sparring Question:* Did we drop this because the thesis is weak, or because we haven't extracted the core scar? "
+                f"Reply with a 1-line answer or a 30s voice note to unblock the draft or discard it."
+            )
             stale_items.append({
                 "type": "stale_draft",
-                "id": r[0],
-                "title": r[1],
-                "status": r[2],
-                "created_at": r[3],
-                "nudge": f"Stale Draft #{r[0]} ('{r[1]}') sitting for >{days_threshold} days in {r[2]} status. Ready to finalize or discard?"
+                "id": ota_id,
+                "title": title,
+                "status": status,
+                "created_at": created_at,
+                "nudge": socratic_prompt
             })
         return stale_items
+
+    def check_open_mental_loops(self, limit=3):
+        """Finds raw mobile reflections that remain unclosed open loops in working memory."""
+        conn = sqlite3.connect(self.db_path)
+        cursor = conn.cursor()
+        cursor.execute("""
+        SELECT id, timestamp, raw_text FROM raw_captures
+        WHERE status = 'unread' AND length(raw_text) > 20
+        ORDER BY id DESC LIMIT ?
+        """, (limit,))
+        rows = cursor.fetchall()
+        conn.close()
+
+        open_loops = []
+        for r in rows:
+            cid, ts, text = r[0], r[1], r[2]
+            clean_snippet = text.strip().replace("\n", " ")[:80]
+            loop_prompt = (
+                f"🧠 *Open Cognitive Loop • Thought #{cid}*\n\n"
+                f"📝 *Capture:* \"{clean_snippet}...\"\n\n"
+                f"💡 *Socratic Question:* What is the single core thesis or action here? Should we link this to an active OTA or archive it?"
+            )
+            open_loops.append({
+                "type": "open_loop",
+                "id": cid,
+                "snippet": clean_snippet,
+                "nudge": loop_prompt
+            })
+        return open_loops
 
     def check_overdue_reminders(self):
         """Finds reminders past their scheduled trigger time still marked pending."""
@@ -74,7 +110,7 @@ class AccountabilityEngine:
                 "id": r[0],
                 "text": r[1],
                 "due": r[2],
-                "nudge": f"Overdue Reminder #{r[0]}: '{r[1]}' (Was due at {r[2]})."
+                "nudge": f"⏰ *Actionable Checkpoint #{r[0]}*\n\n{r[1]}\n(Scheduled for {r[2]})"
             })
         return overdue
 
@@ -137,7 +173,10 @@ class AccountabilityEngine:
             nudge_text = nudge["nudge"]
             db.log_audit_metric("accountability_nudge_pushed", f"{nudge['type']}: {nudge_text[:150]}", db_path=self.db_path)
             dispatched.append(nudge)
-            print(f"[Accountability Nudge Dispatched] {nudge_text}")
+            try:
+                print(f"[Accountability Nudge Dispatched] {nudge_text}")
+            except Exception:
+                print(f"[Accountability Nudge Dispatched] {nudge['type']} #{nudge.get('id')}")
 
         return {
             "total_stale": len(all_nudges),
@@ -150,4 +189,5 @@ class AccountabilityEngine:
 if __name__ == "__main__":
     engine = AccountabilityEngine()
     audit_res = engine.run_daily_accountability_audit()
-    print("Audit Summary:", audit_res)
+    print("Audit Dispatched Count:", audit_res["dispatched_count"])
+    print("Total Stale Items:", audit_res["total_stale"])

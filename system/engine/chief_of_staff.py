@@ -39,9 +39,9 @@ class ChiefOfStaffDispatcher:
         """
         context = {
             "user_profile": {
-                "name": "User Operator (Configured in user_profile)",
-                "degrees": "User Degrees & Academic Foundation (Configured in user_profile)",
-                "role": "AI Architect & Product Leader (Configured in user_profile)"
+                "name": "Monish Nallagondalla Srinath",
+                "degrees": "B.E. Mechanical Engineering (VTU) & M.Sc. Data Science (Coventry University, UK)",
+                "role": "AI Product Manager & Associate Tech Consultant (4+ yrs GenAI/Multi-Agent Systems)"
             },
             "career_milestones": [],
             "active_projects": [],
@@ -80,9 +80,14 @@ class ChiefOfStaffDispatcher:
         conn = sqlite3.connect(self.db_path)
         cursor = conn.cursor()
         
-        cursor.execute("SELECT title, refined_thesis FROM otas ORDER BY id DESC LIMIT 5")
-        for row in cursor.fetchall():
-            context["recent_otas"].append({"title": row[0], "thesis": row[1]})
+        try:
+            cursor.execute("SELECT ota_id, title, hypothesis FROM ota_registry ORDER BY ota_id ASC")
+            for row in cursor.fetchall():
+                context["recent_otas"].append({"id": row[0], "title": row[1], "hypothesis": row[2]})
+        except Exception:
+            cursor.execute("SELECT title, refined_thesis FROM otas ORDER BY id DESC LIMIT 5")
+            for row in cursor.fetchall():
+                context["recent_otas"].append({"title": row[0], "thesis": row[1]})
 
         cursor.execute("SELECT message, remind_at FROM reminders WHERE status = 'pending' ORDER BY remind_at ASC LIMIT 5")
         for row in cursor.fetchall():
