@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nirixa Episteme • Reflect / Chronicle Awwwards SOTD Aesthetic</title>
+  <!-- Google Fonts: Inter with optical tracking + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Reflect / Chronicle Deep Cosmic Indigo Base */
+      --bg-canvas: #08090E;
+      --bg-surface: rgba(16, 18, 27, 0.65);
+      --bg-surface-elevated: rgba(23, 26, 38, 0.75);
+      
+      /* Awwwards Signature Rim-Light & Border */
+      --border-translucent: rgba(255, 255, 255, 0.07);
+      --rim-light-top: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0) 100%);
+      
+      /* Ethereal Luminous Accents (Reflect Palette) */
+      --accent-cyan: #38BDF8;
+      --cyan-soft-glow: rgba(56, 189, 248, 0.15);
+      --accent-violet: #818CF8;
+      --violet-soft-glow: rgba(129, 140, 248, 0.15);
+      --accent-amber: #FBBF24;
+      --accent-emerald: #34D399;
+      
+      --text-white: #FFFFFF;
+      --text-primary: #F1F5F9;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      padding: 48px 24px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Cosmic Ambient Glows (Reflect.app signature) */
+    .glow-sphere-1 {
+      position: fixed;
+      top: -15%;
+      left: 15%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(129, 140, 248, 0.12) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-sphere-2 {
+      position: fixed;
+      bottom: -10%;
+      right: 10%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.09) 0%, transparent 70%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Top Ethereal Nav / Brand */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 48px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-translucent);
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(129, 140, 248, 0.3));
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--text-white);
+    }
+
+    .brand-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 3px 8px;
+      border-radius: 9999px;
+      margin-left: 8px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Reflect Style Rim-Lit Glass Cards */
+    .glass-card {
+      background: var(--bg-surface);
+      backdrop-filter: blur(32px) saturate(180%);
+      -webkit-backdrop-filter: blur(32px) saturate(180%);
+      border: 1px solid var(--border-translucent);
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Top Rim-Light (Reflect SOTD Signature) */
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--rim-light-top);
+      pointer-events: none;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(255, 255, 255, 0.14);
+      transform: translateY(-2px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.06);
+    }
+
+    /* Workspace 3-Column Horizon */
+    .horizon-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr 340px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 1100px) {
+      .horizon-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Left Stream Rail (Reflect Style Nodes & Friction) */
+    .stream-rail {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .rail-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .stream-item {
+      padding: 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .stream-item:hover, .stream-item.active {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .stream-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 6px;
+    }
+
+    .stream-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    /* Center Stage (Deep In-Situ PDF & Thought Workspace) */
+    .center-stage {
+      padding: 32px;
+    }
+
+    .stage-top-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .pill-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .synapse-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+      box-shadow: 0 0 8px var(--accent-cyan);
+    }
+
+    .stage-title {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      color: var(--text-white);
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .stage-body {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+
+    /* Reflect Style In-Situ PDF Reading Anchor */
+    .reading-canvas {
+      background: rgba(8, 9, 14, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .reading-canvas::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(129, 140, 248, 0.3), transparent);
+    }
+
+    .source-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pdf-quote {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #E2E8F0;
+    }
+
+    .highlight-pill {
+      background: rgba(56, 189, 248, 0.16);
+      color: #7DD3FC;
+      border-bottom: 1.5px solid var(--accent-cyan);
+      padding: 2px 6px;
+      border-radius: 4px;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+    }
+
+    /* Floating Action Dock (Reflect Style) */
+    .action-dock {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-reflect-primary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-white);
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-reflect-primary:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.25);
+      transform: translateY(-1px);
+    }
+
+    .btn-reflect-glow {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.25), rgba(129, 140, 248, 0.25));
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #FFFFFF;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+      transition: all 0.2s;
+    }
+
+    .btn-reflect-glow:hover {
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.4);
+      transform: translateY(-1px);
+    }
+
+    /* Right Inspector Rail (Reflect Synapses & Provenance) */
+    .inspector-rail {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .rail-section-title {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-family: 'JetBrains Mono', monospace;
+      margin-bottom: 12px;
+    }
+
+    .compounding-bar-wrap {
+      margin-bottom: 16px;
+    }
+
+    .compounding-title {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-white);
+      margin-bottom: 8px;
+    }
+
+    .compounding-track {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .compounding-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #38BDF8, #818CF8);
+      border-radius: 9999px;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    }
+
+    /* Lineage Provenance Cards */
+    .lineage-node-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .lineage-node {
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .lineage-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+    }
+
+    .lineage-desc {
+      font-size: 12px;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <!-- Ambient Spheres -->
+  <div class="glow-sphere-1"></div>
+  <div class="glow-sphere-2"></div>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="brand-wrap">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </div>
+        <div class="brand-title">Nirixa Episteme</div>
+        <div class="brand-badge">SOTD ARCHETYPE</div>
+      </div>
+
+      <div class="header-actions">
+        <button class="btn-reflect-glow" onclick="alert('Archetype 1 Confirmed! Initializing Next.js 14 project with Reflect / Chronicle design system.')">
+          Approve Archetype 1 Design
+        </button>
+      </div>
+    </header>
+
+    <!-- 3-Column Horizon Grid -->
+    <div class="horizon-grid">
+      <!-- LEFT: Unified Stream Rail -->
+      <div class="glass-card stream-rail">
+        <div class="rail-header">
+          <span>Incoming Stream</span>
+          <span style="color: var(--accent-cyan)">Live Sync</span>
+        </div>
+
+        <div class="stream-item active">
+          <div class="stream-meta">
+            <span>TELEGRAM VOICE</span>
+            <span>•</span>
+            <span>10m ago</span>
+          </div>
+          <div class="stream-title">
+            Emergence of agency through iterative feedback loops
+          </div>
+        </div>
+
+        <div class="stream-item">
+          <div class="stream-meta">
+            <span>YOUTUBE SHORT</span>
+            <span>•</span>
+            <span>2h ago</span>
+          </div>
+          <div class="stream-title">
+            Karpathy on software 2.0 to software 3.0 transition
+          </div>
+        </div>
+
+        <div class="stream-item">
+          <div class="stream-meta">
+            <span>RESEARCH PAPER</span>
+            <span>•</span>
+            <span>Yesterday</span>
+          </div>
+          <div class="stream-title">
+            Licklider: Man-Computer Symbiosis (1960)
+          </div>
+        </div>
+      </div>
+
+      <!-- CENTER: Deep In-Situ Workspace -->
+      <div class="glass-card center-stage">
+        <div class="stage-top-meta">
+          <div class="pill-group">
+            <div class="synapse-pill">
+              <span class="status-dot"></span>
+              <span>OTA-014</span>
+            </div>
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted)">
+              AFFINITY: 0.94 • PAGERANK: 0.88
+            </span>
+          </div>
+        </div>
+
+        <h1 class="stage-title">
+          Tools are not passive instruments; they reshape the cognitive morphology of the thinker.
+        </h1>
+
+        <p class="stage-body">
+          When humans interact with autonomous AI agents over extended time horizons, intentionality ceases to be unidirectional. The coevolution of product architecture and human intuition creates an emergent epistemic feedback loop.
+        </p>
+
+        <!-- In-Situ Research Canvas -->
+        <div class="reading-canvas">
+          <div class="source-label">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+            </svg>
+            <span>RESEARCH PAPER PDF • Licklider (1960) Man-Computer Symbiosis • Page 4</span>
+          </div>
+          <div class="pdf-quote">
+            "The hope is that, in not too many years, human brains and computing machines will be 
+            <span class="highlight-pill">coupled together very tightly</span>, and that the resulting partnership will think as no human brain has ever thought."
+          </div>
+        </div>
+
+        <div class="action-dock">
+          <button class="btn-reflect-glow">
+            <span>⚡</span> Anchor to PhD RQ-2
+          </button>
+          <button class="btn-reflect-primary">
+            <span>✍️</span> Draft LinkedIn Post
+          </button>
+        </div>
+      </div>
+
+      <!-- RIGHT: Inspector & Provenance Rail -->
+      <div class="glass-card inspector-rail">
+        <div>
+          <div class="rail-section-title">Book Chapter Compounding</div>
+          <div class="compounding-bar-wrap">
+            <div class="compounding-title">
+              <span>Ch. 2: The Coevolution</span>
+              <span style="font-family: 'JetBrains Mono', monospace; color: var(--accent-cyan)">74%</span>
+            </div>
+            <div class="compounding-track">
+              <div class="compounding-fill" style="width: 74%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="rail-section-title">Lineage Provenance (Ancestry)</div>
+          <div class="lineage-node-list">
+            <div class="lineage-node">
+              <span class="lineage-badge">Origin</span>
+              <span class="lineage-desc">Telegram Audio Capture #382 (Aug 24)</span>
+            </div>
+            <div class="lineage-node">
+              <span class="lineage-badge">Crystallization</span>
+              <span class="lineage-desc">OTA-014 (Cognitive Morphology)</span>
+            </div>
+            <div class="lineage-node">
+              <span class="lineage-badge">Empirical Evidence</span>
+              <span class="lineage-desc">Licklider (1960) PDF highlight anchor</span>
+            </div>
+            <div class="lineage-node">
+              <span class="lineage-badge">Destination</span>
+              <span class="lineage-desc">PhD RQ-2 & Chapter 2 Manuscript</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
