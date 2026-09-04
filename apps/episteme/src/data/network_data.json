@@ -1,0 +1,3236 @@
+{
+  "metrics": {
+    "total_nodes": 76,
+    "total_edges": 180,
+    "total_otas": 49,
+    "total_rqs": 8,
+    "total_pillars": 4,
+    "density": 0.0632
+  },
+  "nodes": [
+    {
+      "id": "member_harshitha",
+      "label": "Partner (Spouse)",
+      "type": "member",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 1,
+      "ota_num": "",
+      "properties": {
+        "role": "member"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.117,
+        "authority_score": 15.0
+      }
+    },
+    {
+      "id": "rq_1",
+      "label": "RQ1: Impact of AI Copilots on Human Reasoning & Critical Thinking",
+      "type": "phd_rq",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 1,
+      "ota_num": "",
+      "properties": {
+        "dim": "Thinking",
+        "code": "RQ1"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.2985,
+        "authority_score": 20.2
+      }
+    },
+    {
+      "id": "rq_2",
+      "label": "RQ2: Cognitive Dimension Augmentation vs Deskilling",
+      "type": "phd_rq",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 2,
+      "ota_num": "",
+      "properties": {
+        "dim": "Intelligence",
+        "code": "RQ2"
+      },
+      "metrics": {
+        "degree_centrality": 0.0267,
+        "pagerank": 0.4161,
+        "authority_score": 30.4
+      }
+    },
+    {
+      "id": "rq_3",
+      "label": "RQ3: AI Autonomy, Human Decision-Making & Agency",
+      "type": "phd_rq",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 1,
+      "ota_num": "",
+      "properties": {
+        "dim": "Agency",
+        "code": "RQ3"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.2396,
+        "authority_score": 16.9
+      }
+    },
+    {
+      "id": "rq_4",
+      "label": "RQ4: AI-Mediated Learning & Retention of Expertise",
+      "type": "phd_rq",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 1,
+      "ota_num": "",
+      "properties": {
+        "dim": "Learning",
+        "code": "RQ4"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.1468,
+        "authority_score": 15.0
+      }
+    },
+    {
+      "id": "rq_5",
+      "label": "RQ5: Creative Exploration vs Aesthetic Convergence",
+      "type": "phd_rq",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 1,
+      "ota_num": "",
+      "properties": {
+        "dim": "Creativity",
+        "code": "RQ5"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.2707,
+        "authority_score": 18.6
+      }
+    },
+    {
+      "id": "rq_6",
+      "label": "RQ6: The Cognitive Offloading vs Dependency Threshold",
+      "type": "phd_rq",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 1,
+      "ota_num": "",
+      "properties": {
+        "dim": "Offloading",
+        "code": "RQ6"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.117,
+        "authority_score": 15.0
+      }
+    },
+    {
+      "id": "rq_7",
+      "label": "RQ7: Longitudinal Human-Agent Co-Adaptation Dynamics",
+      "type": "phd_rq",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 1,
+      "ota_num": "",
+      "properties": {
+        "dim": "Coevolution",
+        "code": "RQ7"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.222,
+        "authority_score": 16.0
+      }
+    },
+    {
+      "id": "rq_8",
+      "label": "RQ8: System Design for Metacognitive Stimulation",
+      "type": "phd_rq",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 1,
+      "ota_num": "",
+      "properties": {
+        "dim": "System Design",
+        "code": "RQ8"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.2816,
+        "authority_score": 19.2
+      }
+    },
+    {
+      "id": "phd_rq1",
+      "label": "RQ1: How does continuous interaction with AI copilots affect human reasoning and critical thinking?",
+      "type": "phd_rq",
+      "group": "Research Question",
+      "color": "#ec4899",
+      "size": 14,
+      "degree": 3,
+      "ota_num": "",
+      "properties": {
+        "domain": "Thinking",
+        "hypothesis": "Hypothesis: Uncritical copilot use degrades sub-process verification, but Socratic agents amplify cognitive flexibility.",
+        "linked_otas": [
+          "ota_044",
+          "ota_033"
+        ]
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1253,
+        "authority_score": 18.1
+      }
+    },
+    {
+      "id": "phd_rq2",
+      "label": "RQ2: Which dimensions of human cognitive capability are augmented, unchanged or weakened through sustained AI interaction?",
+      "type": "phd_rq",
+      "group": "Research Question",
+      "color": "#ec4899",
+      "size": 14,
+      "degree": 3,
+      "ota_num": "",
+      "properties": {
+        "domain": "Intelligence",
+        "hypothesis": "Hypothesis: High-dimensional associative synthesis is augmented, while low-level syntactic recall is weakened.",
+        "linked_otas": [
+          "ota_035",
+          "ota_047"
+        ]
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1253,
+        "authority_score": 18.1
+      }
+    },
+    {
+      "id": "phd_rq3",
+      "label": "RQ3: How does increasing AI autonomy change human decision-making, judgement and agency?",
+      "type": "phd_rq",
+      "group": "Research Question",
+      "color": "#ec4899",
+      "size": 14,
+      "degree": 3,
+      "ota_num": "",
+      "properties": {
+        "domain": "Autonomy",
+        "hypothesis": "Hypothesis: As agent autonomy increases past Level 3, human agency shifts from decision formulation to passive review unless active sparring guardrails exist.",
+        "linked_otas": [
+          "ota_039",
+          "ota_011"
+        ]
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1253,
+        "authority_score": 18.1
+      }
+    },
+    {
+      "id": "phd_rq4",
+      "label": "RQ4: How does AI-mediated learning affect the development and retention of human expertise?",
+      "type": "phd_rq",
+      "group": "Research Question",
+      "color": "#ec4899",
+      "size": 14,
+      "degree": 3,
+      "ota_num": "",
+      "properties": {
+        "domain": "Learning",
+        "hypothesis": "Hypothesis: Effortless AI answers reduce retention; constraint-based problem formulation enhances transfer learning.",
+        "linked_otas": [
+          "ota_046",
+          "ota_029"
+        ]
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1253,
+        "authority_score": 18.1
+      }
+    },
+    {
+      "id": "phd_rq5",
+      "label": "RQ5: Does AI expand human creative exploration or cause humans to increasingly converge on machine-generated solutions?",
+      "type": "phd_rq",
+      "group": "Research Question",
+      "color": "#ec4899",
+      "size": 14,
+      "degree": 3,
+      "ota_num": "",
+      "properties": {
+        "domain": "Creativity",
+        "hypothesis": "Hypothesis: Prompt-based generation increases initial volume but risks homogenization; human taste acts as the critical selection pressure.",
+        "linked_otas": [
+          "ota_042",
+          "ota_037"
+        ]
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1253,
+        "authority_score": 18.1
+      }
+    },
+    {
+      "id": "phd_rq6",
+      "label": "RQ6: At what point does cognitive augmentation become cognitive dependency?",
+      "type": "phd_rq",
+      "group": "Research Question",
+      "color": "#ec4899",
+      "size": 14,
+      "degree": 3,
+      "ota_num": "",
+      "properties": {
+        "domain": "Offloading",
+        "hypothesis": "Hypothesis: The inflection point occurs when the human cannot reconstruct the first-principles reasoning path of the AI solution.",
+        "linked_otas": [
+          "ota_045",
+          "ota_030"
+        ]
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1253,
+        "authority_score": 18.1
+      }
+    },
+    {
+      "id": "phd_rq7",
+      "label": "RQ7: How do humans and AI agents adapt to one another over prolonged interaction?",
+      "type": "phd_rq",
+      "group": "Research Question",
+      "color": "#ec4899",
+      "size": 14,
+      "degree": 3,
+      "ota_num": "",
+      "properties": {
+        "domain": "Coevolution",
+        "hypothesis": "Hypothesis: Long-term exposure transforms human natural language into structured architectural constraints while personalizing agent associative memory.",
+        "linked_otas": [
+          "ota_040",
+          "ota_045"
+        ]
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1253,
+        "authority_score": 18.1
+      }
+    },
+    {
+      "id": "phd_rq8",
+      "label": "RQ8: How can AI systems be designed to strengthen human cognitive capabilities rather than simply replace cognitive effort?",
+      "type": "phd_rq",
+      "group": "Research Question",
+      "color": "#ec4899",
+      "size": 14,
+      "degree": 4,
+      "ota_num": "",
+      "properties": {
+        "domain": "System Design",
+        "hypothesis": "Hypothesis: Socratic pushback, in-situ cognitive ergonomics, and tactile grounding preserve human agency.",
+        "linked_otas": [
+          "ota_036",
+          "ota_043",
+          "ota_048"
+        ]
+      },
+      "metrics": {
+        "degree_centrality": 0.0533,
+        "pagerank": 0.1253,
+        "authority_score": 21.9
+      }
+    },
+    {
+      "id": "code_identity_router",
+      "label": "system/engine/identity_router.py",
+      "type": "code",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 2,
+      "ota_num": "",
+      "properties": {
+        "subsystem": "engine"
+      },
+      "metrics": {
+        "degree_centrality": 0.0267,
+        "pagerank": 0.1778,
+        "authority_score": 17.3
+      }
+    },
+    {
+      "id": "code_graph_engine",
+      "label": "system/engine/graph.py",
+      "type": "code",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 1,
+      "ota_num": "",
+      "properties": {
+        "subsystem": "engine"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.2681,
+        "authority_score": 18.5
+      }
+    },
+    {
+      "id": "skill_household",
+      "label": ".agents/skills/household-companion/SKILL.md",
+      "type": "code",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 3,
+      "ota_num": "",
+      "properties": {
+        "subsystem": "skills"
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.3767,
+        "authority_score": 32.0
+      }
+    },
+    {
+      "id": "member_monish",
+      "label": "Monish (Primary Owner)",
+      "type": "member",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 7,
+      "ota_num": "",
+      "properties": {
+        "role": "admin"
+      },
+      "metrics": {
+        "degree_centrality": 0.0933,
+        "pagerank": 0.117,
+        "authority_score": 32.7
+      }
+    },
+    {
+      "id": "member_Partner",
+      "label": "Partner (Spouse)",
+      "type": "member",
+      "group": "other",
+      "color": "#94a3b8",
+      "size": 8,
+      "degree": 1,
+      "ota_num": "",
+      "properties": {
+        "role": "member"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.117,
+        "authority_score": 15.0
+      }
+    },
+    {
+      "id": "ota_eval",
+      "label": "Eval OTA Node",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 16,
+      "degree": 3,
+      "ota_num": "OTA-EVAL",
+      "properties": {
+        "category": "test"
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1312,
+        "authority_score": 18.5
+      }
+    },
+    {
+      "id": "phd_master_topic",
+      "label": "Human-AI Coevolution: The Interdependent Evolution of Human Intelligence, AI Agents, Product Design, and Product Management",
+      "type": "phd_topic",
+      "group": "Master Core",
+      "color": "#ef4444",
+      "size": 28,
+      "degree": 12,
+      "ota_num": "",
+      "properties": {
+        "central_question": "As humans and AI agents co-evolve, how must human intelligence, product design, and product management evolve together?",
+        "pillars": [
+          "Human Intelligence",
+          "AI Agents",
+          "Product Design",
+          "Product Management"
+        ],
+        "target_geography": "Europe (Salaried Doctoral Researcher)"
+      },
+      "metrics": {
+        "degree_centrality": 0.16,
+        "pagerank": 0.117,
+        "authority_score": 51.4
+      }
+    },
+    {
+      "id": "pillar_human_intelligence",
+      "label": "Human Intelligence",
+      "type": "phd_pillar",
+      "group": "Pillar Hub",
+      "color": "#38bdf8",
+      "size": 20,
+      "degree": 17,
+      "ota_num": "",
+      "properties": {
+        "description": "Reasoning, critical thinking, heuristic creativity, aesthetic taste, and cognitive offloading."
+      },
+      "metrics": {
+        "degree_centrality": 0.2267,
+        "pagerank": 0.1253,
+        "authority_score": 70.6
+      }
+    },
+    {
+      "id": "pillar_ai_agents",
+      "label": "AI Agents",
+      "type": "phd_pillar",
+      "group": "Pillar Hub",
+      "color": "#a855f7",
+      "size": 20,
+      "degree": 15,
+      "ota_num": "",
+      "properties": {
+        "description": "Autonomous planning, tool/API execution, stateful memory (GraphRAG), and in-situ micro-computation."
+      },
+      "metrics": {
+        "degree_centrality": 0.2,
+        "pagerank": 0.1253,
+        "authority_score": 63.1
+      }
+    },
+    {
+      "id": "pillar_product_design",
+      "label": "Product Design (HACD)",
+      "type": "phd_pillar",
+      "group": "Pillar Hub",
+      "color": "#22c55e",
+      "size": 20,
+      "degree": 10,
+      "ota_num": "",
+      "properties": {
+        "description": "Human\u2013Agent-Centred Product Design where agents are first-class users, intermediaries, and operators."
+      },
+      "metrics": {
+        "degree_centrality": 0.1333,
+        "pagerank": 0.1253,
+        "authority_score": 44.4
+      }
+    },
+    {
+      "id": "pillar_product_management",
+      "label": "Product Management",
+      "type": "phd_pillar",
+      "group": "Pillar Hub",
+      "color": "#f59e0b",
+      "size": 20,
+      "degree": 10,
+      "ota_num": "",
+      "properties": {
+        "description": "Strategy, pricing models, roadmaps, and unit economics in human-agent ecosystems."
+      },
+      "metrics": {
+        "degree_centrality": 0.1333,
+        "pagerank": 0.1253,
+        "authority_score": 44.4
+      }
+    },
+    {
+      "id": "ota_001",
+      "label": "OTA-001: Questions as First-Class Primitives",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 26,
+      "degree": 8,
+      "ota_num": "OTA-001",
+      "properties": {
+        "description": "Questions are living computational objects with ancestry and trajectory, not static text prompts.",
+        "label": "OTA-001: Questions as First-Class Primitives"
+      },
+      "metrics": {
+        "degree_centrality": 0.1067,
+        "pagerank": 0.2132,
+        "authority_score": 41.7
+      }
+    },
+    {
+      "id": "ota_002",
+      "label": "OTA-002: The Scar Extraction Invariant",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 16,
+      "degree": 3,
+      "ota_num": "OTA-002",
+      "properties": {
+        "description": "Authentic authority comes strictly from empirical production scars and battle-tested realities.",
+        "label": "OTA-002: The Scar Extraction Invariant"
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.4099,
+        "authority_score": 33.8
+      }
+    },
+    {
+      "id": "ota_003",
+      "label": "OTA-003: Deterministic Fast Paths vs Stochastic Model Drift",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 20,
+      "degree": 5,
+      "ota_num": "OTA-003",
+      "properties": {
+        "description": "High-reliability cognitive architectures isolate deterministic fast paths from stochastic model inference.",
+        "label": "OTA-003: Deterministic Fast Paths vs Stochastic Model Drift"
+      },
+      "metrics": {
+        "degree_centrality": 0.0667,
+        "pagerank": 0.3357,
+        "authority_score": 37.2
+      }
+    },
+    {
+      "id": "ota_004",
+      "label": "OTA-004: Epistemic Persistence vs Context Window Atrophy",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 24,
+      "degree": 7,
+      "ota_num": "OTA-004",
+      "properties": {
+        "description": "Sliding context windows suffer from transient amnesia; durable cognition requires structured associative graph memory.",
+        "label": "OTA-004: Epistemic Persistence vs Context Window Atrophy"
+      },
+      "metrics": {
+        "degree_centrality": 0.0933,
+        "pagerank": 0.6256,
+        "authority_score": 60.7
+      }
+    },
+    {
+      "id": "ota_005",
+      "label": "OTA-005: Socratic Debate vs Flattery in Strategic Decision Making",
+      "type": "ota",
+      "group": "Pillar 4: Product Management",
+      "color": "#f59e0b",
+      "size": 12,
+      "degree": 1,
+      "ota_num": "OTA-005",
+      "properties": {
+        "description": "In strategic decisions, AI flattery compounds confirmation bias; adversarial debate is mandatory.",
+        "label": "OTA-005: Socratic Debate vs Flattery in Strategic Decision Making"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.1288,
+        "authority_score": 15.0
+      }
+    },
+    {
+      "id": "ota_006",
+      "label": "OTA-006: Epistemological Lineage & Thought Ancestry",
+      "type": "ota",
+      "group": "Pillar 3: Product Design (HACD)",
+      "color": "#22c55e",
+      "size": 12,
+      "degree": 1,
+      "ota_num": "OTA-006",
+      "properties": {
+        "description": "Every public insight must preserve its complete genealogical lineage from experience to doctoral chapter.",
+        "label": "OTA-006: Epistemological Lineage & Thought Ancestry"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.1288,
+        "authority_score": 15.0
+      }
+    },
+    {
+      "id": "ota_007",
+      "label": "OTA-007: Asymmetric Cognitive Bandwidth",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 16,
+      "degree": 3,
+      "ota_num": "OTA-007",
+      "properties": {
+        "description": "Human sensory input bandwidth vastly outpaces motor/vocal output bandwidth, requiring asymmetric capture interfaces.",
+        "label": "OTA-007: Asymmetric Cognitive Bandwidth"
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1237,
+        "authority_score": 18.1
+      }
+    },
+    {
+      "id": "ota_008",
+      "label": "OTA-008: Fractal Cognitive Symmetry",
+      "type": "ota",
+      "group": "Pillar 4: Product Management",
+      "color": "#f59e0b",
+      "size": 12,
+      "degree": 1,
+      "ota_num": "OTA-008",
+      "properties": {
+        "description": "Individual mind memory dynamics mirror collective enterprise knowledge architecture.",
+        "label": "OTA-008: Fractal Cognitive Symmetry"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.1288,
+        "authority_score": 15.0
+      }
+    },
+    {
+      "id": "ota_009",
+      "label": "OTA-009: Progressive Epistemic Disclosure",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 16,
+      "degree": 3,
+      "ota_num": "OTA-009",
+      "properties": {
+        "description": "Cognitive systems must deliver instant zero-friction utility before disclosing deep conceptual complexity.",
+        "label": "OTA-009: Progressive Epistemic Disclosure"
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1246,
+        "authority_score": 18.1
+      }
+    },
+    {
+      "id": "ota_010",
+      "label": "OTA-010: Adversarial Socratic Sparring",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 20,
+      "degree": 5,
+      "ota_num": "OTA-010",
+      "properties": {
+        "description": "Truth emerges from vigorous thesis-antithesis synthesis; AI cognitive partners must actively debate.",
+        "label": "OTA-010: Adversarial Socratic Sparring"
+      },
+      "metrics": {
+        "degree_centrality": 0.0667,
+        "pagerank": 0.2589,
+        "authority_score": 33.0
+      }
+    },
+    {
+      "id": "ota_011",
+      "label": "OTA-011: The Multidecadal Compounding Horizon",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 22,
+      "degree": 6,
+      "ota_num": "OTA-011",
+      "properties": {
+        "description": "Fundamental contributions compound toward a 30-year milestone of establishing laws of intelligence emergence.",
+        "label": "OTA-011: The Multidecadal Compounding Horizon"
+      },
+      "metrics": {
+        "degree_centrality": 0.08,
+        "pagerank": 0.2526,
+        "authority_score": 36.4
+      }
+    },
+    {
+      "id": "ota_012",
+      "label": "OTA-012: Autonomous Metacognitive Auditing",
+      "type": "ota",
+      "group": "Pillar 3: Product Design (HACD)",
+      "color": "#22c55e",
+      "size": 24,
+      "degree": 7,
+      "ota_num": "OTA-012",
+      "properties": {
+        "description": "High-order cognitive systems must monitor their own reasoning trajectories and detect confirmation bias.",
+        "label": "OTA-012: Autonomous Metacognitive Auditing"
+      },
+      "metrics": {
+        "degree_centrality": 0.0933,
+        "pagerank": 0.3435,
+        "authority_score": 45.1
+      }
+    },
+    {
+      "id": "ota_013",
+      "label": "OTA-013: Abstract Structural Isomorphism",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 16,
+      "degree": 3,
+      "ota_num": "OTA-013",
+      "properties": {
+        "description": "Human expertise functions through abstract invariant pattern matching across divergent domains.",
+        "label": "OTA-013: Abstract Structural Isomorphism"
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1246,
+        "authority_score": 18.1
+      }
+    },
+    {
+      "id": "ota_014",
+      "label": "OTA-014: Substrate-Neutral Tool Plasticity",
+      "type": "ota",
+      "group": "Pillar 3: Product Design (HACD)",
+      "color": "#22c55e",
+      "size": 18,
+      "degree": 4,
+      "ota_num": "OTA-014",
+      "properties": {
+        "description": "Biological brains integrate physical tools into body schema; AI systems integrate tools as fluid extensions.",
+        "label": "OTA-014: Substrate-Neutral Tool Plasticity"
+      },
+      "metrics": {
+        "degree_centrality": 0.0533,
+        "pagerank": 0.1431,
+        "authority_score": 22.9
+      }
+    },
+    {
+      "id": "ota_015",
+      "label": "OTA-015: Living Knowledge Ontologies vs Static Atrophy",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 12,
+      "degree": 1,
+      "ota_num": "OTA-015",
+      "properties": {
+        "description": "Knowledge decays unless actively exercised against reality; dormant documentation creates false competence.",
+        "label": "OTA-015: Living Knowledge Ontologies vs Static Atrophy"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.1237,
+        "authority_score": 15.0
+      }
+    },
+    {
+      "id": "ota_016",
+      "label": "OTA-016: Relevance & Actionable Utility over Performative Metrics",
+      "type": "ota",
+      "group": "Pillar 4: Product Management",
+      "color": "#f59e0b",
+      "size": 22,
+      "degree": 6,
+      "ota_num": "OTA-016",
+      "properties": {
+        "description": "Enduring authority compounds strictly when an asset provides deep, actionable utility to real-world friction.",
+        "label": "OTA-016: Relevance & Actionable Utility over Performative Metrics"
+      },
+      "metrics": {
+        "degree_centrality": 0.08,
+        "pagerank": 0.2784,
+        "authority_score": 37.8
+      }
+    },
+    {
+      "id": "ota_017",
+      "label": "OTA-017: The Reliability Advantage Invariant",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 18,
+      "degree": 4,
+      "ota_num": "OTA-017",
+      "properties": {
+        "description": "Repeatable, deterministic, high-signal execution compounds exponentially faster than sporadic flashes of brilliance.",
+        "label": "OTA-017: The Reliability Advantage Invariant"
+      },
+      "metrics": {
+        "degree_centrality": 0.0533,
+        "pagerank": 0.1246,
+        "authority_score": 21.9
+      }
+    },
+    {
+      "id": "ota_018",
+      "label": "OTA-018: Story Density & Emotional Resonance",
+      "type": "ota",
+      "group": "Pillar 3: Product Design (HACD)",
+      "color": "#22c55e",
+      "size": 14,
+      "degree": 2,
+      "ota_num": "OTA-018",
+      "properties": {
+        "description": "Empirical scars structured into high-density human story arcs create enduring emotional resonance and category authority.",
+        "label": "OTA-018: Story Density & Emotional Resonance"
+      },
+      "metrics": {
+        "degree_centrality": 0.0267,
+        "pagerank": 0.3655,
+        "authority_score": 27.6
+      }
+    },
+    {
+      "id": "ota_019",
+      "label": "OTA-019: Continuous Multimodal Sensorimotor Feedback",
+      "type": "ota",
+      "group": "Pillar 3: Product Design (HACD)",
+      "color": "#22c55e",
+      "size": 26,
+      "degree": 9,
+      "ota_num": "OTA-019",
+      "properties": {
+        "description": "Biological intelligence consumes continuous sensorimotor streams; AI cannot achieve parity through discrete text alone.",
+        "label": "OTA-019: Continuous Multimodal Sensorimotor Feedback"
+      },
+      "metrics": {
+        "degree_centrality": 0.12,
+        "pagerank": 0.5248,
+        "authority_score": 62.6
+      }
+    },
+    {
+      "id": "ota_020",
+      "label": "OTA-020: The World-Model Invariant & Limits of Autoregression",
+      "type": "ota",
+      "group": "Pillar 3: Product Design (HACD)",
+      "color": "#22c55e",
+      "size": 22,
+      "degree": 6,
+      "ota_num": "OTA-020",
+      "properties": {
+        "description": "Text prediction is a 1D lossy projection of thought; general intelligence requires continuous world simulation.",
+        "label": "OTA-020: The World-Model Invariant & Limits of Autoregression"
+      },
+      "metrics": {
+        "degree_centrality": 0.08,
+        "pagerank": 0.3374,
+        "authority_score": 41.1
+      }
+    },
+    {
+      "id": "ota_021",
+      "label": "OTA-021: Hierarchical Swarm Consensus",
+      "type": "ota",
+      "group": "Pillar 4: Product Management",
+      "color": "#f59e0b",
+      "size": 22,
+      "degree": 6,
+      "ota_num": "OTA-021",
+      "properties": {
+        "description": "Monolithic models hallucinate on cross-domain tasks; asymmetric SLM swarms provide specialized domain vectors.",
+        "label": "OTA-021: Hierarchical Swarm Consensus"
+      },
+      "metrics": {
+        "degree_centrality": 0.08,
+        "pagerank": 0.1769,
+        "authority_score": 32.2
+      }
+    },
+    {
+      "id": "ota_022",
+      "label": "OTA-022: Associative Thought Graph Invariant",
+      "type": "ota",
+      "group": "Pillar 4: Product Management",
+      "color": "#f59e0b",
+      "size": 26,
+      "degree": 8,
+      "ota_num": "OTA-022",
+      "properties": {
+        "description": "The human mind is a continuous small-world associative graph; new insights must link to prior nodes.",
+        "label": "OTA-022: Associative Thought Graph Invariant"
+      },
+      "metrics": {
+        "degree_centrality": 0.1067,
+        "pagerank": 0.1988,
+        "authority_score": 40.9
+      }
+    },
+    {
+      "id": "ota_023",
+      "label": "OTA-023: Human-AI Symbiotic Communion",
+      "type": "ota",
+      "group": "Pillar 4: Product Management",
+      "color": "#f59e0b",
+      "size": 16,
+      "degree": 3,
+      "ota_num": "OTA-023",
+      "properties": {
+        "description": "Enterprise value is neither pure human nor pure AI: AI delivers context synthesis, humans contribute moral stakes and empathy.",
+        "label": "OTA-023: Human-AI Symbiotic Communion"
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1288,
+        "authority_score": 18.3
+      }
+    },
+    {
+      "id": "ota_024",
+      "label": "OTA-024: Cognitive Scaffolding & Working Memory Liberation",
+      "type": "ota",
+      "group": "Pillar 3: Product Design (HACD)",
+      "color": "#22c55e",
+      "size": 12,
+      "degree": 1,
+      "ota_num": "OTA-024",
+      "properties": {
+        "description": "Offloading routine administrative syntax and mechanical friction frees human working memory for higher-order inquiry.",
+        "label": "OTA-024: Cognitive Scaffolding & Working Memory Liberation"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.1288,
+        "authority_score": 15.0
+      }
+    },
+    {
+      "id": "ota_025",
+      "label": "OTA-025: Data Science Evolution & Causal World Simulation",
+      "type": "ota",
+      "group": "Pillar 4: Product Management",
+      "color": "#f59e0b",
+      "size": 16,
+      "degree": 3,
+      "ota_num": "OTA-025",
+      "properties": {
+        "description": "Data science shifts from manual data munging to causal problem formulation and synthetic world simulation.",
+        "label": "OTA-025: Data Science Evolution & Causal World Simulation"
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.2384,
+        "authority_score": 24.4
+      }
+    },
+    {
+      "id": "ota_026",
+      "label": "OTA-026: Temporal Grounding & State Half-Life Decay",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 12,
+      "degree": 1,
+      "ota_num": "OTA-026",
+      "properties": {
+        "description": "Static neural networks have zero sense of time; artificial grounding requires temporal decay vectors and half-life modeling.",
+        "label": "OTA-026: Temporal Grounding & State Half-Life Decay"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.1246,
+        "authority_score": 15.0
+      }
+    },
+    {
+      "id": "ota_027",
+      "label": "OTA-027: The Outcome Paradigm Shift",
+      "type": "ota",
+      "group": "Pillar 4: Product Management",
+      "color": "#f59e0b",
+      "size": 16,
+      "degree": 3,
+      "ota_num": "OTA-027",
+      "properties": {
+        "description": "When AI collapses 100 hours of cognitive work into 4 seconds, value shifts entirely to Outcome Density and Taste.",
+        "label": "OTA-027: The Outcome Paradigm Shift"
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1288,
+        "authority_score": 18.3
+      }
+    },
+    {
+      "id": "ota_028",
+      "label": "OTA-028: The Modern AI Emergence Hierarchy",
+      "type": "ota",
+      "group": "Pillar 4: Product Management",
+      "color": "#f59e0b",
+      "size": 16,
+      "degree": 3,
+      "ota_num": "OTA-028",
+      "properties": {
+        "description": "AI is a nested hierarchy: Symbolic Systems -> Statistical ML -> Neural Networks -> Transformers -> Multi-Agent Swarms -> World Models.",
+        "label": "OTA-028: The Modern AI Emergence Hierarchy"
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1288,
+        "authority_score": 18.3
+      }
+    },
+    {
+      "id": "ota_029",
+      "label": "OTA-029: Active Agency Primacy vs Passive Next-Token Prediction",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 18,
+      "degree": 4,
+      "ota_num": "OTA-029",
+      "properties": {
+        "description": "True intelligence is an active inference loop with goal-directed environmental intervention, not passive prediction.",
+        "label": "OTA-029: Active Agency Primacy vs Passive Next-Token Prediction"
+      },
+      "metrics": {
+        "degree_centrality": 0.0533,
+        "pagerank": 0.1779,
+        "authority_score": 24.8
+      }
+    },
+    {
+      "id": "ota_030",
+      "label": "OTA-030: Bounded Epistemic Calibration & Humility",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 14,
+      "degree": 2,
+      "ota_num": "OTA-030",
+      "properties": {
+        "description": "Calibrated uncertainty is a prerequisite for higher-order reasoning; expertise recognizes epistemic boundaries.",
+        "label": "OTA-030: Bounded Epistemic Calibration & Humility"
+      },
+      "metrics": {
+        "degree_centrality": 0.0267,
+        "pagerank": 0.1769,
+        "authority_score": 17.2
+      }
+    },
+    {
+      "id": "ota_031",
+      "label": "OTA-031: Socratic Query Primacy as Knowledge Discovery",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 18,
+      "degree": 4,
+      "ota_num": "OTA-031",
+      "properties": {
+        "description": "Questions are active sensors probing the topology of the unknown, structuring the solution space upfront.",
+        "label": "OTA-031: Socratic Query Primacy as Knowledge Discovery"
+      },
+      "metrics": {
+        "degree_centrality": 0.0533,
+        "pagerank": 0.1936,
+        "authority_score": 25.6
+      }
+    },
+    {
+      "id": "ota_032",
+      "label": "OTA-032: Organoid Intelligence & Neuromorphic Silicon Substrates",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 14,
+      "degree": 2,
+      "ota_num": "OTA-032",
+      "properties": {
+        "description": "Biological biocomputing on microelectrode arrays unites living metabolic plasticity with digital permanence.",
+        "label": "OTA-032: Organoid Intelligence & Neuromorphic Silicon Substrates"
+      },
+      "metrics": {
+        "degree_centrality": 0.0267,
+        "pagerank": 0.1544,
+        "authority_score": 16.0
+      }
+    },
+    {
+      "id": "ota_033",
+      "label": "OTA-033: Subconscious Pattern Matching & Dual-Process Cognition",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 20,
+      "degree": 5,
+      "ota_num": "OTA-033",
+      "properties": {
+        "description": "Embedding retrieval acts as subconscious System 1; tree search and deliberate reasoners execute System 2 analysis.",
+        "label": "OTA-033: Subconscious Pattern Matching & Dual-Process Cognition"
+      },
+      "metrics": {
+        "degree_centrality": 0.0667,
+        "pagerank": 0.2456,
+        "authority_score": 32.3
+      }
+    },
+    {
+      "id": "ota_034",
+      "label": "OTA-034: Biochemical Emotional Bias & Focus Modulation",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 16,
+      "degree": 3,
+      "ota_num": "OTA-034",
+      "properties": {
+        "description": "Threat friction narrows focus toward survival/action; psychological safety expands associative exploration.",
+        "label": "OTA-034: Biochemical Emotional Bias & Focus Modulation"
+      },
+      "metrics": {
+        "degree_centrality": 0.04,
+        "pagerank": 0.1237,
+        "authority_score": 18.1
+      }
+    },
+    {
+      "id": "ota_035",
+      "label": "OTA-035: The 3 Cognitive Processing Layers in Agents",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 20,
+      "degree": 5,
+      "ota_num": "OTA-035",
+      "properties": {
+        "description": "Cognition operates across Visceral (filters), Behavioral (tool handling), and Reflective (Socratic metacognition).",
+        "label": "OTA-035: The 3 Cognitive Processing Layers in Agents"
+      },
+      "metrics": {
+        "degree_centrality": 0.0667,
+        "pagerank": 0.2031,
+        "authority_score": 29.9
+      }
+    },
+    {
+      "id": "ota_036",
+      "label": "OTA-036: Human-Centric System Design as Applied Psychology",
+      "type": "ota",
+      "group": "Pillar 3: Product Design (HACD)",
+      "color": "#22c55e",
+      "size": 24,
+      "degree": 7,
+      "ota_num": "OTA-036",
+      "properties": {
+        "description": "Systems are engineered around biological human working memory limits and cognitive half-lives.",
+        "label": "OTA-036: Human-Centric System Design as Applied Psychology"
+      },
+      "metrics": {
+        "degree_centrality": 0.0933,
+        "pagerank": 0.4827,
+        "authority_score": 52.8
+      }
+    },
+    {
+      "id": "ota_037",
+      "label": "OTA-037: Narrative Causality & Storytelling as Predictive Models",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 18,
+      "degree": 4,
+      "ota_num": "OTA-037",
+      "properties": {
+        "description": "Stories are compressed conceptual simulations that allow biological minds to predict consequences.",
+        "label": "OTA-037: Narrative Causality & Storytelling as Predictive Models"
+      },
+      "metrics": {
+        "degree_centrality": 0.0533,
+        "pagerank": 0.4171,
+        "authority_score": 37.9
+      }
+    },
+    {
+      "id": "ota_038",
+      "label": "OTA-038: The Post-LLM Plateau & The Great Systems Boom",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 18,
+      "degree": 4,
+      "ota_num": "OTA-038",
+      "properties": {
+        "description": "Value is migrating from scaling raw model parameters to compound cognitive harnesses and human-AI workflows.",
+        "label": "OTA-038: The Post-LLM Plateau & The Great Systems Boom"
+      },
+      "metrics": {
+        "degree_centrality": 0.0533,
+        "pagerank": 0.355,
+        "authority_score": 34.5
+      }
+    },
+    {
+      "id": "ota_039",
+      "label": "OTA-039: The AI Trust Evolution Scale",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 24,
+      "degree": 7,
+      "ota_num": "OTA-039",
+      "properties": {
+        "description": "Enterprise trust requires formal deterministic runtime eval suites over superficial model fluency.",
+        "label": "OTA-039: The AI Trust Evolution Scale"
+      },
+      "metrics": {
+        "degree_centrality": 0.0933,
+        "pagerank": 0.3926,
+        "authority_score": 47.8
+      }
+    },
+    {
+      "id": "ota_040",
+      "label": "OTA-040: Stateful Cognitive OS vs Transient Desktop CLI Wrappers",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 22,
+      "degree": 6,
+      "ota_num": "OTA-040",
+      "properties": {
+        "description": "A genuine Cognitive OS operates statefully at the memory layer, associative graph topology, and human alignment horizon.",
+        "label": "OTA-040: Stateful Cognitive OS vs Transient Desktop CLI Wrappers"
+      },
+      "metrics": {
+        "degree_centrality": 0.08,
+        "pagerank": 0.5162,
+        "authority_score": 50.9
+      }
+    },
+    {
+      "id": "ota_041",
+      "label": "OTA-041: Synthetic Demeanor Signatures & RLHF Temperament Asymmetry",
+      "type": "ota",
+      "group": "Pillar 2: AI Agents",
+      "color": "#a855f7",
+      "size": 12,
+      "degree": 1,
+      "ota_num": "OTA-041",
+      "properties": {
+        "description": "Model differentiation lies in reasoning posture and demeanor vectors (caution vs fluency vs transparency), not biological feelings.",
+        "label": "OTA-041: Synthetic Demeanor Signatures & RLHF Temperament Asymmetry"
+      },
+      "metrics": {
+        "degree_centrality": 0.0133,
+        "pagerank": 0.1246,
+        "authority_score": 15.0
+      }
+    },
+    {
+      "id": "ota_042",
+      "label": "OTA-042: Taste as the Ultimate Defensible Moat in Commodity AI",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 24,
+      "degree": 7,
+      "ota_num": "OTA-042",
+      "properties": {
+        "description": "When execution is a zero-cost commodity, Taste (curation, aesthetic discipline, knowing what NOT to build) is the sole moat.",
+        "label": "OTA-042: Taste as the Ultimate Defensible Moat in Commodity AI"
+      },
+      "metrics": {
+        "degree_centrality": 0.0933,
+        "pagerank": 0.4634,
+        "authority_score": 51.7
+      }
+    },
+    {
+      "id": "ota_043",
+      "label": "OTA-043: In-Situ Micro-Computation & Zero Context-Switch UX",
+      "type": "ota",
+      "group": "Pillar 3: Product Design (HACD)",
+      "color": "#22c55e",
+      "size": 26,
+      "degree": 8,
+      "ota_num": "OTA-043",
+      "properties": {
+        "description": "Embedding computation at the point of action collapses the intent-action gap and eliminates context-switching drop-offs.",
+        "label": "OTA-043: In-Situ Micro-Computation & Zero Context-Switch UX"
+      },
+      "metrics": {
+        "degree_centrality": 0.1067,
+        "pagerank": 0.1643,
+        "authority_score": 39.0
+      }
+    },
+    {
+      "id": "ota_044",
+      "label": "OTA-044: The Machine-Input Inversion Paradox & Cognitive Ergonomics",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 26,
+      "degree": 17,
+      "ota_num": "OTA-044",
+      "properties": {
+        "description": "Agentic AI absorbs mechanical syntax, freeing human cognition for problem formulation, judgment, and taste.",
+        "label": "OTA-044: The Machine-Input Inversion Paradox & Cognitive Ergonomics"
+      },
+      "metrics": {
+        "degree_centrality": 0.2267,
+        "pagerank": 1.0,
+        "authority_score": 99.5
+      }
+    },
+    {
+      "id": "ota_045",
+      "label": "OTA-045: Symbiotic Cognitive Coevolution & Higher-Order Plasticity",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 26,
+      "degree": 12,
+      "ota_num": "OTA-045",
+      "properties": {
+        "description": "Humans and AI agents coevolve: agents absorb deterministic execution, elevating humans to higher-order architecture.",
+        "label": "OTA-045: Symbiotic Cognitive Coevolution & Higher-Order Plasticity"
+      },
+      "metrics": {
+        "degree_centrality": 0.16,
+        "pagerank": 0.7038,
+        "authority_score": 83.7
+      }
+    },
+    {
+      "id": "ota_046",
+      "label": "OTA-046: Dual-Memory Epistemology: Head vs World",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 26,
+      "degree": 12,
+      "ota_num": "OTA-046",
+      "properties": {
+        "description": "Biological cognition combines internal knowledge (Head) with external tools (World). AI mirrors this via Parametric Weights + GraphRAG.",
+        "label": "OTA-046: Dual-Memory Epistemology: Head vs World"
+      },
+      "metrics": {
+        "degree_centrality": 0.16,
+        "pagerank": 0.5133,
+        "authority_score": 73.2
+      }
+    },
+    {
+      "id": "ota_047",
+      "label": "OTA-047: Biological Memory Multi-Dimensionality vs Parameter Scaling",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 26,
+      "degree": 15,
+      "ota_num": "OTA-047",
+      "properties": {
+        "description": "Human memory is associative and sensory; LLMs are lossy weight matrices. Reasoning requires test-time search and state transitions.",
+        "label": "OTA-047: Biological Memory Multi-Dimensionality vs Parameter Scaling"
+      },
+      "metrics": {
+        "degree_centrality": 0.2,
+        "pagerank": 0.8133,
+        "authority_score": 99.5
+      }
+    },
+    {
+      "id": "ota_048",
+      "label": "OTA-048: Haptic Mechanoreception & Tactile Grounding in Physical AI",
+      "type": "ota",
+      "group": "Pillar 1: Human Intelligence",
+      "color": "#38bdf8",
+      "size": 24,
+      "degree": 7,
+      "ota_num": "OTA-048",
+      "properties": {
+        "description": "Pure text LLMs suffer from grounding failure; physical AI requires high-frequency tactile token streams for causal compliance.",
+        "label": "OTA-048: Haptic Mechanoreception & Tactile Grounding in Physical AI"
+      },
+      "metrics": {
+        "degree_centrality": 0.0933,
+        "pagerank": 0.1592,
+        "authority_score": 35.0
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "member_harshitha",
+      "target": "skill_household",
+      "type": "COLLABORATES_ON",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "member_monish",
+      "target": "ota_022",
+      "type": "CREATED",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_022",
+      "target": "ota_001",
+      "type": "ASSOCIATED_WITH",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_022",
+      "target": "ota_011",
+      "type": "ASSOCIATED_WITH",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_022",
+      "target": "ota_019",
+      "type": "ASSOCIATED_WITH",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_022",
+      "target": "ota_020",
+      "type": "ASSOCIATED_WITH",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_022",
+      "target": "ota_021",
+      "type": "ASSOCIATED_WITH",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_043",
+      "target": "ota_036",
+      "type": "EXPANDS",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Human-centric design collapsing cognitive friction"
+      }
+    },
+    {
+      "source": "ota_043",
+      "target": "ota_035",
+      "type": "IMPLEMENTS",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Behavioral layer zero-friction execution"
+      }
+    },
+    {
+      "source": "ota_044",
+      "target": "ota_036",
+      "type": "EXPANDS",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Human-centric system design vs machine rigidity"
+      }
+    },
+    {
+      "source": "ota_044",
+      "target": "ota_042",
+      "type": "LINKS_TO",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Taste and creativity as human moat over mechanical precision"
+      }
+    },
+    {
+      "source": "ota_045",
+      "target": "ota_044",
+      "type": "EXPANDS",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Correcting machine-input inversion unlocks cognitive coevolution"
+      }
+    },
+    {
+      "source": "ota_045",
+      "target": "ota_042",
+      "type": "LINKS_TO",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Human taste becomes the evolutionary fitness function for agents"
+      }
+    },
+    {
+      "source": "ota_046",
+      "target": "ota_033",
+      "type": "EXPANDS",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Parametric weights as subconscious pattern matcher and context as working memory"
+      }
+    },
+    {
+      "source": "ota_046",
+      "target": "ota_036",
+      "type": "IMPLEMENTS",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Context engineering as human-centric memory ergonomics"
+      }
+    },
+    {
+      "source": "ota_047",
+      "target": "ota_046",
+      "type": "EXPANDS",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Memory encoding constraints dictate context engineering requirements"
+      }
+    },
+    {
+      "source": "ota_047",
+      "target": "ota_038",
+      "type": "LINKS_TO",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Why parameter scaling hits walls and test-time reasoning expands"
+      }
+    },
+    {
+      "source": "ota_048",
+      "target": "ota_047",
+      "type": "EXPANDS",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Touch as the critical missing sensory parameter in digital memory"
+      }
+    },
+    {
+      "source": "ota_048",
+      "target": "ota_032",
+      "type": "LINKS_TO",
+      "weight": 1.0,
+      "properties": {
+        "desc": "Embodied tactile feedback in neuromorphic and robotic systems"
+      }
+    },
+    {
+      "source": "ota_044",
+      "target": "rq_1",
+      "type": "SUPPORTS_RQ",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_045",
+      "target": "rq_7",
+      "type": "SUPPORTS_RQ",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_046",
+      "target": "rq_2",
+      "type": "SUPPORTS_RQ",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_047",
+      "target": "rq_2",
+      "type": "SUPPORTS_RQ",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_048",
+      "target": "rq_4",
+      "type": "SUPPORTS_RQ",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_039",
+      "target": "rq_3",
+      "type": "SUPPORTS_RQ",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_042",
+      "target": "rq_5",
+      "type": "SUPPORTS_RQ",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_031",
+      "target": "rq_8",
+      "type": "SUPPORTS_RQ",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "phd_rq1",
+      "type": "INCLUDES_QUESTION",
+      "weight": 1.0,
+      "properties": {
+        "domain": "Thinking"
+      }
+    },
+    {
+      "source": "phd_rq1",
+      "target": "ota_044",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ1 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_rq1",
+      "target": "ota_033",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ1 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "phd_rq2",
+      "type": "INCLUDES_QUESTION",
+      "weight": 1.0,
+      "properties": {
+        "domain": "Intelligence"
+      }
+    },
+    {
+      "source": "phd_rq2",
+      "target": "ota_035",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ2 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_rq2",
+      "target": "ota_047",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ2 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "phd_rq3",
+      "type": "INCLUDES_QUESTION",
+      "weight": 1.0,
+      "properties": {
+        "domain": "Autonomy"
+      }
+    },
+    {
+      "source": "phd_rq3",
+      "target": "ota_039",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ3 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_rq3",
+      "target": "ota_011",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ3 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "phd_rq4",
+      "type": "INCLUDES_QUESTION",
+      "weight": 1.0,
+      "properties": {
+        "domain": "Learning"
+      }
+    },
+    {
+      "source": "phd_rq4",
+      "target": "ota_046",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ4 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_rq4",
+      "target": "ota_029",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ4 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "phd_rq5",
+      "type": "INCLUDES_QUESTION",
+      "weight": 1.0,
+      "properties": {
+        "domain": "Creativity"
+      }
+    },
+    {
+      "source": "phd_rq5",
+      "target": "ota_042",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ5 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_rq5",
+      "target": "ota_037",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ5 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "phd_rq6",
+      "type": "INCLUDES_QUESTION",
+      "weight": 1.0,
+      "properties": {
+        "domain": "Offloading"
+      }
+    },
+    {
+      "source": "phd_rq6",
+      "target": "ota_045",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ6 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_rq6",
+      "target": "ota_030",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ6 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "phd_rq7",
+      "type": "INCLUDES_QUESTION",
+      "weight": 1.0,
+      "properties": {
+        "domain": "Coevolution"
+      }
+    },
+    {
+      "source": "phd_rq7",
+      "target": "ota_040",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ7 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_rq7",
+      "target": "ota_045",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ7 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "phd_rq8",
+      "type": "INCLUDES_QUESTION",
+      "weight": 1.0,
+      "properties": {
+        "domain": "System Design"
+      }
+    },
+    {
+      "source": "phd_rq8",
+      "target": "ota_036",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ8 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_rq8",
+      "target": "ota_043",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ8 theoretical foundation"
+      }
+    },
+    {
+      "source": "phd_rq8",
+      "target": "ota_048",
+      "type": "GROUNDED_IN",
+      "weight": 1.0,
+      "properties": {
+        "desc": "RQ8 theoretical foundation"
+      }
+    },
+    {
+      "source": "ota_014",
+      "target": "code_identity_router",
+      "type": "IMPLEMENTED_IN",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_014",
+      "target": "skill_household",
+      "type": "POWERED_BY",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "code_identity_router",
+      "target": "code_graph_engine",
+      "type": "UTILIZES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "member_monish",
+      "target": "ota_014",
+      "type": "CREATED",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "member_Partner",
+      "target": "skill_household",
+      "type": "COLLABORATES_ON",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_019",
+      "target": "ota_020",
+      "type": "SUBSET_OF",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_021",
+      "target": "ota_019",
+      "type": "ARCHITECTURAL_SOLUTION_FOR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_016",
+      "target": "ota_018",
+      "type": "REQUIRES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_017",
+      "target": "ota_016",
+      "type": "ENFORCES",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "member_monish",
+      "target": "ota_016",
+      "type": "CREATED",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "member_monish",
+      "target": "ota_019",
+      "type": "CREATED",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "member_monish",
+      "target": "ota_020",
+      "type": "CREATED",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "member_monish",
+      "target": "ota_021",
+      "type": "CREATED",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_001",
+      "target": "ota_011",
+      "type": "EXTENDED_BY",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "member_monish",
+      "target": "ota_eval",
+      "type": "CREATED",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_eval",
+      "target": "ota_001",
+      "type": "ASSOCIATED_WITH",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_eval",
+      "target": "ota_022",
+      "type": "ASSOCIATED_WITH",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "pillar_human_intelligence",
+      "type": "FOUNDED_ON_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "pillar_ai_agents",
+      "type": "FOUNDED_ON_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "pillar_product_design",
+      "type": "FOUNDED_ON_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "phd_master_topic",
+      "target": "pillar_product_management",
+      "type": "FOUNDED_ON_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_001",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_007",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_011",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_015",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_030",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_031",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_033",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_034",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_035",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_037",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_042",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_044",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_045",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_046",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_047",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_human_intelligence",
+      "target": "ota_048",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_002",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_003",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_004",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_009",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_010",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_013",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_017",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_026",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_029",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_032",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_038",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_039",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_040",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_ai_agents",
+      "target": "ota_041",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_design",
+      "target": "ota_006",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_design",
+      "target": "ota_012",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_design",
+      "target": "ota_014",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_design",
+      "target": "ota_018",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_design",
+      "target": "ota_019",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_design",
+      "target": "ota_020",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_design",
+      "target": "ota_024",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_design",
+      "target": "ota_036",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_design",
+      "target": "ota_043",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_management",
+      "target": "ota_005",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_management",
+      "target": "ota_008",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_management",
+      "target": "ota_016",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_management",
+      "target": "ota_021",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_management",
+      "target": "ota_022",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_management",
+      "target": "ota_023",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_management",
+      "target": "ota_025",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_management",
+      "target": "ota_027",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "pillar_product_management",
+      "target": "ota_028",
+      "type": "GROUNDS_PILLAR",
+      "weight": 1.0,
+      "properties": {}
+    },
+    {
+      "source": "ota_046",
+      "target": "ota_044",
+      "type": "COMPLEMENTS",
+      "weight": 0.95,
+      "properties": {
+        "reason": "Context Engineering bridges Norman's knowledge in the head with machine precision to resolve the Machine-Input Inversion.",
+        "score": 0.95
+      }
+    },
+    {
+      "source": "ota_046",
+      "target": "ota_047",
+      "type": "THEORETICAL_FOUNDATION",
+      "weight": 0.92,
+      "properties": {
+        "reason": "Head vs World context engineering directly explains why parameter scaling hits limits without external working memory.",
+        "score": 0.92
+      }
+    },
+    {
+      "source": "ota_044",
+      "target": "ota_045",
+      "type": "ENABLES",
+      "weight": 0.9,
+      "properties": {
+        "reason": "Fixing machine-input friction allows humans and agents to enter true higher-order symbiotic coevolution.",
+        "score": 0.9
+      }
+    },
+    {
+      "source": "ota_045",
+      "target": "ota_040",
+      "type": "ARCHITECTURAL_PARADIGM",
+      "weight": 0.94,
+      "properties": {
+        "reason": "Coevolution requires an associative Cognitive OS (Nirixa) rather than disposable desktop scripts.",
+        "score": 0.94
+      }
+    },
+    {
+      "source": "ota_048",
+      "target": "ota_047",
+      "type": "SENSORIMOTOR_GROUNDING",
+      "weight": 0.88,
+      "properties": {
+        "reason": "Haptic mechanoreceptors provide the physical grounding parameters absent in text-only LLM memory.",
+        "score": 0.88
+      }
+    },
+    {
+      "source": "ota_043",
+      "target": "ota_044",
+      "type": "IN_SITU_ERGONOMICS",
+      "weight": 0.91,
+      "properties": {
+        "reason": "PhonePe in-situ calculator is the concrete product implementation of absorbing precision friction for humans.",
+        "score": 0.91
+      }
+    },
+    {
+      "source": "ota_043",
+      "target": "ota_036",
+      "type": "HUMAN_CENTRIC_UX",
+      "weight": 0.89,
+      "properties": {
+        "reason": "In-situ micro-computation embodies the human-centric design invariant by collapsing intent-to-action friction.",
+        "score": 0.89
+      }
+    },
+    {
+      "source": "ota_001",
+      "target": "ota_031",
+      "type": "EPISTEMIC_CORE",
+      "weight": 0.98,
+      "properties": {
+        "reason": "Socratic queries are the computational primitive driving the dynamic system engine.",
+        "score": 0.98
+      }
+    },
+    {
+      "source": "ota_001",
+      "target": "ota_010",
+      "type": "SOCRATIC_SPARRING",
+      "weight": 0.93,
+      "properties": {
+        "reason": "Questions as first-class primitives empower adversarial sparring over passive autocomplete.",
+        "score": 0.93
+      }
+    },
+    {
+      "source": "ota_011",
+      "target": "ota_039",
+      "type": "AUDIT_PROVENANCE",
+      "weight": 0.91,
+      "properties": {
+        "reason": "Thought ancestry provides the verifiable lineage required for Level 4/5 AI Trust.",
+        "score": 0.91
+      }
+    },
+    {
+      "source": "ota_035",
+      "target": "ota_044",
+      "type": "COGNITIVE_LAYERS",
+      "weight": 0.87,
+      "properties": {
+        "reason": "Norman's Visceral/Behavioral/Reflective layers dictate how machine precision must be abstracted.",
+        "score": 0.87
+      }
+    },
+    {
+      "source": "ota_033",
+      "target": "ota_047",
+      "type": "DUAL_PROCESS_MEMORY",
+      "weight": 0.89,
+      "properties": {
+        "reason": "Subconscious topology maps to high-dimensional associative human memory vs linear token projection.",
+        "score": 0.89
+      }
+    },
+    {
+      "source": "ota_034",
+      "target": "ota_047",
+      "type": "EMOTIONAL_VALENCY",
+      "weight": 0.93,
+      "properties": {
+        "reason": "Biochemical hormonal floods (amygdala/dopamine) create permanent memory retention weights in humans.",
+        "score": 0.93
+      }
+    },
+    {
+      "source": "ota_042",
+      "target": "ota_037",
+      "type": "AESTHETIC_MOAT",
+      "weight": 0.9,
+      "properties": {
+        "reason": "Human taste acts as the selection pressure on narrative conceptual models in commodity AI generation.",
+        "score": 0.9
+      }
+    },
+    {
+      "source": "ota_007",
+      "target": "ota_012",
+      "type": "MOBILE_BUFFER",
+      "weight": 0.95,
+      "properties": {
+        "reason": "Mobile capture asymmetry is sustained through multi-channel ephemeral buffers (Telegram).",
+        "score": 0.95
+      }
+    },
+    {
+      "source": "ota_012",
+      "target": "ota_019",
+      "type": "DISTILLATION_PIPELINE",
+      "weight": 0.94,
+      "properties": {
+        "reason": "Raw mobile friction buffers flow directly into the 3-stage ephemeral-to-permanent distillation pipeline.",
+        "score": 0.94
+      }
+    },
+    {
+      "source": "ota_019",
+      "target": "ota_004",
+      "type": "ACID_PERSISTENCE",
+      "weight": 0.92,
+      "properties": {
+        "reason": "Refined knowledge is persisted into SQLite ACID single-source-of-truth tables.",
+        "score": 0.92
+      }
+    },
+    {
+      "source": "ota_003",
+      "target": "ota_002",
+      "type": "RESILIENCE_HIERARCHY",
+      "weight": 0.96,
+      "properties": {
+        "reason": "Deterministic fast paths fallback to cached patterns before hitting expensive LLM inference.",
+        "score": 0.96
+      }
+    },
+    {
+      "source": "ota_009",
+      "target": "ota_004",
+      "type": "SEMANTIC_ANCHORING",
+      "weight": 0.91,
+      "properties": {
+        "reason": "Deterministic semantic anchoring prevents vector drift in SQLite database storage.",
+        "score": 0.91
+      }
+    },
+    {
+      "source": "ota_013",
+      "target": "ota_046",
+      "type": "MEMORY_HIERARCHY",
+      "weight": 0.95,
+      "properties": {
+        "reason": "The 3-tier memory hierarchy is the technical implementation of Knowledge in the World (GraphRAG).",
+        "score": 0.95
+      }
+    },
+    {
+      "source": "ota_017",
+      "target": "ota_010",
+      "type": "INTERACTIVE_SPARRING",
+      "weight": 0.92,
+      "properties": {
+        "reason": "Multi-turn Socratic loops implement active debate and counter-argument probing.",
+        "score": 0.92
+      }
+    },
+    {
+      "source": "ota_020",
+      "target": "ota_044",
+      "type": "LOAD_EQUALIZATION",
+      "weight": 0.89,
+      "properties": {
+        "reason": "The cognitive load equalizer offloads deterministic mechanics to preserve human creative energy.",
+        "score": 0.89
+      }
+    },
+    {
+      "source": "ota_021",
+      "target": "ota_016",
+      "type": "COMPOUNDING_FLYWHEEL",
+      "weight": 0.94,
+      "properties": {
+        "reason": "The asymmetric knowledge flywheel directly compounds toward the 2029 Keynote milestone.",
+        "score": 0.94
+      }
+    },
+    {
+      "source": "ota_023",
+      "target": "ota_025",
+      "type": "DISTRIBUTION_ENGINE",
+      "weight": 0.93,
+      "properties": {
+        "reason": "Viral conversion frameworks feed into executive authority positioning matrices on LinkedIn.",
+        "score": 0.93
+      }
+    },
+    {
+      "source": "ota_027",
+      "target": "ota_004",
+      "type": "VERIFICATION_HARNESS",
+      "weight": 0.95,
+      "properties": {
+        "reason": "Continuous health eval suites enforce database integrity and zero-regression rules.",
+        "score": 0.95
+      }
+    },
+    {
+      "source": "ota_028",
+      "target": "ota_012",
+      "type": "DELEGATION_LOOP",
+      "weight": 0.91,
+      "properties": {
+        "reason": "Proactive Chief of Staff delegation pushes micro-tasks back to mobile Telegram when away from desk.",
+        "score": 0.91
+      }
+    },
+    {
+      "source": "ota_029",
+      "target": "ota_040",
+      "type": "SKILL_HARNESS",
+      "weight": 0.92,
+      "properties": {
+        "reason": "Executable markdown skills are first-class primitives inside the Cognitive OS.",
+        "score": 0.92
+      }
+    },
+    {
+      "source": "ota_038",
+      "target": "ota_045",
+      "type": "POST_LLM_ERA",
+      "weight": 0.94,
+      "properties": {
+        "reason": "The 10-year post-LLM systems boom will be defined by human-agent coevolutionary interfaces, not raw parameter scale.",
+        "score": 0.94
+      }
+    },
+    {
+      "source": "ota_039",
+      "target": "ota_003",
+      "type": "TRUST_VERIFICATION",
+      "weight": 0.93,
+      "properties": {
+        "reason": "AI Trust scales only when backed by deterministic fast-path verifiers.",
+        "score": 0.93
+      }
+    },
+    {
+      "source": "ota_045",
+      "target": "ota_044",
+      "type": "DEPENDS_ON",
+      "weight": 0.916,
+      "properties": {
+        "reason": "Human-agent coevolution depends on eliminating low-level mechanical syntax friction first.",
+        "score": 0.916,
+        "attributes": {
+          "semantic_similarity": 0.9,
+          "epistemic_dependency": 0.95,
+          "cross_pillar_bridge": 0.92,
+          "empirical_resonance": 0.88,
+          "composite_score": 0.916
+        }
+      }
+    },
+    {
+      "source": "ota_046",
+      "target": "ota_044",
+      "type": "EXTENDS",
+      "weight": 0.754,
+      "properties": {
+        "reason": "Context Engineering extends Don Norman's head vs world duality into AI architecture, solving the Machine-Input Inversion.",
+        "verb": "EXTENDS",
+        "score": 0.754,
+        "attributes": {
+          "semantic_similarity": 0.676,
+          "epistemic_dependency": 0.82,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.95,
+          "composite_score": 0.754
+        }
+      }
+    },
+    {
+      "source": "ota_046",
+      "target": "ota_047",
+      "type": "SUPPORTS",
+      "weight": 0.726,
+      "properties": {
+        "reason": "Knowledge in the World context engineering supports why parametric weight scaling alone hits reasoning limits.",
+        "verb": "SUPPORTS",
+        "score": 0.726,
+        "attributes": {
+          "semantic_similarity": 0.712,
+          "epistemic_dependency": 0.78,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.775,
+          "composite_score": 0.726
+        }
+      }
+    },
+    {
+      "source": "ota_044",
+      "target": "ota_045",
+      "type": "DEPENDS_ON",
+      "weight": 0.783,
+      "properties": {
+        "reason": "Human-Agent symbiotic coevolution depends on eliminating low-level mechanical syntax friction first.",
+        "verb": "DEPENDS_ON",
+        "score": 0.783,
+        "attributes": {
+          "semantic_similarity": 0.732,
+          "epistemic_dependency": 0.95,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.775,
+          "composite_score": 0.783
+        }
+      }
+    },
+    {
+      "source": "ota_045",
+      "target": "ota_040",
+      "type": "DERIVES_FROM",
+      "weight": 0.842,
+      "properties": {
+        "reason": "Coevolutionary intelligence derives from an associative Cognitive OS foundation rather than transient scripts.",
+        "verb": "DERIVES_FROM",
+        "score": 0.842,
+        "attributes": {
+          "semantic_similarity": 0.736,
+          "epistemic_dependency": 0.9,
+          "cross_pillar_bridge": 0.95,
+          "empirical_resonance": 0.76,
+          "composite_score": 0.842
+        }
+      }
+    },
+    {
+      "source": "ota_048",
+      "target": "ota_047",
+      "type": "ANALOGOUS_TO",
+      "weight": 0.663,
+      "properties": {
+        "reason": "High-frequency haptic mechanoreception is analogous to multimodal sensorimotor token streams.",
+        "verb": "ANALOGOUS_TO",
+        "score": 0.663,
+        "attributes": {
+          "semantic_similarity": 0.712,
+          "epistemic_dependency": 0.58,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.75,
+          "composite_score": 0.663
+        }
+      }
+    },
+    {
+      "source": "ota_043",
+      "target": "ota_044",
+      "type": "APPLIES_TO",
+      "weight": 0.825,
+      "properties": {
+        "reason": "PhonePe in-situ micro-calculator applies the machine-input inversion fix directly to payment friction.",
+        "verb": "APPLIES_TO",
+        "score": 0.825,
+        "attributes": {
+          "semantic_similarity": 0.722,
+          "epistemic_dependency": 0.75,
+          "cross_pillar_bridge": 0.95,
+          "empirical_resonance": 0.975,
+          "composite_score": 0.825
+        }
+      }
+    },
+    {
+      "source": "ota_043",
+      "target": "ota_036",
+      "type": "APPLIES_TO",
+      "weight": 0.713,
+      "properties": {
+        "reason": "In-situ micro-computation applies the human-centric design invariant by collapsing intent-to-action friction.",
+        "verb": "APPLIES_TO",
+        "score": 0.713,
+        "attributes": {
+          "semantic_similarity": 0.684,
+          "epistemic_dependency": 0.75,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.8,
+          "composite_score": 0.713
+        }
+      }
+    },
+    {
+      "source": "ota_001",
+      "target": "ota_031",
+      "type": "REFINES",
+      "weight": 0.691,
+      "properties": {
+        "reason": "Socratic query primacy refines how the question-driven system engine traverses living thoughts.",
+        "verb": "REFINES",
+        "score": 0.691,
+        "attributes": {
+          "semantic_similarity": 0.741,
+          "epistemic_dependency": 0.72,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.6,
+          "composite_score": 0.691
+        }
+      }
+    },
+    {
+      "source": "ota_001",
+      "target": "ota_010",
+      "type": "QUESTIONS",
+      "weight": 0.727,
+      "properties": {
+        "reason": "Socratic queries actively question and probe unstated premises during adversarial sparring.",
+        "verb": "QUESTIONS",
+        "score": 0.727,
+        "attributes": {
+          "semantic_similarity": 0.65,
+          "epistemic_dependency": 0.68,
+          "cross_pillar_bridge": 0.95,
+          "empirical_resonance": 0.6,
+          "composite_score": 0.727
+        }
+      }
+    },
+    {
+      "source": "ota_011",
+      "target": "ota_039",
+      "type": "SUPPORTS",
+      "weight": 0.773,
+      "properties": {
+        "reason": "Thought ancestry supports verifiable trust by preserving complete epistemic lineage across time.",
+        "verb": "SUPPORTS",
+        "score": 0.773,
+        "attributes": {
+          "semantic_similarity": 0.704,
+          "epistemic_dependency": 0.78,
+          "cross_pillar_bridge": 0.95,
+          "empirical_resonance": 0.6,
+          "composite_score": 0.773
+        }
+      }
+    },
+    {
+      "source": "ota_035",
+      "target": "ota_044",
+      "type": "INSPIRED_BY",
+      "weight": 0.681,
+      "properties": {
+        "reason": "Agent interface abstraction is inspired by Don Norman's 3 cognitive processing layers (Visceral, Behavioral, Reflective).",
+        "verb": "INSPIRED_BY",
+        "score": 0.681,
+        "attributes": {
+          "semantic_similarity": 0.821,
+          "epistemic_dependency": 0.52,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.775,
+          "composite_score": 0.681
+        }
+      }
+    },
+    {
+      "source": "ota_033",
+      "target": "ota_047",
+      "type": "ANALOGOUS_TO",
+      "weight": 0.642,
+      "properties": {
+        "reason": "Subconscious associative topology in human memory is analogous to non-parametric GraphRAG retrieval.",
+        "verb": "ANALOGOUS_TO",
+        "score": 0.642,
+        "attributes": {
+          "semantic_similarity": 0.718,
+          "epistemic_dependency": 0.58,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.6,
+          "composite_score": 0.642
+        }
+      }
+    },
+    {
+      "source": "ota_034",
+      "target": "ota_047",
+      "type": "INSPIRED_BY",
+      "weight": 0.612,
+      "properties": {
+        "reason": "Dynamic attention weighting is inspired by biological biochemical hormonal flooding (amygdala valency).",
+        "verb": "INSPIRED_BY",
+        "score": 0.612,
+        "attributes": {
+          "semantic_similarity": 0.679,
+          "epistemic_dependency": 0.52,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.6,
+          "composite_score": 0.612
+        }
+      }
+    },
+    {
+      "source": "ota_042",
+      "target": "ota_037",
+      "type": "REFINES",
+      "weight": 0.663,
+      "properties": {
+        "reason": "Human taste acts as the critical selection pressure refining machine-generated narrative models.",
+        "verb": "REFINES",
+        "score": 0.663,
+        "attributes": {
+          "semantic_similarity": 0.65,
+          "epistemic_dependency": 0.72,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.6,
+          "composite_score": 0.663
+        }
+      }
+    },
+    {
+      "source": "ota_007",
+      "target": "ota_012",
+      "type": "SUPPORTS",
+      "weight": 0.823,
+      "properties": {
+        "reason": "Mobile capture asymmetry supports zero-friction logging via multi-channel ephemeral buffers.",
+        "verb": "SUPPORTS",
+        "score": 0.823,
+        "attributes": {
+          "semantic_similarity": 0.698,
+          "epistemic_dependency": 0.78,
+          "cross_pillar_bridge": 0.95,
+          "empirical_resonance": 0.95,
+          "composite_score": 0.823
+        }
+      }
+    },
+    {
+      "source": "ota_012",
+      "target": "ota_019",
+      "type": "EXTENDS",
+      "weight": 0.744,
+      "properties": {
+        "reason": "The ephemeral mobile buffer extends directly into the permanent 3-stage distillation pipeline.",
+        "verb": "EXTENDS",
+        "score": 0.744,
+        "attributes": {
+          "semantic_similarity": 0.65,
+          "epistemic_dependency": 0.82,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.935,
+          "composite_score": 0.744
+        }
+      }
+    },
+    {
+      "source": "ota_019",
+      "target": "ota_004",
+      "type": "DEPENDS_ON",
+      "weight": 0.858,
+      "properties": {
+        "reason": "The 3-stage distillation pipeline depends on SQLite ACID single-source-of-truth persistence.",
+        "verb": "DEPENDS_ON",
+        "score": 0.858,
+        "attributes": {
+          "semantic_similarity": 0.65,
+          "epistemic_dependency": 0.95,
+          "cross_pillar_bridge": 0.95,
+          "empirical_resonance": 0.935,
+          "composite_score": 0.858
+        }
+      }
+    },
+    {
+      "source": "ota_003",
+      "target": "ota_002",
+      "type": "DERIVES_FROM",
+      "weight": 0.758,
+      "properties": {
+        "reason": "Deterministic fast paths derive from the zero-cost resilience fallback hierarchy.",
+        "verb": "DERIVES_FROM",
+        "score": 0.758,
+        "attributes": {
+          "semantic_similarity": 0.704,
+          "epistemic_dependency": 0.9,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.76,
+          "composite_score": 0.758
+        }
+      }
+    },
+    {
+      "source": "ota_009",
+      "target": "ota_004",
+      "type": "SUPPORTS",
+      "weight": 0.742,
+      "properties": {
+        "reason": "Deterministic semantic anchoring supports ACID invariants by preventing vector drift.",
+        "verb": "SUPPORTS",
+        "score": 0.742,
+        "attributes": {
+          "semantic_similarity": 0.689,
+          "epistemic_dependency": 0.78,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.925,
+          "composite_score": 0.742
+        }
+      }
+    },
+    {
+      "source": "ota_013",
+      "target": "ota_046",
+      "type": "REFINES",
+      "weight": 0.765,
+      "properties": {
+        "reason": "The 3-tier layered memory hierarchy refines the technical implementation of Knowledge in the World.",
+        "verb": "REFINES",
+        "score": 0.765,
+        "attributes": {
+          "semantic_similarity": 0.65,
+          "epistemic_dependency": 0.72,
+          "cross_pillar_bridge": 0.95,
+          "empirical_resonance": 0.775,
+          "composite_score": 0.765
+        }
+      }
+    },
+    {
+      "source": "ota_017",
+      "target": "ota_010",
+      "type": "REFINES",
+      "weight": 0.663,
+      "properties": {
+        "reason": "Multi-turn Socratic loops refine the multi-perspective debate mechanism.",
+        "verb": "REFINES",
+        "score": 0.663,
+        "attributes": {
+          "semantic_similarity": 0.65,
+          "epistemic_dependency": 0.72,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.6,
+          "composite_score": 0.663
+        }
+      }
+    },
+    {
+      "source": "ota_020",
+      "target": "ota_044",
+      "type": "REFINES",
+      "weight": 0.775,
+      "properties": {
+        "reason": "The cognitive load equalizer refines the mechanical offloading layer to preserve human creative taste.",
+        "verb": "REFINES",
+        "score": 0.775,
+        "attributes": {
+          "semantic_similarity": 0.684,
+          "epistemic_dependency": 0.72,
+          "cross_pillar_bridge": 0.95,
+          "empirical_resonance": 0.775,
+          "composite_score": 0.775
+        }
+      }
+    },
+    {
+      "source": "ota_021",
+      "target": "ota_016",
+      "type": "EXTENDS",
+      "weight": 0.746,
+      "properties": {
+        "reason": "The asymmetric knowledge flywheel extends daily captures toward the 2029 Keynote horizon.",
+        "verb": "EXTENDS",
+        "score": 0.746,
+        "attributes": {
+          "semantic_similarity": 0.65,
+          "epistemic_dependency": 0.82,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.95,
+          "composite_score": 0.746
+        }
+      }
+    },
+    {
+      "source": "ota_023",
+      "target": "ota_025",
+      "type": "APPLIES_TO",
+      "weight": 0.687,
+      "properties": {
+        "reason": "Viral conversion copywriting frameworks apply directly to executive authority positioning.",
+        "verb": "APPLIES_TO",
+        "score": 0.687,
+        "attributes": {
+          "semantic_similarity": 0.698,
+          "epistemic_dependency": 0.75,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.6,
+          "composite_score": 0.687
+        }
+      }
+    },
+    {
+      "source": "ota_027",
+      "target": "ota_004",
+      "type": "SUPPORTS",
+      "weight": 0.809,
+      "properties": {
+        "reason": "Continuous health eval suites support database integrity through automated verification checks.",
+        "verb": "SUPPORTS",
+        "score": 0.809,
+        "attributes": {
+          "semantic_similarity": 0.65,
+          "epistemic_dependency": 0.78,
+          "cross_pillar_bridge": 0.95,
+          "empirical_resonance": 0.95,
+          "composite_score": 0.809
+        }
+      }
+    },
+    {
+      "source": "ota_028",
+      "target": "ota_012",
+      "type": "APPLIES_TO",
+      "weight": 0.809,
+      "properties": {
+        "reason": "Proactive Chief of Staff delegation applies micro-task prompts directly to mobile Telegram.",
+        "verb": "APPLIES_TO",
+        "score": 0.809,
+        "attributes": {
+          "semantic_similarity": 0.692,
+          "epistemic_dependency": 0.75,
+          "cross_pillar_bridge": 0.95,
+          "empirical_resonance": 0.925,
+          "composite_score": 0.809
+        }
+      }
+    },
+    {
+      "source": "ota_029",
+      "target": "ota_040",
+      "type": "APPLIES_TO",
+      "weight": 0.697,
+      "properties": {
+        "reason": "Executable markdown skills apply directly inside the Cognitive OS harness.",
+        "verb": "APPLIES_TO",
+        "score": 0.697,
+        "attributes": {
+          "semantic_similarity": 0.65,
+          "epistemic_dependency": 0.75,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.76,
+          "composite_score": 0.697
+        }
+      }
+    },
+    {
+      "source": "ota_038",
+      "target": "ota_047",
+      "type": "CONTRADICTS",
+      "weight": 0.747,
+      "properties": {
+        "reason": "The 10-year systems boom thesis contradicts the assumption that reasoning improves by simply scaling model parameters.",
+        "verb": "CONTRADICTS",
+        "score": 0.747,
+        "attributes": {
+          "semantic_similarity": 0.75,
+          "epistemic_dependency": 0.65,
+          "cross_pillar_bridge": 0.95,
+          "empirical_resonance": 0.6,
+          "composite_score": 0.747
+        }
+      }
+    },
+    {
+      "source": "ota_039",
+      "target": "ota_003",
+      "type": "DEPENDS_ON",
+      "weight": 0.791,
+      "properties": {
+        "reason": "AI Trust scales only when backed by deterministic fast-path verifiers.",
+        "verb": "DEPENDS_ON",
+        "score": 0.791,
+        "attributes": {
+          "semantic_similarity": 0.766,
+          "epistemic_dependency": 0.95,
+          "cross_pillar_bridge": 0.65,
+          "empirical_resonance": 0.76,
+          "composite_score": 0.791
+        }
+      }
+    }
+  ]
+}
