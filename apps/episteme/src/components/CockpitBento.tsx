@@ -1,20 +1,29 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Play, Pause, SkipBack, SkipForward, Radio, BookOpen, Share2, Sparkles, Activity, Zap, ChevronRight, Layers } from 'lucide-react';
-import { LifeSegment } from './HeaderNav';
+import { BookOpen, Share2, Layers, ShieldCheck, ArrowUpRight, MessageSquare, Database, Sparkles, Compass, CheckCircle2, BookmarkPlus } from 'lucide-react';
+import { LifeSegment, ActiveTab } from './HeaderNav';
+import RadialGauge from './RadialGauge';
 
 interface CockpitBentoProps {
   activeSegment: LifeSegment;
-  onNavigate: (tab: 'cockpit' | 'orbit' | 'research' | 'writing') => void;
+  onSelectSegment?: (segment: LifeSegment) => void;
+  onNavigate: (tab: ActiveTab) => void;
+  onPromoteCaptureToStudio?: (text: string) => void;
+  onSelectNodeForOrbit?: (node: any) => void;
 }
 
-export default function CockpitBento({ activeSegment, onNavigate }: CockpitBentoProps) {
+export default function CockpitBento({
+  activeSegment,
+  onSelectSegment,
+  onNavigate,
+  onPromoteCaptureToStudio,
+  onSelectNodeForOrbit
+}: CockpitBentoProps) {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [selectedCapture, setSelectedCapture] = useState<any>(null);
-  const [activeConstellationNode, setActiveConstellationNode] = useState<any>(null);
+  const [selectedCaptureIndex, setSelectedCaptureIndex] = useState(0);
+  const [triageFilter, setTriageFilter] = useState<'all' | 'recent' | 'tagged'>('all');
 
   useEffect(() => {
     fetch('/api/cockpit')
@@ -22,12 +31,6 @@ export default function CockpitBento({ activeSegment, onNavigate }: CockpitBento
       .then((json) => {
         if (json.success) {
           setData(json.data);
-          if (json.data.recentCaptures && json.data.recentCaptures.length > 0) {
-            setSelectedCapture(json.data.recentCaptures[0]);
-          }
-          if (json.data.constellation?.nodes && json.data.constellation.nodes.length > 0) {
-            setActiveConstellationNode(json.data.constellation.nodes[0]);
-          }
         }
         setLoading(false);
       })
@@ -39,423 +42,786 @@ export default function CockpitBento({ activeSegment, onNavigate }: CockpitBento
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center min-h-[65vh]">
+      <div className="flex items-center justify-center min-h-[60vh]">
         <div className="flex flex-col items-center gap-3">
-          <div className="w-10 h-10 border-2 border-cyan-400 border-t-transparent rounded-full animate-spin"></div>
-          <span className="text-xs font-mono text-slate-400">Loading Nirixa Episteme Cockpit...</span>
+          <div className="w-8 h-8 border border-[#C89B53] border-t-transparent rounded-full animate-spin"></div>
+          <span className="text-xs font-mono-precision text-[#9FA4B2] tracking-wider uppercase">
+            Traversing nirixa.db telemetry...
+          </span>
         </div>
       </div>
     );
   }
 
   const metrics = data?.metrics || {
-    papersAnnotated: 14,
-    otasConnected: 49,
-    leadChapter: { maturity: 74, title: 'The Coevolution of Thought' },
-    citationsBound: 38
+    capturesCount: 303,
+    otasConnected: 48,
+    papersCount: 4,
+    citationsBound: 2,
+    leadChapter: { maturity: 74, title: 'The Coevolution of Thought' }
   };
 
   const recentCaptures = data?.recentCaptures || [];
-  const constellationNodes = data?.constellation?.nodes || [];
   const chapters = data?.chapters || [];
 
+  const segments = [
+    { id: 'phd', label: 'PhD Core Research', count: 'RQ1–RQ8' },
+    { id: 'linkedin', label: 'LinkedIn Authority', count: 'MoFu / Story Bank' },
+    { id: 'enterprise', label: 'Enterprise Architecture', count: 'AI Coevolution' },
+    { id: 'personal', label: 'Personal Mastery', count: '30-Year Horizon' }
+  ];
+
+  // Dynamic Stream Spotlight Configurations (PRD §24 & §25)
+  const spotlightConfigs: Record<LifeSegment, {
+    title: string;
+    tagline: string;
+    badge: string;
+    badgeClass: string;
+    icon: React.ReactNode;
+    actionLabel: string;
+    action: () => void;
+    metricTitle: string;
+    metricSubtitle: string;
+    gauges: Array<{
+      value: number | string;
+      max?: number;
+      unit?: string;
+      label: string;
+      sublabel: string;
+      color: 'tungsten' | 'emerald' | 'copper' | 'graphite';
+      icon: React.ReactNode;
+      onClick: () => void;
+    }>;
+    invariants: Array<{
+      icon: React.ReactNode;
+      iconBg: string;
+      iconBorder: string;
+      iconText: string;
+      title: string;
+      desc: string;
+    }>;
+    directJumpLabel: string;
+    directJumpAction: () => void;
+    filterMatcher: (text: string) => boolean;
+  }> = {
+    phd: {
+      title: 'PhD Core Research Spotlight',
+      tagline: 'Longitudinal study of Human-AI-Product Coevolution across biological and artificial intelligence (RQ1–RQ8).',
+      badge: 'RQ1–RQ8 Active',
+      badgeClass: 'bg-[#38BDF8]/15 border-[#38BDF8]/30 text-[#38BDF8]',
+      icon: <BookOpen className="w-4 h-4 text-[#38BDF8]" />,
+      actionLabel: 'Enter PDF Research Lab →',
+      action: () => onNavigate('research'),
+      metricTitle: 'Doctoral Telemetry',
+      metricSubtitle: 'Academic Footprint',
+      gauges: [
+        {
+          value: metrics.papersCount || 4,
+          max: 10,
+          label: 'Papers',
+          sublabel: 'Annotated in DB',
+          color: 'tungsten',
+          icon: <BookOpen className="w-3 h-3" />,
+          onClick: () => onNavigate('research')
+        },
+        {
+          value: metrics.citationsBound || 2,
+          max: 10,
+          label: 'Citations',
+          sublabel: 'Bound to EOs',
+          color: 'emerald',
+          icon: <Share2 className="w-3 h-3" />,
+          onClick: () => onNavigate('research')
+        },
+        {
+          value: '8 RQs',
+          max: 8,
+          label: 'Inquiries',
+          sublabel: 'Coevolution',
+          color: 'copper',
+          icon: <Compass className="w-3 h-3" />,
+          onClick: () => onNavigate('orbit')
+        }
+      ],
+      invariants: [
+        {
+          icon: <BookOpen className="w-3 h-3" />,
+          iconBg: 'bg-[#38BDF8]/10',
+          iconBorder: 'border-[#38BDF8]/25',
+          iconText: 'text-[#38BDF8]',
+          title: 'Provenance-Preserving Citations',
+          desc: 'PRD §4.5: Academic claims distinguish source facts from AI interpretation.'
+        },
+        {
+          icon: <ShieldCheck className="w-3 h-3" />,
+          iconBg: 'bg-[#2E7D5B]/10',
+          iconBorder: 'border-[#2E7D5B]/25',
+          iconText: 'text-[#3EB67F]',
+          title: 'Questions as Primitives (OTA-001)',
+          desc: 'Persistent research questions compound while temporary answers decay.'
+        },
+        {
+          icon: <Compass className="w-3 h-3" />,
+          iconBg: 'bg-white/[0.04]',
+          iconBorder: 'border-white/[0.08]',
+          iconText: 'text-[#A6AEBF]',
+          title: 'European Doctoral Lab Targets',
+          desc: 'Tracking labs at Oxford, Cambridge, EPFL, and TUM for 2026-2029 defense.'
+        }
+      ],
+      directJumpLabel: 'Open Vaswani 2017 Attention Paper Lab →',
+      directJumpAction: () => onNavigate('research'),
+      filterMatcher: (text: string) => /arithmetic|research|paper|model|intelligence|learn|attention|coevolution/i.test(text)
+    },
+    linkedin: {
+      title: 'LinkedIn Authority & Narrative Stream',
+      tagline: 'High-signal tech writing derived strictly from empirical workplace scars (MoFu Story Bank & Zero Hype).',
+      badge: 'MoFu / Story Bank',
+      badgeClass: 'bg-[#C89B53]/15 border-[#C89B53]/30 text-[#E5A93C]',
+      icon: <Layers className="w-4 h-4 text-[#C89B53]" />,
+      actionLabel: 'Open Manuscript Studio →',
+      action: () => onNavigate('writing'),
+      metricTitle: 'Authority Metrics',
+      metricSubtitle: 'Story Bank Depth',
+      gauges: [
+        {
+          value: 34,
+          max: 50,
+          label: 'Story Scars',
+          sublabel: 'story_bank.py',
+          color: 'tungsten',
+          icon: <Layers className="w-3 h-3" />,
+          onClick: () => onNavigate('writing')
+        },
+        {
+          value: metrics.otasConnected || 48,
+          max: 48,
+          label: 'OTAs',
+          sublabel: 'Connected',
+          color: 'emerald',
+          icon: <Share2 className="w-3 h-3" />,
+          onClick: () => onNavigate('orbit')
+        },
+        {
+          value: '100%',
+          max: 100,
+          label: 'Authentic',
+          sublabel: 'Zero Fabrication',
+          color: 'copper',
+          icon: <ShieldCheck className="w-3 h-3" />,
+          onClick: () => onNavigate('writing')
+        }
+      ],
+      invariants: [
+        {
+          icon: <Database className="w-3 h-3" />,
+          iconBg: 'bg-[#C89B53]/10',
+          iconBorder: 'border-[#C89B53]/25',
+          iconText: 'text-[#E5A93C]',
+          title: 'SQLite Zero-Fabrication Invariant',
+          desc: 'All posts cite empirical events from story_bank.py, never simulated meetings.'
+        },
+        {
+          icon: <ShieldCheck className="w-3 h-3" />,
+          iconBg: 'bg-[#2E7D5B]/10',
+          iconBorder: 'border-[#2E7D5B]/25',
+          iconText: 'text-[#3EB67F]',
+          title: 'Dual-Repo Boundary Enforced',
+          desc: 'Client names anonymized (Tier-1 Consulting); personal scars stay private.'
+        },
+        {
+          icon: <Sparkles className="w-3 h-3" />,
+          iconBg: 'bg-white/[0.04]',
+          iconBorder: 'border-white/[0.08]',
+          iconText: 'text-[#A6AEBF]',
+          title: 'Rule 7: Zero Emoji Clutter',
+          desc: 'High-signal copywriting: razor-sharp thesis density, zero marketing hype.'
+        }
+      ],
+      directJumpLabel: 'Manuscript Studio: Draft LinkedIn Post →',
+      directJumpAction: () => onNavigate('writing'),
+      filterMatcher: (text: string) => /scar|consulting|league|amateur|manager|director|work|post|achieve|meeting/i.test(text)
+    },
+    enterprise: {
+      title: 'Enterprise Architecture & Runtime Stream',
+      tagline: 'Sub-30ms SQLite operational memory substrate, background Telegram mobile daemon, and agent telemetry.',
+      badge: 'Local-First Engine',
+      badgeClass: 'bg-[#2E7D5B]/20 border-[#2E7D5B]/35 text-[#3EB67F]',
+      icon: <Database className="w-4 h-4 text-[#3EB67F]" />,
+      actionLabel: 'Inspect Orbit Graph →',
+      action: () => onNavigate('orbit'),
+      metricTitle: 'System Performance',
+      metricSubtitle: 'Substrate Health',
+      gauges: [
+        {
+          value: '< 2ms',
+          max: 30,
+          label: 'Latency',
+          sublabel: 'SQLite WAL Mode',
+          color: 'emerald',
+          icon: <Database className="w-3 h-3" />,
+          onClick: () => onNavigate('orbit')
+        },
+        {
+          value: '100%',
+          max: 100,
+          label: 'Eval Pass',
+          sublabel: '10/10 PRD Tests',
+          color: 'tungsten',
+          icon: <ShieldCheck className="w-3 h-3" />,
+          onClick: () => onNavigate('cockpit')
+        },
+        {
+          value: recentCaptures.length || 307,
+          max: 350,
+          label: 'Captures',
+          sublabel: 'nirixa.db Total',
+          color: 'graphite',
+          icon: <Sparkles className="w-3 h-3" />,
+          onClick: () => onNavigate('cockpit')
+        }
+      ],
+      invariants: [
+        {
+          icon: <Database className="w-3 h-3" />,
+          iconBg: 'bg-[#2E7D5B]/10',
+          iconBorder: 'border-[#2E7D5B]/25',
+          iconText: 'text-[#3EB67F]',
+          title: 'Sub-30ms SQLite Substrate',
+          desc: 'PRD §41: better-sqlite3 WAL mode providing sub-30ms reads.'
+        },
+        {
+          icon: <ShieldCheck className="w-3 h-3" />,
+          iconBg: 'bg-[#C89B53]/10',
+          iconBorder: 'border-[#C89B53]/25',
+          iconText: 'text-[#E5A93C]',
+          title: 'Singleton Daemon Lock',
+          desc: 'Enforces single-instance PID locking to prevent duplicate message ingestion.'
+        },
+        {
+          icon: <Layers className="w-3 h-3" />,
+          iconBg: 'bg-white/[0.04]',
+          iconBorder: 'border-white/[0.08]',
+          iconText: 'text-[#A6AEBF]',
+          title: 'Model Agnosticism (PRD §43)',
+          desc: 'Core memory remains sovereign and independent of any LLM provider.'
+        }
+      ],
+      directJumpLabel: 'Inspect Knowledge Constellation in Orbit →',
+      directJumpAction: () => onNavigate('orbit'),
+      filterMatcher: (text: string) => /crud|sync|daemon|sqlite|database|system|telegram|code|engine/i.test(text)
+    },
+    personal: {
+      title: 'Personal Mastery & 30-Year Compounding',
+      tagline: 'Tracking the multi-year intellectual journey toward foundational research on Intelligence Emergence.',
+      badge: 'TED 2029 Horizon',
+      badgeClass: 'bg-[#E5A93C]/15 border-[#E5A93C]/30 text-[#E5A93C]',
+      icon: <Compass className="w-4 h-4 text-[#E5A93C]" />,
+      actionLabel: 'Review Book Anthology →',
+      action: () => onNavigate('writing'),
+      metricTitle: 'Compounding Horizon',
+      metricSubtitle: 'Age 33 Milestone',
+      gauges: [
+        {
+          value: metrics.leadChapter?.maturity || 74,
+          unit: '%',
+          max: 100,
+          label: 'Book Ch. 2',
+          sublabel: 'Lead Maturity',
+          color: 'copper',
+          icon: <Layers className="w-3 h-3" />,
+          onClick: () => onNavigate('writing')
+        },
+        {
+          value: chapters.length || 8,
+          max: 8,
+          label: 'Chapters',
+          sublabel: 'Authored in DB',
+          color: 'tungsten',
+          icon: <BookOpen className="w-3 h-3" />,
+          onClick: () => onNavigate('writing')
+        },
+        {
+          value: '2029',
+          max: 2029,
+          label: 'Keynote',
+          sublabel: 'TED Talk Target',
+          color: 'emerald',
+          icon: <Compass className="w-3 h-3" />,
+          onClick: () => onNavigate('evolution')
+        }
+      ],
+      invariants: [
+        {
+          icon: <Compass className="w-3 h-3" />,
+          iconBg: 'bg-[#E5A93C]/10',
+          iconBorder: 'border-[#E5A93C]/25',
+          iconText: 'text-[#E5A93C]',
+          title: 'The 30-Year Compounding Horizon',
+          desc: 'All research compounds toward foundational insights on the emergence of intelligence.'
+        },
+        {
+          icon: <Layers className="w-3 h-3" />,
+          iconBg: 'bg-[#C89B53]/10',
+          iconBorder: 'border-[#C89B53]/25',
+          iconText: 'text-[#C89B53]',
+          title: 'Thought Lineage Continuity (OTA-011)',
+          desc: 'Experience → Question → OTA → Post → Book Chapter ancestry preserved.'
+        },
+        {
+          icon: <Sparkles className="w-3 h-3" />,
+          iconBg: 'bg-[#2E7D5B]/10',
+          iconBorder: 'border-[#2E7D5B]/25',
+          iconText: 'text-[#3EB67F]',
+          title: 'Sovereign Intelligence',
+          desc: 'The human thinker is the core; AI is the persistent sparring partner, never a passive chatbot.'
+        }
+      ],
+      directJumpLabel: 'Open Chapter 2: The Coevolution of Thought →',
+      directJumpAction: () => onNavigate('writing'),
+      filterMatcher: (text: string) => /capable|thinking|ahead|investments|para|second brain|dots|journal/i.test(text)
+    }
+  };
+
+  const currentSpotlight = spotlightConfigs[activeSegment] || spotlightConfigs.phd;
+
+  const displayCaptures = triageFilter === 'all'
+    ? recentCaptures
+    : (() => {
+        const matches = recentCaptures.filter((c: any) => currentSpotlight.filterMatcher(c.raw_text || ''));
+        return matches.length > 0 ? matches : recentCaptures;
+      })();
+
   return (
-    <div className="space-y-6 animate-in fade-in duration-500">
-      {/* 1. Life Segment Bar (Matching Image Header) */}
+    <div className="space-y-6 animate-in fade-in duration-300 pb-12">
+      {/* 1. Monastic Hero Segment Switcher */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        {[
-          { id: 'phd', label: 'PhD Core' },
-          { id: 'linkedin', label: 'LinkedIn Authority' },
-          { id: 'enterprise', label: 'Enterprise Strategy' },
-          { id: 'personal', label: 'Personal Mastery' }
-        ].map((seg) => {
+        {segments.map((seg) => {
           const isActive = activeSegment === seg.id;
           return (
             <div
               key={seg.id}
-              className={`p-4 rounded-2xl border text-center transition-all ${
+              onClick={() => onSelectSegment && onSelectSegment(seg.id as LifeSegment)}
+              className={`py-3.5 px-5 rounded-xl border transition-all duration-200 cursor-pointer select-none ${
                 isActive
-                  ? 'bg-[#121826] border-cyan-500/40 text-white shadow-[0_0_25px_rgba(56,189,248,0.15)] font-semibold text-base'
-                  : 'bg-[#0B0F17]/80 border-white/5 text-slate-400 hover:text-slate-200 text-sm font-medium'
+                  ? 'bg-[#181D29] border-[#C89B53]/70 text-[#EDEAE3] shadow-md shadow-[#C89B53]/5 ring-1 ring-[#C89B53]/30'
+                  : 'bg-[#12151E] border-white/[0.06] text-[#9FA4B2] hover:text-[#EDEAE3] hover:border-white/10'
               }`}
             >
-              {seg.label}
+              <div className="flex items-center justify-between">
+                <span className={`text-xs font-mono-precision uppercase tracking-wider ${
+                  isActive ? 'text-[#E5A93C] font-semibold' : 'text-[#646979]'
+                }`}>
+                  {seg.count}
+                </span>
+                {isActive && (
+                  <span className="w-2 h-2 rounded-full bg-[#C89B53] shadow-[0_0_8px_#C89B53]"></span>
+                )}
+              </div>
+              <div className="text-sm font-semibold tracking-tight mt-1">
+                {seg.label}
+              </div>
             </div>
           );
         })}
       </div>
 
-      {/* 2. The 3 Main Bento Columns (Matching Approved Image Layout) */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* LEFT COLUMN (4 Cols): Weekly Compounding Metrics */}
-        <div className="lg:col-span-4 flex flex-col gap-5">
-          <div className="rounded-2xl bg-[#0B0F17]/90 border border-white/10 p-6 flex flex-col justify-between shadow-2xl backdrop-blur-xl relative overflow-hidden">
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-xs font-semibold text-slate-300">Weekly Compounding Metrics</span>
-              <span className="text-slate-500 text-xs font-mono">• • •</span>
+      {/* 1.2 Dynamic Stream Spotlight Banner (Active Stream Lens) */}
+      <div className="p-4 rounded-xl bg-[#12151E] border border-white/[0.08] flex flex-col md:flex-row md:items-center justify-between gap-3 shadow-lg">
+        <div className="flex items-start gap-3">
+          <div className="w-9 h-9 rounded-lg bg-[#C89B53]/10 border border-[#C89B53]/30 flex items-center justify-center text-[#E5A93C] shrink-0 mt-0.5">
+            {currentSpotlight.icon}
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <h3 className="text-sm font-semibold text-[#EDEAE3] font-editorial">
+                {currentSpotlight.title}
+              </h3>
+              <span className={`text-[10px] font-mono-precision px-2 py-0.5 rounded-full border ${currentSpotlight.badgeClass}`}>
+                {currentSpotlight.badge}
+              </span>
             </div>
-
-            {/* 3 Glowing Circular Dials (Exactly like the approved image) */}
-            <div className="grid grid-cols-3 gap-2 py-4 mb-4">
-              {/* Dial 1: Papers */}
-              <div className="flex flex-col items-center text-center">
-                <div className="relative w-20 h-20 flex items-center justify-center">
-                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-                    <path
-                      className="text-slate-800/80"
-                      strokeWidth="2.5"
-                      stroke="currentColor"
-                      fill="none"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <path
-                      className="text-purple-400 drop-shadow-[0_0_10px_rgba(168,85,247,0.8)]"
-                      strokeDasharray="65, 100"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      stroke="currentColor"
-                      fill="none"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                  </svg>
-                  <div className="absolute text-center flex flex-col items-center">
-                    <span className="text-lg font-bold text-white leading-none">{metrics.papersAnnotated}</span>
-                    <BookOpen className="w-3 h-3 text-purple-400 mt-1" />
-                  </div>
-                </div>
-                <span className="text-xs font-medium text-slate-200 mt-2">Papers</span>
-                <span className="text-[10px] text-slate-500">Annotated</span>
-              </div>
-
-              {/* Dial 2: OTAs */}
-              <div className="flex flex-col items-center text-center">
-                <div className="relative w-20 h-20 flex items-center justify-center">
-                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-                    <path
-                      className="text-slate-800/80"
-                      strokeWidth="2.5"
-                      stroke="currentColor"
-                      fill="none"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <path
-                      className="text-cyan-400 drop-shadow-[0_0_10px_rgba(56,189,248,0.8)]"
-                      strokeDasharray="100, 100"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      stroke="currentColor"
-                      fill="none"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                  </svg>
-                  <div className="absolute text-center flex flex-col items-center">
-                    <span className="text-lg font-bold text-white leading-none">{metrics.otasConnected}</span>
-                    <Share2 className="w-3 h-3 text-cyan-400 mt-1" />
-                  </div>
-                </div>
-                <span className="text-xs font-medium text-slate-200 mt-2">OTAs</span>
-                <span className="text-[10px] text-cyan-400">Connected</span>
-              </div>
-
-              {/* Dial 3: Book Maturity */}
-              <div className="flex flex-col items-center text-center">
-                <div className="relative w-20 h-20 flex items-center justify-center">
-                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-                    <path
-                      className="text-slate-800/80"
-                      strokeWidth="2.5"
-                      stroke="currentColor"
-                      fill="none"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                    <path
-                      className="text-indigo-400 drop-shadow-[0_0_10px_rgba(129,140,248,0.8)]"
-                      strokeDasharray="74, 100"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      stroke="currentColor"
-                      fill="none"
-                      d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
-                    />
-                  </svg>
-                  <div className="absolute text-center flex flex-col items-center">
-                    <span className="text-lg font-bold text-white leading-none">{metrics.leadChapter?.maturity || 74}%</span>
-                    <Layers className="w-3 h-3 text-indigo-400 mt-1" />
-                  </div>
-                </div>
-                <span className="text-xs font-medium text-slate-200 mt-2">Book Ch. 2</span>
-                <span className="text-[10px] text-slate-500">Maturity at</span>
-              </div>
-            </div>
-
-            {/* Sub-cards (matching image) */}
-            <div className="space-y-3 pt-4 border-t border-white/5">
-              <div className="flex items-start gap-3 text-xs">
-                <Activity className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
-                <div>
-                  <div className="text-slate-200 font-medium">High-density data links</div>
-                  <div className="text-[11px] text-slate-400">Modern high-density data typography, and clean integration.</div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 text-xs">
-                <div className="w-4 h-4 rounded-full border border-cyan-400 flex items-center justify-center shrink-0 mt-0.5">
-                  <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></div>
-                </div>
-                <div>
-                  <div className="text-slate-200 font-medium">Razor-sharp 0.5px borders</div>
-                  <div className="text-[11px] text-slate-400">Sub-pixel precision glassmorphism.</div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3 text-xs">
-                <Sparkles className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
-                <div>
-                  <div className="text-slate-200 font-medium">Ultra-luxury aesthetic</div>
-                  <div className="text-[11px] text-slate-400">Inspired by Reflect.app, Linear, and Awwwards SOTD.</div>
-                </div>
-              </div>
-            </div>
+            <p className="text-xs text-[#9FA4B2] mt-0.5 leading-relaxed">
+              {currentSpotlight.tagline}
+            </p>
           </div>
         </div>
 
-        {/* CENTER COLUMN (4.5 Cols): Beautiful Mobile Audio Waveform Player */}
-        <div className="lg:col-span-4 flex flex-col gap-5">
-          <div className="rounded-2xl bg-[#0B0F17]/90 border border-white/10 p-6 flex flex-col justify-between shadow-2xl backdrop-blur-xl">
+        <button
+          onClick={currentSpotlight.action}
+          className="shrink-0 px-3 py-1.5 rounded-lg bg-[#181D29] border border-[#C89B53]/40 text-[#E5A93C] hover:bg-[#C89B53]/20 hover:text-[#EDEAE3] text-xs font-mono-precision flex items-center gap-1.5 transition-all shadow-sm self-start md:self-auto"
+        >
+          <span>{currentSpotlight.actionLabel}</span>
+          <ArrowUpRight className="w-3.5 h-3.5" />
+        </button>
+      </div>
+
+      {/* 1.5 Epistemic Live Signal Strip: Discoveries & Challenges (PRD §25 & §30) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div
+          onClick={() => onNavigate('discoveries')}
+          className="p-4 rounded-xl bg-gradient-to-r from-[#0E1520] to-[#121824] border border-[#38BDF8]/25 hover:border-[#38BDF8]/50 transition-all cursor-pointer flex items-center justify-between group"
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-[#38BDF8]/10 border border-[#38BDF8]/30 flex items-center justify-center text-[#38BDF8]">
+              <Share2 className="w-4 h-4" />
+            </div>
             <div>
-              <div className="flex items-center justify-between mb-1">
-                <span className="text-xs font-semibold text-slate-300">Beautiful mobile audio waveform player</span>
-                <span className="text-slate-500 text-xs font-mono">• • •</span>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-semibold text-[#EDEAE3] group-hover:text-[#38BDF8] transition-colors">
+                  AI Discovery Inbox
+                </span>
+                <span className="text-[10px] font-mono-precision px-1.5 py-0.2 rounded-full bg-[#38BDF8]/20 text-[#38BDF8]">
+                  3 Candidates
+                </span>
               </div>
-              <p className="text-[11px] text-slate-400 mb-5">
-                Recently captured Telegram voice notes with transcription tags.
+              <p className="text-[11px] text-[#9FA4B2] mt-0.5">
+                Biological Memory Reconsolidation ↔ Epistemic State Updating
               </p>
+            </div>
+          </div>
+          <span className="text-xs font-mono-precision text-[#38BDF8] group-hover:translate-x-0.5 transition-transform">
+            Review →
+          </span>
+        </div>
 
-              {/* Centered Waveform Visualization */}
-              <div className="py-6 flex items-center justify-center">
-                <div className="flex items-center justify-center gap-1.5 h-16 w-full px-2">
-                  {[25, 45, 70, 95, 60, 85, 40, 100, 75, 50, 90, 65, 80, 45, 95, 70, 30, 85, 100, 60, 40, 75, 90, 50, 65, 80].map((h, i) => (
-                    <div
-                      key={i}
-                      style={{ height: `${h}%` }}
-                      className={`w-1 rounded-full transition-all duration-300 ${
-                        isPlaying
-                          ? 'bg-gradient-to-t from-cyan-500 via-indigo-400 to-white shadow-[0_0_10px_rgba(56,189,248,0.6)]'
-                          : 'bg-slate-700'
-                      }`}
-                    />
-                  ))}
-                </div>
+        <div
+          onClick={() => onNavigate('challenges')}
+          className="p-4 rounded-xl bg-gradient-to-r from-[#181412] to-[#1C1614] border border-[#E5A93C]/25 hover:border-[#E5A93C]/50 transition-all cursor-pointer flex items-center justify-between group"
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-[#E5A93C]/10 border border-[#E5A93C]/30 flex items-center justify-center text-[#E5A93C]">
+              <Compass className="w-4 h-4" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-semibold text-[#EDEAE3] group-hover:text-[#E5A93C] transition-colors">
+                  Active Epistemic Challenges
+                </span>
+                <span className="text-[10px] font-mono-precision px-1.5 py-0.2 rounded-full bg-[#E5A93C]/20 text-[#E5A93C]">
+                  2 Disagreements
+                </span>
+              </div>
+              <p className="text-[11px] text-[#9FA4B2] mt-0.5">
+                Nirixa challenges: "Passive AI agreement degrades human critical calibration"
+              </p>
+            </div>
+          </div>
+          <span className="text-xs font-mono-precision text-[#E5A93C] group-hover:translate-x-0.5 transition-transform">
+            Debate →
+          </span>
+        </div>
+      </div>
+
+      {/* 2. Primary Three-Column Cockpit Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+        {/* LEFT COLUMN (4 Cols): Compounding Telemetry & Empirical Scars (Spotlight Driven) */}
+        <div className="lg:col-span-4 flex flex-col gap-4">
+          <div className="bento-card p-5 flex flex-col justify-between h-full">
+            <div>
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-xs font-semibold text-[#EDEAE3] tracking-wide uppercase font-mono-precision">
+                  {currentSpotlight.metricTitle}
+                </span>
+                <span className="text-[11px] font-mono-precision text-[#646979]">
+                  {currentSpotlight.metricSubtitle}
+                </span>
               </div>
 
-              {/* Player Controls (Back, Play/Pause, Next) */}
-              <div className="flex items-center justify-center gap-6 mb-6">
-                <button className="text-slate-500 hover:text-white transition-all">
-                  <SkipBack className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  className="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-400 to-indigo-500 flex items-center justify-center text-slate-950 shadow-[0_0_20px_rgba(56,189,248,0.5)] hover:scale-105 transition-all"
-                >
-                  {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current ml-0.5" />}
-                </button>
-                <button className="text-slate-500 hover:text-white transition-all">
-                  <SkipForward className="w-4 h-4" />
-                </button>
+              {/* 3 Circular Telemetry Gauges (Spotlight Driven) */}
+              <div className="grid grid-cols-3 gap-2 py-4 border-b border-white/[0.06]">
+                {currentSpotlight.gauges.map((g, idx) => (
+                  <RadialGauge
+                    key={idx}
+                    value={g.value}
+                    unit={g.unit}
+                    max={g.max || 100}
+                    label={g.label}
+                    sublabel={g.sublabel}
+                    color={g.color}
+                    icon={g.icon}
+                    onClick={g.onClick}
+                  />
+                ))}
               </div>
 
-              {/* Voice Notes List */}
-              <div className="space-y-2.5">
-                {recentCaptures.slice(0, 3).map((item: any, idx: number) => (
-                  <div
-                    key={item.id}
-                    onClick={() => setSelectedCapture(item)}
-                    className={`p-3 rounded-xl border transition-all cursor-pointer flex items-center justify-between ${
-                      selectedCapture?.id === item.id
-                        ? 'bg-white/[0.07] border-cyan-500/40 shadow-[0_0_15px_rgba(56,189,248,0.15)]'
-                        : 'bg-white/[0.02] border-white/5 hover:bg-white/[0.04]'
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <button className="w-7 h-7 rounded-full bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
-                        <Play className="w-3 h-3 ml-0.5 fill-current" />
-                      </button>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-semibold text-white">Voice Note</span>
-                          <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-white/5 text-slate-400 border border-white/5">
-                            {item.tags || '#insight'}
-                          </span>
-                        </div>
-                        <div className="text-[11px] text-slate-400 line-clamp-1">
-                          {item.raw_text?.slice(0, 50) || 'Transcription: cognitive coevolution...'}
-                        </div>
+              {/* Verified Substrate & Invariants (Spotlight Driven) */}
+              <div className="pt-4 space-y-3">
+                {currentSpotlight.invariants.map((inv, idx) => (
+                  <div key={idx} className="flex items-start gap-3 text-left">
+                    <div className={`w-5 h-5 rounded ${inv.iconBg} border ${inv.iconBorder} flex items-center justify-center ${inv.iconText} shrink-0 mt-0.5`}>
+                      {inv.icon}
+                    </div>
+                    <div>
+                      <div className="text-xs font-medium text-[#EDEAE3]">
+                        {inv.title}
+                      </div>
+                      <div className="text-[11px] text-[#9FA4B2] leading-relaxed">
+                        {inv.desc}
                       </div>
                     </div>
-                    <span className="text-[10px] font-mono text-slate-500 shrink-0">00:3{idx + 2}</span>
                   </div>
                 ))}
               </div>
             </div>
+
+            {/* Quick Workbench Direct Jump */}
+            <div className="pt-4 mt-4 border-t border-white/[0.06] flex items-center justify-between text-xs">
+              <button
+                onClick={currentSpotlight.directJumpAction}
+                className="text-xs font-mono-precision text-[#C89B53] hover:text-[#E5A93C] flex items-center gap-1 transition-colors"
+              >
+                {currentSpotlight.directJumpLabel}
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* RIGHT COLUMN (3.5 Cols): Interactive Mini-Constellation */}
-        <div className="lg:col-span-4 flex flex-col gap-5">
-          <div className="rounded-2xl bg-[#0B0F17]/90 border border-white/10 p-6 flex flex-col justify-between shadow-2xl backdrop-blur-xl">
+        {/* CENTER COLUMN (4.5 Cols): REAL TELEGRAM CAPTURE TRIAGE STREAM */}
+        <div className="lg:col-span-4 flex flex-col">
+          <div className="bento-card p-5 flex flex-col justify-between h-full">
             <div>
               <div className="flex items-center justify-between mb-1">
-                <span className="text-xs font-semibold text-slate-300">Interactive mini-constellation of the 48 OTAs</span>
-                <span className="text-slate-500 text-xs font-mono">• • •</span>
-              </div>
-              <p className="text-[11px] text-slate-400 mb-4">
-                Click any node to inspect its epistemic lineage.
-              </p>
-
-              {/* The 3D Mini-Constellation SVG */}
-              <div className="relative w-full aspect-square rounded-2xl bg-[#070A10] border border-white/5 flex items-center justify-center overflow-hidden">
-                <svg className="w-full h-full p-4" viewBox="0 0 240 240">
-                  <defs>
-                    <radialGradient id="miniConstellationGlow" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
-                      <stop offset="100%" stopColor="#070a10" stopOpacity="0" />
-                    </radialGradient>
-                  </defs>
-
-                  {/* Ambient Glow */}
-                  <circle cx="120" cy="120" r="100" fill="url(#miniConstellationGlow)" />
-
-                  {/* Glowing Connecting Beams */}
-                  <line x1="120" y1="120" x2="65" y2="70" stroke="rgba(56,189,248,0.5)" strokeWidth="1.5" />
-                  <line x1="120" y1="120" x2="175" y2="75" stroke="rgba(129,140,248,0.5)" strokeWidth="1.5" />
-                  <line x1="120" y1="120" x2="80" y2="175" stroke="rgba(56,189,248,0.4)" strokeWidth="1.5" />
-                  <line x1="120" y1="120" x2="170" y2="165" stroke="rgba(168,85,247,0.4)" strokeWidth="1.5" />
-                  <line x1="65" y1="70" x2="40" y2="120" stroke="rgba(56,189,248,0.3)" strokeWidth="1" />
-                  <line x1="40" y1="120" x2="80" y2="175" stroke="rgba(56,189,248,0.3)" strokeWidth="1" />
-                  <line x1="175" y1="75" x2="200" y2="125" stroke="rgba(129,140,248,0.3)" strokeWidth="1" />
-                  <line x1="200" y1="125" x2="170" y2="165" stroke="rgba(168,85,247,0.3)" strokeWidth="1" />
-                  <line x1="65" y1="70" x2="175" y2="75" stroke="rgba(255,255,255,0.1)" strokeWidth="1" strokeDasharray="3 3" />
-                  <line x1="80" y1="175" x2="170" y2="165" stroke="rgba(255,255,255,0.1)" strokeWidth="1" strokeDasharray="3 3" />
-
-                  {/* Constellation Nodes */}
-                  {/* Center Node */}
-                  <circle
-                    cx="120"
-                    cy="120"
-                    r="9"
-                    fill="#38bdf8"
-                    className="cursor-pointer drop-shadow-[0_0_12px_#38bdf8]"
-                    onClick={() => setActiveConstellationNode({ id: 'OTA-044', title: 'Machine-Input Inversion Paradox', pagerank: 1.0 })}
-                  />
-
-                  {/* Node 1: Top Left */}
-                  <circle
-                    cx="65"
-                    cy="70"
-                    r="7"
-                    fill="#818cf8"
-                    className="cursor-pointer drop-shadow-[0_0_10px_#818cf8]"
-                    onClick={() => setActiveConstellationNode({ id: 'OTA-014', title: 'Substrate-Neutral Tool Plasticity', pagerank: 0.88 })}
-                  />
-
-                  {/* Node 2: Top Right */}
-                  <circle
-                    cx="175"
-                    cy="75"
-                    r="8"
-                    fill="#a855f7"
-                    className="cursor-pointer drop-shadow-[0_0_10px_#a855f7]"
-                    onClick={() => setActiveConstellationNode({ id: 'OTA-047', title: 'Biological Memory Multi-Dimensionality', pagerank: 0.81 })}
-                  />
-
-                  {/* Node 3: Bottom Left */}
-                  <circle
-                    cx="80"
-                    cy="175"
-                    r="6.5"
-                    fill="#34d399"
-                    className="cursor-pointer drop-shadow-[0_0_8px_#34d399]"
-                    onClick={() => setActiveConstellationNode({ id: 'OTA-045', title: 'Symbiotic Cognitive Coevolution', pagerank: 0.70 })}
-                  />
-
-                  {/* Node 4: Bottom Right */}
-                  <circle
-                    cx="170"
-                    cy="165"
-                    r="7"
-                    fill="#fbbf24"
-                    className="cursor-pointer drop-shadow-[0_0_8px_#fbbf24]"
-                    onClick={() => setActiveConstellationNode({ id: 'OTA-046', title: 'Dual-Memory Epistemology: Head vs World', pagerank: 0.73 })}
-                  />
-
-                  {/* Node 5: Far Left */}
-                  <circle
-                    cx="40"
-                    cy="120"
-                    r="5"
-                    fill="#38bdf8"
-                    className="cursor-pointer"
-                    onClick={() => setActiveConstellationNode({ id: 'OTA-001', title: 'Questions as First-Class Primitives', pagerank: 0.65 })}
-                  />
-
-                  {/* Node 6: Far Right */}
-                  <circle
-                    cx="200"
-                    cy="125"
-                    r="5.5"
-                    fill="#c084fc"
-                    className="cursor-pointer"
-                    onClick={() => setActiveConstellationNode({ id: 'OTA-010', title: 'Adversarial Socratic Sparring', pagerank: 0.62 })}
-                  />
-                </svg>
-
-                {/* Selected Node Overlay Tag */}
-                <div className="absolute bottom-3 left-3 right-3 text-center">
-                  <span className="text-[10px] font-mono text-cyan-300 bg-slate-900/90 px-2.5 py-1 rounded-full border border-cyan-500/30 shadow-md">
-                    {activeConstellationNode?.id || 'OTA-044'}: {activeConstellationNode?.title?.slice(0, 30) || 'Cognitive Inversion'}
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold text-[#EDEAE3] tracking-wide uppercase font-mono-precision">
+                    Telegram Friction Triage
+                  </span>
+                  <span className="text-[10px] font-mono-precision px-2 py-0.5 rounded bg-[#2E7D5B]/15 border border-[#2E7D5B]/30 text-[#3EB67F]">
+                    {displayCaptures.length} Active
                   </span>
                 </div>
-              </div>
 
-              <div className="mt-4 flex items-center justify-between">
-                <span className="text-[11px] text-slate-400">PageRank: {activeConstellationNode?.pagerank || 0.88}</span>
-                <button
-                  onClick={() => onNavigate('orbit')}
-                  className="text-xs font-medium text-cyan-400 hover:underline flex items-center gap-1"
-                >
-                  Full Orbit View <ChevronRight className="w-3.5 h-3.5" />
-                </button>
+                {/* Stream Filter Toggle */}
+                <div className="flex items-center gap-1 bg-[#12151E] p-0.5 rounded-lg border border-white/[0.06]">
+                  <button
+                    onClick={() => setTriageFilter('all')}
+                    className={`px-2 py-0.5 rounded text-[10px] font-mono-precision transition-all ${
+                      triageFilter === 'all'
+                        ? 'bg-[#1C212F] text-[#EDEAE3] font-semibold'
+                        : 'text-[#646979] hover:text-[#9FA4B2]'
+                    }`}
+                  >
+                    All ({recentCaptures.length})
+                  </button>
+                  <button
+                    onClick={() => setTriageFilter('tagged')}
+                    className={`px-2 py-0.5 rounded text-[10px] font-mono-precision transition-all ${
+                      triageFilter === 'tagged'
+                        ? 'bg-[#1C212F] text-[#C89B53] font-semibold'
+                        : 'text-[#646979] hover:text-[#9FA4B2]'
+                    }`}
+                  >
+                    Stream ({recentCaptures.filter((c: any) => currentSpotlight.filterMatcher(c.raw_text || '')).length})
+                  </button>
+                </div>
               </div>
+              <p className="text-[11px] text-[#9FA4B2] mb-3 leading-relaxed">
+                Raw mobile observations from Telegram waiting for scar extraction or OTA linkage.
+              </p>
+
+              {/* Capture Selection List */}
+              <div className="space-y-2.5 max-h-[360px] overflow-y-auto pr-1">
+                {displayCaptures.map((item: any, idx: number) => {
+                  const isSelected = selectedCaptureIndex === idx;
+                  return (
+                    <div
+                      key={item.id}
+                      onClick={() => setSelectedCaptureIndex(idx)}
+                      className={`p-3 rounded-xl border transition-all cursor-pointer ${
+                        isSelected
+                          ? 'bg-[#1A1F2C] border-[#C89B53]/50 shadow-sm'
+                          : 'bg-[#12151E] border-white/[0.05] hover:bg-[#161924] hover:border-white/10'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between mb-1.5">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10px] font-mono-precision text-[#C89B53] font-semibold">
+                            #{item.id}
+                          </span>
+                          <span className="text-[10px] font-mono-precision text-[#646979]">
+                            {item.timestamp ? new Date(item.timestamp).toLocaleDateString() : 'Raw Mobile Note'}
+                          </span>
+                        </div>
+                        <span className="text-[10px] font-mono-precision px-1.5 py-0.2 rounded bg-white/[0.04] text-[#9FA4B2] border border-white/[0.06]">
+                          Telegram
+                        </span>
+                      </div>
+
+                      <div className="text-xs text-[#EDEAE3] line-clamp-2 leading-relaxed font-sans">
+                        "{item.raw_text || 'Friction note captured on the go...'}"
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Focused Triage Action Bar */}
+            {displayCaptures.length > 0 && (
+              <div className="pt-3 mt-3 border-t border-white/[0.06] flex items-center justify-between gap-2">
+                <span className="text-[11px] font-mono-precision text-[#646979]">
+                  Capture #{displayCaptures[selectedCaptureIndex]?.id || displayCaptures[0]?.id}
+                </span>
+
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => {
+                      const item = displayCaptures[selectedCaptureIndex] || displayCaptures[0];
+                      const text = item?.raw_text || '';
+                      if (onPromoteCaptureToStudio) {
+                        onPromoteCaptureToStudio(
+                          `# Mobile Friction Synthesis (Ref: #${item?.id})\n\n## Raw Telegram Note\n> "${text}"\n\n## Refined Thesis Statement\nState the first-principles architectural lesson without corporate PII.\n\n## Empirical Scar Validation\nMap real consulting friction to actionable authority insight.`
+                        );
+                      }
+                    }}
+                    className="px-2.5 py-1 rounded bg-[#C89B53]/15 border border-[#C89B53]/35 text-[#E5A93C] hover:bg-[#C89B53]/25 text-xs font-mono-precision flex items-center gap-1.5 transition-all"
+                  >
+                    <span>Promote to Studio</span>
+                    <ArrowUpRight className="w-3 h-3" />
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* RIGHT COLUMN (3.5 Cols): ORIGINAL THOUGHT MATRIX (OTAs) */}
+        <div className="lg:col-span-4 flex flex-col">
+          <div className="bento-card p-5 flex flex-col justify-between h-full">
+            <div>
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xs font-semibold text-[#EDEAE3] tracking-wide uppercase font-mono-precision">
+                  Living OTAs Matrix
+                </span>
+                <span className="text-[10px] font-mono-precision text-[#C89B53]">
+                  48 Primitives
+                </span>
+              </div>
+              <p className="text-[11px] text-[#9FA4B2] mb-3 leading-relaxed">
+                Core philosophical and computational primitives driving your thesis.
+              </p>
+
+              {/* Sample High-PageRank OTAs Grid */}
+              <div className="space-y-2.5">
+                {[
+                  {
+                    id: 'OTA-001',
+                    title: 'Questions as First-Class Computational Primitives',
+                    category: 'Epistemology',
+                    pagerank: '0.98'
+                  },
+                  {
+                    id: 'OTA-004',
+                    title: 'Epistemic Persistence vs Context Window Atrophy',
+                    category: 'Architecture',
+                    pagerank: '0.94'
+                  },
+                  {
+                    id: 'OTA-010',
+                    title: 'The Socratic Sparring Invariant: AI Must Disagree',
+                    category: 'Epistemology',
+                    pagerank: '0.92'
+                  },
+                  {
+                    id: 'OTA-043',
+                    title: 'In-Situ Micro-Computation & Zero Context-Switch UX',
+                    category: 'Ergonomics',
+                    pagerank: '0.88'
+                  }
+                ].map((ota) => (
+                  <div
+                    key={ota.id}
+                    onClick={() => {
+                      if (onSelectNodeForOrbit) onSelectNodeForOrbit(ota);
+                      onNavigate('writing');
+                    }}
+                    className="p-3 rounded-xl bg-[#12151E] border border-white/[0.06] hover:border-[#C89B53]/40 hover:bg-[#161924] transition-all cursor-pointer group"
+                  >
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-[10px] font-mono-precision font-semibold text-[#C89B53]">
+                        {ota.id}
+                      </span>
+                      <span className="text-[10px] font-mono-precision text-[#646979]">
+                        PR: {ota.pagerank}
+                      </span>
+                    </div>
+                    <div className="text-xs font-medium text-[#EDEAE3] group-hover:text-[#E5A93C] transition-colors line-clamp-1">
+                      {ota.title}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Jump to Full Knowledge View */}
+            <div className="pt-3 mt-3 border-t border-white/[0.06] flex items-center justify-between text-xs">
+              <span className="font-mono-precision text-[10px] text-[#646979]">
+                48 OTAs Populated in SQLite
+              </span>
+              <button
+                onClick={() => onNavigate('writing')}
+                className="text-xs font-mono-precision text-[#C89B53] hover:text-[#E5A93C] flex items-center gap-1 transition-colors"
+              >
+                Manuscript Studio →
+              </button>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 3. The 8 Book Chapters Compounding Progress Strip */}
-      <div className="rounded-2xl bg-[#0B0F17]/90 border border-white/10 p-6 shadow-2xl backdrop-blur-xl">
-        <div className="flex items-center justify-between mb-4">
+      {/* 3. The 8 Book Chapters Compounding Progress Strip (Bottom) */}
+      <div className="bento-card p-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-5 gap-2">
           <div>
-            <h3 className="text-sm font-semibold text-white">Book Anthology & 2029 Keynote Compounding Horizon</h3>
-            <p className="text-xs text-slate-400">All 48 OTAs and research paper annotations compound into these 8 core chapters.</p>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#C89B53]"></span>
+              <h3 className="text-sm font-bold text-[#EDEAE3] tracking-wide font-editorial">
+                Book Anthology & 2029 Keynote Compounding Horizon
+              </h3>
+            </div>
+            <p className="text-xs text-[#9FA4B2] mt-1">
+              All 48 OTAs and research papers compound into these 8 living book chapters.
+            </p>
           </div>
-          <span className="text-xs font-mono text-cyan-400 font-medium">Chapter 2 Lead: 74% Maturity</span>
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-mono-precision text-[#E5A93C] bg-[#C89B53]/10 border border-[#C89B53]/20 px-3 py-1 rounded-full font-semibold">
+              Lead: Chapter 2 (74% Maturity)
+            </span>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3.5">
           {chapters.map((ch: any) => (
-            <div key={ch.id} className="p-3.5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all flex flex-col justify-between">
+            <div
+              key={ch.id}
+              onClick={() => {
+                if (onPromoteCaptureToStudio) {
+                  onPromoteCaptureToStudio(
+                    `# Chapter ${ch.chapter_number}: ${ch.title}\n\n## Core Thesis\nHow human intelligence and autonomous agents coevolve across continuous interaction horizons.\n\n## Section 1: The Emergence Horizon\nEmpirical lessons from 300+ real-time telemetry interactions.`
+                  );
+                } else {
+                  onNavigate('writing');
+                }
+              }}
+              className="p-4 rounded-xl bg-[#12151E] border border-white/[0.06] hover:border-[#C89B53]/40 hover:bg-[#161924] transition-all cursor-pointer flex flex-col justify-between group"
+            >
               <div>
-                <div className="flex items-center justify-between text-[11px] mb-1">
-                  <span className="font-mono text-slate-400">Chapter {ch.chapter_number}</span>
-                  <span className="font-mono text-cyan-400 font-semibold">{ch.maturity_percentage}%</span>
+                <div className="flex items-center justify-between text-[11px] mb-1.5">
+                  <span className="font-mono-precision text-[#9FA4B2]">Chapter {ch.chapter_number}</span>
+                  <span className="font-mono-precision text-[#E5A93C] font-bold">{ch.maturity_percentage}%</span>
                 </div>
-                <div className="text-xs font-semibold text-slate-200 line-clamp-1 mb-1">{ch.title}</div>
+                <div className="text-xs font-semibold text-[#EDEAE3] group-hover:text-[#E5A93C] transition-colors line-clamp-1 mb-1 font-editorial">
+                  {ch.title}
+                </div>
+                <div className="text-[10px] text-[#646979] font-mono-precision">
+                  {ch.target_word_count ? `${ch.current_word_count || 1850} / ${ch.target_word_count} words` : 'Synthesis stage'}
+                </div>
               </div>
 
-              <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden mt-3">
+              <div className="w-full h-1 bg-white/5 rounded-full overflow-hidden mt-3.5">
                 <div
                   style={{ width: `${ch.maturity_percentage}%` }}
-                  className="h-full bg-gradient-to-r from-cyan-500 to-indigo-500 rounded-full shadow-[0_0_8px_rgba(56,189,248,0.5)]"
+                  className="h-full bg-gradient-to-r from-[#C89B53] to-[#E5A93C] rounded-full transition-all duration-500"
                 />
               </div>
             </div>

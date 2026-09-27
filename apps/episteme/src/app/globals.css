@@ -1,102 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --bg-canvas: #06080F;
-  --bg-surface: rgba(16, 18, 27, 0.65);
-  --bg-surface-elevated: rgba(23, 26, 38, 0.8);
+  color-scheme: dark;
   
-  --border-translucent: rgba(255, 255, 255, 0.07);
-  --rim-light-top: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.18) 50%, rgba(255,255,255,0) 100%);
+  /* Monastic Obsidian & Warm Tungsten Design System */
+  --bg-canvas: #0B0D13;
+  --bg-surface: #12151E;
+  --bg-surface-elevated: #171B26;
+  --bg-surface-hover: #1C212F;
   
-  --accent-cyan: #38BDF8;
-  --cyan-soft-glow: rgba(56, 189, 248, 0.15);
-  --accent-violet: #818CF8;
-  --violet-soft-glow: rgba(129, 140, 248, 0.15);
-  --accent-amber: #FBBF24;
-  --accent-emerald: #34D399;
+  --border-hairline: rgba(255, 255, 255, 0.07);
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --border-active: rgba(200, 155, 83, 0.45);
   
-  --text-white: #FFFFFF;
-  --text-primary: #F1F5F9;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
+  /* Academic Accents: Warm Tungsten / Antique Brass / Scholar Emerald */
+  --accent-tungsten: #C89B53;
+  --accent-tungsten-soft: rgba(200, 155, 83, 0.14);
+  --accent-gold: #E5A93C;
+  --accent-emerald: #2E7D5B;
+  --accent-emerald-soft: rgba(46, 125, 91, 0.14);
+  --accent-copper: #B86B43;
+  
+  /* Editorial Typography: Warm Parchment */
+  --text-parchment: #EDEAE3;
+  --text-secondary: #9FA4B2;
+  --text-muted: #646979;
+  --text-faint: #3F4452;
 }
 
-body {
+html, body {
+  color-scheme: dark;
   background-color: var(--bg-canvas);
-  color: var(--text-primary);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-parchment);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Cosmic Ambient Lighting (Reflect.app signature) */
-.glow-orb-1 {
-  position: fixed;
-  top: -10%;
-  left: 15%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(129, 140, 248, 0.1) 0%, transparent 70%);
-  filter: blur(80px);
-  pointer-events: none;
-  z-index: 0;
+/* Typography Utility Classes */
+.font-editorial {
+  font-family: var(--font-serif-editorial), Georgia, Cambria, "Times New Roman", serif;
+  letter-spacing: -0.015em;
 }
 
-.glow-orb-2 {
-  position: fixed;
-  bottom: -10%;
-  right: 15%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
-  filter: blur(90px);
-  pointer-events: none;
-  z-index: 0;
+.font-mono-precision {
+  font-family: var(--font-mono-precision), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-/* Reflect Style Rim-Lit Glass Cards */
-.glass-panel {
-  background: var(--bg-surface);
-  backdrop-filter: blur(32px) saturate(180%);
-  -webkit-backdrop-filter: blur(32px) saturate(180%);
-  border: 1px solid var(--border-translucent);
-  border-radius: 18px;
+/* Monastic Bento & Glass Cards */
+.bento-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 16px;
   position: relative;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.glass-panel::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--rim-light-top);
-  pointer-events: none;
+.bento-card:hover {
+  border-color: var(--border-subtle);
 }
 
-.glass-panel:hover {
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.55), 0 0 25px rgba(56, 189, 248, 0.05);
+.glass-panel {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 14px;
 }
 
-/* Custom Scrollbars */
+/* Universal Dark Form Elements */
+select, option, optgroup, input, textarea {
+  color-scheme: dark;
+  background-color: #12151E !important;
+  color: #EDEAE3 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+option:hover, option:focus, option:checked {
+  background-color: #1C212F !important;
+  color: #C89B53 !important;
+}
+
+/* Custom Clean Scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(200, 155, 83, 0.35);
 }

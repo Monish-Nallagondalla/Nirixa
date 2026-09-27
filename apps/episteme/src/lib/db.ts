@@ -9,8 +9,8 @@ export function getDb(): Database.Database {
     return dbInstance;
   }
 
-  const primaryPath = path.resolve(process.cwd(), process.env.DATABASE_PATH || '../../system/data/nirixa.db');
-  const fallbackPath = path.resolve(process.cwd(), 'system/data/nirixa.db');
+  const primaryPath = path.resolve(/*turbopackIgnore: true*/ process.cwd(), process.env.DATABASE_PATH || '../../system/data/nirixa.db');
+  const fallbackPath = path.resolve(/*turbopackIgnore: true*/ process.cwd(), 'system/data/nirixa.db');
 
   let dbPath = primaryPath;
   if (!fs.existsSync(primaryPath) && fs.existsSync(fallbackPath)) {
@@ -24,6 +24,14 @@ export function getDb(): Database.Database {
   // Enable WAL mode for high concurrency and sub-millisecond reads
   dbInstance.pragma('journal_mode = WAL');
   dbInstance.pragma('synchronous = NORMAL');
+
+  // Initialize PRD Epistemic tables & seeds
+  try {
+    const { initializeEpistemicSchema } = require('./schema');
+    initializeEpistemicSchema(dbInstance);
+  } catch (schemaErr) {
+    console.warn('Epistemic schema init warning:', schemaErr);
+  }
 
   return dbInstance;
 }

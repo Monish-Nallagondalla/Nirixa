@@ -123,6 +123,28 @@ export async function POST(request: Request) {
         VALUES (?, ?, ?, ?, ?, ?, ?)
       `).run(id, paperId, pageNumber || 1, highlightedText, note || '', annotationType || 'note', linkedOtaId || null);
 
+      // PRD Scenario 3: Auto-promote to Evidence attached to Epistemic Object
+      if (linkedOtaId) {
+        const eoId = linkedOtaId.toUpperCase().replace('OTA_', 'EO-').replace('OTA-', 'EO-');
+        try {
+          db.prepare(`
+            INSERT OR IGNORE INTO evidence (id, source_id, eo_id, claim, content, type, strength, provenance)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+          `).run(
+            'E-' + Date.now(),
+            paperId,
+            eoId,
+            highlightedText.slice(0, 180),
+            highlightedText,
+            'literature_finding',
+            0.88,
+            `Paper Annotation: ${paperId} (Page ${pageNumber || 1})`
+          );
+        } catch (eErr) {
+          console.warn('Auto evidence insert warning:', eErr);
+        }
+      }
+
       return NextResponse.json({ success: true, id });
     }
 

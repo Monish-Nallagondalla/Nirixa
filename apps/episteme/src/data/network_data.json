@@ -418,8 +418,8 @@
       }
     },
     {
-      "id": "member_monish",
-      "label": "Monish (Primary Owner)",
+      "id": "member_lead",
+      "label": "Lead Researcher (Primary Owner)",
       "type": "member",
       "group": "other",
       "color": "#94a3b8",
@@ -1490,7 +1490,7 @@
       "properties": {}
     },
     {
-      "source": "member_monish",
+      "source": "member_lead",
       "target": "ota_022",
       "type": "CREATED",
       "weight": 1.0,
@@ -1942,7 +1942,7 @@
       "properties": {}
     },
     {
-      "source": "member_monish",
+      "source": "member_lead",
       "target": "ota_014",
       "type": "CREATED",
       "weight": 1.0,
@@ -1984,28 +1984,28 @@
       "properties": {}
     },
     {
-      "source": "member_monish",
+      "source": "member_lead",
       "target": "ota_016",
       "type": "CREATED",
       "weight": 1.0,
       "properties": {}
     },
     {
-      "source": "member_monish",
+      "source": "member_lead",
       "target": "ota_019",
       "type": "CREATED",
       "weight": 1.0,
       "properties": {}
     },
     {
-      "source": "member_monish",
+      "source": "member_lead",
       "target": "ota_020",
       "type": "CREATED",
       "weight": 1.0,
       "properties": {}
     },
     {
-      "source": "member_monish",
+      "source": "member_lead",
       "target": "ota_021",
       "type": "CREATED",
       "weight": 1.0,
@@ -2019,7 +2019,7 @@
       "properties": {}
     },
     {
-      "source": "member_monish",
+      "source": "member_lead",
       "target": "ota_eval",
       "type": "CREATED",
       "weight": 1.0,
