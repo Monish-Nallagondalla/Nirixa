@@ -208,21 +208,175 @@ Full details: **[docs/getting-started/PROGRESSIVE_ENLIGHTENMENT.md](docs/getting
 
 ---
 
-## Architecture
+## Complete Scientific & System Architecture
 
-```mermaid
-graph TD
-    User["User / Team (Mobile & IDE Gateway)"] -->|"Voice / Text Note"| Daemon["Runtime Daemon (Zero-LLM Fast Path)"]
-    Daemon -->|"Classify & Store"| DB[("SQLite Core (nirixa.db)")]
-    DB --> OperatingMode{"Operating Mode Engine"}
-    OperatingMode -->|"Personal Mode"| Q["4-Quadrant / 3-Horizon Framework"]
-    OperatingMode -->|"Company Mode"| W["Living Engineering Playbook & Scars"]
-    Q & W --> Compounding["Compounding Engine<br/>(Visual Documents, RFCs, Post-Mortems)"]
-    Compounding --> Proactive["Proactive Briefings & Blocker Alerts"]
-    Proactive --> User
+Nirixa Episteme OS is architected not merely as a software utility, but as an **instrumented computational research platform** designed to investigate the longitudinal dynamics of **Human–AI Cognitive Coevolution** and the transformation of workplace organizational systems.
+
+---
+
+### 1. Theoretical Grounding: The 4-Layer Causal Continuum
+
+When evaluated from a cognitive systems and organizational research perspective, Nirixa addresses one overarching scientific problem:
+
+> **"How does the design and use of AI products reshape human agency, cognition, collaboration, and organizational dynamics in the workplace?"**
+
+Rather than treating memory, interaction, cognition, and product design as disconnected topics, Nirixa formalizes them into a **single causal continuum**:
+
+```
+                    CENTRAL RESEARCH PROBLEM
+       How will the design and use of AI products
+       reshape human agency, cognition, collaboration,
+       and organizational dynamics in the workplace?
+                         │
+                         ▼
+              ┌────────────────────────┐
+              │ 1. REPRESENTATION       │ ──► What should an AI remember?
+              │ Epistemic memory,      │     Living questions (OTA-001),
+              │ context, beliefs, and  │     beliefs, evidence anchors,
+              │ provenance lineages.   │     and semantic relationship graphs.
+              └──────────┬─────────────┘
+                         │
+                         ▼
+              ┌────────────────────────┐
+              │ 2. INTERACTION         │ ──► How should the AI participate?
+              │ AI as a coworker,      │     Adversarial sparring, Socratic
+              │ Socratic debate,       │     premise probing, unprompted
+              │ and premise defense.   │     discovery, and challenge arenas.
+              └──────────┬─────────────┘
+                         │
+                         ▼
+              ┌────────────────────────┐
+              │ 3. HUMAN COGNITION     │ ──► What happens to the human?
+              │ Reasoning, memory,     │     Mitigating cognitive offloading,
+              │ metacognition, and     │     measuring critical reasoning,
+              │ intellectual agency.   │     and preventing cognitive atrophy.
+              └──────────┬─────────────┘
+                         │
+                         ▼
+              ┌────────────────────────┐
+              │ 4. COEVOLUTION &       │ ──► How do systems and teams adapt?
+              │    WORKPLACE DYNAMICS  │     Cross-project knowledge accumulation,
+              │ Roles, authority,      │     joint human-AI performance reviews,
+              │ teams, management, and │     and the employee mobility/portability
+              │ mutual adaptation.     │     boundary (Company IP vs. Agent Skill).
+              └──────────┬─────────────┘
+                         │
+                         ▼
+       ┌──────────────────────────────────────┐
+       │ PRODUCT DESIGN AS INTERVENTION LAYER │ ──► What do we actually build?
+       │ Manipulating collaborator behaviors  │     Testing Designs A, B, C, D, E
+       │ (immediate answer vs. Socratic first)│     in controlled empirical trials.
+       └──────────────────────────────────────┘
 ```
 
 ---
+
+### 2. Layered System Architecture
+
+Nirixa operates as a unified, dual-interface architecture: a **Full-Stack Monastic Web Cockpit** (Next.js 16 + React 19) for deep intellectual synthesis, synchronized with an **Ambient Mobile Gateway** (Telegram daemon) for low-friction real-world friction capture.
+
+```mermaid
+graph TB
+    subgraph ClientTier ["1. Presentation & Dialectic Client Tier (Next.js 16 / Port 3000)"]
+        Cockpit["Cockpit Bento<br/>(4 Life Segments & Telemetry)"]
+        Timeline["Evolution Timeline<br/>(Visual Diff & Provenance)"]
+        Challenges["Challenges Deck<br/>(Socratic Adversarial Arena)"]
+        Discoveries["Discoveries Deck<br/>(Unprompted Serendipity Surface)"]
+        Studio["Writing Studio<br/>(Newsreader Typography & OTA Lineage)"]
+        Orbit["Orbit Graph<br/>(D3 Associative Topology)"]
+        JarvisModal["Jarvis Command Modal<br/>(Global Cmd+K Cognitive Router)"]
+    end
+
+    subgraph MiddlewareTier ["2. Cognitive Engine & Epistemic Middleware (/api/episteme/*)"]
+        EOEngine["/api/episteme/eos<br/>(Lifecycle State Machine)"]
+        BeliefEngine["/api/episteme/beliefs<br/>(Non-Destructive Versioning)"]
+        ChallengeEngine["/api/episteme/challenges<br/>(Socratic Premise Sparring)"]
+        DiscoveryEngine["/api/episteme/discoveries<br/>(Latent Pattern Matcher)"]
+        LineageEngine["/api/episteme/lineage<br/>(Bidirectional Ancestry Traversal)"]
+        CommandEngine["/api/episteme/command<br/>(Natural Language Intent Dispatcher)"]
+        PaperVault["/api/papers<br/>(Academic Literature Citation Binder)"]
+    end
+
+    subgraph IngestionTier ["3. Ambient Mobile & Edge Ingestion Tier"]
+        Telegram["Telegram Gateway<br/>(Text / 10s Voice Notes)"]
+        Listener["Background Listener Daemon<br/>(telegram_listener.py)"]
+        FastPath["Zero-LLM Fast Path<br/>(Deterministic Telemetry & Reminders)"]
+    end
+
+    subgraph StorageTier ["4. Relational & Provenance Storage Core (ACID SQLite / nirixa.db)"]
+        EOTables[("epistemic_objects<br/>(Atomic Concepts & Status)")]
+        BeliefTables[("epistemic_beliefs & mutations<br/>(Append-Only Provenance Logs)")]
+        ChallengeTables[("epistemic_challenges & sparring<br/>(Conviction Metric Logs)")]
+        DiscoveryTables[("epistemic_discoveries<br/>(Serendipity Affinity Clusters)")]
+        FTSIndex[("FTS5 & sqlite-vec<br/>(Full-Text & Vector Search)")]
+        SystemTables[("telemetry_logs & jarvis_commands<br/>(Audit & Cognitive Metrics)")]
+    end
+
+    %% Flow Connections
+    ClientTier --> MiddlewareTier
+    Telegram --> Listener
+    Listener --> FastPath
+    FastPath --> StorageTier
+    MiddlewareTier --> StorageTier
+    StorageTier --> MiddlewareTier
+    MiddlewareTier --> ClientTier
+```
+
+---
+
+### 3. Core Ontological & Computational Primitives
+
+Nirixa does not treat information as static text notes. It models thought through four living primitives:
+
+#### A. Living Question Primitives (`OTA-001`)
+Questions are first-class computational objects rather than transient prompt queries. They possess state machines:
+$$\text{OPEN} \longrightarrow \text{SPARRED} \longrightarrow \text{DEFENDED} \longrightarrow \text{CANONIZED}$$
+A living question maintains its unresolved tensions, cited evidence, and competing premises across years rather than resetting to zero.
+
+#### B. Epistemic Objects (EOs)
+Atomic semantic nodes carrying metadata:
+* **Category**: Core Thesis, Empirical Scar, Technical Architecture, or Invariant.
+* **Confidence & Maturity**: Quantitative progression ($0\%\dots 100\%$) based on empirical backing.
+* **Lineage Ancestry**: Every EO points to its upstream trigger (mobile capture, book excerpt, real-world friction) and downstream output (publication, book chapter, system invariant).
+
+#### C. Non-Destructive Belief Mutations
+Beliefs and premises are **never overwritten**. When an assumption is modified:
+1. The prior belief is preserved with an immutable snapshot.
+2. The trigger (falsifying paper, production outage scar, counter-argument) is bound to the mutation.
+3. A cryptographic provenance hash and visual textual diff are recorded in `belief_mutations`.
+
+#### D. Adversarial Socratic Sparring
+To prevent confirmation bias and cognitive offloading:
+* Nirixa generates opposing arguments via three distinct persona lenses: **Socratic** (conceptual definition testing), **Empirical** (scars and real-world failure modes), and **First-Principles** (physical and computational boundaries).
+* Calculates an **Epistemic Conviction Metric** tracking how well premises withstand scrutiny.
+
+---
+
+### 4. The Associate-to-Agent Analogy & Workplace Portability
+
+In enterprise organizational systems, human associates do not restart from zero on every project; they carry accumulated institutional context, problem-solving heuristics, and managerial collaboration habits.
+
+Nirixa operationalizes this **Accumulated Working Intelligence Model**:
+* **Cross-Project Epistemic Retention**: What an AI collaborator retains across workflows versus what it prunes for compliance.
+* **Joint Human-AI Performance Reviews**: Evaluating collaborative dyads (handoff efficiency, error correction, mutual adaptation) rather than measuring isolated human output.
+* **The Portability Boundary**: Defining the boundary between **Company IP** (client data, proprietary systems) and **Individual Working Intelligence** (the accumulated dyadic collaboration patterns an employee develops with their AI partner over a career).
+
+---
+
+### 5. Experimental Testbed for Empirical Studies
+
+For academic researchers and doctoral programmes (e.g., EMANAIRE, UZH HISE, TUM, Oulu HI), Nirixa provides an instrumented testbed for running controlled human-subject experiments:
+
+| Experimental Condition | AI Coworker Behavior | Target Cognitive Measure |
+| :--- | :--- | :--- |
+| **Design A (Baseline Tool)** | Instant autocomplete answer | Cognitive offloading ratio, task time |
+| **Design B (Metacognitive Prompt)** | Requires user to formulate premises before response | Reflection depth, solution retention |
+| **Design C (Socratic Challenger)** | Probes unstated assumptions and generates counter-theses | Critical thinking quality, premise resilience |
+| **Design D (Serendipity Engine)** | Surfaces unprompted contradictory evidence | Confirmation bias mitigation |
+| **Design E (Autonomous Agent)** | Executes multi-step workflows with human-in-the-loop review | Human agency, supervisory vigilance |
+
+---
+
 
 ## Documentation Index
 
