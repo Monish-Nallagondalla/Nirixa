@@ -26,6 +26,13 @@
 
 Built on an ACID SQLite core (`system/data/nirixa.db`) with zero lock-in, universal coding agent support (Google Antigravity, Cursor, Claude Code), and a 100% deterministic test suite verifying PRD dialectic invariants.
 
+<p align="center">
+  <a href="docs/assets/screenshots/hero-cockpit-bento.png"><img src="docs/assets/screenshots/hero-cockpit-bento.png" alt="Nirixa Episteme OS Cockpit Hero" width="100%"></a>
+</p>
+<p align="center">
+  <em>The Epistemic Cockpit Bento: Multi-segment triage, real-time doctoral telemetry, living OTAs matrix, and cognitive focus.</em>
+</p>
+
 ---
 
 ## The 7 Epistemic Engine Surfaces
@@ -39,6 +46,30 @@ Nirixa Episteme OS is built around 7 interconnected intellectual surfaces:
 5. **Jarvis Command Modal (`Cmd+K` / `Ctrl+K`)**: Global cognitive command dispatcher for natural language synthesis, lineage tracing, premise challenges, and instant navigation.
 6. **Writing Studio**: Editorial canvas with Newsreader typography, distraction-free drafting, deep-linked Original Thought Asset (OTA) lineage sidebars, and paper citations.
 7. **Orbit Graph**: Interactive D3 knowledge topology visualizing living computational question primitives, PageRank authority scores, and bidirectional lineage trees.
+
+### Visual Interface Showcase
+
+<table>
+<tr>
+  <td width="50%">
+    <b>Adversarial Socratic Challenges Deck</b><br/>
+    <a href="docs/assets/screenshots/socratic-challenges-deck.png"><img src="docs/assets/screenshots/socratic-challenges-deck.png" alt="Adversarial Socratic Challenges Deck" width="100%"></a>
+    <p><em>Probes unstated premises, tests edge cases across Socratic/Empirical/First-Principles personas, and tracks epistemic conviction without confirmation bias.</em></p>
+  </td>
+  <td width="50%">
+    <b>Manuscript Studio &amp; Lineage Attribution</b><br/>
+    <a href="docs/assets/screenshots/writing-studio-attribution.png"><img src="docs/assets/screenshots/writing-studio-attribution.png" alt="Manuscript Studio & Lineage Attribution" width="100%"></a>
+    <p><em>Distraction-free drafting with verified 4-layer lineage (Paragraph &rarr; EO &rarr; Question &rarr; Evidence &rarr; Belief), real-time attribution ratio, and Enterprise Privacy Shield.</em></p>
+  </td>
+</tr>
+<tr>
+  <td colspan="2">
+    <b>Living Knowledge Gravity &amp; Question Orbit Graph</b><br/>
+    <a href="docs/assets/screenshots/knowledge-orbit-graph.png"><img src="docs/assets/screenshots/knowledge-orbit-graph.png" alt="Living Knowledge Orbit Graph" width="100%"></a>
+    <p><em>Interactive knowledge topology visualizing living computational question primitives, PageRank authority scores, upstream empirical scars, and downstream book chapters.</em></p>
+  </td>
+</tr>
+</table>
 
 ---
 
