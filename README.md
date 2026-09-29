@@ -1,30 +1,22 @@
-<p align="center">
-<pre align="center">
- ███╗   ██╗██╗██████╗ ██╗██╗  ██╗ █████╗        ██████╗ ███████╗
- ████╗  ██║██║██╔══██╗██║╚██╗██╔╝██╔══██╗      ██╔═══██╗██╔════╝
- ██╔██╗ ██║██║██████╔╝██║ ╚███╔╝ ███████║█████╗██║   ██║███████╗
- ██║╚██╗██║██║██╔══██╗██║ ██╔██╗ ██╔══██║╚════╝██║   ██║╚════██║
- ██║ ╚████║██║██║  ██║██║██╔╝ ██╗██║  ██║      ╚██████╔╝███████║
- ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝       ╚═════╝ ╚══════╝
-</pre>
-</p>
+# Nirixa Episteme OS
 
-# Nirixa OS & Episteme Cockpit
+### An Open-Source Computational Testbed and Cognitive Workbench for Longitudinal Human–AI Interaction Research
+
 <p align="center">
   <a href="https://github.com/Monish-Nallagondalla/Nirixa">Nirixa OS</a> | <a href="docs/architecture/EPISTEME_OS_PRD.md">Episteme PRD</a> | <a href="docs/getting-started/QUICKSTART.md">Getting Started</a> | <a href="docs/guides/LEADER_BLUEPRINT.md">Daily Blueprint</a> | <a href="docs/README.md">Documentation Hub</a>
 </p>
 <p align="center">
-  <a href="docs/architecture/EPISTEME_OS_PRD.md"><img src="https://img.shields.io/badge/PRD-Episteme_OS_Spec-C89B53?style=for-the-badge" alt="PRD Spec"></a>
-  <a href="docs/README.md"><img src="https://img.shields.io/badge/Docs-Documentation_Hub-FFD700?style=for-the-badge" alt="Documentation"></a>
-  <a href="https://github.com/Monish-Nallagondalla/Nirixa/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
-  <img src="https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js">
-  <img src="https://img.shields.io/badge/Storage-SQLite_Core-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
-  <img src="https://img.shields.io/badge/Telegram-Connected-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
+  <a href="docs/architecture/EPISTEME_OS_PRD.md"><img src="https://img.shields.io/badge/Specification-Episteme_PRD-C89B53?style=flat-square" alt="PRD Spec"></a>
+  <a href="docs/README.md"><img src="https://img.shields.io/badge/Docs-Documentation_Hub-555555?style=flat-square" alt="Documentation"></a>
+  <a href="https://github.com/Monish-Nallagondalla/Nirixa/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/Next.js-16.3-black?style=flat-square&logo=next.js&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/Storage-SQLite_ACID-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite">
+  <img src="https://img.shields.io/badge/Interface-Telegram_Daemon-2CA5E0?style=flat-square&logo=telegram&logoColor=white" alt="Telegram">
 </p>
 
-**The autonomous cognitive operating system, full-stack Episteme cockpit, and AI coevolution partner.** Nirixa combines an Awwwards-caliber Monastic Obsidian web cockpit (`http://localhost:3000`) with a 24/7 background Telegram daemon. It captures raw friction, preserves non-destructive belief evolutions, challenges unstated premises via Socratic sparring, and auto-compiles authentic lessons into research assets, decision records, and public frameworks.
+**Nirixa is an instrumented research testbed designed to investigate persistent, longitudinal Human–AI collaboration.** Unlike stateless conversational agents that reset context between sessions, Nirixa maintains a durable epistemic substrate across multi-month horizons. It provides a local graphical research cockpit, an asynchronous mobile capture daemon, non-destructive belief mutation logging, and adversarial Socratic sparring protocols to study the division of cognitive labour, human agency, and knowledge retention across task boundaries.
 
-Built on an ACID SQLite core (`system/data/nirixa.db`) with zero lock-in, universal coding agent support (Google Antigravity, Cursor, Claude Code), and a 100% deterministic test suite verifying PRD dialectic invariants.
+Built on an ACID SQLite core (`system/data/nirixa.db`) with zero vendor lock-in, universal coding agent integration (Google Antigravity, Cursor, Claude Code), and an automated test harness verifying epistemic state transitions and dialectic invariants.
 
 <p align="center">
   <a href="docs/assets/screenshots/hero-cockpit-bento.png"><img src="docs/assets/screenshots/hero-cockpit-bento.png" alt="Nirixa Episteme OS Cockpit Hero" width="100%"></a>
@@ -74,12 +66,12 @@ Nirixa Episteme OS is built around 7 interconnected intellectual surfaces:
 ---
 
 <table>
-<tr><td width="30%"><b>Full-Stack Episteme Web Cockpit</b></td><td>Awwwards-caliber Monastic Obsidian &amp; Warm Tungsten design system (Next.js 16 + Tailwind) running locally on Port 3000 with real-time SQLite telemetry.</td></tr>
+<tr><td width="30%"><b>Local Epistemic Cockpit</b></td><td>A local graphical interface (Next.js 16 + Tailwind) running locally on Port 3000 with real-time SQLite telemetry and provenance inspection.</td></tr>
 <tr><td><b>Mobile Telegram Gateway</b></td><td>Zero-friction Telegram text and voice capture, interactive inline buttons, 1-click approvals, and bidirectional IDE execution with zero latency.</td></tr>
 <tr><td><b>Non-Destructive Belief Evolution</b></td><td>Beliefs and premises are never overwritten. Every mutation records its trigger, rationale, timestamp, and visual diff.</td></tr>
 <tr><td><b>Socratic Sparring &amp; Premise Defense</b></td><td>The AI does not flatter or autocomplete. It probes unstated premises, tests edge cases, and calculates conviction scores.</td></tr>
 <tr><td><b>DB-First SQLite Core</b></td><td>Single ACID SQLite database with vector embeddings and FTS5 search. Full thought ancestry and lineage tracking.</td></tr>
-<tr><td><b>Verified PRD Invariants</b></td><td>10 / 10 automated test scenarios (<code>npm test</code>) verifying zero-loss triage, unprompted discovery, and longitudinal self-inquiry.</td></tr>
+<tr><td><b>Reproducible Empirical Harness</b></td><td>Automated test suite (<code>npm test</code>) verifying epistemic state transitions, unprompted discovery, and longitudinal self-inquiry protocols.</td></tr>
 </table>
 
 ---
@@ -396,7 +388,7 @@ Nirixa operationalizes this **Accumulated Working Intelligence Model**:
 
 ### 5. Experimental Testbed for Empirical Studies
 
-For academic researchers and doctoral programmes (e.g., EMANAIRE, UZH HISE, TUM, Oulu HI), Nirixa provides an instrumented testbed for running controlled human-subject experiments:
+For researchers investigating Human-Computer Interaction (HCI), Information Systems (IS), and Cognitive Ergonomics, Nirixa provides an instrumented environment for running controlled behavioral studies:
 
 | Experimental Condition | AI Coworker Behavior | Target Cognitive Measure |
 | :--- | :--- | :--- |
@@ -479,6 +471,6 @@ MIT — see [LICENSE](LICENSE).
 ---
 
 <p align="center">
-  <b>Built by Human and AI in the end!</b><br/>
-  <i>Co-conceived, architected, and continuously engineered in daily partnership between biological human intuition and autonomous agentic AI.</i>
+  <b>Nirixa Research Testbed</b><br/>
+  <i>An open-source computational environment co-developed through longitudinal human–agent collaboration to study the dynamics of mutual adaptation.</i>
 </p>

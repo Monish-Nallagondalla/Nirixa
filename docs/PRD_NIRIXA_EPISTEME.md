@@ -23,15 +23,15 @@ Modern knowledge workers, researchers, and students face severe **cognitive frag
 - **Epistemic Knowledge Graph**: 48 Original Thought Assets (OTAs) with mathematical affinity and lineage traversal.
 - **In-Situ Academic Paper Reading**: PDF ingestion, highlight anchoring, and cross-paper gap synthesis.
 - **Dual-Channel Distribution Studio**: High-signal LinkedIn publishing pipeline + Academic Thesis/LaTeX citation generator.
-- **Living Human–AI Coevolution Cockpit**: Real-time telemetry documenting the interdependent coevolution of human cognition and an autonomous AI agent—serving as the living empirical laboratory for Monish's PhD publication.
+- **Living Human–AI Coevolution Cockpit**: Real-time telemetry documenting the interdependent coevolution of human cognition and an autonomous AI agent—serving as a living empirical laboratory for human-AI interaction research.
 
 ---
 
 ## 2. User Personas & Primary Use Cases
 
-### Persona A: Monish (The Technical PM & PhD Aspirant at EY)
-- **Daily Context**: High-stress enterprise consulting at EY, strict client boundaries, mobile commute.
-- **Goal**: Capture sparks on mobile via 2-second Telegram Share Sheet, synthesize research on weekends, publish high-signal technical essays on LinkedIn, and build undeniable research evidence for European PhD labs.
+### Persona A: The AI Product Leader & System Architect
+- **Daily Context**: Fast-paced enterprise environment, high cognitive load, mobile commute.
+- **Goal**: Capture sparks on mobile via Telegram, synthesize research on weekends, publish high-signal technical essays, and build durable empirical research assets.
 - **Pain Point**: Zero bandwidth for manual tagging or multi-server maintenance. Needs instant local execution.
 
 ### Persona B: Academic Researcher / Doctoral Student (Open-Source User)
@@ -136,14 +136,14 @@ All thoughts, captures, and assets in Nirixa Episteme are categorized across **4
   - **Tone & Signal Auditor**: Flags hype emojis (🔥, 🚀), buzzwords, and marketing gimmicks. Enforces minimalist, high-signal tech copywriting.
   - Auto-compiles multi-slide carousels into ready-to-upload PDF documents.
 
-### Module 5: The Book & 2029 TED Talk Compounding Tracker
+### Module 5: The Longitudinal Research Compounding Tracker
 - **Foundational Chapters**:
   - Tracks 8 foundational book chapters corresponding to the core philosophical pillars.
   - **Chapter Density Metric**: Automatically calculated as:
     $$\text{Maturity} = \frac{\text{OTAs Bound} \times 2 + \text{Published Essays} \times 3 + \text{Paper Annotations} \times 1.5}{\text{Target Threshold}} \times 100\%$$
-  - Provides Monish with quiet, compounding progress that builds toward the 2029 Keynote without daily pressure.
+  - Provides quiet, compounding progress across multi-year research milestones without daily cognitive fatigue.
 
-### Module 6: Human–AI Coevolution Telemetry Cockpit (The Living PhD Artifact)
+### Module 6: Human–AI Coevolution Telemetry Cockpit (The Living Empirical Artifact)
 - **Live Empirical Evidence**:
   - Records session history, agent prompt iterations, and Socratic challenge rates.
   - Quantifies cognitive scaffolding and conceptual drift over time.
