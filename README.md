@@ -1,22 +1,31 @@
-# Nirixa Episteme OS
-
-### An Open-Source Computational Testbed and Cognitive Workbench for Longitudinal Human–AI Interaction Research
-
 <p align="center">
-  <a href="https://github.com/Monish-Nallagondalla/Nirixa">Nirixa OS</a> | <a href="docs/architecture/EPISTEME_OS_PRD.md">Episteme PRD</a> | <a href="docs/getting-started/QUICKSTART.md">Getting Started</a> | <a href="docs/guides/LEADER_BLUEPRINT.md">Daily Blueprint</a> | <a href="docs/README.md">Documentation Hub</a>
-</p>
-<p align="center">
-  <a href="docs/architecture/EPISTEME_OS_PRD.md"><img src="https://img.shields.io/badge/Specification-Episteme_PRD-C89B53?style=flat-square" alt="PRD Spec"></a>
-  <a href="docs/README.md"><img src="https://img.shields.io/badge/Docs-Documentation_Hub-555555?style=flat-square" alt="Documentation"></a>
-  <a href="https://github.com/Monish-Nallagondalla/Nirixa/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="License: MIT"></a>
-  <img src="https://img.shields.io/badge/Next.js-16.3-black?style=flat-square&logo=next.js&logoColor=white" alt="Next.js">
-  <img src="https://img.shields.io/badge/Storage-SQLite_ACID-003B57?style=flat-square&logo=sqlite&logoColor=white" alt="SQLite">
-  <img src="https://img.shields.io/badge/Interface-Telegram_Daemon-2CA5E0?style=flat-square&logo=telegram&logoColor=white" alt="Telegram">
+<pre align="center">
+ ███╗   ██╗██╗██████╗ ██╗██╗  ██╗ █████╗        ██████╗ ███████╗
+ ████╗  ██║██║██╔══██╗██║╚██╗██╔╝██╔══██╗      ██╔═══██╗██╔════╝
+ ██╔██╗ ██║██║██████╔╝██║ ╚███╔╝ ███████║█████╗██║   ██║███████╗
+ ██║╚██╗██║██║██╔══██╗██║ ██╔██╗ ██╔══██║╚════╝██║   ██║╚════██║
+ ██║ ╚████║██║██║  ██║██║██╔╝ ██╗██║  ██║      ╚██████╔╝███████║
+ ╚═╝  ╚═══╝╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═╝       ╚═════╝ ╚══════╝
+</pre>
 </p>
 
-**Nirixa is an instrumented research testbed designed to investigate persistent, longitudinal Human–AI collaboration.** Unlike stateless conversational agents that reset context between sessions, Nirixa maintains a durable epistemic substrate across multi-month horizons. It provides a local graphical research cockpit, an asynchronous mobile capture daemon, non-destructive belief mutation logging, and adversarial Socratic sparring protocols to study the division of cognitive labour, human agency, and knowledge retention across task boundaries.
+# Nirixa OS
+<p align="center">
+  <a href="https://github.com/Monish-Nallagondalla/Nirixa">Nirixa OS</a> | <a href="docs/getting-started/QUICKSTART.md">Getting Started</a> | <a href="docs/guides/LEADER_BLUEPRINT.md">Daily Blueprint</a> | <a href="docs/README.md">Documentation Hub</a>
+</p>
+<p align="center">
+  <a href="docs/README.md"><img src="https://img.shields.io/badge/Docs-Documentation_Hub-FFD700?style=for-the-badge" alt="Documentation"></a>
+  <a href="https://github.com/Monish-Nallagondalla/Nirixa/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License: MIT"></a>
+  <img src="https://img.shields.io/badge/Next.js-16.3-black?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js">
+  <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Storage-SQLite_Core-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+  <img src="https://img.shields.io/badge/Telegram-Connected-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
+  <img src="https://img.shields.io/badge/Agents-Antigravity_%7C_Cursor_%7C_Claude-blueviolet?style=for-the-badge" alt="Agents">
+</p>
 
-Built on an ACID SQLite core (`system/data/nirixa.db`) with zero vendor lock-in, universal coding agent integration (Google Antigravity, Cursor, Claude Code), and an automated test harness verifying epistemic state transitions and dialectic invariants.
+**The autonomous 24/7 AI Chief of Staff and Company Living Wiki built by Monish Nallagondalla.** It is an agentic operating system with a closed learning loop — it captures raw voice and text friction on mobile, debates and spars on assumptions via Socratic reasoning, persists structured knowledge in an ACID SQLite core, and auto-compiles authentic lessons into living engineering playbooks, research assets, and decision records. Run it locally, on an Oracle Always-Free VPS, or alongside your coding agent in Google Antigravity, Cursor, and Claude Code. It is not tied to your IDE — talk to it from Telegram while it manages your memory, telemetry, and execution.
+
+Use any model you want — Gemini Flash, Claude, OpenAI, or local open weights. Switch via configuration with zero code changes and zero lock-in.
 
 <p align="center">
   <a href="docs/assets/screenshots/hero-cockpit-bento.png"><img src="docs/assets/screenshots/hero-cockpit-bento.png" alt="Nirixa Episteme OS Cockpit Hero" width="100%"></a>
